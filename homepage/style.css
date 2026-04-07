@@ -1,0 +1,94 @@
+:root{
+    --um: #5A9C56;
+    --dois: #438F68;
+    --trez: #184C78;
+    --quatro: #298073;
+    --cinco:#154666;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+}
+.container-fluid{
+    background-color: #154666;
+    position: fixed;
+    z-index: 1;
+    height: 110px;
+}
+.form-header{
+    position: absolute;
+    width: 30%;
+    margin-top: 10px;
+    margin-left: 35%;
+}
+.form-header .form-control{
+    display: flex;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    width: 80%;
+    position: absolute;
+}
+.form-header .btn-outline-success{
+    position: absolute;
+    margin-left: 72%;
+    border: none;
+    font-size: 20px;
+    color: rgb(0, 70, 199);
+}
+.form-header .btn-outline-success:hover{
+    background: none;
+}
+.buttons-interact{
+    display: flex;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 90%;
+}
+.buttons-interact button{
+    margin-left: 20px;
+    margin-bottom: 50px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 25px;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+.buttons-interact button:hover{
+    transition: 0.5s ease;
+    background-color: #298073;
+    border-radius: 50px;
+}
+.container-login{
+    position: absolute;
+    margin-left: 80%;
+    margin-top: 40px;
+    display: flex;
+}
+.container-login button{
+    border: none;
+    color: white;
+    border-radius: 10px;
+    background-color: #298073;
+    margin-left: 20px;
+    height: 40px;
+    width: 150px;
+}
+.container-login button:hover{
+    background-color: var(--trez);
+}
+
+/* Carrosel itens */
+
+.container-carousel{
+    height: 100px;
+    margin-top: 50px;
+}
