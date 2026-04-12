@@ -1,10 +1,4 @@
-:root{
-    --cor-fonte: #879D88;
-    --dois: #438F68;
-    --trez: #184C78;
-    --animacao-hover: #298073;
-    --cinco:#154666;
-}
+
 
 body{
     padding: 0;
@@ -297,9 +291,10 @@ body{
 
 .button-anterior-carrosel{
     margin-left: 19%;
-    margin-top: 43.2%;
+    margin-top: 42%;
     height: 0px;
     width: 30px;
+    z-index: 1;
 }
 .button-anterior-carrosel span{
     height: 20px;
@@ -308,11 +303,118 @@ body{
     border-radius: 5px;
 }
 .button-next-carrosel{
+    height: 20px;
+    width: 20px;
     margin-right: 10%;
-    margin-top: 35%;
+    margin-top: 42%;
 }
 .button-next-carrosel span{
     height: 20px;
     width: 20px;
     border-radius: 5px;
+}
+
+
+
+
+/* CARD ITENS */
+section{
+    margin-left: 24%;
+    margin-top: 2%;
+}
+section h6{
+    font-size: 30px;
+    font-weight: 700;
+}
+section p{
+    font-size: 15px;
+    margin-top: 20px;
+    color: rgba(37, 35, 35, 0.672);
+}
+
+.card{
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+}
+.img-container{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px;
+}
+.img-container img{
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    transform: scale(1.1);
+}
+.grid-container{
+    width: 20%;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0;
+}
+.card-content{
+    padding: 5%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+.card-content h3{
+    font-size: 23px;
+    margin: 0;
+    line-height: 1.2;
+}
+.preco{
+    font-size: 25px;
+    font-weight: bold;
+    color: #F97015;
+    margin: 2px 0;
+    margin-top: 20px;
+}
+.info{
+    font-size: 15px;
+    color: grey;
+    margin-top: 15px;
+}
+.btn-alugar{
+    margin-top: auto;
+    width: 100%;
+    padding: 8px 0;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.252);
+    font-weight: bold;
+    border-radius: 10px;
+}
+.btn-alugar:hover{
+    background-color: #ffdcc598;
+    color: #F97015;
+}
+.ver-todos{
+    position: absolute;
+    margin-left: 55%;
+    margin-top: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.285);
+    height: 40px;
+    width: 110px;
+    border-radius: 5px;
+}
+.ver-todos:hover{
+    background-color: #ffdcc598;
+    color: #F97015;
 }
