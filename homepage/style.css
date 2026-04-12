@@ -16,20 +16,20 @@ body{
     background-color: #fff;
 }
 .container-fluid{
-    background-color: #d8dacc;
+    background-color: #ffffffa0;
+    border-bottom: 1px solid;
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect width='1' height='0.8' fill='%23ccc'/%3E%3C/svg%3E") 0 0 100% 0;
+    backdrop-filter: blur(10px);
     position: fixed;
     z-index: 1;
     height: 150px;
-    width: 70%;
-    margin-left: 15%;
-    border-radius: 15px;
-    border: 1px solid var(--cor-fonte);
+    width: 100%;
 }
 .container-fluid a{
-    margin-left: 20px;
+    margin-left: 16%;
     margin-top: 70px;
     font-size: 25px;
-    color: #3B444D;
+    color: #F97015;
     font-weight: 700;
     cursor: pointer;
 }
@@ -43,14 +43,22 @@ body{
     margin-top: 10px;
     display: flex;
     height: 40px;
-    border-radius: 20px;
-    border: 1px solid #090D0F;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.245);
     width: 65%;
     position: absolute;
     box-shadow: none;
+    padding-left: 40px;
 }
+.form-control::placeholder{
+    font-size: 12px;
+    padding-left: 5px;
+}
+
 .form-header .form-control:focus{
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.164) !important;
+    box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.164) !important;
+    border: 1px solid #F97015;
+    font-size: 15px;
 }
 
 .form-control::-webkit-search-decoration,
@@ -62,10 +70,10 @@ body{
 
 .form-header .btn-outline-success{
     position: absolute;
-    margin-left: 56%;
-    margin-top: 10px;
+    margin-left: 5px;
+    margin-top: 15px;
     border: none;
-    font-size: 17px;
+    font-size: 13px;
     color: #090D0F;
 }
 .form-header .btn-outline-success:hover{
@@ -78,14 +86,17 @@ body{
     margin-top: 10px;
     margin-left: 80%;
 }
+.buttons-interact button i{
+    -webkit-text-stroke: 0.5px currentColor;
+}
 
-.buttons-interact button {
+.buttons-interact button{
     margin-left: 20px;
     margin-bottom: 50px;
     border: none;
     background: none;
     color: #090D0F;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 50%; 
     height: 50px;
     width: 50px;
@@ -100,19 +111,19 @@ body{
 }
 
 /* A borda que sobe de baixo para cima */
-.buttons-interact button::after {
+.buttons-interact button::after{
     content: "";
     position: absolute;
-    inset: 0; /* Preenche o tamanho do botão */
+    inset: 0; 
     border-radius: 50%;
-    padding: 2px; /* Espessura da borda */
+    padding: 2px;
     
-    /* Gradiente que começa transparente e sobe com a cor */
-    background: linear-gradient(to top, var(--animacao-hover) 50%, transparent 50%) bottom;
-    background-size: 100% 200%; /* Faz o gradiente ter o dobro da altura */
-    background-position: top; /* Começa mostrando a parte transparente */
     
-    /* Máscara para deixar o meio transparente e aparecer só a borda */
+    background: linear-gradient(to top, #F97015 50%, transparent 50%) bottom;
+    background-size: 100% 200%; 
+    background-position: top; 
+    
+    
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -129,7 +140,7 @@ body{
 }
 
 .buttons-interact button:hover {
-    color: var(--animacao-hover); /* Muda a cor do ícone também */
+    color: #F97015; /* Muda a cor do ícone também */
     transition: 0.5s ease;
 }
 /* CONTAINER LOGIN*/
@@ -141,16 +152,35 @@ body{
     padding-left: 10px;
 }
 .container-login button{
-    border: none;
-    color: #879D88;
-    border-radius: 10px;
-    background-color: none;
+    border-radius: 7px;
     margin-left: 20px;
     position: relative;
     height: 40px;
     width: 120px;
+    font-weight: 500;
 }
-.container-login button::after{
+.button-login{
+    border: 1px solid rgba(0, 0, 0, 0.224);
+    background-color: transparent;
+    transition: all 0.5s ease;
+}
+.button-login:hover{
+    background-color: #f9dfce9f;
+    color: #F97015;
+}
+.button-login:hover i{
+    color: #F97015;
+    transition: 0.5s ease;
+}
+.button-login i{
+    transition: 0.5s ease;
+}
+
+.button-login i:hover{
+    color: #F97015;
+    transition: 0.5s ease;
+}
+/* .container-login button::after{
     content: "";
     position: absolute;
     inset: 0;
@@ -168,50 +198,121 @@ body{
     transition: background-position 0.5s ease, opacity 0.3s ease;
     opacity: 0;
     pointer-events: none;
-}
+} */
 .container-login button:hover::after{
     opacity: 1;
     background-position: bottom;
 }
-.container-login button:hover{
-    color: var(--animacao-hover);
-    transition: 0.3s ease;
-}
-.container-login button i:hover{
-    color: var(--animacao-hover);
-    transition: 0.5 ease;
-}
-.container-login i{
+
+.button-login i{
     margin-right: 10px;
     font-size: 20px;
-    color: #879D88;
+    color: rgba(0, 0, 0, 0.768);
+    font-weight: 700;
 }
 
-/* Carrosel itens */
+.btn-anunciar{
+    border: none;
+    background-color: #F97015;
+    color: white;
+    font-weight: 400;
+}
+.btn-anunciar i{
+    margin-right: 7px;
+    font-size: 18px;
+}
+.btn-anunciar:hover{
+    background-color: #d35f11;
+}
 
-.container-carousel{
-    background-color: none;
-    height: 60px;
-    border: 1px solid #879D88;
-    margin-top: 90px;
-    width: 70%;
-    margin-left: 15%;
+
+/* CARROSEL PREMIUM */
+#carouselExampleCaptions{
+    height: 60%;
+    width: 60%;
+    margin-left: 24%;
+    margin-top: 5%;
+}
+
+.carousel-inner{
+    height: 70%;
     border-radius: 10px;
 }
-.container-carousel button{
-    height: 35px;
-    margin-top: 10px;
-    border: 1px solid var(--animacao-hover);
-    color: var(--animacao-hover);
+#carousel-control-prev{
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    color: black;
+    margin-top: 22%;
+    margin-left: 26%;
+    border-radius: 5px;
 }
+#icon-prev-carousel{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333333'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e") !important;
+}
+
+#carousel-control-next{
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    color: black;
+    margin-top: 23%;
+    margin-right: 18%;
+    position: absolute;
+    border-radius: 5px;
+}
+.carousel-control-next-icon{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333333'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e") !important;
+    transform: rotate(180deg) !important;
+}
+
 /* BOTAO ANTERIOR CARROSSEL CATEGORIAS */
 
 
+.btn-categoria-filtro{
+    border: none !important;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    white-space: nowrap;
+    background-color: #F97015;
+    margin-top: 30px;
+}
+#CarroselIcons{
+    margin-top: 20px;
+    margin-left: 10%;
+}
+.btn-categoria-filtro:hover{
+    background: none !important;
+    border: none !important;
+}
+
+.btn-categoria-filtro.active {
+    color: white !important;
+    background-color: #F97015 !important;
+    border: none;
+}
+
+
 .button-anterior-carrosel{
-    height: 50px;
-    margin-left: 180px;
-    margin-top: 95px;
+    margin-left: 19%;
+    margin-top: 43.2%;
+    height: 0px;
+    width: 30px;
 }
 .button-anterior-carrosel span{
-    height: 30px;
+    height: 20px;
+    width: 20px;
+    fill: black;
+    border-radius: 5px;
+}
+.button-next-carrosel{
+    margin-right: 10%;
+    margin-top: 35%;
+}
+.button-next-carrosel span{
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
 }
