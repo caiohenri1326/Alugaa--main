@@ -55,6 +55,7 @@ body{
     font-size: 12px;
     font-weight: 600;
     margin-top: 5%;
+    margin-right: 70%;
     padding-bottom: 7px;
 }
 .form-login input::placeholder{

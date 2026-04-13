@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.box-registro{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    width: 35%;
+    height: 20%;
+}
+.form-registro{
+    flex-direction: column;
+    display: flex;
+}
+.box-registro h6{
+    font-size: 24px;
+    font-weight: 600;
+}
+.box-registro p{
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.705);
+}
