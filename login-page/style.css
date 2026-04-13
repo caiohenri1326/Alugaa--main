@@ -40,6 +40,11 @@ body{
     width: 500px;
     margin-top: 150px;
 }
+.box-login p a{
+    text-decoration: none;
+    color: #FF6933;
+    font-weight: 600;
+}
 .form-login{
     display: flex;
     flex-direction: column;
@@ -49,7 +54,6 @@ body{
 .form-login label{
     font-size: 12px;
     font-weight: 600;
-    margin-right: 70%;
     margin-top: 5%;
     padding-bottom: 7px;
 }
@@ -61,7 +65,7 @@ body{
     padding-left: 7px;
 }
 .form-login input:focus{
-    padding-left: 35px;
+    padding-left: 0px;
     font-size: 15px;
     border: 1px solid rgb(255, 170, 0);
     outline: none;
@@ -103,7 +107,7 @@ body{
     border: 1px solid rgba(0, 0, 0, 0.164);
     border-radius: 5px;
 }
-.container-checkbox input[type="checkbox"]{
+.container-checkbox .checkbox[type="checkbox"]{
     -webkit-appearance: none;
     appearance: none;
     height: 15px !important;
@@ -116,7 +120,6 @@ body{
     border-radius: 50%;
     border: 1px solid #FF6933;
     cursor: pointer;
-    aspect-ratio: 1 / 1;
 
     display: flex;
     align-items: center;
@@ -130,6 +133,7 @@ body{
 .container-checkbox input[type="checkbox"]:checked::before{
     content: "";
     border-radius: 50%;
+    position: absolute;
     width: 8px;
     height: 8px;
     background-color: #FF6933;
@@ -144,16 +148,16 @@ body{
 .container-checkbox a{
     width: 100px;
     position: absolute;
-    left: 19rem;
-    bottom: 3rem;
+    left: 18.5rem;
+    bottom: 3.8rem;
 }
 .container-checkbox label{
     font-size: 13px;
     font-weight: 500;
     position: static;
-    width: 200px;
+    width: auto;
     white-space: nowrap;
-    margin-left: 23px;
+    margin-left: 10px;
     margin-top: 5px;
 }
 .form-login button{
