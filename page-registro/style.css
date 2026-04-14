@@ -6,16 +6,20 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 10%;
+    margin-top: 6%;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid black;
     width: 35%;
-    height: 20%;
+    height: 35%;
 }
 .form-registro{
     flex-direction: column;
     display: flex;
+    gap: 0;
+    margin-top: 20px;
+    height: 35rem;
+    width: 100%;
 }
 .box-registro h6{
     font-size: 24px;
@@ -25,4 +29,19 @@ body{
     font-size: 14px;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.705);
+}
+.form-registro input{
+    width: 80%;
+    height: 35px;
+    border: 1px solid rgba(0, 0, 0, 0.389);
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.form-registro input::placeholder{
+    padding-left: 40px;
+}
+.form-registro i{
+    padding-top: 20px;
 }
