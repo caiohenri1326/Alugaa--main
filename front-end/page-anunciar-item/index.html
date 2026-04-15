@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anúnciar um item</title>
+    <link rel="icon" href="../../assets/LOGO_ALUGAÊ-removebg-preview.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-anuncio">
+        <a href=""><i class="bi bi-arrow-left"></i>Voltar</a>
+        <div class="text-header">
+            <h6>Publicar um Anúncio</h6>
+            <p>Preencha os dados abaixo com o máximo de detalhes possível para atrair mais compradores</p>
+        </div>
+        <form class="form-anuncio">
+            <p>Fotos do Produto</p></p>
+            <div class="container-upload">
+                <label for="foto" class="upload-placeholder">
+                    <i class="bi bi-image icon-upload"></i>
+                    <span class="text-upload">Adicionar Foto</span>
+                </label>
+                <input type="file" id="foto" name="foto" accept="image/*" class="hide-input">
+            </div>
+
+            <label>Título do Anúncio</label>
+            <input type="text" placeholder="Ex: PlayStation 5 Pro">
+
+            <div class="container-categorias">
+                <label>Categorias</label>
+                <select name="categorias" id="categorias">
+                    <option value="" disabled selected>Selecione uma categorias</option>
+                    <option value="roupas">Roupas</option>
+                    <option value="esportes">Esportes</option>
+                    <option value="autos">Autos</option>
+                    <option value="videogames">Video Games</option>
+                    <option value="imoveis">Imoveis</option>
+                    <option value="tecnologias">Tecnologias</option>    
+                </select>
+
+                <label>Preço (R$)</label>
+                <input type="text">
+            </div>
+            <label>Descrição</label>
+            <input type="text" placeholder="Descreva as características, estado de conservação, acessórios inclusos, etc.">
+            <div class="container-localization">
+                <label>Localização / Cidade</label>
+                <input type="text" placeholder="Ex: São Paulo, SP">
+
+                <label>Telefone para Contato</label>
+                <input type="number" placeholder="(00) 00000-0000">
+            </div>
+            <button>Cancelar</button>
+            <button><i class="bi bi-upload"></i>Anunciar</button>
+        </form>
+    </div>
+</body>
+</html>
