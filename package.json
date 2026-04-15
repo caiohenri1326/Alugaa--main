@@ -1,4 +1,18 @@
 {
+<<<<<<< HEAD
+=======
+  "name": "alugaa--main-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+>>>>>>> 9b646e01c61c8e0df1133969f4c321786b7d40cf
   "dependencies": {
     "express": "^5.2.1"
   }
