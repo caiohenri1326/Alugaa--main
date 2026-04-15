@@ -6,37 +6,69 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
 
-    width: 30%;
-    height: 45rem;
-    background-color: red;
+    width: 35%;
+    height: 53rem;
+    border: 1px solid black;
+}
+.container-anuncio a{
+    margin-right: 85%;
+    margin-top: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.61);
+    font-weight: 600;
+}
+.container-anuncio a i{
+    margin-right: 10px;
+}
+.text-header h6{
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-right: 25rem;
+}
+.text-header p{
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.685);
+}
+.form-anuncio p{
+    font-size: 13px;
+    font-weight: 700;
+    margin-left: 45px;
+    margin-top: 20px;
 }
 
-
-
 .container-upload{
+    width: 90%;
     padding: 20px;
     display: flex;
     justify-content: center;
+    margin-left: 30px;
+    border-radius: 5px;
 }
 .upload-placeholder{
-    width: 150px;
-    height: 150px;
-    border: 2px dashed #d1d1d1;
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #14141479;
     border-radius: 15px;
     background-color: white;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-right: 0rem;
 
     cursor: pointer;
     transition: all 0.3s;
 }
 .upload-placeholder::placeholder{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border: 2px dashed #d1d1d1;
     border-radius: 15px;
     background-color: white;
@@ -51,9 +83,9 @@ body{
 }
 .text-upload{
     font-family: sans-serif;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 600;
-    color: rgba(0, 0, 0, 0.39);
+    color: rgba(0, 0, 0, 0.582);
     text-align: center;
 }
 .hide-input{
@@ -63,6 +95,44 @@ body{
     position: absolute;
 }
 .icon-upload{
-    color: rgba(0, 0, 0, 0.278);
-    font-size: 50px;
+    color: rgba(0, 0, 0, 0.575);
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.nome-do-anuncio{
+    display: flex;
+    flex-direction: column;
+}
+.nome-do-anuncio label{
+    font-size: 15px;
+    margin-left: 40px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.nome-do-anuncio p{
+    margin-top: 15px;
+    margin-bottom: 0px;
+    margin-left: 30.8%;
+    color: rgba(0, 0, 0, 0.555);
+    font-size: 12px;
+    position: absolute;
+}
+.nome-do-anuncio input{
+    width: 88%;
+    height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.589);
+}
+.nome-do-anuncio input::placeholder{
+    font-size: 14px;
+}
+.nome-do-anuncio input:focus{
+    outline: none;
+    border: 1px solid #FF7040;
+    font-size: 14px;
+    font-weight: 600;
 }
