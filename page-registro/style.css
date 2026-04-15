@@ -58,7 +58,7 @@ body{
 }
 
 .box-registro h6{
-    margin-top: 70px;
+    margin-top: 100px;
     font-size: 24px;
     font-weight: 600;
 }
@@ -122,4 +122,10 @@ body{
 .box-registro p a{
     text-decoration: none;
     color: #FF6933;
+}
+.box-registro img{
+    height: 40px;
+    width: 40px;
+    margin-top: 80px;
+    position: absolute;
 }
