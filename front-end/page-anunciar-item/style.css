@@ -136,3 +136,70 @@ body{
     font-size: 14px;
     font-weight: 600;
 }
+.container-categorias .categorias{
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.container-categorias .preco{
+    position: absolute;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.container-categorias select{
+    margin-left: 40px;
+    margin-top: 45px;
+    height: 40px;
+    width: 45%;
+    border: 1px solid rgba(0, 0, 0, 0.555);
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.61);
+    font-size: 14px;
+    padding-left: 10px;
+}
+.container-categorias select:focus{
+    border: 1px solid #FF7040;
+    outline: none;
+}
+.container-categorias input{
+    width: 42%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.616);
+}
+.container-categorias input:focus{
+    border: 1px solid #FF7040;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+}
+.container-categorias input::placeholder{
+    padding-left: 10px;
+    font-size: 14px;
+}
+.form-anuncio .descricao{
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.area-caracteristicas{
+    margin-left: 40px;
+    margin-top: 50px;
+    height: 150px;
+    width: 88%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.459);
+}
+.area-caracteristicas::placeholder{
+    font-size: 13px;
+    font-weight: 500;
+}
+.area-caracteristicas:focus{
+    border: 1px solid rgba(0, 0, 0, 0.466);
+    outline: none;
+}
