@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="./../page-anunciar-item/script.js" defer></script>
 </head>
 <body>
     <div class="container-anuncio">
@@ -33,22 +34,20 @@
             </div>
             
 
-            <div class="container-categorias">
-                <label class="categorias">Categorias</label>
-                <select name="categorias" class="x" id="categorias">
-                    <option value="" disabled selected>Selecione uma categorias</option>
-                    <option value="roupas">Roupas</option>
-                    <option value="esportes">Esportes</option>
-                    <option value="autos">Autos</option>
-                    <option value="videogames">Video Games</option>
-                    <option value="imoveis">Imoveis</option>
-                    <option value="tecnologias">Tecnologias</option>    
-                </select>
-
-                <label class="preco">Preço (R$)</label>
-                <input type="text" placeholder="0,00">
+            <div class="select-custom">
+                <div class="select-selected">Categorias<i class="bi bi-arrow-down"></i></div>
+                    <ul name="categorias" class="select-options">
+                        <li data-value="roupas">Roupas</li>
+                        <li data-value="esportes">Esportes</li>
+                        <li data-value="autos">Autos</li>
+                        <li data-value="videogames">Video Games</li>
+                        <li data-value="imoveis">Imoveis</li>
+                        <li data-value="tecnologias">Tecnologias</li>    
+                    </ul>
+                    <input type="hidden" name="opcao">
             </div>
-
+            <label class="preco">Preço (R$)</label>
+            <input type="text" placeholder="0,00" class="input-preco">
             <label class="descricao">Descrição</label>
             <input class="area-caracteristicas" type="text" placeholder="Descreva as características, estado de conservação, acessórios inclusos, etc.">
             <div class="container-infos">

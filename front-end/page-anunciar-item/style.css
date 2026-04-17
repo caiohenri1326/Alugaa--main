@@ -137,12 +137,42 @@ body{
     font-size: 14px;
     font-weight: 600;
 }
-.container-categorias .categorias{
-    position: absolute;
+.select-custom{
+    width: 220px;
+    position: relative;
+}
+.select-selected{
     margin-left: 40px;
+    padding: 10px;
+    border-radius: 5px;
     margin-top: 20px;
     font-size: 15px;
     font-weight: 500;
+    cursor: pointer;
+    border: 1px solid black;
+}
+.select-options{
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px grey;
+    display: none;
+    z-index: 10;
+}
+.select-options li{
+    padding: 10px;
+    cursor: pointer;
+}
+.select-options li:hover{
+    background-color: green;
+    color: white;
+}
+.select-custom.open .select-options{
+    display: block;
 }
 .container-categorias .preco{
     position: absolute;
@@ -150,28 +180,15 @@ body{
     font-size: 15px;
     font-weight: 500;
 }
-.container-categorias select{
-    margin-left: 40px;
-    margin-top: 45px;
-    height: 40px;
-    width: 45%;
-    border: 1px solid rgba(0, 0, 0, 0.555);
-    border-radius: 5px;
-    color: rgba(0, 0, 0, 0.61);
-    font-size: 14px;
-    padding-left: 10px;
-}
-.container-categorias select:focus{
-    border: 1px solid #FF7040;
-    outline: none;
-}
-.container-categorias input{
+
+
+.container-categorias .input-preco{
     width: 42%;
     height: 40px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.616);
 }
-.container-categorias input:focus{
+/* .container-categorias input:focus{
     border: 1px solid #FF7040;
     font-size: 14px;
     font-weight: 600;
@@ -180,7 +197,7 @@ body{
 .container-categorias input::placeholder{
     padding-left: 10px;
     font-size: 14px;
-}
+} */
 .form-anuncio .descricao{
     position: absolute;
     margin-left: 40px;
