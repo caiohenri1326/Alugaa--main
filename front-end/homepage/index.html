@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pagina Inicial | Alugaê</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../../assets/LOGO_ALUGAÊ-removebg-preview.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="index.js"></script>
 </head>
 <body>
@@ -26,50 +26,51 @@
                 
             </form>
             <div class="container-login">
-                
+                <div class="dropdown">
+                    <img src="../../assets/eu.jpg" alt="Perfil" class="rounded-circle dropdown-toggle" id="menuPerfil" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; cursor: pointer;">
+                    <ul class="dropdown-menu shadow" aria-labelledby="menuPerfil">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill-gear"></i>Editar Perfil</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i>Configurações</a></li>
+                        <li><a href=""><i class="bi bi-bag"></i>Meus Anuncios</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="../login-page/index.html"><i class="bi bi-person-up"></i>Sair</a></li>
+                    </ul>
+                    </div>
+
                 <button class="btn-anunciar"><i class="bi bi-bag-plus"></i>Anunciar</button>
             </div>
         </div>
     </nav>
 
     <!-- Carrosel Slides -->
-    <div id="carouselExampleCaptions" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner" data-bs-ride="carousel">
-            <div class="carousel-item active">
-                <img src="../../assets/imagem 1.png" class="d-block w-100">
-            </div>
-            </div>
-            <div class="carousel-item">
-                <img src="../../assets/imagem 2.png" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-                <img src="../../assets/imagem 3.png" class="d-block w-100">
-            </div>        
-        </div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
     </div>
-    <button class="carousel-control-prev" id="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" id="icon-prev-carousel" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-     </button>
-    <button class="carousel-control-next" id="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Proximo</span>
+    
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../../assets/imagem 1.png" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+            <img src="../../assets/imagem 2.png" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+            <img src="../../assets/imagem 3.png" class="d-block w-100">
+        </div>
+    </div> <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
     </button>
-    </div>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
 </div>
-
-
-
-
 
 <!-- Carrosel Icones -->
 
-<div id="CarroselIcons" class="carousel slide" data-bs-ride="carousel">
+<div id="CarroselIcons" class="carousel slide" data-bs-interval="false">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <div class="d-flex justify-content-center gap-2 container-carousel">
@@ -205,6 +206,7 @@
             </article>
         </div>
     </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </body>
 </html>

@@ -1,5 +1,3 @@
-
-
 body{
     padding: 0;
     margin: 0;
@@ -15,7 +13,7 @@ body{
     border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect width='1' height='0.8' fill='%23ccc'/%3E%3C/svg%3E") 0 0 100% 0;
     backdrop-filter: blur(10px);
     position: fixed;
-    z-index: 1;
+    z-index: 1050;
     height: 150px;
     width: 100%;
 }
@@ -72,6 +70,20 @@ body{
 }
 .form-header .btn-outline-success:hover{
     background: none;
+}
+.dropdown-menu{
+    height: 21rem;
+    width: 250px;
+}
+.dropdown-menu li{
+    width: 100%;
+    max-width: 85%;
+}
+.dropdown-menu li a{
+    width: 100%;
+    margin-top: 20px;
+    font-size: 15px;
+    text-decoration: none;
 }
 /* BOTOES INTERAÇOES HEADER */
 .buttons-interact {
@@ -227,9 +239,14 @@ body{
     margin-left: 24%;
     margin-top: 5%;
 }
-
+.carousel-item img{
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 0;
+    width: 50%;
+}
 .carousel-inner{
-    height: 70%;
+    width: 10%;
     border-radius: 10px;
 }
 #carousel-control-prev{
@@ -274,7 +291,7 @@ body{
     margin-top: 30px;
 }
 #CarroselIcons{
-    margin-top: 20px;
+    margin-top: 5px;
     margin-left: 10%;
 }
 .btn-categoria-filtro:hover{
@@ -359,6 +376,7 @@ section p{
 }
 .grid-container{
     width: 20%;
+    margin-top:40rem;
     margin-bottom: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
