@@ -1,0 +1,11 @@
+git pull origin main - Puxar arquivos atualizados do git hub para a maquina local
+
+git push -u origin main - ENVIA OS ARQUIVOS DA MAQUINA LOCAL PARA O GITHUB
+
+git commit -m "Nome do commit" - Cria um commit local
+
+git add . - "Avisa" para o git que colocou um arquivo novo na pasta do projeto
+
+git remote add origin (link do projeto) - Linka o projeto local ao repositorio do github
+
+git pull origin main - baixa os arquivos que existe no repositorio (Importante linkar o projeto antes de baixar os arquivos)
