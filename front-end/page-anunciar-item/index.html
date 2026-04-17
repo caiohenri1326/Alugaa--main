@@ -18,7 +18,7 @@
             <p>Preencha os dados abaixo com o máximo de detalhes possível para atrair mais compradores</p>
         </div>
         <form class="form-anuncio">
-            <p>Fotos do Produto</p></p>
+            <p>Fotos do Produto</p>
             <div class="container-upload">
                 <label for="foto" class="upload-placeholder">
                     <i class="bi bi-image icon-upload"></i>
@@ -35,7 +35,7 @@
 
             <div class="container-categorias">
                 <label class="categorias">Categorias</label>
-                <select name="categorias" id="categorias">
+                <select name="categorias" class="x" id="categorias">
                     <option value="" disabled selected>Selecione uma categorias</option>
                     <option value="roupas">Roupas</option>
                     <option value="esportes">Esportes</option>
@@ -48,6 +48,7 @@
                 <label class="preco">Preço (R$)</label>
                 <input type="text" placeholder="0,00">
             </div>
+
             <label class="descricao">Descrição</label>
             <input class="area-caracteristicas" type="text" placeholder="Descreva as características, estado de conservação, acessórios inclusos, etc.">
             <div class="container-infos">
@@ -62,8 +63,11 @@
                 </div>
                 
             </div>
-            <button>Cancelar</button>
-            <button><i class="bi bi-upload"></i>Anunciar</button>
+            <div class="buttons-enter">
+                <button class="button-cancel">Cancelar</button>
+                <button class="button-anunciar"><i class="bi bi-upload"></i>Anunciar</button>
+            </div>
+            
         </form>
     </div>
 </body>

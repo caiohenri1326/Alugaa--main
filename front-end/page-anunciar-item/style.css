@@ -11,13 +11,14 @@ body{
     margin-top: 60px;
 
     width: 35%;
-    height: 58rem;
-    border: 1px solid black;
+    height: 60rem;
+    border: 1px solid rgba(0, 0, 0, 0.452);
+    border-radius: 5px;
 }
 .container-anuncio a{
     margin-right: 85%;
     margin-top: 10px;
-    font-size: 13px;
+    font-size: 15px;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.61);
     font-weight: 600;
@@ -39,7 +40,7 @@ body{
 .form-anuncio p{
     font-size: 13px;
     font-weight: 700;
-    margin-left: 45px;
+    margin-left: 35px;
     margin-top: 20px;
 }
 
@@ -48,11 +49,11 @@ body{
     padding: 20px;
     display: flex;
     justify-content: center;
-    margin-left: 30px;
+    margin-left: 10px;
     border-radius: 5px;
 }
 .upload-placeholder{
-    width: 100px;
+    width: 150px;
     height: 100px;
     border: 2px dashed #14141479;
     border-radius: 15px;
@@ -61,7 +62,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 0rem;
+    margin-right: 26rem;
 
     cursor: pointer;
     transition: all 0.3s;
@@ -113,7 +114,7 @@ body{
 .nome-do-anuncio p{
     margin-top: 15px;
     margin-bottom: 0px;
-    margin-left: 30.8%;
+    margin-left: 25.5%;
     color: rgba(0, 0, 0, 0.555);
     font-size: 12px;
     position: absolute;
@@ -198,16 +199,91 @@ body{
 .area-caracteristicas::placeholder{
     font-size: 13px;
     font-weight: 500;
+    padding-top: 0px;
 }
+
 .area-caracteristicas:focus{
     border: 1px solid rgba(0, 0, 0, 0.466);
     outline: none;
+    padding-top: 0;
 }
 .container-localization{
     display: flex;
     flex-direction: column;
 }
+.localizaçao{
+    margin-left: 40px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-localization{
+    height: 40px;
+    width: 88%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.452);
+    margin-left: 40px;
+    font-size: 13px;
+    padding-left: 5px;
+    font-weight: 500;
+}
+.input-localization:focus{
+    outline: none;
+    border: 1px solid #FF7040;
+    font-size: 13px;
+}
+
 .container-contato{
     display: flex;
     flex-direction: column;
+}
+.container-contato label{
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.container-contato input{
+    margin-left: 40px;
+    height: 40px;
+    width: 88%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.61);
+}
+.container-contato input:focus{
+    outline: none;
+    border: 1px solid #FF7040;
+}
+
+.buttons-enter{
+    margin-top: 20px;
+    margin-left: 60%;
+}
+.button-cancel{
+    height: 40px;
+    width: 90px;
+    font-size: 13px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.568);
+    font-weight: 600;
+}
+.button-anunciar{
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color: #FF7040;
+    font-weight: 500;
+    border-radius: 5px;
+    color: white;
+}
+.button-anunciar:hover{
+    background-color: #be5330;
+}
+.button-anunciar i{
+    margin-right: 7px;
+    color: white;
+    font-weight: 500;
 }
