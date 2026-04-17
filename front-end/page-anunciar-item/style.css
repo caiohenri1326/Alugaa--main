@@ -6,37 +6,70 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
 
-    width: 30%;
-    height: 45rem;
-    background-color: red;
+    width: 35%;
+    height: 60rem;
+    border: 1px solid rgba(0, 0, 0, 0.452);
+    border-radius: 5px;
+}
+.container-anuncio a{
+    margin-right: 85%;
+    margin-top: 10px;
+    font-size: 15px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.61);
+    font-weight: 600;
+}
+.container-anuncio a i{
+    margin-right: 10px;
+}
+.text-header h6{
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-right: 24rem;
+}
+.text-header p{
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.685);
+}
+.form-anuncio p{
+    font-size: 13px;
+    font-weight: 700;
+    margin-left: 35px;
+    margin-top: 20px;
 }
 
-
-
 .container-upload{
+    width: 90%;
     padding: 20px;
     display: flex;
     justify-content: center;
+    margin-left: 10px;
+    border-radius: 5px;
 }
 .upload-placeholder{
     width: 150px;
-    height: 150px;
-    border: 2px dashed #d1d1d1;
+    height: 100px;
+    border: 2px dashed #14141479;
     border-radius: 15px;
     background-color: white;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-right: 26rem;
 
     cursor: pointer;
     transition: all 0.3s;
 }
 .upload-placeholder::placeholder{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border: 2px dashed #d1d1d1;
     border-radius: 15px;
     background-color: white;
@@ -51,9 +84,9 @@ body{
 }
 .text-upload{
     font-family: sans-serif;
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 600;
-    color: rgba(0, 0, 0, 0.39);
+    color: rgba(0, 0, 0, 0.582);
     text-align: center;
 }
 .hide-input{
@@ -63,6 +96,194 @@ body{
     position: absolute;
 }
 .icon-upload{
-    color: rgba(0, 0, 0, 0.278);
-    font-size: 50px;
+    color: rgba(0, 0, 0, 0.575);
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.nome-do-anuncio{
+    display: flex;
+    flex-direction: column;
+}
+.nome-do-anuncio label{
+    font-size: 15px;
+    margin-left: 40px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.nome-do-anuncio p{
+    margin-top: 15px;
+    margin-bottom: 0px;
+    margin-left: 25.5%;
+    color: rgba(0, 0, 0, 0.555);
+    font-size: 12px;
+    position: absolute;
+}
+.nome-do-anuncio input{
+    width: 88%;
+    height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.589);
+}
+.nome-do-anuncio input::placeholder{
+    font-size: 14px;
+}
+.nome-do-anuncio input:focus{
+    outline: none;
+    border: 1px solid #FF7040;
+    font-size: 14px;
+    font-weight: 600;
+}
+.container-categorias .categorias{
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.container-categorias .preco{
+    position: absolute;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.container-categorias select{
+    margin-left: 40px;
+    margin-top: 45px;
+    height: 40px;
+    width: 45%;
+    border: 1px solid rgba(0, 0, 0, 0.555);
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.61);
+    font-size: 14px;
+    padding-left: 10px;
+}
+.container-categorias select:focus{
+    border: 1px solid #FF7040;
+    outline: none;
+}
+.container-categorias input{
+    width: 42%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.616);
+}
+.container-categorias input:focus{
+    border: 1px solid #FF7040;
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+}
+.container-categorias input::placeholder{
+    padding-left: 10px;
+    font-size: 14px;
+}
+.form-anuncio .descricao{
+    position: absolute;
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.area-caracteristicas{
+    margin-left: 40px;
+    margin-top: 50px;
+    height: 150px;
+    width: 88%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.459);
+}
+.area-caracteristicas::placeholder{
+    font-size: 13px;
+    font-weight: 500;
+    padding-top: 0px;
+}
+
+.area-caracteristicas:focus{
+    border: 1px solid rgba(0, 0, 0, 0.466);
+    outline: none;
+    padding-top: 0;
+}
+.container-localization{
+    display: flex;
+    flex-direction: column;
+}
+.localizaçao{
+    margin-left: 40px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.input-localization{
+    height: 40px;
+    width: 88%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.452);
+    margin-left: 40px;
+    font-size: 13px;
+    padding-left: 5px;
+    font-weight: 500;
+}
+.input-localization:focus{
+    outline: none;
+    border: 1px solid #FF7040;
+    font-size: 13px;
+}
+
+.container-contato{
+    display: flex;
+    flex-direction: column;
+}
+.container-contato label{
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.container-contato input{
+    margin-left: 40px;
+    height: 40px;
+    width: 88%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.61);
+}
+.container-contato input:focus{
+    outline: none;
+    border: 1px solid #FF7040;
+}
+
+.buttons-enter{
+    margin-top: 20px;
+    margin-left: 60%;
+}
+.button-cancel{
+    height: 40px;
+    width: 90px;
+    font-size: 13px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.568);
+    font-weight: 600;
+}
+.button-anunciar{
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color: #FF7040;
+    font-weight: 500;
+    border-radius: 5px;
+    color: white;
+}
+.button-anunciar:hover{
+    background-color: #be5330;
+}
+.button-anunciar i{
+    margin-right: 7px;
+    color: white;
+    font-weight: 500;
 }
