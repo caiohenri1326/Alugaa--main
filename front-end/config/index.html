@@ -1,74 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Configurações | Alugaê</title>
     <link rel="stylesheet" href="../config/style.css">
+    <link rel="stylesheet" href="../config/css-perfil/perfil-css.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" href="../../assets/gear-fill.svg" type="icon">
 </head>
 <body>
     <header>
-        <div>
+        <div class="container-img">
            <img src="../../assets/LOGO_ALUGAÊ-removebg-preview.png">
             <p>Alugaê</p> 
         </div>
-        <div>
+        <div class="container-botao-divisoria">
             <i class="bi bi-layout-sidebar-reverse"></i>
             <span>Area</span>
         </div>
         <div class="buttons-header">
-            <button><i class="bi bi-bag-plus"></i>Anunciar</button>
-            <button><i class="bi bi-bell"></i></button>
-            <img src="../../assets/eu.jpg">
+            <button class="button-anunciar"><i class="bi bi-bag-plus"></i>Anunciar</button>
+            <button class="icon-sino"><i class="bi bi-bell"></i></button>
+            <img src="../../assets/eu.jpg" class="img-perfil">
         </div>
     </header>
+    <hr style="background-color: rgba(0, 0, 0, 0.176); border: none; opacity: 1; height: 1px; margin-top: 0;">
+    <div class="divisao-vertical"></div>
+
+
+
     <div class="config-sidebar">
-    <ul class="nav nav-pills flex-column">
-        <li class="nav-item" id="tela-perfil">
-            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tela-perfil">
-                <i class="bi bi-person-circle"></i> Perfil
-            </button>
-        </li>
-        
-        <li class="nav-item" id="tela-conta">
-            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-conta">
-                <i class="bi bi-gear-fill"></i> Conta
-            </button>
-        </li>
+        <ul class="nav nav-pills flex-column">
+            <li class="nav-item" id="tela-perfil">
+                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tela-perfil" id="botao-ativar-perfil">
+                    <i class="bi bi-person"></i> Perfil
+                </button>
+            </li>
+            
+            <li class="nav-item" id="tela-conta">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-conta">
+                    <i class="bi bi-gear"></i> Conta
+                </button>
+            </li>
 
-        <li class="nav-item" id="tela-aparencia">
-            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-aparencia">
-                <i class="bi bi-palette-fill"></i> Aparência
-            </button>
-        </li>
+            <li class="nav-item" id="tela-aparencia">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-aparencia">
+                    <i class="bi bi-palette"></i> Aparência
+                </button>
+            </li>
 
-        <li class="nav-item" id="tela-enderecos">
-            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-enderecos">
-                <i class="bi bi-geo-alt-fill"></i> Endereços
-            </button>
-        </li>
+            <li class="nav-item" id="tela-enderecos">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-enderecos">
+                    <i class="bi bi-geo-alt"></i> Endereços
+                </button>
+            </li>
 
-        <li class="nav-item" id="tela-seguranca">
-            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-seguranca">
-                <i class="bi bi-key-fill"></i> Segurança
-            </button>
-        </li>
+            <li class="nav-item" id="tela-seguranca">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-seguranca">
+                    <i class="bi bi-key"></i> Segurança
+                </button>
+            </li>
 
-        <li class="nav-item" id="tela-privacidade">
-            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-privacidade">
-                <i class="bi bi-shield-fill-check"></i> Privacidade
-            </button>
-        </li>
+            <li class="nav-item" id="tela-privacidade">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-privacidade">
+                    <i class="bi bi-shield-check"></i> Privacidade
+                </button>
+            </li>
 
-        <hr class="my-3">
+            <hr class="my-3">
 
-        <li class="nav-item">
-            <a href="../login/index.html" class="nav-link text-danger">
-                <i class="bi bi-box-arrow-left"></i> Sair
-            </a>
-        </li>
-    </ul>
+            <li class="nav-item container-exit">
+                <a href="../login/index.html" class="nav-link text-danger">
+                    <i class="bi bi-box-arrow-right"></i> Sair
+                </a>
+            </li>
+        </ul>
 </div>
 
 
@@ -77,9 +84,18 @@
 
 <!-- AREA VISUAL PERFIL -->
 
-<div class="container-perfil">
-    <p>Foto de Perfil</p>
-    <img src="../../assets/eu.jpg">
+<div class="container-perfil" id="container-perfil">
+    <div class="infos">
+        <p style="font-size: 23px; margin-left: 25px; margin-top: 35px;">Foto de Perfil</p>
+        <img src="../../assets/eu.jpg">
+        <div class="container-infos-pessoais">
+            <span id="nomePessoa">Nome da Pessoa</span>
+            <p class="text-member">Membro desde <span>Data que a pessoa entrou</span></p>
+        </div>
+        
+        <input type="file"><i class="bi bi-camera"></i></input>
+    </div>
+    
 
     <div class="info-pessoal">
         <div class="nome">
@@ -103,7 +119,7 @@
         </div>
     </div>
 </div>
-
+<!------------------------------------------------------------------------------------------------------------------>
 
 <script src="../config/script.js"></script>
 </body>

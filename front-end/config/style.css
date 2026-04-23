@@ -1,3 +1,216 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Inter;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variant: normal;
+    font-variation-settings: 100;
+    background-color: #FAF8F6;
+}
+.divisao-vertical {
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.176);
+    height: 100%; /* Ou 100% se o pai tiver altura fixa */ 
+    position: absolute;
+    margin-left: 290px;
+    top: 0;
+}
+header{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    background-color: #FCFAF7;
+}
+.container-img{
+    margin-left: 20px;
+    display: flex;
+    font-size: 23px;
+    color: #F97015;
+}
+.container-img img{
+    height: 30px;
+    width: 30px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+/* AREA BOTAO DE DIVISORIA DA ESQUEDA */
+.container-botao-divisoria{
+    display: flex;
+    padding-left: 180px;  
+}
+.bi-layout-sidebar-reverse{
+    font-size: 20px;
+    margin-top: 20px;
+    padding-left: 13px;
+    padding-top: 10px;
+    cursor: pointer;
+    height: 35px;
+    width: 33px;
+    align-items: center;
+    font-display: center;
+    border-radius: 15px;
+}
+.bi-layout-sidebar-reverse:hover{
+    background-color: #FFF3EB;
+    color: #F97015;
+}
+.container-botao-divisoria span{
+    font-size: 23px;
+    margin-top: 28PX;
+    margin-left: 10px;
+}
+
+/* DIV BOTOES HEADER PERFIL/ANUNCIAR/SINO */
+
+.buttons-header{
+    margin-left: 63%;
+}
+.button-anunciar{
+    height: 40px;
+    width: 120px;
+    background-color: #F97015;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+}
+.button-anunciar:hover{
+    background-color: #e25d05;
+}
+.button-anunciar i{
+    font-size: 17px;
+    margin-right: 7px;
+}
+.icon-sino{
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.icon-sino:hover{
+    background-color: #FFF3EB;
+    color: #F97015;
+}
+.img-perfil{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: 1px solid #FFF3EB;
+    margin-left: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    position: absolute;
+}
+.img-perfil:hover{
+    border: 2px solid #F97015;
+    transform: scale(1.02);
+    transition: 0.1s ease-in;
+}
+
+
+
+/* LISTA OPÇÕES CONFIGURAÇÕES */
+
+
+.nav-pills{
+    list-style: none;
+    padding-left: 0;
+}
+.nav-item{
+    margin-top: 30px;
+}
+.nav-item button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 276px;
+    height: 50px;
+    font-size: 15px;
+    font-family: Inter;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.nav-item button:hover{
+    background-color: #FFF3EB;
+    color: #F97015;
+}
+.nav-item button i{
+    -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.605);
+    margin-right: 15px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.908);
+}
+.nav-item button:hover i{
+    -webkit-text-stroke: 0.5px #F97015;
+    color: #F97015;
+}
+
+.nav-item button.ativo{
+    background-color: #FFF3EB;
+    color: #F97015;
+}
+.nav-item button.ativo i{
+    color: #F97015;
+    -webkit-text-stroke: 0.5px #F97015;
+}
+
+.config-sidebar hr{
+    width: 15.4%;
+    left: 0px;
+    top: 92%;
+    position: absolute;
+}
+
+.text-danger{
+    text-decoration: none;
+    color: rgb(255, 58, 58);
+    margin-top: 17.5%;
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    position: absolute;
+    font-size: 16px;
+    width: 260px;
+    height: 30px;
+    border-radius: 10px;
+}
+.text-danger:hover{
+    background-color: rgba(219, 218, 218, 0.346);
+}
+.text-danger i{
+    -webkit-text-stroke: 0.5px rgb(255, 58, 58);
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
 .container-perfil{
-    opacity: 0;
+    display: none;
+}
+
+
+.container-perfil.ativa{
+    display: block;
 }
