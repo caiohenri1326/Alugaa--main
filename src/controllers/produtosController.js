@@ -1,18 +1,18 @@
 const db = require('../config/db');
 
-// CADASTRAR PRODUTO
 const cadastrar = (req, res) => {
     const {
-        nome,
+        titulo,
         descricao,
-        preco_dia,
-        categoria_id,
+        preco,
+        categoria,
         cidade,
-        estado,
-        usuario_id
+        telefone
     } = req.body;
 
-    if (!nome || !preco_dia || !categoria_id || !usuario_id) {
+    const usuario_id = req.usuario.id; // vem do token
+
+    if (!titulo || !preco || !categoria) {
         return res.status(400).json({ message: 'Campos obrigatórios faltando' });
     }
 
@@ -23,12 +23,12 @@ const cadastrar = (req, res) => {
     `;
 
     db.query(sql, [
-        nome,
+        titulo,
         descricao,
-        preco_dia,
-        categoria_id,
+        preco,
+        categoria, // depois a gente pode mapear melhor
         cidade,
-        estado,
+        telefone, // usando como "estado" por enquanto
         usuario_id
     ], (err, result) => {
         if (err) {
@@ -43,30 +43,6 @@ const cadastrar = (req, res) => {
     });
 };
 
-// LISTAR PRODUTOS
-const listar = (req, res) => {
-    const sql = `
-        SELECT 
-            p.*, 
-            c.nome AS categoria,
-            u.nome AS dono
-        FROM produtos p
-        JOIN categorias c ON p.categoria_id = c.id
-        JOIN usuarios u ON p.usuario_id = u.id
-        ORDER BY p.id DESC
-    `;
-
-    db.query(sql, (err, result) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).json({ message: 'Erro ao buscar produtos' });
-        }
-
-        res.json(result);
-    });
-};
-
 module.exports = {
-    cadastrar,
-    listar
+    cadastrar
 };
