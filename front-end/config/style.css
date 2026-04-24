@@ -46,14 +46,13 @@ header{
     margin-top: 20px;
     padding-left: 13px;
     padding-top: 10px;
-    cursor: pointer;
     height: 35px;
     width: 33px;
     align-items: center;
     font-display: center;
     border-radius: 15px;
 }
-.bi-layout-sidebar-reverse:hover{
+.container-botao-divisoria button:hover{
     background-color: #FFF3EB;
     color: #F97015;
 }
@@ -167,7 +166,10 @@ header{
     color: #F97015;
     -webkit-text-stroke: 0.5px #F97015;
 }
-
+.config-sidebar{
+    transition: width 0.3s ease;
+    white-space: nowrap;
+}
 .config-sidebar hr{
     width: 15.4%;
     left: 0px;
@@ -195,8 +197,6 @@ header{
     -webkit-text-stroke: 0.5px rgb(255, 58, 58);
     font-size: 18px;
 }
-
-
 
 
 
