@@ -167,7 +167,7 @@ header{
     -webkit-text-stroke: 0.5px #F97015;
 }
 .config-sidebar{
-    transition: width 0.3s ease;
+    transition: width 0.3s ease-out;
     white-space: nowrap;
 }
 .config-sidebar hr{

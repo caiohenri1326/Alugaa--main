@@ -264,10 +264,9 @@ textarea:focus{
 
 /* APARECE/DESAPARECE A ABA PERFIL */
 
-.container-perfil.ativo{
-    display: block;
-}
-.container-perfil.desativado{
-    display: none;
+.ativado{
+    width: 50px;
+    transition: 0.5s ease;
+    overflow: hidden;
 }
  
