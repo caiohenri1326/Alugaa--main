@@ -269,4 +269,52 @@ textarea:focus{
     transition: 0.5s ease;
     overflow: hidden;
 }
+
+
+/* Selecione os elementos que você está movendo */
+.config-sidebar, 
+.hr-vertical, 
+.my-3 {
+    /* 'all' aplica a transição a qualquer mudança, 0.3s é o tempo */
+    transition: all 0.5s ease;
+}
+
+/* Opcional: Garanta que o overflow mude suavemente se necessário */
+.container-botoes_env {
+    transition: max-height 0.3s ease; 
+}
+
+/* Quando a sidebar encolher, o traço vertical se move */
+body.sidebar-encolhida .divisao-vertical {
+    margin-left: 50px !important;
+}
+
+/* Quando a sidebar encolher, a linha do botão sair diminui */
+body.sidebar-encolhida .my-3 {
+    width: 50px !important;
+}
+
+/* Ajustando o container de perfil para não ficar buraco branco */
+body.sidebar-encolhida .container-perfil {
+    margin-left: 5rem; /* Ajuste o valor conforme sua necessidade */
+}
+
+/* TRANSIÇAO PARA O TITULO E O SAIR */
+
+
+.texto-logo,
+.texto-sair{
+    transition: width 0.3s ease;
+    display: flex;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.config-sidebar.ativado .texto-sair,
+body:has(.config-sidebar.ativado) .texto-logo{
+    pointer-events: none;
+    width: 0px;
+}
+
  

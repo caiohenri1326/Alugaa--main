@@ -57,15 +57,13 @@ const hr_sair = document.querySelector('.my-3');
 const container_botoes_env = document.querySelector('.container-botoes-env');
 
 divisao_container_esquerdo.addEventListener('click', function(){
+    Animaçoes();
+});
+
+
+function Animaçoes(){
     config_sidebar.classList.toggle('ativado');
 
-    if(config_sidebar.classList.contains('ativado')){
-        hr_vertical.style.marginLeft = '50px';
-        hr_sair.style.width = '50px';
-        container_botoes_env.style.overflow = 'hidden';
-    }
-    else{
-        hr_vertical.style.marginLeft = '15.2%';
-        hr_sair.style.width = '15%';
-    }
-});
+    document.body.classList.toggle('sidebar-encolhida');
+
+}
