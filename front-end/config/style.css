@@ -42,7 +42,8 @@ header{
 /* AREA BOTAO DE DIVISORIA DA ESQUEDA */
 .container-botao-divisoria{
     display: flex;
-    padding-left: 180px;  
+    margin-left: 80px;
+    transition: margin-left 0.5s ease;
 }
 .bi-layout-sidebar-reverse{
     font-size: 20px;
@@ -68,7 +69,7 @@ header{
 /* DIV BOTOES HEADER PERFIL/ANUNCIAR/SINO */
 
 .buttons-header{
-    margin-left: 63%;
+    margin-left: 60%;
 }
 .button-anunciar{
     height: 40px;

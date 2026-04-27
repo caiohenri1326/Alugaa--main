@@ -1,3 +1,5 @@
+
+
 const folhaEstilo = document.styleSheets[0];
 
 
@@ -10,6 +12,8 @@ const tela_perfil = document.getElementById('container-perfil');
 const tela_ativa = document.querySelectorAll('.tela');
 
 const text_area = document.getElementById('text-area');
+
+
 
 
 botao_ativar_perfil.addEventListener('click', function(){
@@ -53,8 +57,12 @@ const config_sidebar = document.getElementById('config-sidebar');
 const container_exit = document.getElementById('container-exit');
  
 const hr_vertical = document.querySelector('.divisao-vertical');
+
 const hr_sair = document.querySelector('.my-3');
+
 const container_botoes_env = document.querySelector('.container-botoes-env');
+
+const container_botao_divisoria = document.getElementById('container-botao-divisoria');
 
 divisao_container_esquerdo.addEventListener('click', function(){
     Animaçoes();
@@ -66,4 +74,7 @@ function Animaçoes(){
 
     document.body.classList.toggle('sidebar-encolhida');
 
+    container_botao_divisoria.classList.toggle('movendo-botao-divisoria');
+
+    container_exit.classList.toggle('movendo-botao-sair');
 }

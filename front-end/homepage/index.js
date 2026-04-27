@@ -1,3 +1,11 @@
+import LocomotiveScroll from 'locomotive-scroll';
+const scroll = new LocomotiveScroll();
+ScrollSmoother.create({
+    smooth: 1,
+    effects: true
+});
+
+
 document.addEventListener('DOMContentLoaded', function(){
     const botoesCategorias = document.querySelectorAll('.btn-categoria-filtro');
 
