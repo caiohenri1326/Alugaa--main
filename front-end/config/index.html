@@ -74,11 +74,9 @@
             <hr class="my-3">
 
             <li class="nav-item container-exit" id="container-exit">
-                <span class="texto-sair">
-                    <a href="../login/index.html" class="nav-link text-danger">
-                        <i class="bi bi-box-arrow-right"></i> Sair
-                    </a>
-                </span>
+                <a href="../login/index.html" class="nav-link text-danger">
+                    <i class="bi bi-box-arrow-right"></i> Sair
+                </a>
             </li>
         </ul>
 </div>
@@ -100,7 +98,7 @@
         
         <div class="perfil-header">
             <img src="../../assets/eu.jpg">
-            <input type="file" value="" id="upload-foto" style="display: none;"></input>
+            <input type="file" id="upload-foto" style="display: none;"></input>
             <label for="upload-foto" class="botao-foto"><i class="bi bi-camera"></i></label>
         </div>
     </div>
@@ -126,10 +124,21 @@
 
         </div>
 
+        <div class="cpf">
+            <label for="cpf">CPF</label>
+            <input type="number" placeholder="Ex: 335.333.333-05">
+        </div>
+
+        <div class="rg">
+            <label for="RG">RG (Registro Geral)</label>
+            <input type="number" placeholder="ex: 55.555.555-0">
+        </div>
+
         <div class="bio">
             <label>Bio</label>
             <textarea placeholder="Conte um pouco sobre você..."></textarea>
         </div>
+        
         
     </div>
     <div class="container-botoes-env">
