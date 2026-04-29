@@ -81,7 +81,7 @@
 
 
 .info-pessoais{
-    height: 520px;
+    height: 587px;
     width: 73%;
     margin-left: auto;
     margin-right: auto;
@@ -92,7 +92,8 @@
 }
 .info-pessoais p{
     font-size: 23px;
-    margin-left: 30px;
+    margin-left: 45px;
+    padding-top: 20px;
     font-weight: 500;
 }
 
@@ -101,7 +102,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 14px;
     font-family: Inter;
+    width: 92.4%;
 }
 .nome label{
     margin-left: 30px;
@@ -110,7 +113,7 @@
     font-weight: 500;
 }
 .nome input{
-    width: 94%;
+    width: 100%;
     height: 35px;
     margin-left: 30px;
     border-radius: 10px;
@@ -138,8 +141,9 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
-    width: 96%;
+    width: 95%;
     height: 100px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -157,7 +161,7 @@
 .fone input{
     width: 100%;
     height: 35px;
-    margin-top: 10px;
+    margin-top: 5px;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.356);
     background-color: var(--cor-body);
@@ -172,7 +176,7 @@
 .cidade input{
     width: 100%;
     height: 35px;
-    margin-top: 10px;
+    margin-top: 5px;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.308);
     background-color: var(--cor-body);
@@ -182,9 +186,9 @@
 .cpf{
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    width: 95%;
+    margin-left: 44px;
+    width: 93%;
+    max-width: 100%;
 }
 .cpf label{
     font-size: 13px;
@@ -196,6 +200,7 @@
     width: 100%;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.342);
+    background-color: #FCFAF7;
     outline: none;
 }
 /* --------------------------------------------------------- */
@@ -203,21 +208,21 @@
 .rg{
     display: flex;
     flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    width: 95%;
+    margin-left: 44px;
+    width: 93.5%;
     max-width: 100%;
 }
 .rg label{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
-    margin-top: 7px;
+    margin-top: 9px;
     margin-bottom: 5px;
 }
 .rg input{
     height: 35px;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.336);
+    background-color: #FCFAF7;
     outline: none;
 }
 
@@ -227,9 +232,8 @@
 .bio{
     display: flex;
     flex-direction: column;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 93.5%;
+    margin-left: 44px;
     max-width: 100%;
 }
 .bio label{
@@ -265,8 +269,10 @@ textarea:focus{
 /* CONTAINER BOTOES SALVAR */
 
 .container-botoes-env{
-    margin-left: 69.5%;
+    display: flex !important;
+    width: 73%;
     margin-top: 10px;
+    margin-left: 30px;
 }
 .container-botoes-env button{
     height: 40px;

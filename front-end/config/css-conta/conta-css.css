@@ -1,0 +1,9 @@
+.container-conta{
+    height: 500px;
+    width: 500px;
+    background-color: red;
+    display: none;
+}
+.container-conta.ativa{
+    display: block;
+}

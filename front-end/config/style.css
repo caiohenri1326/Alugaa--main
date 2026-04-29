@@ -69,8 +69,8 @@ header{
 /* DIV BOTOES HEADER PERFIL/ANUNCIAR/SINO */
 
 .buttons-header{
-    margin-left: 63%;
-    position: static;
+    margin-left: 85%;
+    position: fixed;
 }
 .button-anunciar{
     height: 40px;
