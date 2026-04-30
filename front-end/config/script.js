@@ -9,7 +9,7 @@ const container_botao_divisoria = document.getElementById('container-botao-divis
 const botao_ativar_perfil = document.getElementById('botao-ativar-perfil');
 const tela_perfil = document.getElementById('container-perfil');
 
-const botaoAtivarConta = document.getElementById('botao-ativar-conta');
+const botao_ativar_conta = document.getElementById('botao-ativar-conta');
 const containerConta = document.getElementById('container-conta'); // Alterado para ID para bater com o perfil
 
 // Seleção de todas as telas para poder esconder
@@ -27,24 +27,12 @@ function esconderTodasAsTelas() {
 
 /* --- LOGICA DA ABA PERFIL --- */
 botao_ativar_perfil.addEventListener('click', function(){
-    esconderTodasAsTelas(); // Esconde as outras primeiro
-    
-    tela_perfil.style.display = 'block';
-    tela_perfil.classList.add('ativa');
-    text_area.innerText = "Perfil";
-    this.classList.add('ativo');
+    alternarAba(this, tela_perfil, "Perfil");
 });
 
 /* --- LOGICA DA ABA CONTA --- */
-botaoAtivarConta.addEventListener('click', function(){
-    esconderTodasAsTelas(); // Esconde as outras primeiro
-
-    if(containerConta) {
-        containerConta.style.display = 'block';
-        containerConta.classList.add('ativa');
-    }
-    text_area.innerText = "Conta";
-    this.classList.add('ativo');
+botao_ativar_conta.addEventListener('click', function(){
+    alternarAba(this, containerConta, "Conta");
 });
 
 /* --- ANIMAÇÃO SIDEBAR (ABRIR/FECHAR) --- */
@@ -57,6 +45,18 @@ function Animaçoes(){
     document.body.classList.toggle('sidebar-encolhida');
     container_botao_divisoria.classList.toggle('movendo-botao-divisoria');
     container_exit.classList.toggle('movendo-botao-sair');
+}
+
+function alternarAba(botaoClicado, telaParaMostrar, nomeTexto){
+    esconderTodasAsTelas()
+
+    if(telaParaMostrar){
+        telaParaMostrar.style.display = 'block';
+        telaParaMostrar.classList.add('ativa');
+    }
+
+    botaoClicado.classList.add('ativo');
+    text_area.innerText = nomeTexto;
 }
 
 /* --- INICIALIZAÇÃO --- */

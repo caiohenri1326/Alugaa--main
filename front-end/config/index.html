@@ -89,7 +89,7 @@
 <!-- AREA VISUAL PERFIL -->
 
 <div class="container-agrupa-tudo" id="container-agrupa-tudo">
-    <div class="container-perfil" id="container-perfil">
+    <div class="container-perfil tela" id="container-perfil">
         <div class="infos">
             <p style="font-size: 23px; margin-left: 25px; margin-top: 35px;">Foto de Perfil</p>
             
@@ -152,9 +152,9 @@
 
     <!-- AREA VISUAL CONTA -->
 
-    <div class="container-conta" id="container-conta">
+    <div class="container-conta tela" id="container-conta">
         <div class="aba-email-idioma">
-            <h6>E-mail e idioma</h6>
+            <h1>E-mail e idioma</h1>
             <p>Atualize as informações da sua conta</p>
             <div class="input-email">
                 <label for="Email">E-mail</label>
@@ -164,9 +164,45 @@
             <div class="aba-moeda">
                 <div class="idioma">
                     <label for="idioma">Idioma</label>
-                    <button type=""></button>
+                    <select id="idioma">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="moeda">
+                    <label for="moeda">Moeda</label>
+                    <select id="moeda" class="select-customizado">
+                        <option value="brl">Real (R$)</option>
+                        <option value="usd">Dólar (US$)</option>
+                        <option value="eur">Euro (€)</option>
+                    </select>
                 </div>
             </div>
+            <button>Salvar</button>
+        </div>
+        <div class="mudar-senha">
+            <h1>Alterar Senha</h1>
+            <p>Use uma senha forte que você não usa em outros lugares.</p>
+            <div class="senha-atual">
+                <label for="senha">Senha Atual</label>
+                <input type="text">
+            </div>
+            <div class="mudando-senha">
+                <div class="nova-senha">
+                    <label for="NewSenha">Nova Senha</label>
+                    <input type="text">
+                </div>
+                <div class="confirm-senha">
+                    <label for="confirm-senha">Confirmar nova senha</label>
+                    <input type="text">
+                </div>
+            </div>
+            <button>Atualizar Senha</button>
+        </div>
+        <div class="excluir-conta">
+            <h1>Zona de Perigo</h1>
+            <p>Esta ação é permanente e não pode ser desfeita.</p>
+            <button id="excluir-conta">Excluir minha conta</button>
         </div>
     </div>
 </div>
