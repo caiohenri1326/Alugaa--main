@@ -8,10 +8,11 @@ const container_botao_divisoria = document.getElementById('container-botao-divis
 // Abas e Botões
 const botao_ativar_perfil = document.getElementById('botao-ativar-perfil');
 const tela_perfil = document.getElementById('container-perfil');
+const botao_ativar_aparencia = document.getElementById('botao-ativar-aparencia');
 
 const botao_ativar_conta = document.getElementById('botao-ativar-conta');
 const containerConta = document.getElementById('container-conta'); // Alterado para ID para bater com o perfil
-
+const container_aparencia = document.getElementById('container-aparencia');
 // Seleção de todas as telas para poder esconder
 const todas_as_telas = document.querySelectorAll('.tela'); 
 const botoesMenu = document.querySelectorAll('.nav-item');
@@ -33,6 +34,10 @@ botao_ativar_perfil.addEventListener('click', function(){
 /* --- LOGICA DA ABA CONTA --- */
 botao_ativar_conta.addEventListener('click', function(){
     alternarAba(this, containerConta, "Conta");
+});
+
+botao_ativar_aparencia.addEventListener('click', function(){
+    alternarAba(this, container_aparencia, "Aparencia");
 });
 
 /* --- ANIMAÇÃO SIDEBAR (ABRIR/FECHAR) --- */

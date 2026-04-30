@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css-conta/conta-css.css">
+    <link rel="stylesheet" href="../config/css-aparencia/aparencia-css.css">
 </head>
 <body>
     <header>
@@ -49,7 +50,7 @@
             </li>
 
             <li class="nav-item" id="tela-aparencia">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-aparencia">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-aparencia" id="botao-ativar-aparencia">
                     <i class="bi bi-palette"></i> Aparência
                 </button>
             </li>
@@ -203,6 +204,35 @@
             <h1>Zona de Perigo</h1>
             <p>Esta ação é permanente e não pode ser desfeita.</p>
             <button id="excluir-conta">Excluir minha conta</button>
+        </div>
+    </div>
+
+
+
+    <!-- -------------------------------------------------------------------------------------- -->
+    <!-- AREA APARENCIA -->
+
+    <div class="container-aparencia" id="container-aparencia">
+        <div class="tema">
+            <h3>Tema</h3>
+            <p>Escolha como o Alugaê aparece para você.</p>
+            <div class="escolha-tema">
+                <button class="claro"><i class="bi bi-brightness-high"></i>Claro</button>
+                <button class="escuro"><i class="bi bi-moon-stars"></i>Escuro</button>
+                <button class="sistema"><i class="bi bi-display"></i>Sistema</button>
+            </div>
+        </div>
+
+        <div class="cor-destaque">
+            <h3>Cor de destaque</h3>
+            <p>Personalize a cor principal da interface.</p>
+            <div class="cores">
+                <button class="laranja"></button>
+                <button class="azul"></button>
+                <button class="verde"></button>
+                <button class="rosa"></button>
+                <button class="roxo"></button>
+            </div>
         </div>
     </div>
 </div>

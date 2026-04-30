@@ -1,0 +1,123 @@
+:root{
+    --cor-fontes-afins: #F97015;
+    --cor-containers: rgb(255, 255, 255);
+    --cor-body: #FCFAF7;
+    --hover: #FFF3EB;
+}
+
+
+.container-aparencia{
+    width: 63%;
+    margin-left: 26%;
+    margin-top: -43%;
+    display: none;
+}
+.tema{
+    width: 95%;
+    height: 270px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.068);
+}
+.tema h3{
+    font-size: 23px;
+    margin-left: 20px;
+    padding-top: 20px;
+    font-weight: 500;
+}
+.tema p{
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.658);
+    margin-left: 20px;
+    margin-top: -15px;
+}
+.escolha-tema{
+    width: 100%;
+    margin-top: 20px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.escolha-tema button{
+    height: 130px;
+    width: 350px;
+    margin-top: 15px;
+    margin-left: 15px;
+    border: 2px solid rgba(36, 36, 36, 0.205);
+    border-radius: 10px;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    
+}
+.escolha-tema button i{
+    display: flex;
+    flex-direction: column;
+    color: var(--cor-fontes-afins);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.escolha-tema button:hover{
+    border: 2px solid var(--cor-fontes-afins);
+    transition: 0.5s ease;
+}
+
+/* ===================================================== */
+
+/* CONTAINER MUDAR COR DESTAQUE */
+
+.cor-destaque{
+    width: 95%;
+    margin-top: 20px;
+    background-color: white;
+    height: 220px;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.068);
+    border-radius: 10px;
+}
+.cor-destaque h3{
+    font-size: 23px;
+    margin-left: 20px;
+    padding-top: 15px;
+    font-weight: 500;
+}
+.cor-destaque p{
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: -15px;
+    color: rgba(0, 0, 0, 0.637);
+    font-weight: 400;
+}
+.cores{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.cores button{
+    height: 70px;
+    width: 70px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.cores button:hover{
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+.laranja{
+    background: linear-gradient(135deg, #FF7E3E 0%, #FF9E5E 100%);
+}
+.azul{
+    background: linear-gradient(135deg, #3B9DFF 0%, #68B4FF 100%);
+}
+.verde{
+    background: linear-gradient(135deg, #1BC19D 0%, #45D9B9 100%);
+}
+.rosa{
+    background: linear-gradient(135deg, #F95D8B 0%, #FF85A9 100%);
+}
+.roxo{
+    background: linear-gradient(135deg, #A87FFB 0%, #C3A5FF 100%);
+}

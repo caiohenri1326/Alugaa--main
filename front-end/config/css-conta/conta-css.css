@@ -11,7 +11,7 @@
     width: 65%;
     display: none;
     margin-left: 25%;
-    margin-top: -44%;
+    margin-top: -45%;
     position: absolute;
 }
 
@@ -225,7 +225,28 @@
     border-radius: 10px;
     box-shadow: 1px 1px 10px 5px rgba(255, 0, 0, 0.068);
     border: 1px solid rgba(255, 0, 0, 0.705);
+    margin-top: 20px;
 }
 .excluir-conta h1{
-    font-size: ;
+    font-size: 20px;
+    margin-left: 20px;
+    color: #EF4343;
+}
+.excluir-conta p{
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: -5px;
+    color: rgba(0, 0, 0, 0.61);
+}
+.excluir-conta button{
+    margin-left: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    height: 45px;
+    width: 160px;
+    border: none;
+    background-color: #EF4343;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
 }
