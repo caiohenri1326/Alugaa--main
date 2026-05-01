@@ -12,6 +12,7 @@
     margin-top: -43%;
     display: none;
 }
+
 .tema{
     width: 95%;
     height: 270px;
@@ -120,4 +121,20 @@
 }
 .roxo{
     background: linear-gradient(135deg, #A87FFB 0%, #C3A5FF 100%);
+}
+.salvar{
+    height: 40px;
+    width: 110px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(to right, #FF8436, #FF660D);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.salvar:hover{
+    border: 1px solid #f75d04;
+    transform: scaleX(0.5.0.5);
+    transition: 0.3s ease;
 }

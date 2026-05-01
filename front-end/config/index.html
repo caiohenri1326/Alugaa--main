@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css-conta/conta-css.css">
     <link rel="stylesheet" href="../config/css-aparencia/aparencia-css.css">
+    <link rel="stylesheet" href="../config/css-endereco/css-endereco.css">
 </head>
 <body>
     <header>
@@ -34,8 +35,9 @@
     <div class="divisao-vertical" id="divisao-vertical"></div>
 
 
+<main class="layout-principal">
 
-    <div class="config-sidebar" id="config-sidebar">
+    <aside class="config-sidebar" id="config-sidebar">
         <ul class="nav nav-pills flex-column">
             <li class="nav-item" id="tela-perfil">
                 <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tela-perfil" id="botao-ativar-perfil">
@@ -56,7 +58,7 @@
             </li>
 
             <li class="nav-item" id="tela-enderecos">
-                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-enderecos">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-enderecos" id="botao-ativar-endereco">
                     <i class="bi bi-geo-alt"></i> Endereços
                 </button>
             </li>
@@ -81,8 +83,8 @@
                 </a>
             </li>
         </ul>
-</div>
-
+    </aside>
+</main>
 
 
 
@@ -143,8 +145,8 @@
             </div>
             
             <div class="container-botoes-env">
-                <button class="cancelar">Cancelar</button>
                 <button class="env">Salvar alterações</button>
+                <button class="cancelar">Cancelar</button>
             </div>
         </div>
         
@@ -212,7 +214,7 @@
     <!-- -------------------------------------------------------------------------------------- -->
     <!-- AREA APARENCIA -->
 
-    <div class="container-aparencia" id="container-aparencia">
+    <div class="container-aparencia tela" id="container-aparencia">
         <div class="tema">
             <h3>Tema</h3>
             <p>Escolha como o Alugaê aparece para você.</p>
@@ -233,6 +235,62 @@
                 <button class="rosa"></button>
                 <button class="roxo"></button>
             </div>
+        </div>
+        <button class="salvar">Salvar</button>
+    </div>
+
+
+    <!-- --------------------------------------------------------- -->
+
+    <!-- AREA ENDEREÇOS -->
+
+    <div class="container-endereco tela" id="container-endereco">
+        <div class="add-endereco">
+            <h2><i class="bi bi-geo-alt"></i>Meus Endereços</h2>
+            <p>Use para entrega, retirada de produtos e localização nos anúncios.</p>
+            <button class="novo-endereco" id="adicionar-novo-endereco"><i class="bi bi-plus"></i>Novo endereço</button>
+        </div>
+
+        <div class="container-infos-endereco">
+            <i class="bi bi-house"></i>
+            <div class="endereco">
+                <span class="nomeEndereco" id= "nomeEndereco">Nome do endereco</span>
+                <span class="text-endereco" id="text-endereco">Rua das acácias, 123 - Apto 43</span>
+                <span class="estado-cep">São Paulo, SP • CEP 01234-567</span>
+                
+            </div>
+            <div class="buttons-enderecos">
+            <button class="edit-endereco"><i class="bi bi-pencil-square"></i></button>
+            <button class="excluir-endereco"><i class="bi bi-trash3"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="aba-adicionar-novo-endereco" id="aba-adicionar-novo-endereco">
+        <h2>Novo Endereço</h2>
+        <p>Preencha os dados do endereço.</p>
+
+        <div class="identificacao">
+            <label for="identificacao">Identificação(Casa, Trabalho...)</label>
+            <input type="text">
+        </div>
+        <div class="rua">
+            <label for="rua">Rua e Número</label>
+            <input type="text">
+        </div>
+        <div class="cidadeCep">
+            <div class="cidade-endereco">
+                <label for="cidade">Cidade</label>
+                <input type="text">
+            </div>
+            <div class="cep">
+                <label for="cep">CEP</label>
+                <input type="number">
+            </div>
+        </div>
+        <div class="botoes-salvar">
+            <button class="salvar">Salva</button>
+            <button class="cancelar">Cancelar</button>
         </div>
     </div>
 </div>

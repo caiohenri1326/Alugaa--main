@@ -1,0 +1,249 @@
+:root{
+    --cor-fontes-afins: #F97015;
+    --cor-containers: rgb(255, 255, 255);
+    --cor-body: #FCFAF7;
+    --hover: #FFF3EB;
+}
+
+
+
+/* ================================================ */
+
+.container-endereco{
+    width: 1200px;
+    min-height: 30%;
+    display: none;
+    background-color: white;
+    margin-top: -800px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.068);
+}
+.add-endereco h2{
+    font-size: 22px;
+    margin-left: 20px;
+}
+.add-endereco h2 i {
+    margin-right: 10px;
+    color: var(--cor-fontes-afins);
+    font-weight: 600;
+}
+.add-endereco p{
+    font-size: 14px;
+    margin-left: 22px;
+    margin-top: -10px;
+    color: rgba(77, 76, 76, 0.685);
+}
+.add-endereco button{
+    margin-left: 53%;
+    margin-top: -3%;
+    position: absolute;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #FF8436, #FF660D);
+    color: white;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+.add-endereco button i{
+    font-size: 20px;
+    margin-right: 7px;
+}
+
+
+/* ====================================== */
+
+/* ENDEREÇO */
+.container-infos-endereco{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    width: 95%;
+    border: 1px solid rgba(0, 0, 0, 0.164);
+}
+.bi-house{
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    margin-left: 20px;
+    margin-top: 30px;
+    background-color: var(--hover);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: #F97015;
+    -webkit-text-stroke: 0.5px currentColor;
+}
+.endereco{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+}
+.nomeEndereco{
+    margin-top: 30px;
+    margin-left: 15px;
+    font-size: 16px;
+}
+.text-endereco{
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 15px;
+    margin-top: 8px;
+}
+.estado-cep{
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    color: rgba(0, 0, 0, 0.582);
+}
+
+/* ========================================= */
+
+.buttons-enderecos{
+    display: flex;
+    margin-right: 10px;
+    margin-top: 40px;
+}
+.buttons-enderecos button{
+    height: 35px;
+    width: 35px;
+    font-size: 16px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    cursor: pointer;
+    -webkit-text-stroke: 0.2px;
+    transition: 0.3s ease;
+}
+.excluir-endereco{
+    color: red;
+}
+.excluir-endereco:hover{
+    background-color: rgb(250, 216, 216);
+}
+.edit-endereco{
+    color: rgba(0, 0, 0, 0.788);
+}
+.edit-endereco:hover{
+    background: var(--hover);
+}
+
+/* ====================================================== */
+
+/* ABA ADICIONAR NOVO ENDEREÇO */
+
+.aba-adicionar-novo-endereco{
+    display: none;
+    background-color: white;
+    position: absolute;
+    margin-top: -650px;
+    border-radius: 20px;
+    width: 500px;
+}
+.aba-adicionar-novo-endereco input{
+    border-radius: 10px;
+    height: 35px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.308);
+    padding-left: 10px;
+    font-size: 15px;
+}
+.aba-adicionar-novo-endereco input:focus{
+    border: 1px solid var(--cor-fontes-afins);
+}
+
+.aba-adicionar-novo-endereco h2{
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.aba-adicionar-novo-endereco p{
+    font-size: 13px;
+    margin-left: 20px;
+    margin-top: -10px;
+    color: rgba(75, 75, 75, 0.733);
+}
+.identificacao{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-left: 20px;
+    -webkit-text-stroke: 0.2px;
+}
+.identificacao label{
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.2px;
+}
+.identificacao input{
+    margin-top: 10px;
+    width: 91%;
+}
+.rua{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.rua label{
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.2px;
+}
+.rua input{
+    margin-top: 10px;
+    width: 91%;
+}
+
+.cidadeCep{
+    display: flex;
+    flex-direction: row;
+}
+.cidade-endereco{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.cidade-endereco label{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    -webkit-text-stroke: 0.2px;
+}
+
+.cep{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.cep label{
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.2px;
+}
+.cep input{
+    width: 220px;
+    margin-top: 9px;
+}
+
+.botoes-salvar{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.cancelar{
+    height: 40px;
+}
