@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const upload = require('../config/upload');
 
 const verificarToken = require('../middlewares/authMiddleware');
 const produtosController = require('../controllers/produtosController');
@@ -12,7 +13,11 @@ router.get('/protegida', verificarToken, (req, res) => {
     });
 });
 
+router.get('/', (req, res) => {
+    res.send('ROTA PRODUTOS OK 🚀');
+});
+
 // 🚀 CRIAR PRODUTO
-router.post('/', verificarToken, produtosController.cadastrar);
+router.post('/', verificarToken, upload.single('foto'), produtosController.cadastrar);
 
 module.exports = router;
