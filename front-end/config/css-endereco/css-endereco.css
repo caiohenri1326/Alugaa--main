@@ -10,8 +10,10 @@
 /* ================================================ */
 
 .container-endereco{
-    width: 1200px;
-    min-height: 30%;
+    width: 95%;
+    max-width: 1200px;
+    min-height: 200px;
+    height: auto;
     display: none;
     background-color: white;
     margin-top: -800px;
@@ -57,11 +59,11 @@
 
 /* ENDEREÇO */
 .container-infos-endereco{
+    display: none;
     margin-top: 50px;
-    margin-bottom: 20px;
+    margin-bottom:20px;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
     background: white;
     border-radius: 10px;
     width: 95%;
@@ -98,16 +100,45 @@
     margin-left: 15px;
     margin-top: 8px;
 }
-.estado-cep{
+.container-cidade{
+    display: flex;
+}
+.text-cidade{
     font-size: 13px;
     font-weight: 400;
     margin-left: 15px;
+    margin-top: 5px;
+    margin-right: 5px;
+    color: #666;
+}
+.container-cidade p{
+    color: #666;
+    margin: 3px 0 0 0;
+}
+.estado-cep{
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 25px;
     color: rgba(0, 0, 0, 0.582);
 }
 
 /* ========================================= */
+/* MENSAGEM VAZIA */
+
+.mensagem-vazia{
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    border: none;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+.mensagem-vazia.esconder{
+    display: none;
+}
+
 
 .buttons-enderecos{
     display: flex;
@@ -144,13 +175,47 @@
 /* ABA ADICIONAR NOVO ENDEREÇO */
 
 .aba-adicionar-novo-endereco{
-    display: none;
     background-color: white;
     position: absolute;
-    margin-top: -650px;
     border-radius: 20px;
     width: 500px;
+    opacity: 0;
+    transition: display 0.3s allow-discrete, overlay 0.3s allow-discrete;
 }
+.aba-adicionar-novo-endereco[open]{
+    opacity: 1;
+    animation: fade-in-slide-down 0.3s ease-out forwards;
+}
+.aba-adicionar-novo-endereco::backdrop{
+    background-color: rgba(0, 0, 0, 0.829);
+    transition: display 0.3s allow-discrete, overlay 0.3s allow-discrete;
+}
+/* --- ANIMAÇAO ABA ADICIONAR ENDEREÇO (KEYFRAME) ---*/
+@keyframes fade-in-slide-down{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fade-out-slide-up{
+    from{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+.aba-adicionar-novo-endereco.fechando{
+    animation: fade-out-slide-up 0.3s ease-in formwards;
+}
+
 .aba-adicionar-novo-endereco input{
     border-radius: 10px;
     height: 35px;
@@ -246,4 +311,37 @@
 }
 .cancelar{
     height: 40px;
+}
+
+
+/* MENSAGEM DE EXCLUSÃO */
+
+.confirmacao-excluir{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: white;
+    color: #333;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.4s ease;
+    z-index: 9999;
+}
+.confirmacao-excluir i{
+    color: #28a745;
+    font-size: 1.2rem;
+}
+.confirmacao-excluir.mostrar{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
 }

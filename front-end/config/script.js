@@ -80,10 +80,135 @@ function alternarAba(botaoClicado, telaParaMostrar, nomeTexto){
 
 // ================================================================
 // ADICIONANDO NOVO ENDEREÇO
+const botao_cancelar_endereco = aparecer_aba_adicionar_endereco.querySelector('.cancelar');
 
 botao_adicionar_novo_endereco.addEventListener('click', function(){
-    alternarAba(this, aparecer_aba_adicionar_endereco);
+    aparecer_aba_adicionar_endereco.showModal();
 });
+
+botao_cancelar_endereco.addEventListener('click', function(){
+    aparecer_aba_adicionar_endereco.close();
+})
+
+// LOGICA ADICIONANDO ENDERECO
+
+// 1. Referencie apenas os ELEMENTOS (sem o .value) no topo
+const campoNome = document.getElementById('nomeDoEndereco');
+const campoRua = document.getElementById('enderecoRua');
+const campoCidade = document.getElementById('enderecoCidade');
+const campoCep = document.getElementById('cep');
+
+const aparecer_infos_endereco = document.getElementById('container-infos-endereco');
+const botaoSalva = document.getElementById('salvar');
+const botaoCancelar = document.getElementById('cancelar');
+
+const nomeEnderecoTrocado = document.getElementById('nomeEndereco');
+const text_endereco = document.getElementById('text-endereco');
+const text_cidade = document.getElementById('text-cidade');
+const text_cep = document.getElementById('text-cep');
+
+// MENSAGEM VAZIA
+
+const mensagem_vazia = document.getElementById('mensagem-vazia');
+
+
+// 2. Capture os VALORES apenas dentro do evento de clique
+botaoSalva.addEventListener('click', function() {
+    const nome = campoNome.value;
+    const rua = campoRua.value;
+    const cidade = campoCidade.value;
+    const cepVal = campoCep.value;
+
+    // Verifica se os campos principais foram preenchidos
+    if (nome && rua) {
+        const novoCard = aparecer_infos_endereco.cloneNode(true);
+
+        novoCard.removeAttribute('id');
+        novoCard.style.display = "flex";
+
+        novoCard.querySelector('.nomeEndereco').innerText = nome;
+        novoCard.querySelector('.text-endereco').innerText = rua;
+        novoCard.querySelector('.estado-cep').innerText = `${cidade} • CEP ${cepVal}`;
+
+        document.getElementById('lista-enderecos-container').appendChild(novoCard);
+
+        mensagem_vazia.style.display = "none";
+        aparecer_aba_adicionar_endereco.close();
+        limparInputs();
+
+        // BOTAO EXCLUIR E MODIFICAR ENDEREÇO
+
+        const excluirEndereco = novoCard.querySelector('.excluir-endereco');
+        const modificarEndereco = document.getElementById('edit-endereco');
+
+        excluirEndereco.addEventListener('click', function(){
+            novoCard.remove();
+            mostrarConfirmacaoExclusao("Endereço removido.");
+          
+            const containerLista = document.getElementById('lista-enderecos-container');
+            const cardsRestantes = document.querySelectorAll('.container-infos-endereco').length;
+
+            if(cardsRestantes === 0 || (cardsRestantes === 1 && document.getElementById('container-infos-endereco').style.display === 'none')){
+                mensagem_vazia.style.display = "flex";
+            }
+        })
+    } else {
+        alert("Preencha o nome e a rua!");
+    }
+
+});
+
+
+botaoCancelar.addEventListener('click', function(){
+        limparInputs();
+    })
+
+    function limparInputs(){
+    document.getElementById('nomeDoEndereco').value = "";
+    document.getElementById('enderecoRua').value = "";
+    document.getElementById('enderecoCidade').value = "";
+    document.getElementById('cep').value = "";
+}
+
+// EXCLUIR E MODIFICAR ENDEREÇO
+
+
+
+
+function mostrarConfirmacaoExclusao(mensagem){
+    const confirmacaoExcluir = document.getElementById('confirmacao-excluir');
+    const mostrarMensagemExcluir = document.getElementById('toast-menssage');
+
+
+    mostrarMensagemExcluir.innerText = mensagem;
+
+    confirmacaoExcluir.classList.add('mostrar');
+
+    setTimeout(() => {
+        confirmacaoExcluir.classList.remove('mostrar');
+    }, 3000)
+}
+
+// ANIMAÇAO ADICIONANDO NOVO ENDEREÇO
+
+botao_cancelar_endereco.addEventListener('click', function(){
+    event.preventDefault();
+
+    aparecer_aba_adicionar_endereco.classList.add('fechando');
+    
+
+    aparecer_aba_adicionar_endereco.addEventListener('animationend', function functionOnEnd(){
+        aparecer_aba_adicionar_endereco.classList.remove('fechando');
+
+        aparecer_aba_adicionar_endereco.removeEventListener('animationend', functionOnEnd);
+
+        aparecer_aba_adicionar_endereco.close();
+    })
+})
+
+
+
+
 
 
 /* --- INICIALIZAÇÃO --- */
