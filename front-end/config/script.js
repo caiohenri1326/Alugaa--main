@@ -141,17 +141,21 @@ botaoSalva.addEventListener('click', function() {
         const excluirEndereco = novoCard.querySelector('.excluir-endereco');
         const modificarEndereco = document.getElementById('edit-endereco');
 
-        excluirEndereco.addEventListener('click', function(){
-            novoCard.remove();
-            mostrarConfirmacaoExclusao("Endereço removido.");
-          
-            const containerLista = document.getElementById('lista-enderecos-container');
-            const cardsRestantes = document.querySelectorAll('.container-infos-endereco').length;
 
-            if(cardsRestantes === 0 || (cardsRestantes === 1 && document.getElementById('container-infos-endereco').style.display === 'none')){
-                mensagem_vazia.style.display = "flex";
-            }
-        })
+excluirEndereco.addEventListener('click', function(){
+        const containerLista = document.getElementById('lista-enderecos-container');
+        const cardsRestantes = containerLista.children.length;
+        console.log(cardsRestantes);
+        
+        if(cardsRestantes === 2){
+            mensagem_vazia.style.display = "block";
+        }
+
+
+        novoCard.remove(); // Remove o card da tela
+        console.log("Numero de abas:", cardsRestantes);
+        mostrarConfirmacaoExclusao("Endereço removido.");
+});
     } else {
         alert("Preencha o nome e a rua!");
     }
@@ -191,7 +195,7 @@ function mostrarConfirmacaoExclusao(mensagem){
 
 // ANIMAÇAO ADICIONANDO NOVO ENDEREÇO
 
-botao_cancelar_endereco.addEventListener('click', function(){
+botao_cancelar_endereco.addEventListener('click', function(event){
     event.preventDefault();
 
     aparecer_aba_adicionar_endereco.classList.add('fechando');
