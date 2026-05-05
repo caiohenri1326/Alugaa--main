@@ -5,6 +5,9 @@ const config_sidebar = document.getElementById('config-sidebar');
 const container_exit = document.getElementById('container-exit');
 const container_botao_divisoria = document.getElementById('container-botao-divisoria');
 const aparecer_aba_adicionar_endereco = document.getElementById('aba-adicionar-novo-endereco');
+const container_seguranca = document.getElementById('container-seguranca');
+
+
 // ========================================
 // Abas e Botões
 const botao_ativar_perfil = document.getElementById('botao-ativar-perfil');
@@ -13,6 +16,7 @@ const botao_ativar_aparencia = document.getElementById('botao-ativar-aparencia')
 const botao_ativar_endereco = document.getElementById('botao-ativar-endereco');
 const botao_ativar_conta = document.getElementById('botao-ativar-conta');
 const botao_adicionar_novo_endereco = document.getElementById('adicionar-novo-endereco');
+const botao_ativar_seguranca = document.getElementById('tela-seguranca');
 
 // ========================================================
 // ADICIONANDO O CONTAINER AO HTML
@@ -54,6 +58,10 @@ botao_ativar_endereco.addEventListener('click', function(){
 divisao_container_esquerdo.addEventListener('click', function(){
     Animaçoes();
 });
+botao_ativar_seguranca.addEventListener('click', function(){
+    alternarAba(this, container_seguranca, "Segurança");
+})
+
 
 
 

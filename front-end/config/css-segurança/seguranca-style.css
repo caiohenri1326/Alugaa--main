@@ -1,0 +1,52 @@
+.container-seguranca{
+    display: none;
+    margin-top: -790px;
+}
+.verificacao-identidade{
+    background-color: white;
+    min-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.052);
+}
+.verificacao-identidade h6{
+    font-size: 23px;
+    margin-left: 20px;
+    padding-top: 20px;
+    color: black;
+}
+.verificacao-identidade p{
+    font-size: 13px;
+    margin-left: 25px;
+    margin-top: -50px;
+    color: rgba(73, 73, 73, 0.571);
+}
+
+
+.container-email{
+    width: 95%;
+    height: 75px;
+    background-color: #FFF8F4;
+    margin-left: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    border: 1px solid #f5d5c3;
+    display: flex;
+}
+
+.container-email i{
+    font-size: 21px;
+    margin-top: 20px;
+    margin-left: 15px;
+    -webkit-text-stroke: 0.6px;
+}
+.div-email{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    margin-left: 15px;
+    margin-top: 17px;
+}
+.s-email{
+    font-weight: 400;
+    
+}

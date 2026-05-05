@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css-conta/conta-css.css">
     <link rel="stylesheet" href="../config/css-aparencia/aparencia-css.css">
     <link rel="stylesheet" href="../config/css-endereco/css-endereco.css">
+    <link rel="stylesheet" href="css-segurança/seguranca-style.css">
 </head>
 <body>
     <header>
@@ -310,6 +311,56 @@
             <button class="cancelar" id="cancelar">Cancelar</button>
         </div>
     </dialog>
+
+
+
+    <!-- AREA DE SEGURANÇA -->
+
+
+    <div class="container-seguranca" id="container-seguranca">
+        <div class="verificacao-identidade">
+            <h6><i class="bi bi-patch-check" style="color: #ff5722; margin-right: 10px; font-size: 22px; -webkit-text-stroke: 0.5px;"></i>Verificação de identidade</h6>
+            <p>Verifique-se para receber o selo de confiança.</p>
+
+            <div class="container-email">
+                <i class="bi bi-file-earmark-check" style="color: #149C72;"></i>
+                <div class="div-email">
+                    <span class="s-email">Situaçao do email</span>
+                    <span class="e-p">email da pessoa</span>
+                </div>
+                <span>status do email</span>
+            </div>
+
+            <div class="container-telefone">
+                <i class="bi bi-phone" style="color: #149C72;"></i>
+                <span>Situaçao do telefone</span>
+                <span>telefone da pesssoa</span>
+                <span>status do telefone</span>
+            </div>
+        </div>
+
+
+        <div class="container-autenticacao">
+            <h6><i class="bi bi-shield-check" style="color: #ff5722;">Autenticação em duas etapas</i></h6>
+            <p>Adicione uma camada extra de proteção á sua conta.</p>        
+            
+            <div class="codigo-email">
+                <h3>Código por e-mail</h3>
+                <p>Receba um código no e-mail cadastrado.</p>
+                <button class="checkbox" type="checkbox" role="switch"></button>               
+             </div>
+        </div>
+            
+            
+        <div class="sessoes-ativas">
+            <h6><i class="bi bi-laptop">Sessoões ativas</i></h6>
+            <p>Dispositivos atualmente conectados á sua conta.</p>
+            <div class="dispositivos">
+                
+            </div>
+            <button class="encerrar-sessoes">Encerrar todas as outras sessões</button>
+        </div>   
+    </div>
 </div>
 <script src="../config/script.js"></script>
 </body>
