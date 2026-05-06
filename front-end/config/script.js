@@ -54,13 +54,15 @@ botao_ativar_aparencia.addEventListener('click', function(){
 botao_ativar_endereco.addEventListener('click', function(){
     alternarAba(this, container_endereco, "Endereço"); 
 });
+
+botao_ativar_seguranca.addEventListener('click', function(){
+    alternarAba(this, container_seguranca, "Segurança");
+});
 /* --- ANIMAÇÃO SIDEBAR (ABRIR/FECHAR) --- */
 divisao_container_esquerdo.addEventListener('click', function(){
     Animaçoes();
 });
-botao_ativar_seguranca.addEventListener('click', function(){
-    alternarAba(this, container_seguranca, "Segurança");
-});
+
 
 
 
@@ -84,6 +86,9 @@ function alternarAba(botaoClicado, telaParaMostrar, nomeTexto){
 
     botaoClicado.classList.add('ativo');
     text_area.innerText = nomeTexto;
+    text_area.style.animation = 'none';
+    text_area.offsetHeight;
+    text_area.style.animation = '';
 }
 
 // ================================================================

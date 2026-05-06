@@ -24,7 +24,7 @@
         </div>
         <div class="container-botao-divisoria" id="container-botao-divisoria">
             <button id="divisao-container-esquerdo" style="border: none; background: none; width: 50px; height: 50px; margin-top: 18px; cursor: pointer;"><i class="bi bi-layout-sidebar-reverse"></i></button>
-            <span id="text-area">Area</span>
+            <span id="text-area" class="text-area">Area</span>
         </div>
         <div class="buttons-header">
             <button class="button-anunciar"><i class="bi bi-bag-plus"></i>Anunciar</button>
@@ -317,7 +317,7 @@
     <!-- AREA DE SEGURANÇA -->
 
 
-    <div class="container-seguranca" id="container-seguranca">
+    <div class="container-seguranca tela" id="container-seguranca">
         <div class="verificacao-identidade">
             <h6><i class="bi bi-patch-check" style="color: #ff5722; margin-right: 10px; font-size: 22px; -webkit-text-stroke: 0.5px;"></i>Verificação de identidade</h6>
             <p>Verifique-se para receber o selo de confiança.</p>
@@ -354,16 +354,20 @@
             <div class="codigo-email">
                 <h3>Código por e-mail</h3>
                 <p>Receba um código no e-mail cadastrado.</p>
-                <button class="checkbox" type="checkbox" role="switch"></button>               
+                <input class="checkbox" type="checkbox" role="switch"></input>               
              </div>
         </div>
             
             
         <div class="sessoes-ativas">
-            <h6><i class="bi bi-laptop">Sessoões ativas</i></h6>
+            <h3><i class="bi bi-laptop"></i>Sessoões ativas</h3>
             <p>Dispositivos atualmente conectados á sua conta.</p>
-            <div class="dispositivos">
-                
+            <div class="dispositivos">         
+               <i class="bi bi-laptop"></i>
+                <div class="info-dispositivos">
+                    <span id="computador-pessoa">Computador da pessoa</span>
+                    <span id="ip-pessoa">Localizaçao do computador</span>
+                </div>
             </div>
             <button class="encerrar-sessoes">Encerrar todas as outras sessões</button>
         </div>   

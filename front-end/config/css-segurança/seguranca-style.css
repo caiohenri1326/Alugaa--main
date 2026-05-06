@@ -1,6 +1,7 @@
 .container-seguranca{
     display: none;
     margin-top: -890px;
+    margin-left: 250px;
 }
 .verificacao-identidade{
     background-color: white;
@@ -19,7 +20,8 @@
     font-size: 13px;
     margin-left: 25px;
     margin-top: -50px;
-    color: rgba(73, 73, 73, 0.571);
+    color: rgba(50, 50, 50, 0.726);
+    font-weight: 400;
 }
 
 .container-email{
@@ -122,6 +124,9 @@
     outline: none;
     padding-left: 10px;
 }
+.container-cpf input:focus{
+    border: 1px solid #F97015;
+}
 
 
 /* CONTAINER AUTENTICAÇAO */
@@ -131,14 +136,186 @@
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.052);
     min-width: 1200px;
-    min-height: 250px;
+    max-width: 1200px;
+    min-height: 210px;
+    max-height: 210px;
 }
 .container-autenticacao i{
     font-size: 25px;
     margin-left: 20px;
-    margin-top: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    display: inline-block;
     -webkit-text-stroke: 0.5px;
 }
 .container-autenticacao h6{
     margin-top: 20px;
+    font-size: 23px;
+}
+
+.container-autenticacao p{
+    font-size: 13px;
+    margin-top: -46px;
+    margin-left: 25px;
+    color: rgba(54, 53, 53, 0.813);
+    font-weight: 400;
+}
+
+.codigo-email{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.codigo-email p{
+    margin-top: 0;
+    margin-left: 0;
+}
+.codigo-email h3{
+    font-size: 15px;
+}
+.codigo-email input{
+    display: flex;
+    margin-left: 1070px;
+    margin-top: -60px;
+}
+.codigo-email input[type="checkbox"]{
+    appearance: none;
+    width: 70px;
+    height: 35px;
+    background-color: rgb(208, 208, 208);
+    border-radius: 50px;
+    position: absolute;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.codigo-email input[type="checkbox"]::before{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    left: 5px;
+    top: 5px;
+    transition: .3s;
+}
+.codigo-email input[type="checkbox"]::after{
+    content: "";
+    position: absolute;
+    color: #34384b;
+    font-size: 20px;
+    left: 20px;
+    top: 29px;
+    transition: .3s;
+}
+.codigo-email input[type="checkbox"]:checked{
+    background-color: #F97015;
+}
+.codigo-email input[type="checkbox"]:checked::before{
+    background: #fff;
+    left: 40px;
+}
+.codigo-email input[type="checkbox"]:checked::after{
+    content: "";
+    color: #fff;
+    left: 10px;
+}
+
+
+/* ABA SESSOES ATIVAS */
+
+.sessoes-ativas{
+    max-width: 1200px;
+    min-width: 1200px;
+    min-height: 250px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.052);
+}
+.sessoes-ativas i{
+    font-size: 23px;
+    margin-left: 25px;
+    margin-right: 10px;
+    margin-top: 20px;
+    display: inline-block;
+    -webkit-text-stroke: 0.6px;
+    color: #F97015;
+}
+.sessoes-ativas h3{
+    font-size: 23px;
+}
+.sessoes-ativas p{
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 20px;
+    margin-top: -10px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.sessoes-ativas button{
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 95%;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #a08c804f;
+    background: #FCFAF8;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    -webkit-text-stroke: 0.3px;
+}
+.sessoes-ativas button:hover{
+    background-color: #fdddbd;
+    color: #db5a03;
+    transition: 0.3s;
+}
+
+
+/* ABA DISPOSITIVOS */
+
+.dispositivos{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 80px;
+    margin-left: 20px;
+    margin-top: 30px;
+    background: none;
+    border-radius: 15px;
+    border: 1px solid #fdddbd;
+}
+.dispositivos i{
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 0;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    font-size: 21px;
+    background-color: #FFF3EB;
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+    border-radius: 15px;
+}
+.info-dispositivos{
+    margin-left: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#computador-pessoa{
+    font-size: 15px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.3px;
+}
+#ip-pessoa{
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.659);
 }

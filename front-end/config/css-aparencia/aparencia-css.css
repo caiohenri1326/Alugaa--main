@@ -7,8 +7,9 @@
 
 
 .container-aparencia{
-    width: 63%;
-    margin-left: 26%;
+    width: 95%;
+    min-width: 1200px;
+    margin-left: 250px;
     margin-top: -43%;
     display: none;
 }
