@@ -60,7 +60,7 @@ divisao_container_esquerdo.addEventListener('click', function(){
 });
 botao_ativar_seguranca.addEventListener('click', function(){
     alternarAba(this, container_seguranca, "Segurança");
-})
+});
 
 
 
