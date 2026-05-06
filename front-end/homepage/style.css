@@ -9,6 +9,9 @@ body{
     font-variation-settings: 100;
     background-color: #fff;
 }
+html{
+    scroll-behavior: smooth;
+}
 .container-fluid{
     background-color: #ffffffa0;
     border-bottom: 1px solid;

@@ -5,6 +5,9 @@ const config_sidebar = document.getElementById('config-sidebar');
 const container_exit = document.getElementById('container-exit');
 const container_botao_divisoria = document.getElementById('container-botao-divisoria');
 const aparecer_aba_adicionar_endereco = document.getElementById('aba-adicionar-novo-endereco');
+const container_seguranca = document.getElementById('container-seguranca');
+
+
 // ========================================
 // Abas e Botões
 const botao_ativar_perfil = document.getElementById('botao-ativar-perfil');
@@ -13,6 +16,7 @@ const botao_ativar_aparencia = document.getElementById('botao-ativar-aparencia')
 const botao_ativar_endereco = document.getElementById('botao-ativar-endereco');
 const botao_ativar_conta = document.getElementById('botao-ativar-conta');
 const botao_adicionar_novo_endereco = document.getElementById('adicionar-novo-endereco');
+const botao_ativar_seguranca = document.getElementById('tela-seguranca');
 
 // ========================================================
 // ADICIONANDO O CONTAINER AO HTML
@@ -54,6 +58,10 @@ botao_ativar_endereco.addEventListener('click', function(){
 divisao_container_esquerdo.addEventListener('click', function(){
     Animaçoes();
 });
+botao_ativar_seguranca.addEventListener('click', function(){
+    alternarAba(this, container_seguranca, "Segurança");
+});
+
 
 
 
@@ -141,17 +149,21 @@ botaoSalva.addEventListener('click', function() {
         const excluirEndereco = novoCard.querySelector('.excluir-endereco');
         const modificarEndereco = document.getElementById('edit-endereco');
 
-        excluirEndereco.addEventListener('click', function(){
-            novoCard.remove();
-            mostrarConfirmacaoExclusao("Endereço removido.");
-          
-            const containerLista = document.getElementById('lista-enderecos-container');
-            const cardsRestantes = document.querySelectorAll('.container-infos-endereco').length;
 
-            if(cardsRestantes === 0 || (cardsRestantes === 1 && document.getElementById('container-infos-endereco').style.display === 'none')){
-                mensagem_vazia.style.display = "flex";
-            }
-        })
+excluirEndereco.addEventListener('click', function(){
+        const containerLista = document.getElementById('lista-enderecos-container');
+        const cardsRestantes = containerLista.children.length;
+        console.log(cardsRestantes);
+        
+        if(cardsRestantes === 2){
+            mensagem_vazia.style.display = "block";
+        }
+
+
+        novoCard.remove(); // Remove o card da tela
+        console.log("Numero de abas:", cardsRestantes);
+        mostrarConfirmacaoExclusao("Endereço removido.");
+});
     } else {
         alert("Preencha o nome e a rua!");
     }
@@ -191,7 +203,7 @@ function mostrarConfirmacaoExclusao(mensagem){
 
 // ANIMAÇAO ADICIONANDO NOVO ENDEREÇO
 
-botao_cancelar_endereco.addEventListener('click', function(){
+botao_cancelar_endereco.addEventListener('click', function(event){
     event.preventDefault();
 
     aparecer_aba_adicionar_endereco.classList.add('fechando');

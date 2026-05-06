@@ -178,6 +178,7 @@
     background-color: white;
     position: absolute;
     border-radius: 20px;
+    border: none;
     width: 500px;
     opacity: 0;
     transition: display 0.3s allow-discrete, overlay 0.3s allow-discrete;
