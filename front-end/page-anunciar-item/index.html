@@ -17,11 +17,13 @@
     <div class="container-anuncio">
 
         <!-- 🔙 VOLTAR -->
-        <a href="../homepage/index.html"><i class="bi bi-arrow-left"></i> Voltar</a>
+        <a href="../homepage/index.html">
+            <i class="bi bi-arrow-left"></i> Voltar
+        </a>
 
         <div class="text-header">
             <h6>Publicar um Anúncio</h6>
-            <p>Preencha os dados abaixo com o máximo de detalhes possível para atrair mais compradores</p>
+            <p>Preencha os dados abaixo com o máximo de detalhes possível</p>
         </div>
 
         <!-- 🚀 FORM -->
@@ -35,62 +37,50 @@
                     <span class="text-upload">Adicionar Foto</span>
                 </label>
 
-                <!-- ✅ IMPORTANTE -->
                 <input type="file" id="foto" name="foto" accept="image/*" class="hide-input">
             </div>
 
             <div class="nome-do-anuncio">
-                <label class="titulo-anuncio">Título do Anúncio</label>
-                <p>0/100</p>
-
-                <!-- ✅ NAME ADICIONADO -->
+                <label>Título do Anúncio</label>
                 <input type="text" class="input-titulo" name="titulo" placeholder="Ex: PlayStation 5 Pro">
             </div>
 
             <!-- 🎯 SELECT -->
             <div class="select-custom">
-                <div class="select-selected">Categorias <i class="bi bi-arrow-down"></i></div>
+                <div class="select-selected">
+                    Categorias <i class="bi bi-arrow-down"></i>
+                </div>
 
                 <ul class="select-options">
                     <li data-value="5">Roupas</li>
                     <li data-value="6">Esportes</li>
                     <li data-value="7">Autos</li>
                     <li data-value="8">Video Games</li>
-                    <li data-value="9">Imoveis</li>
+                    <li data-value="9">Imóveis</li>
                     <li data-value="10">Tecnologias</li>    
                 </ul>
 
-                <!-- ✅ NAME ADICIONADO -->
                 <input type="hidden" name="categoria">
             </div>
 
-            <label class="preco">Preço (R$)</label>
-
-            <!-- ✅ NAME -->
+            <label>Preço (R$)</label>
             <input type="text" class="input-preco" name="preco" placeholder="0,00">
 
-            <label class="descricao">Descrição</label>
-
-            <!-- ✅ NAME -->
-            <input class="area-caracteristicas" type="text" name="descricao" placeholder="Descreva as características...">
+            <label>Descrição</label>
+            <input class="area-caracteristicas" type="text" name="descricao" placeholder="Descreva o produto...">
 
             <div class="container-infos">
-
-                <div class="container-localization">
-                    <label>Localização / Cidade</label>
-
-                    <!-- ✅ NAME -->
-                    <input type="text" class="input-localization" name="cidade" placeholder="Ex: São Paulo, SP">
-                </div>
-
-                <div class="container-contato">
-                    <label>Telefone para Contato</label>
-
-                    <!-- ✅ NAME -->
-                    <input type="text" name="telefone" placeholder="(00) 00000-0000">
-                </div>
-
+                <label>Informe o CEP</label>
+                <input type="text" id="cep"  maxlength="9" placeholder="00000-000">
             </div>
+
+        <div id="endereco" class="cep-box hidden">
+                <i class="bi bi-geo-alt-fill"></i>
+            <div class="cep-info">
+            <span class="cep-main"></span>
+            <small class="cep-sub"></small>
+        </div>
+    </div>
 
             <div class="buttons-enter">
                 <button type="button" class="button-cancel">Cancelar</button>

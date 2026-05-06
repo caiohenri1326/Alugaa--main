@@ -5,13 +5,17 @@ const cadastrar = (req, res) => {
     const foto = req.file ? req.file.filename : null;
 
     const {
-        titulo,
-        descricao,
-        preco,
-        categoria,
-        cidade,
-        telefone
-    } = req.body;
+    titulo,
+    descricao,
+    preco,
+    categoria,
+    cidade,
+    estado,
+    cep,
+    bairro,
+    logradouro,
+    telefone
+} = req.body;
 
 
     const usuario_id = req.usuario.id;
@@ -28,20 +32,24 @@ const cadastrar = (req, res) => {
     }
 
     const sql = `
-        INSERT INTO produtos 
-        (nome, descricao, preco_dia, categoria_id, cidade, usuario_id, foto)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-    `;
+    INSERT INTO produtos 
+    (nome, descricao, preco_dia, categoria_id, cidade, estado, cep, bairro, logradouro, usuario_id, foto)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+`;
 
     db.query(sql, [
-        titulo,
-        descricao,
-        preco,
-        categoria_id,
-        cidade,
-        usuario_id,
-        foto
-    ], (err, result) => {
+    titulo,
+    descricao,
+    preco,
+    categoria_id,
+    cidade,
+    estado,
+    cep,
+    bairro,
+    logradouro,
+    usuario_id,
+    foto
+], (err, result) => {
         if (err) {
             console.error('ERRO SQL COMPLETO:', err);
             return res.status(500).json({ message: 'Erro ao cadastrar produto' });

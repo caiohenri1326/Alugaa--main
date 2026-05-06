@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 🎯 SELECT CUSTOM (mantido)
+    const textEndereco = document.getElementById('endereco');
     const selectCustom = document.querySelector('.select-custom');
     const selected = selectCustom.querySelector('.select-selected');
     const options = selectCustom.querySelectorAll('.select-options li');
@@ -24,7 +24,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 🚀 FORM
+    let endereco = {};
+
+    const inputCep = document.getElementById('cep');
+
+    if (inputCep) {
+
+        // 💡 FORMATA CEP AUTOMÁTICO
+        inputCep.addEventListener('input', () => {
+            let cep = inputCep.value.replace(/\D/g, '').slice(0, 8);
+
+            if (cep.length > 5) {
+                cep = cep.replace(/^(\d{5})(\d)/, '$1-$2');
+            }
+
+            inputCep.value = cep;
+        });
+
+        // 🔎 BUSCA CEP
+        inputCep.addEventListener('blur', async () => {
+
+            let cep = inputCep.value.replace(/\D/g, '');
+
+            if (cep.length !== 8) {
+                textEndereco.textContent = '';
+                return;
+            }
+
+            try {
+                textEndereco.textContent = 'Buscando endereço...';
+
+                const res = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                const data = await res.json();
+
+                if (data.erro) {
+                    textEndereco.textContent = 'CEP inválido ❌';
+                    endereco = {};
+                    return;
+                }
+
+                endereco = data;
+
+                // 🔥 MOSTRA NA TELA
+                const cidade = `${data.localidade}, ${data.uf}`;
+                const bairro = data.bairro;
+
+                textEndereco.textContent = `${bairro} - ${cidade}`;
+
+            } catch (error) {
+                console.error('Erro CEP:', error);
+                textEndereco.textContent = 'Erro ao buscar CEP ❌';
+                endereco = {};
+            }
+        });
+    }
+
     const form = document.querySelector('.form-anuncio');
 
     form.addEventListener('submit', async (e) => {
@@ -42,7 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const descricao = document.querySelector('.area-caracteristicas')?.value;
         const preco = document.querySelector('.input-preco')?.value;
         const categoria = inputHidden?.value;
-        const cidade = document.querySelector('.input-localization')?.value;
+
+        // 📍 cidade vem do CEP
+        const cidade = `${endereco.localidade}, ${endereco.uf}`;
 
         // 📸 IMAGEM
         const fileInput = document.getElementById('foto');
@@ -50,7 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 🛑 VALIDAÇÃO
         if (!nome || !preco || !categoria || !imagem) {
-            alert('Preencha todos os campos obrigatórios, incluindo a imagem!');
+            alert('Preencha todos os campos obrigatórios!');
+            return;
+        }
+
+        if (!endereco.cep) {
+            alert('Digite um CEP válido!');
             return;
         }
 
@@ -62,19 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('preco', preco);
             formData.append('categoria', categoria);
             formData.append('cidade', cidade);
-            formData.append('telefone', '');
-
-            // 📸 imagem
+            formData.append('cep', endereco.cep);
+            formData.append('estado', endereco.uf);
+            formData.append('bairro', endereco.bairro);
+            formData.append('logradouro', endereco.logradouro);
             formData.append('foto', imagem);
-
-            // 🧪 DEBUG (IMPORTANTE AGORA)
-            console.log('Enviando:', {
-                nome,
-                preco,
-                categoria,
-                cidade,
-                imagem
-            });
 
             const res = await fetch('http://localhost:3000/api/produtos', {
                 method: 'POST',
@@ -84,14 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: formData
             });
 
-            // ⚠️ PROTEÇÃO CONTRA ERRO HTML (SEU CASO)
             let data;
             try {
                 data = await res.json();
             } catch {
                 const text = await res.text();
                 console.error('Resposta não é JSON:', text);
-                alert('Erro no servidor (resposta inválida)');
+                alert('Erro no servidor');
                 return;
             }
 
@@ -102,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             alert('Anúncio criado com sucesso 🚀');
-
             window.location.href = "../homepage/index.html";
 
         } catch (error) {
