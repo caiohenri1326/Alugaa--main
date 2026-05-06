@@ -6,9 +6,11 @@
 }
 
 .container-perfil{
+    width: 95%;
+    min-width: 1200px;
     display: none;
     flex-direction: column;
-    margin-left: 22rem;
+    margin-left: 250px;
     margin-top:  -53rem;
     font-family: Inter;
     transition: 0.5s ease;

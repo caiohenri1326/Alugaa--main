@@ -12,6 +12,7 @@
 .container-endereco{
     width: 95%;
     max-width: 1200px;
+    min-width: 1200px;
     min-height: 200px;
     height: auto;
     display: none;
@@ -19,6 +20,7 @@
     margin-top: -800px;
     border-radius: 20px;
     box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.068);
+    margin-left: 250px;
 }
 .add-endereco h2{
     font-size: 22px;
