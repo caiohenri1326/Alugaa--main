@@ -1,138 +1,148 @@
-/* --- REFERÊNCIAS DO DOM --- */
+/* ============================================================
+   1. REFERÊNCIAS DO DOM (Elementos Globais)
+   ============================================================ */
+
+// Layout e UI Geral
 const text_area = document.getElementById('text-area');
 const divisao_container_esquerdo = document.getElementById('divisao-container-esquerdo');
 const config_sidebar = document.getElementById('config-sidebar');
 const container_exit = document.getElementById('container-exit');
 const container_botao_divisoria = document.getElementById('container-botao-divisoria');
-const aparecer_aba_adicionar_endereco = document.getElementById('aba-adicionar-novo-endereco');
-const container_seguranca = document.getElementById('container-seguranca');
 
+// Abas (Navegação)
+const botoesMenu = document.querySelectorAll('.nav-item');
+const todas_as_telas = document.querySelectorAll('.tela'); 
 
-// ========================================
-// Abas e Botões
 const botao_ativar_perfil = document.getElementById('botao-ativar-perfil');
-const tela_perfil = document.getElementById('container-perfil');
+const botao_ativar_conta = document.getElementById('botao-ativar-conta');
 const botao_ativar_aparencia = document.getElementById('botao-ativar-aparencia');
 const botao_ativar_endereco = document.getElementById('botao-ativar-endereco');
-const botao_ativar_conta = document.getElementById('botao-ativar-conta');
-const botao_adicionar_novo_endereco = document.getElementById('adicionar-novo-endereco');
-const botao_ativar_seguranca = document.getElementById('tela-seguranca');
+const botao_ativar_seguranca = document.getElementById('botao-ativar-seguranca');
+const botao_ativar_privacidade = document.getElementById('botao-ativar-privacidade');
 
-// ========================================================
-// ADICIONANDO O CONTAINER AO HTML
-const containerConta = document.getElementById('container-conta'); // Alterado para ID para bater com o perfil
+// Containers de Conteúdo
+const tela_perfil = document.getElementById('container-perfil');
+const containerConta = document.getElementById('container-conta');
 const container_aparencia = document.getElementById('container-aparencia');
 const container_endereco = document.getElementById('container-endereco');
+const container_seguranca = document.getElementById('container-seguranca');
+const container_privacidade = document.getElementById('container-privacidade');
 
-// Seleção de todas as telas para poder esconder
-const todas_as_telas = document.querySelectorAll('.tela'); 
-const botoesMenu = document.querySelectorAll('.nav-item');
+// Módulos de Endereço (Modal e Listagem)
+const aparecer_aba_adicionar_endereco = document.getElementById('aba-adicionar-novo-endereco');
+const botao_adicionar_novo_endereco = document.getElementById('adicionar-novo-endereco');
+const aparecer_infos_endereco = document.getElementById('container-infos-endereco');
+const lista_enderecos_container = document.getElementById('lista-enderecos-container');
+const mensagem_vazia = document.getElementById('mensagem-vazia');
 
-/* --- FUNÇÃO DE LIMPEZA (Para as abas funcionarem) --- */
+// Inputs e Botões do Modal de Endereço
+const campoNome = document.getElementById('nomeDoEndereco');
+const campoRua = document.getElementById('enderecoRua');
+const campoCidade = document.getElementById('enderecoCidade');
+const campoCep = document.getElementById('cep');
+const botaoSalva = document.getElementById('salvar');
+const botaoCancelar = document.getElementById('cancelar');
+const botao_cancelar_endereco = aparecer_aba_adicionar_endereco.querySelector('.cancelar');
+
+/* ============================================================
+   2. FUNÇÕES AUXILIARES (Lógica de Negócio)
+   ============================================================ */
+
 function esconderTodasAsTelas() {
     todas_as_telas.forEach(tela => {
         tela.style.display = 'none';
         tela.classList.remove('ativa');
     });
-    botoesMenu.forEach(btn => btn.classList.remove('ativo'));
+
+    const todosOsBotoes = document.querySelectorAll('.nav-item button');
+    todosOsBotoes.forEach(btn => {
+        btn.classList.remove('ativo');
+    })
 }
 
-/* --- LOGICA DA ABA PERFIL --- */
-botao_ativar_perfil.addEventListener('click', function(){
-    alternarAba(this, tela_perfil, "Perfil");
-});
+function alternarAba(botaoClicado, telaParaMostrar, nomeTexto) {
+    esconderTodasAsTelas();
 
-/* --- LOGICA DA ABA CONTA --- */
-botao_ativar_conta.addEventListener('click', function(){
-    alternarAba(this, containerConta, "Conta");
-});
-
-botao_ativar_aparencia.addEventListener('click', function(){
-    alternarAba(this, container_aparencia, "Aparencia");
-});
-
-botao_ativar_endereco.addEventListener('click', function(){
-    alternarAba(this, container_endereco, "Endereço"); 
-});
-
-botao_ativar_seguranca.addEventListener('click', function(){
-    alternarAba(this, container_seguranca, "Segurança");
-});
-/* --- ANIMAÇÃO SIDEBAR (ABRIR/FECHAR) --- */
-divisao_container_esquerdo.addEventListener('click', function(){
-    Animaçoes();
-});
-
-
-
-
-
-
-
-function Animaçoes(){
-    config_sidebar.classList.toggle('ativado');
-    document.body.classList.toggle('sidebar-encolhida');
-    container_botao_divisoria.classList.toggle('movendo-botao-divisoria');
-    container_exit.classList.toggle('movendo-botao-sair');
-}
-
-function alternarAba(botaoClicado, telaParaMostrar, nomeTexto){
-    esconderTodasAsTelas()
-
-    if(telaParaMostrar){
+    if (telaParaMostrar) {
         telaParaMostrar.style.display = 'block';
         telaParaMostrar.classList.add('ativa');
     }
 
     botaoClicado.classList.add('ativo');
     text_area.innerText = nomeTexto;
+    
+    // Reiniciar animação do texto
     text_area.style.animation = 'none';
-    text_area.offsetHeight;
+    text_area.offsetHeight; // Trigger reflow
     text_area.style.animation = '';
 }
 
-// ================================================================
-// ADICIONANDO NOVO ENDEREÇO
-const botao_cancelar_endereco = aparecer_aba_adicionar_endereco.querySelector('.cancelar');
+function Animaçoes() {
+    config_sidebar.classList.toggle('ativado');
+    document.body.classList.toggle('sidebar-encolhida');
+    container_botao_divisoria.classList.toggle('movendo-botao-divisoria');
+    container_exit.classList.toggle('movendo-botao-sair');
+}
 
-botao_adicionar_novo_endereco.addEventListener('click', function(){
+function limparInputs() {
+    campoNome.value = "";
+    campoRua.value = "";
+    campoCidade.value = "";
+    campoCep.value = "";
+}
+
+function mostrarConfirmacaoExclusao(mensagem) {
+    const confirmacaoExcluir = document.getElementById('confirmacao-excluir');
+    const mostrarMensagemExcluir = document.getElementById('toast-menssage');
+
+    mostrarMensagemExcluir.innerText = mensaje;
+    confirmacaoExcluir.classList.add('mostrar');
+
+    setTimeout(() => {
+        confirmacaoExcluir.classList.remove('mostrar');
+    }, 3000);
+}
+
+/* ============================================================
+   3. EVENT LISTENERS (Interações)
+   ============================================================ */
+
+/* --- Navegação entre Abas --- */
+botao_ativar_perfil.addEventListener('click', function() { alternarAba(this, tela_perfil, "Perfil"); });
+botao_ativar_conta.addEventListener('click', function() { alternarAba(this, containerConta, "Conta"); });
+botao_ativar_aparencia.addEventListener('click', function() { alternarAba(this, container_aparencia, "Aparencia"); });
+botao_ativar_endereco.addEventListener('click', function() { alternarAba(this, container_endereco, "Endereço"); });
+botao_ativar_seguranca.addEventListener('click', function() { alternarAba(this, container_seguranca, "Segurança"); });
+botao_ativar_privacidade.addEventListener('click', function() { alternarAba(this, container_privacidade, "Privacidade"); });
+
+/* --- Sidebar --- */
+divisao_container_esquerdo.addEventListener('click', Animaçoes);
+
+/* --- Modal de Endereço (Ações de Abrir/Fechar) --- */
+botao_adicionar_novo_endereco.addEventListener('click', () => {
     aparecer_aba_adicionar_endereco.showModal();
 });
 
-botao_cancelar_endereco.addEventListener('click', function(){
-    aparecer_aba_adicionar_endereco.close();
-})
+botaoCancelar.addEventListener('click', limparInputs);
 
-// LOGICA ADICIONANDO ENDERECO
+botao_cancelar_endereco.addEventListener('click', function(event) {
+    event.preventDefault();
+    aparecer_aba_adicionar_endereco.classList.add('fechando');
 
-// 1. Referencie apenas os ELEMENTOS (sem o .value) no topo
-const campoNome = document.getElementById('nomeDoEndereco');
-const campoRua = document.getElementById('enderecoRua');
-const campoCidade = document.getElementById('enderecoCidade');
-const campoCep = document.getElementById('cep');
+    aparecer_aba_adicionar_endereco.addEventListener('animationend', function functionOnEnd() {
+        aparecer_aba_adicionar_endereco.classList.remove('fechando');
+        aparecer_aba_adicionar_endereco.removeEventListener('animationend', functionOnEnd);
+        aparecer_aba_adicionar_endereco.close();
+    });
+});
 
-const aparecer_infos_endereco = document.getElementById('container-infos-endereco');
-const botaoSalva = document.getElementById('salvar');
-const botaoCancelar = document.getElementById('cancelar');
-
-const nomeEnderecoTrocado = document.getElementById('nomeEndereco');
-const text_endereco = document.getElementById('text-endereco');
-const text_cidade = document.getElementById('text-cidade');
-const text_cep = document.getElementById('text-cep');
-
-// MENSAGEM VAZIA
-
-const mensagem_vazia = document.getElementById('mensagem-vazia');
-
-
-// 2. Capture os VALORES apenas dentro do evento de clique
+/* --- Lógica de Salvar Endereço --- */
 botaoSalva.addEventListener('click', function() {
     const nome = campoNome.value;
     const rua = campoRua.value;
     const cidade = campoCidade.value;
     const cepVal = campoCep.value;
 
-    // Verifica se os campos principais foram preenchidos
     if (nome && rua) {
         const novoCard = aparecer_infos_endereco.cloneNode(true);
 
@@ -143,91 +153,30 @@ botaoSalva.addEventListener('click', function() {
         novoCard.querySelector('.text-endereco').innerText = rua;
         novoCard.querySelector('.estado-cep').innerText = `${cidade} • CEP ${cepVal}`;
 
-        document.getElementById('lista-enderecos-container').appendChild(novoCard);
+        lista_enderecos_container.appendChild(novoCard);
 
         mensagem_vazia.style.display = "none";
         aparecer_aba_adicionar_endereco.close();
         limparInputs();
 
-        // BOTAO EXCLUIR E MODIFICAR ENDEREÇO
-
+        // Lógica de Exclusão do Novo Card
         const excluirEndereco = novoCard.querySelector('.excluir-endereco');
-        const modificarEndereco = document.getElementById('edit-endereco');
+        excluirEndereco.addEventListener('click', function() {
+            novoCard.remove();
+            
+            // Verifica se a lista ficou vazia (considerando o template original se estiver no container)
+            if (lista_enderecos_container.children.length === 1) { 
+                mensagem_vazia.style.display = "block";
+            }
+            mostrarConfirmacaoExclusao("Endereço removido.");
+        });
 
-
-excluirEndereco.addEventListener('click', function(){
-        const containerLista = document.getElementById('lista-enderecos-container');
-        const cardsRestantes = containerLista.children.length;
-        console.log(cardsRestantes);
-        
-        if(cardsRestantes === 2){
-            mensagem_vazia.style.display = "block";
-        }
-
-
-        novoCard.remove(); // Remove o card da tela
-        console.log("Numero de abas:", cardsRestantes);
-        mostrarConfirmacaoExclusao("Endereço removido.");
-});
     } else {
         alert("Preencha o nome e a rua!");
     }
-
 });
 
-
-botaoCancelar.addEventListener('click', function(){
-        limparInputs();
-    })
-
-    function limparInputs(){
-    document.getElementById('nomeDoEndereco').value = "";
-    document.getElementById('enderecoRua').value = "";
-    document.getElementById('enderecoCidade').value = "";
-    document.getElementById('cep').value = "";
-}
-
-// EXCLUIR E MODIFICAR ENDEREÇO
-
-
-
-
-function mostrarConfirmacaoExclusao(mensagem){
-    const confirmacaoExcluir = document.getElementById('confirmacao-excluir');
-    const mostrarMensagemExcluir = document.getElementById('toast-menssage');
-
-
-    mostrarMensagemExcluir.innerText = mensagem;
-
-    confirmacaoExcluir.classList.add('mostrar');
-
-    setTimeout(() => {
-        confirmacaoExcluir.classList.remove('mostrar');
-    }, 3000)
-}
-
-// ANIMAÇAO ADICIONANDO NOVO ENDEREÇO
-
-botao_cancelar_endereco.addEventListener('click', function(event){
-    event.preventDefault();
-
-    aparecer_aba_adicionar_endereco.classList.add('fechando');
-    
-
-    aparecer_aba_adicionar_endereco.addEventListener('animationend', function functionOnEnd(){
-        aparecer_aba_adicionar_endereco.classList.remove('fechando');
-
-        aparecer_aba_adicionar_endereco.removeEventListener('animationend', functionOnEnd);
-
-        aparecer_aba_adicionar_endereco.close();
-    })
-})
-
-
-
-
-
-
-/* --- INICIALIZAÇÃO --- */
-// Força o clique no perfil ao carregar a página
+/* ============================================================
+   4. INICIALIZAÇÃO
+   ============================================================ */
 botao_ativar_perfil.click();
