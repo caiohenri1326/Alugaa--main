@@ -304,3 +304,47 @@ body{
     color: white;
     font-weight: 500;
 }
+
+/* css do CEP */
+
+.cep-box {
+    margin-top: 12px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #f5f5f5;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+
+    transition: all 0.3s ease;
+}
+
+.cep-box i {
+    font-size: 20px;
+    color: #007bff;
+}
+
+.cep-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cep-main {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.cep-sub {
+    font-size: 12px;
+    color: #666;
+}
+
+.hidden {
+    display: none;
+}
+
+.cep-box.loading {
+    opacity: 0.6;
+}

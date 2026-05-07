@@ -13,6 +13,12 @@ app.use(express.json());
 app.use('/api/usuarios', usuariosRoutes);
 app.use('/api/produtos', produtosRoutes);
 
+// TESTE
+app.get('/teste', (req, res) => {
+    res.send('Servidor funcionando 🚀');
+});
+
+// 🔥 listen sempre no final
 app.listen(3000, () => {
     console.log('Servidor rodando 🚀');
 });

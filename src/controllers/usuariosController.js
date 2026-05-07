@@ -2,75 +2,180 @@ const usuariosModel = require('../models/usuariosModel');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
-// cadastro (já feito)
+// 🚀 CADASTRO
 const cadastrar = async (req, res) => {
+
     const { nome, email, senha } = req.body;
 
+    // 🛑 validação
     if (!nome || !email || !senha) {
-        return res.status(400).json({ message: 'Preencha todos os campos' });
+        return res.status(400).json({
+            message: 'Preencha todos os campos'
+        });
     }
 
     try {
-        // criptografar senha
+
+        // 🔐 criptografa senha
         const senhaHash = await bcrypt.hash(senha, 10);
 
         usuariosModel.criarUsuario(
-            { nome, email, senha: senhaHash },
+            {
+                nome,
+                email,
+                senha: senhaHash
+            },
             (err, result) => {
+
                 if (err) {
+
+                    // 🚨 email duplicado
                     if (err.code === 'ER_DUP_ENTRY') {
-                        return res.status(400).json({ message: 'Email já cadastrado' });
+                        return res.status(400).json({
+                            message: 'Email já cadastrado'
+                        });
                     }
-                    return res.status(500).json({ message: 'Erro ao cadastrar' });
+
+                    console.error('ERRO CADASTRO:', err);
+
+                    return res.status(500).json({
+                        message: 'Erro ao cadastrar usuário'
+                    });
                 }
 
+                // ✅ sucesso
                 res.status(201).json({
                     message: 'Usuário criado com sucesso 🔐'
                 });
+
             }
         );
+
     } catch (error) {
-        res.status(500).json({ message: 'Erro ao criptografar senha' });
+
+        console.error('ERRO HASH:', error);
+
+        res.status(500).json({
+            message: 'Erro ao criptografar senha'
+        });
+
     }
 };
 
-// LOGIN
+// 🔑 LOGIN
 const login = (req, res) => {
+
     const { email, senha } = req.body;
 
+    // 🛑 validação
     if (!email || !senha) {
-        return res.status(400).json({ message: 'Preencha todos os campos' });
+        return res.status(400).json({
+            message: 'Preencha todos os campos'
+        });
     }
 
     usuariosModel.buscarPorEmail(email, async (err, result) => {
-        if (err) return res.status(500).json({ message: 'Erro no servidor' });
 
+        if (err) {
+
+            console.error('ERRO LOGIN:', err);
+
+            return res.status(500).json({
+                message: 'Erro no servidor'
+            });
+        }
+
+        // 🚨 usuário não encontrado
         if (result.length === 0) {
-            return res.status(400).json({ message: 'Usuário não encontrado' });
+            return res.status(400).json({
+                message: 'Usuário não encontrado'
+            });
         }
 
         const usuario = result[0];
 
-        // comparar senha criptografada
-        const senhaValida = await bcrypt.compare(senha, usuario.senha);
-
-        if (!senhaValida) {
-            return res.status(400).json({ message: 'Senha incorreta' });
-        }
-
-        const token = require('jsonwebtoken').sign(
-            { id: usuario.id, email: usuario.email },
-            'segredo',
-            { expiresIn: '1d' }
+        // 🔐 compara senha
+        const senhaValida = await bcrypt.compare(
+            senha,
+            usuario.senha
         );
 
+        // 🚨 senha inválida
+        if (!senhaValida) {
+            return res.status(400).json({
+                message: 'Senha incorreta'
+            });
+        }
+
+        // 🎟️ TOKEN JWT
+        const token = jwt.sign(
+            {
+                id: usuario.id,
+                email: usuario.email
+            },
+            'segredo',
+            {
+                expiresIn: '1d'
+            }
+        );
+
+        // ✅ resposta login
         res.json({
+
             message: 'Login realizado com sucesso 🔐',
-            token
+
+            token,
+
+            usuario: {
+                id: usuario.id,
+                nome: usuario.nome,
+                email: usuario.email,
+                telefone: usuario.telefone,
+                cidade: usuario.cidade,
+                bio: usuario.bio,
+                foto_perfil: usuario.foto_perfil,
+                created_at: usuario.created_at
+            }
+
         });
+
     });
+
 };
+
+// 👤 PERFIL USUÁRIO LOGADO
+const buscarPerfil = (req, res) => {
+
+    // 🔥 id vem do token JWT
+    const usuarioId = req.usuario.id;
+
+    usuariosModel.buscarPorId(usuarioId, (err, result) => {
+
+        if (err) {
+
+            console.error('ERRO PERFIL:', err);
+
+            return res.status(500).json({
+                message: 'Erro ao buscar usuário'
+            });
+        }
+
+        // 🚨 usuário não encontrado
+        if (result.length === 0) {
+            return res.status(404).json({
+                message: 'Usuário não encontrado'
+            });
+        }
+
+        // ✅ retorna usuário
+        res.json(result[0]);
+
+    });
+
+};
+
 module.exports = {
     cadastrar,
-    login
+    login,
+    buscarPerfil
 };
