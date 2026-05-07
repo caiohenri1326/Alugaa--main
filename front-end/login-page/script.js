@@ -24,7 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            // 🔐 salva token
             localStorage.setItem('token', data.token);
+
+            // 🔥 salva usuário
+            localStorage.setItem('usuario', JSON.stringify(data.usuario));
+
+            // 🔥 salva ID separado (opcional mas útil)
+            localStorage.setItem('usuarioId', data.usuario.id);
+
+            // 🔥 salva nome separado
+            localStorage.setItem('usuarioNome', data.usuario.nome);
 
             alert('Login realizado com sucesso 🔐');
 

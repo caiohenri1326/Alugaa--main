@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const textEndereco = document.getElementById('endereco');
+    // 🔥 ELEMENTOS DO CARD DE ENDEREÇO
+    const box = document.getElementById('endereco');
+    const cepMain = box?.querySelector('.cep-main');
+    const cepSub = box?.querySelector('.cep-sub');
+
     const selectCustom = document.querySelector('.select-custom');
     const selected = selectCustom.querySelector('.select-selected');
     const options = selectCustom.querySelectorAll('.select-options li');
@@ -47,33 +51,44 @@ document.addEventListener('DOMContentLoaded', () => {
             let cep = inputCep.value.replace(/\D/g, '');
 
             if (cep.length !== 8) {
-                textEndereco.textContent = '';
+                box?.classList.add('hidden');
                 return;
             }
 
             try {
-                textEndereco.textContent = 'Buscando endereço...';
+                box?.classList.remove('hidden');
+                box?.classList.add('loading');
+
+                if (cepMain) cepMain.textContent = 'Buscando endereço...';
+                if (cepSub) cepSub.textContent = '';
 
                 const res = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
                 const data = await res.json();
 
                 if (data.erro) {
-                    textEndereco.textContent = 'CEP inválido ❌';
+                    if (cepMain) cepMain.textContent = 'CEP inválido ❌';
+                    if (cepSub) cepSub.textContent = '';
                     endereco = {};
                     return;
                 }
 
                 endereco = data;
 
-                // 🔥 MOSTRA NA TELA
                 const cidade = `${data.localidade}, ${data.uf}`;
-                const bairro = data.bairro;
 
-                textEndereco.textContent = `${bairro} - ${cidade}`;
+                // 🔥 ATUALIZA UI BONITA
+                if (cepMain) cepMain.textContent = data.bairro || 'Sem bairro';
+                if (cepSub) cepSub.textContent = cidade;
+
+                box?.classList.remove('loading');
 
             } catch (error) {
                 console.error('Erro CEP:', error);
-                textEndereco.textContent = 'Erro ao buscar CEP ❌';
+
+                if (cepMain) cepMain.textContent = 'Erro ao buscar CEP ❌';
+                if (cepSub) cepSub.textContent = '';
+
+                box?.classList.remove('loading');
                 endereco = {};
             }
         });
@@ -125,8 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('cidade', cidade);
             formData.append('cep', endereco.cep);
             formData.append('estado', endereco.uf);
-            formData.append('bairro', endereco.bairro);
-            formData.append('logradouro', endereco.logradouro);
+            formData.append('bairro', endereco.bairro || '');
+            formData.append('logradouro', endereco.logradouro || '');
             formData.append('foto', imagem);
 
             const res = await fetch('http://localhost:3000/api/produtos', {

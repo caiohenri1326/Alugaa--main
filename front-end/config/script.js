@@ -231,3 +231,5 @@ botao_cancelar_endereco.addEventListener('click', function(event){
 /* --- INICIALIZAÇÃO --- */
 // Força o clique no perfil ao carregar a página
 botao_ativar_perfil.click();
+
+
