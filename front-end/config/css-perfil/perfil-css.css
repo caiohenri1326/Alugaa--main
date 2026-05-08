@@ -11,12 +11,11 @@
     display: none;
     flex-direction: column;
     margin-left: 250px;
-    margin-top:  -53rem;
+    margin-top:  -54rem;
     font-family: Inter;
     transition: 0.5s ease;
 }
 .texto-sair{
-    background-color: red;
     width: 100% !important;
     margin-top: 70px;
     margin-left: 5px;
@@ -25,7 +24,7 @@
     height: 220px;
     width: 73%;
     border-radius: 10px;
-    background-color: var(--cor-containers);
+    background-color: var(--fundo-de-abas);
     border: 1px solid rgba(0, 0, 0, 0.098);
     margin-left: auto;
     margin-right: auto;
@@ -41,7 +40,7 @@
 }
 .text-member{
     font-size: 14px;
-    color: rgba(0, 0, 0, 0.631);
+    color: var(--colorTextCinza);
 }
 .perfil-header{
     display: flex;
@@ -69,7 +68,7 @@
     border: none;
     background-color: var(--cor-fontes-afins);
     border-radius: 100%;
-    color: white;
+    color: var(--colorText);
     cursor: pointer;
 
     display: flex;
@@ -87,12 +86,13 @@
     width: 73%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
-    background-color: var(--cor-containers);
+    margin-top: 25px;
+    background-color: var(--bg-site);
     border-radius: 10px;
     box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.068);
 }
 .info-pessoais p{
+    color: var(--textoPreto);
     font-size: 23px;
     margin-left: 45px;
     padding-top: 20px;
@@ -125,7 +125,7 @@
 }
 .info-pessoais input::placeholder{
     font-size: 15px;
-    color: black;
+    color: var(--colorTextCinza);
     font-weight: 500;
 }
 .info-pessoais input:focus{

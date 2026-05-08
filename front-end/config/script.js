@@ -44,6 +44,20 @@ const botaoSalva = document.getElementById('salvar');
 const botaoCancelar = document.getElementById('cancelar');
 const botao_cancelar_endereco = aparecer_aba_adicionar_endereco.querySelector('.cancelar');
 
+
+// VARIAVEIS DO TEMA 
+
+const temaClaro = document.getElementById('claro');
+const temaEscuro = document.getElementById('escuro');
+const temaSistema = document.getElementById('tema-sistema');
+
+
+const root = document.documentElement;
+
+// EXPORTANDO VARIAVEIS DA PAGE REGISTRO
+
+
+
 /* ============================================================
    2. FUNÇÕES AUXILIARES (Lógica de Negócio)
    ============================================================ */
@@ -108,7 +122,7 @@ function mostrarConfirmacaoExclusao(mensagem) {
    ============================================================ */
 
 /* --- Navegação entre Abas --- */
-botao_ativar_perfil.addEventListener('click', function() { alternarAba(this, tela_perfil, "Perfil"); });
+botao_ativar_perfil.addEventListener('click', function() { alternarAba(this, tela_perfil, "Perfil");});
 botao_ativar_conta.addEventListener('click', function() { alternarAba(this, containerConta, "Conta"); });
 botao_ativar_aparencia.addEventListener('click', function() { alternarAba(this, container_aparencia, "Aparencia"); });
 botao_ativar_endereco.addEventListener('click', function() { alternarAba(this, container_endereco, "Endereço"); });
@@ -138,18 +152,18 @@ botao_cancelar_endereco.addEventListener('click', function(event) {
 
 /* --- Lógica de Salvar Endereço --- */
 botaoSalva.addEventListener('click', function() {
-    const nome = campoNome.value;
+    const nomeAddEndereco = campoNome.value;
     const rua = campoRua.value;
     const cidade = campoCidade.value;
     const cepVal = campoCep.value;
 
-    if (nome && rua) {
+    if (nomeAddEndereco && rua) {
         const novoCard = aparecer_infos_endereco.cloneNode(true);
 
         novoCard.removeAttribute('id');
         novoCard.style.display = "flex";
 
-        novoCard.querySelector('.nomeEndereco').innerText = nome;
+        novoCard.querySelector('.nomeEndereco').innerText = nomeAddEndereco;
         novoCard.querySelector('.text-endereco').innerText = rua;
         novoCard.querySelector('.estado-cep').innerText = `${cidade} • CEP ${cepVal}`;
 
@@ -175,6 +189,25 @@ botaoSalva.addEventListener('click', function() {
         alert("Preencha o nome e a rua!");
     }
 });
+
+// MUNDANDO TEMA DO SITE
+
+temaClaro.addEventListener('click', function(){
+    
+})
+
+temaEscuro.addEventListener('click', function(){
+    root.style.setProperty('--bg-site', '#121212');
+    root.style.setProperty('--colorText', '#E0E0E0');
+    root.style.setProperty('--fundo-de-abas', '#1E1E1E');
+    root.style.setProperty('--colorTextCinza', '#A0A0A0');
+    root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
+    root.style.colorScheme = 'dark';
+})
+
+
+
+
 
 /* ============================================================
    4. INICIALIZAÇÃO
