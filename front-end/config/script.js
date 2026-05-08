@@ -95,7 +95,7 @@ function mostrarConfirmacaoExclusao(mensagem) {
     const confirmacaoExcluir = document.getElementById('confirmacao-excluir');
     const mostrarMensagemExcluir = document.getElementById('toast-menssage');
 
-    mostrarMensagemExcluir.innerText = mensaje;
+    mostrarMensagemExcluir.innerText = mensagem;
     confirmacaoExcluir.classList.add('mostrar');
 
     setTimeout(() => {
@@ -137,13 +137,49 @@ botao_cancelar_endereco.addEventListener('click', function(event) {
 });
 
 /* --- Lógica de Salvar Endereço --- */
-botaoSalva.addEventListener('click', function() {
+botaoSalva.addEventListener('click', async function () {
+
     const nome = campoNome.value;
     const rua = campoRua.value;
     const cidade = campoCidade.value;
     const cepVal = campoCep.value;
 
-    if (nome && rua) {
+    if (!nome || !rua || !cidade || !cepVal) {
+        alert('Preencha todos os campos!');
+        return;
+    }
+
+    try {
+
+        const token = localStorage.getItem('token');
+
+        const res = await fetch(
+            'http://localhost:3000/api/enderecos',
+            {
+                method: 'POST',
+
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`
+                },
+
+                body: JSON.stringify({
+                    nome,
+                    rua,
+                    cidade,
+                    cep: cepVal
+                })
+            }
+        );
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            alert(data.message);
+            return;
+        }
+
+        // 🔥 cria card visual
         const novoCard = aparecer_infos_endereco.cloneNode(true);
 
         novoCard.removeAttribute('id');
@@ -151,32 +187,253 @@ botaoSalva.addEventListener('click', function() {
 
         novoCard.querySelector('.nomeEndereco').innerText = nome;
         novoCard.querySelector('.text-endereco').innerText = rua;
-        novoCard.querySelector('.estado-cep').innerText = `${cidade} • CEP ${cepVal}`;
+        novoCard.querySelector('.estado-cep').innerText =
+            `${cidade} • CEP ${cepVal}`;
 
         lista_enderecos_container.appendChild(novoCard);
 
         mensagem_vazia.style.display = "none";
+
         aparecer_aba_adicionar_endereco.close();
+
         limparInputs();
 
-        // Lógica de Exclusão do Novo Card
-        const excluirEndereco = novoCard.querySelector('.excluir-endereco');
-        excluirEndereco.addEventListener('click', function() {
-            novoCard.remove();
-            
-            // Verifica se a lista ficou vazia (considerando o template original se estiver no container)
-            if (lista_enderecos_container.children.length === 1) { 
-                mensagem_vazia.style.display = "block";
-            }
-            mostrarConfirmacaoExclusao("Endereço removido.");
-        });
+        alert('Endereço salvo com sucesso 🚀');
 
-    } else {
-        alert("Preencha o nome e a rua!");
+    } catch (error) {
+
+        console.error(error);
+
+        alert('Erro ao salvar endereço');
+
     }
-});
+
+}); 
 
 /* ============================================================
    4. INICIALIZAÇÃO
    ============================================================ */
 botao_ativar_perfil.click();
+
+/* ============================================================
+   5. CARREGAR DADOS DO USUÁRIO
+============================================================ */
+
+document.addEventListener('DOMContentLoaded', async () => {
+
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        window.location.href = '../login-page/index.html';
+        return;
+    }
+
+    try {
+
+        const res = await fetch('http://localhost:3000/api/usuarios/me', {
+
+            method: 'GET',
+
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+
+        });
+
+        const usuario = await res.json();
+
+        console.log('USUÁRIO:', usuario);
+
+        // 🔥 TOPO PERFIL
+        document.getElementById('nomePessoa').textContent =
+            usuario.nome || 'Usuário';
+
+        // 🔥 INPUT NOME
+        document.querySelector('.nome input').value =
+            usuario.nome || '';
+
+        // 🔥 TELEFONE
+        document.querySelector('.fone input').value =
+            usuario.telefone || '';
+
+        // 🔥 CIDADE
+        document.querySelector('.cidade input').value =
+            usuario.cidade || '';
+
+        // 🔥 CPF
+        document.querySelector('.cpf input').value =
+            usuario.cpf || '';
+
+        // 🔥 RG
+        document.querySelector('.rg input').value =
+            usuario.rg || '';
+
+        // 🔥 BIO
+        document.querySelector('.bio textarea').value =
+            usuario.bio || '';
+
+        // 🔥 EMAIL
+        document.querySelector('.input-email input').value =
+            usuario.email || '';
+
+        // 🔥 MEMBRO DESDE
+        const membroDesde =
+            new Date(usuario.criado_em).toLocaleDateString('pt-BR');
+
+        document.querySelector('.text-member span').textContent =
+            membroDesde;
+
+    } catch (error) {
+
+        console.error('ERRO AO CARREGAR PERFIL:', error);
+
+    }
+
+});
+
+/* ============================================================
+   6. FORMATAÇÃO AUTOMÁTICA
+============================================================ */
+
+// 📱 TELEFONE
+const inputTelefone = document.querySelector('.fone input');
+
+inputTelefone.addEventListener('input', () => {
+
+    let valor = inputTelefone.value
+        .replace(/\D/g, '')
+        .slice(0, 11);
+
+    valor = valor.replace(
+        /^(\d{2})(\d)/,
+        '($1) $2'
+    );
+
+    valor = valor.replace(
+        /(\d{5})(\d)/,
+        '$1-$2'
+    );
+
+    inputTelefone.value = valor;
+
+});
+
+// 🪪 CPF
+const inputCpf = document.querySelector('.cpf input');
+
+inputCpf.addEventListener('input', () => {
+
+    let valor = inputCpf.value
+        .replace(/\D/g, '')
+        .slice(0, 11);
+
+    valor = valor.replace(
+        /(\d{3})(\d)/,
+        '$1.$2'
+    );
+
+    valor = valor.replace(
+        /(\d{3})(\d)/,
+        '$1.$2'
+    );
+
+    valor = valor.replace(
+        /(\d{3})(\d{1,2})$/,
+        '$1-$2'
+    );
+
+    inputCpf.value = valor;
+
+});
+
+// 🪪 RG
+const inputRg = document.querySelector('.rg input');
+
+inputRg.addEventListener('input', () => {
+
+    let valor = inputRg.value
+        .replace(/\D/g, '')
+        .slice(0, 9);
+
+    valor = valor.replace(
+        /(\d{2})(\d)/,
+        '$1.$2'
+    );
+
+    valor = valor.replace(
+        /(\d{3})(\d)/,
+        '$1.$2'
+    );
+
+    valor = valor.replace(
+        /(\d{3})(\d)/,
+        '$1-$2'
+    );
+
+    inputRg.value = valor;
+
+});
+
+// ============================================================
+// 🔥 ATUALIZAR PERFIL
+// ============================================================
+
+const botaoSalvarPerfil = document.getElementById('salvar-perfil');
+
+botaoSalvarPerfil.addEventListener('click', async () => {
+
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        alert('Você precisa estar logado');
+        return;
+    }
+
+    const nome = document.getElementById('input-nome').value;
+    const telefone = document.getElementById('input-telefone').value;
+    const cidade = document.getElementById('input-cidade').value;
+    const cpf = document.getElementById('input-cpf').value;
+    const rg = document.getElementById('input-rg').value;
+    const bio = document.getElementById('input-bio').value;
+
+    try {
+
+        const res = await fetch(
+            'http://localhost:3000/api/usuarios/me',
+            {
+                method: 'PUT',
+
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+
+                body: JSON.stringify({
+                    nome,
+                    telefone,
+                    cidade,
+                    cpf,
+                    rg,
+                    bio
+                })
+            }
+        );
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            alert(data.message);
+            return;
+        }
+
+        alert('Perfil atualizado com sucesso 🚀');
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert('Erro ao atualizar perfil');
+
+    }
+
+});

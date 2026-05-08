@@ -36,7 +36,7 @@ const buscarPorEmail = (email, callback) => {
     db.query(sql, [email], callback);
 };
 
-// 🔥 BUSCAR POR ID
+// 👤 BUSCAR POR ID
 const buscarPorId = (id, callback) => {
 
     const sql = `
@@ -48,7 +48,9 @@ const buscarPorId = (id, callback) => {
             cidade,
             bio,
             foto_perfil,
-            created_at
+            cpf,
+            rg,
+            criado_em
         FROM usuarios
         WHERE id = ?
     `;
@@ -56,8 +58,43 @@ const buscarPorId = (id, callback) => {
     db.query(sql, [id], callback);
 };
 
+// ✏️ ATUALIZAR PERFIL
+const atualizarPerfil = (
+    id,
+    dados,
+    callback
+) => {
+
+    const sql = `
+        UPDATE usuarios
+        SET
+            nome = ?,
+            telefone = ?,
+            cidade = ?,
+            bio = ?,
+            cpf = ?,
+            rg = ?
+        WHERE id = ?
+    `;
+
+    db.query(
+        sql,
+        [
+            dados.nome,
+            dados.telefone,
+            dados.cidade,
+            dados.bio,
+            dados.cpf,
+            dados.rg,
+            id
+        ],
+        callback
+    );
+};
+
 module.exports = {
     criarUsuario,
     buscarPorEmail,
-    buscarPorId
-};
+    buscarPorId,
+    atualizarPerfil
+};  

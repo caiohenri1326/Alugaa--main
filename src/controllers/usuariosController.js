@@ -133,8 +133,10 @@ const login = (req, res) => {
                 telefone: usuario.telefone,
                 cidade: usuario.cidade,
                 bio: usuario.bio,
+                cpf: usuario.cpf,
+                rg: usuario.rg,
                 foto_perfil: usuario.foto_perfil,
-                created_at: usuario.created_at
+                created_at: usuario.criado_em
             }
 
         });
@@ -143,8 +145,8 @@ const login = (req, res) => {
 
 };
 
-// 👤 PERFIL USUÁRIO LOGADO
-const buscarPerfil = (req, res) => {
+// 👤 USUÁRIO LOGADO
+const buscarUsuarioLogado = (req, res) => {
 
     // 🔥 id vem do token JWT
     const usuarioId = req.usuario.id;
@@ -174,8 +176,58 @@ const buscarPerfil = (req, res) => {
 
 };
 
+// ✏️ ATUALIZAR PERFIL
+const atualizarPerfil = (req, res) => {
+
+    const usuarioId = req.usuario.id;
+
+    const {
+        nome,
+        telefone,
+        cidade,
+        cpf,
+        rg,
+        bio
+    } = req.body;
+
+    usuariosModel.atualizarPerfil(
+
+        usuarioId,
+
+        {
+            nome,
+            telefone,
+            cidade,
+            cpf,
+            rg,
+            bio
+        },
+
+        (err, result) => {
+
+            if (err) {
+
+                console.error('ERRO UPDATE:', err);
+
+                return res.status(500).json({
+                    message: 'Erro ao atualizar perfil'
+                });
+
+            }
+
+            res.json({
+                message: 'Perfil atualizado com sucesso 🚀'
+            });
+
+        }
+
+    );
+
+};
+
 module.exports = {
     cadastrar,
     login,
-    buscarPerfil
+    buscarUsuarioLogado,
+    atualizarPerfil
 };

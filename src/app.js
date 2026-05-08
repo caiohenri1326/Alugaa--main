@@ -3,6 +3,7 @@ const cors = require('cors');
 
 const usuariosRoutes = require('./routes/usuariosRoutes');
 const produtosRoutes = require('./routes/produtosRoutes');
+const enderecosRoutes = require('./routes/enderecosRoutes');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 // ROTAS
 app.use('/api/usuarios', usuariosRoutes);
 app.use('/api/produtos', produtosRoutes);
+app.use('/api/enderecos', enderecosRoutes);
 
 // TESTE
 app.get('/teste', (req, res) => {
