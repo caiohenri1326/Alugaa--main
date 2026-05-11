@@ -7,6 +7,8 @@
     --textoPreto: black;
 }
 
+
+
 body{
     padding: 0;
     margin: 0;
@@ -165,6 +167,7 @@ header{
 .icon-sino:hover{
     background-color: #FFF3EB;
     color: #F97015;
+    transition: .3s;
 }
 .img-perfil{
     height: 40px;
@@ -275,6 +278,9 @@ aside hr{
 
 
 
+.config-sidebar button, .config-sidebar i{
+    color: var(--colorTextCinza) !important;
+}
 
 
 

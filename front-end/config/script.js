@@ -197,9 +197,9 @@ temaClaro.addEventListener('click', function(){
 })
 
 temaEscuro.addEventListener('click', function(){
-    root.style.setProperty('--bg-site', '#121212');
-    root.style.setProperty('--colorText', '#E0E0E0');
-    root.style.setProperty('--fundo-de-abas', '#1E1E1E');
+    root.style.setProperty('--bg-site', '#1C1C1D');
+    root.style.setProperty('--colorText', '#252728');
+    root.style.setProperty('--fundo-de-abas', '#252728');
     root.style.setProperty('--colorTextCinza', '#A0A0A0');
     root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
     root.style.colorScheme = 'dark';
