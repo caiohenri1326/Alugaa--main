@@ -189,3 +189,55 @@ body{
 .login-container p{
     margin-top: 40px;
 }
+
+.toast-login{
+
+    position: fixed;
+
+    top: 30px;
+    right: 30px;
+
+    background: #161616;
+
+    color: white;
+
+    padding: 16px 22px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+    opacity: 0;
+
+    transform: translateY(-20px);
+
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 9999;
+
+}
+
+.toast-login.mostrar{
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+.toast-login i{
+
+    color: #22c55e;
+
+    font-size: 18px;
+
+}

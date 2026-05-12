@@ -3,18 +3,33 @@ body{
     padding: 0;
 }
 .container-anuncio{
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 60px;
 
-    width: 35%;
-    height: 60rem;
-    border: 1px solid rgba(0, 0, 0, 0.452);
-    border-radius: 5px;
+    margin: 50px auto;
+
+    width: 42%;
+    min-height: 60rem;
+
+    background: white;
+
+    border: 1px solid rgba(0, 0, 0, 0.18);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.08);
+
+    padding:
+        30px
+        0
+        50px
+        0;
+
 }
+
 .container-anuncio a{
     margin-right: 85%;
     margin-top: 10px;
@@ -50,13 +65,13 @@ body{
     display: flex;
     justify-content: center;
     margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 18px;
 }
 .upload-placeholder{
     width: 150px;
     height: 100px;
     border: 2px dashed #14141479;
-    border-radius: 15px;
+    border-radius: 18px;
     background-color: white;
 
     display: flex;
@@ -71,7 +86,7 @@ body{
     width: 100px;
     height: 100px;
     border: 2px dashed #d1d1d1;
-    border-radius: 15px;
+    border-radius: 18px;
     background-color: white;
 
     display: flex;
@@ -125,7 +140,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.589);
 }
 .nome-do-anuncio input::placeholder{
@@ -144,7 +159,7 @@ body{
 .select-selected{
     margin-left: 40px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 12px;
     margin-top: 20px;
     font-size: 15px;
     font-weight: 500;
@@ -158,7 +173,7 @@ body{
     width: 100%;
     background: white;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 12px;
     box-shadow: 0 4px 10px grey;
     display: none;
     z-index: 10;
@@ -175,44 +190,90 @@ body{
     display: block;
 }
 .container-categorias .preco{
-    position: absolute;
     margin-top: 20px;
     font-size: 15px;
     font-weight: 500;
 }
 
 
-.container-categorias .input-preco{
-    width: 42%;
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.616);
+.container-categorias{
+
+    width: 88%;
+
+    margin-top: 20px;
+
 }
-/* .container-categorias input:focus{
-    border: 1px solid #FF7040;
+
+.container-categorias .preco{
+
+    display: block;
+
+    margin-bottom: 8px;
+
     font-size: 14px;
     font-weight: 600;
-    outline: none;
+
 }
+
+.container-categorias .input-preco{
+
+    width: 100%;
+
+    height: 46px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(0, 0, 0, 0.35);
+
+    padding-left: 12px;
+
+    font-size: 14px;
+
+    box-sizing: border-box;
+
+}
+
+.container-categorias .input-preco:focus{
+
+    outline: none;
+
+    border: 1px solid #FF7040;
+
+}
+
 .container-categorias input::placeholder{
     padding-left: 10px;
     font-size: 14px;
 } */
 .form-anuncio .descricao{
-    position: absolute;
+
     margin-left: 40px;
     margin-top: 20px;
     font-size: 14px;
     font-weight: 600;
 }
 .area-caracteristicas{
-    margin-left: 40px;
-    margin-top: 50px;
+
+    margin-top: 10px;
+
     height: 150px;
-    width: 88%;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.459);
+
+    width: 100%;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(0, 0, 0, 0.35);
+
+    padding: 12px;
+
+    font-size: 14px;
+
+    resize: none;
+
+    box-sizing: border-box;
+
 }
+
 .area-caracteristicas::placeholder{
     font-size: 13px;
     font-weight: 500;
@@ -237,20 +298,30 @@ body{
 }
 
 .input-localization{
-    height: 40px;
-    width: 88%;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.452);
-    margin-left: 40px;
-    font-size: 13px;
-    padding-left: 5px;
-    font-weight: 500;
+
+    width: 100%;
+
+    height: 46px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(0, 0, 0, 0.35);
+
+    padding-left: 12px;
+
+    font-size: 14px;
+
+    box-sizing: border-box;
+
 }
+
+/**
 .input-localization:focus{
     outline: none;
     border: 1px solid #FF7040;
     font-size: 13px;
 }
+*/
 
 .container-contato{
     display: flex;
@@ -264,12 +335,21 @@ body{
     margin-bottom: 5px;
 }
 .container-contato input{
-    margin-left: 40px;
-    height: 40px;
+
+    height: 46px;
+
     width: 88%;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.61);
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(0, 0, 0, 0.35);
+
+    padding-left: 12px;
+
+    font-size: 14px;
+
 }
+
 .container-contato input:focus{
     outline: none;
     border: 1px solid #FF7040;
@@ -280,21 +360,44 @@ body{
     margin-left: 60%;
 }
 .button-cancel{
-    height: 40px;
-    width: 90px;
+
+    height: 44px;
+    width: 100px;
+
     font-size: 13px;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.568);
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
     font-weight: 600;
+
+    background: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
 }
 .button-anunciar{
-    width: 120px;
-    height: 40px;
+
+    width: 130px;
+    height: 46px;
+
     border: none;
+
     background-color: #FF7040;
-    font-weight: 500;
-    border-radius: 5px;
+
+    font-weight: 600;
+
+    border-radius: 12px;
+
     color: white;
+
+    transition: 0.2s;
+
+    cursor: pointer;
+
 }
 .button-anunciar:hover{
     background-color: #be5330;
@@ -315,7 +418,7 @@ body{
     gap: 10px;
 
     background: #f5f5f5;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid #e0e0e0;
 
     transition: all 0.3s ease;
@@ -347,4 +450,29 @@ body{
 
 .cep-box.loading {
     opacity: 0.6;
+}
+
+/* ======================================================
+   PADRÃO DOS CAMPOS
+====================================================== */
+
+.nome-do-anuncio,
+.container-categorias,
+.container-localization,
+.container-contato{
+
+    width: 88%;
+
+}
+
+.nome-do-anuncio input,
+.input-preco,
+.input-localization,
+.container-contato input,
+.area-caracteristicas{
+
+    width: 100%;
+
+    box-sizing: border-box;
+
 }

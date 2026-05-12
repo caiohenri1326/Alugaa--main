@@ -261,28 +261,66 @@
         </div>
 
     <div id="lista-enderecos-container">
-        <div class="container-infos-endereco" id="container-infos-endereco">
-                    <i class="bi bi-house"></i>
-                    <div class="endereco" id="endereco">
-                        <span class="nomeEndereco" id= "nomeEndereco">Nome do endereco</span>
-                        <span class="text-endereco" id="text-endereco">Rua das acácias, 123 - Apto 43</span>
-                        <div class="container-cidade">
-                            <span id="text-cidade" class="text-cidade">São Paulo, SP</span>
-                            <p>•</p> 
-                            <span class="estado-cep" id="text-cep">  CEP 01234-567</span></div>
-                    </div>
-                    <div class="buttons-enderecos">
-                    <button class="edit-endereco" id="edit-endereco"><i class="bi bi-pencil-square" ></i></button>
-                    <button class="excluir-endereco" id="excluir-endereco"><i class="bi bi-trash3"></i></button>
-                </div>
+
+    <div
+        class="container-infos-endereco"
+        id="container-infos-endereco"
+        style="display: none;"
+    >
+
+        <i class="bi bi-house"></i>
+
+        <div class="endereco">
+
+            <span class="nomeEndereco">
+                Nome do endereco
+            </span>
+
+            <span class="text-endereco">
+                Rua das acácias, 123 - Apto 43
+            </span>
+
+            <div class="container-cidade">
+
+                <span class="text-cidade">
+                    São Paulo, SP
+                </span>
+
+                <p>•</p>
+
+                <span class="estado-cep">
+                    CEP 01234-567
+                </span>
+
             </div>
+
         </div>
+
+        <div class="buttons-enderecos">
+
+            <button class="edit-endereco">
+                <i class="bi bi-pencil-square"></i>
+            </button>
+
+            <button class="excluir-endereco">
+                <i class="bi bi-trash3"></i>
+            </button>
+
+        </div>
+
     </div>
-        
-    <div id="confirmacao-excluir" class="confirmacao-excluir">
-        <i class="bi bi-check-circle-fill"></i>
-        <span id="toast-menssage">Endereço Removido.</span>
-    </div>
+
+</div>
+
+<div id="confirmacao-excluir" class="confirmacao-excluir">
+
+    <i class="bi bi-check-circle-fill"></i>
+
+    <span id="toast-menssage">
+        Endereço removido.
+    </span>
+
+</div>
 
 
     <dialog class="aba-adicionar-novo-endereco" id="aba-adicionar-novo-endereco">
@@ -413,6 +451,7 @@
         </div>
     </div>
 </div>
+
 <script src="../config/script.js"></script>
 </body>
 </html>

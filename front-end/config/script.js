@@ -1,3 +1,78 @@
+function mostrarToast(
+    mensagem,
+    tipo = 'sucesso'
+){
+
+    const toast =
+        document.getElementById(
+            'toast-global'
+        );
+
+    const texto =
+        document.getElementById(
+            'toast-message'
+        );
+
+    const icon =
+        document.getElementById(
+            'toast-icon'
+        );
+
+    texto.innerText = mensagem;
+
+    // limpa classes
+    toast.classList.remove(
+        'toast-sucesso',
+        'toast-erro',
+        'toast-aviso'
+    );
+
+    // troca ícone
+    if(tipo === 'sucesso'){
+
+        toast.classList.add(
+            'toast-sucesso'
+        );
+
+        icon.className =
+            'bi bi-check-circle-fill';
+
+    }
+
+    if(tipo === 'erro'){
+
+        toast.classList.add(
+            'toast-erro'
+        );
+
+        icon.className =
+            'bi bi-x-circle-fill';
+
+    }
+
+    if(tipo === 'aviso'){
+
+        toast.classList.add(
+            'toast-aviso'
+        );
+
+        icon.className =
+            'bi bi-exclamation-triangle-fill';
+
+    }
+
+    toast.classList.add('mostrar');
+
+    setTimeout(() => {
+
+        toast.classList.remove(
+            'mostrar'
+        );
+
+    }, 3000);
+
+}
+
 /* ============================================================
    1. REFERÊNCIAS DO DOM (Elementos Globais)
    ============================================================ */
@@ -571,6 +646,7 @@ async function carregarEnderecos() {
         // limpa lista
         lista_enderecos_container.innerHTML = '';
 
+
         // 🚨 sem endereço
         if (enderecos.length === 0) {
 
@@ -599,6 +675,75 @@ async function carregarEnderecos() {
 
             novoCard.querySelector('.estado-cep').innerText =
                 `${endereco.cidade} • CEP ${endereco.cep}`;
+
+            const botaoExcluir =
+                novoCard.querySelector('.excluir-endereco');
+
+            botaoExcluir.addEventListener('click', async () => {
+
+                // 🚨 confirmação
+                const confirmar = confirm(
+                    'Deseja realmente excluir este endereço?'
+                );
+
+                // ❌ cancelou
+                if (!confirmar) {
+                    return;
+                }
+
+                try {
+
+                    const token = localStorage.getItem('token');
+
+                    const res = await fetch(
+                        `http://localhost:3000/api/enderecos/${endereco.id}`,
+                        {
+
+                            method: 'DELETE',
+
+                            headers: {
+                                Authorization: `Bearer ${token}`
+                            }
+
+                        }
+                    );
+
+                    if (!res.ok) {
+
+                        alert('Erro ao excluir endereço');
+
+                        return;
+                    }
+
+                    // 🔥 remove card
+                    novoCard.remove();
+
+                    // 🔥 toast confirmação
+                    mostrarConfirmacaoExclusao(
+                        'Endereço removido com sucesso'
+                    );
+
+                    // 🚨 se não houver mais endereços
+                    const cards =
+                        lista_enderecos_container.querySelectorAll(
+                            '.container-infos-endereco'
+                        );
+
+                    if (cards.length === 1) {
+
+                        mensagem_vazia.style.display = 'block';
+
+                    }
+
+                } catch (error) {
+
+                    console.error(error);
+
+                    alert('Erro ao excluir endereço');
+
+                }
+
+            });
 
             lista_enderecos_container.appendChild(novoCard);
 

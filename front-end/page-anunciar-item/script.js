@@ -1,3 +1,78 @@
+function mostrarToast(
+    mensagem,
+    tipo = 'sucesso'
+){
+
+    const toast =
+        document.getElementById(
+            'toast-global'
+        );
+
+    const texto =
+        document.getElementById(
+            'toast-message'
+        );
+
+    const icon =
+        document.getElementById(
+            'toast-icon'
+        );
+
+    texto.innerText = mensagem;
+
+    // limpa classes
+    toast.classList.remove(
+        'toast-sucesso',
+        'toast-erro',
+        'toast-aviso'
+    );
+
+    // troca ícone
+    if(tipo === 'sucesso'){
+
+        toast.classList.add(
+            'toast-sucesso'
+        );
+
+        icon.className =
+            'bi bi-check-circle-fill';
+
+    }
+
+    if(tipo === 'erro'){
+
+        toast.classList.add(
+            'toast-erro'
+        );
+
+        icon.className =
+            'bi bi-x-circle-fill';
+
+    }
+
+    if(tipo === 'aviso'){
+
+        toast.classList.add(
+            'toast-aviso'
+        );
+
+        icon.className =
+            'bi bi-exclamation-triangle-fill';
+
+    }
+
+    toast.classList.add('mostrar');
+
+    setTimeout(() => {
+
+        toast.classList.remove(
+            'mostrar'
+        );
+
+    }, 3000);
+
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // 🔥 ELEMENTOS DO CARD DE ENDEREÇO
@@ -121,12 +196,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 🛑 VALIDAÇÃO
         if (!nome || !preco || !categoria || !imagem) {
-            alert('Preencha todos os campos obrigatórios!');
+            mostrarToast(
+    'Preencha todos os campos',
+    'aviso'
+);
             return;
         }
 
         if (!endereco.cep) {
-            alert('Digite um CEP válido!');
+            mostrarToast(
+    'Preencha todos os campos',
+    'aviso'
+);
             return;
         }
 
@@ -158,22 +239,31 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch {
                 const text = await res.text();
                 console.error('Resposta não é JSON:', text);
-                alert('Erro no servidor');
+                mostrarToast(
+    'Erro ao salvar',
+    'erro'
+);
                 return;
             }
 
             if (!res.ok) {
                 console.error('Erro backend:', data);
-                alert(data.message || 'Erro ao criar anúncio');
+                mostrarToast(
+    'Erro ao salvar',
+    'erro'
+);
                 return;
             }
 
-            alert('Anúncio criado com sucesso 🚀');
+            mostrarToast(
+    'Conta criada!',
+    'sucesso'
+);
             window.location.href = "../homepage/index.html";
 
         } catch (error) {
             console.error('Erro geral:', error);
-            alert('Erro ao criar anúncio');
+            mostrarToast('Erro ao salvar','erro');
         }
     });
 

@@ -1,6 +1,27 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.getElementById('formLogin');
+
+    function mostrarToast(mensagem) {
+
+            const toast =
+                document.getElementById('toast-login');
+
+            const texto =
+                document.getElementById('toast-text');
+
+            texto.innerText = mensagem;
+
+            toast.classList.add('mostrar');
+
+            setTimeout(() => {
+
+                toast.classList.remove('mostrar');
+
+            }, 3000);
+
+        }
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -36,9 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // 🔥 salva nome separado
             localStorage.setItem('usuarioNome', data.usuario.nome);
 
-            alert('Login realizado com sucesso 🔐');
+        mostrarToast('Login realizado com sucesso 🚀');
 
-            window.location.href = "../homepage/index.html";
+        setTimeout(() => {
+
+            window.location.href =
+                "../homepage/index.html";
+
+        }, 200);
 
         } catch (error) {
             console.error(error);
