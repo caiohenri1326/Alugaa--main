@@ -1,30 +1,11 @@
-const enderecosModel = require('../models/enderecosModel');
+    const enderecosModel = require('../models/enderecosModel');
 
-// 🚀 CRIAR ENDEREÇO
-const criarEndereco = (req, res) => {
+    // 🚀 CRIAR ENDEREÇO
+    const criarEndereco = (req, res) => {
 
-    const usuario_id = req.usuario.id;
+        const usuario_id = req.usuario.id;
 
-    const {
-        nome_endereco,
-        cep,
-        estado,
-        cidade,
-        bairro,
-        logradouro,
-        numero,
-        complemento
-    } = req.body;
-
-    if (!nome_endereco || !cep) {
-        return res.status(400).json({
-            message: 'Preencha os campos obrigatórios'
-        });
-    }
-
-    enderecosModel.criarEndereco(
-        {
-            usuario_id,
+        const {
             nome_endereco,
             cep,
             estado,
@@ -33,81 +14,100 @@ const criarEndereco = (req, res) => {
             logradouro,
             numero,
             complemento
-        },
-        (err, result) => {
+        } = req.body;
 
-            if (err) {
-
-                console.error(err);
-
-                return res.status(500).json({
-                    message: 'Erro ao criar endereço'
-                });
-            }
-
-            res.status(201).json({
-                message: 'Endereço criado com sucesso'
+        if (!nome_endereco || !cep) {
+            return res.status(400).json({
+                message: 'Preencha os campos obrigatórios'
             });
-
         }
-    );
-};
 
-// 🔍 LISTAR ENDEREÇOS
-const listarEnderecos = (req, res) => {
+        enderecosModel.criarEndereco(
+            {
+                usuario_id,
+                nome_endereco,
+                cep,
+                estado,
+                cidade,
+                bairro,
+                logradouro,
+                numero,
+                complemento
+            },
+            (err, result) => {
 
-    const usuario_id = req.usuario.id;
+                if (err) {
 
-    enderecosModel.listarEnderecos(
-        usuario_id,
-        (err, result) => {
+                    console.error(err);
 
-            if (err) {
+                    return res.status(500).json({
+                        message: 'Erro ao criar endereço'
+                    });
+                }
 
-                console.error(err);
-
-                return res.status(500).json({
-                    message: 'Erro ao buscar endereços'
+                res.status(201).json({
+                    message: 'Endereço criado com sucesso'
                 });
+
             }
+        );
+    };
 
-            res.json(result);
+    // 🔍 LISTAR ENDEREÇOS
+    const listarEnderecos = (req, res) => {
 
-        }
-    );
-};
+        const usuario_id = req.usuario.id;
 
-// ❌ EXCLUIR ENDEREÇO
-const excluirEndereco = (req, res) => {
+        enderecosModel.listarEnderecos(
+            usuario_id,
+            (err, result) => {
 
-    const usuario_id = req.usuario.id;
+                if (err) {
 
-    const id = req.params.id;
+                    console.error(err);
 
-    enderecosModel.excluirEndereco(
-        id,
-        usuario_id,
-        (err, result) => {
+                    return res.status(500).json({
+                        message: 'Erro ao buscar endereços'
+                    });
+                }
 
-            if (err) {
+                res.json(result);
 
-                console.error(err);
+            }
+        );
+    };
 
-                return res.status(500).json({
-                    message: 'Erro ao excluir endereço'
+    // ❌ EXCLUIR ENDEREÇO
+    const excluirEndereco = (req, res) => {
+
+        const usuario_id = req.usuario.id;
+
+        const id = req.params.id;
+
+        enderecosModel.excluirEndereco(
+            id,
+            usuario_id,
+            (err, result) => {
+
+                if (err) {
+
+                    console.error(err);
+
+                    return res.status(500).json({
+                        message: 'Erro ao excluir endereço'
+                    });
+                }
+
+                res.json({
+                    message: 'Endereço removido'
                 });
+
             }
+        );
+    };
 
-            res.json({
-                message: 'Endereço removido'
-            });
-
-        }
-    );
-};
-
-module.exports = {
-    criarEndereco,
-    listarEnderecos,
-    excluirEndereco
-};
+    module.exports = {
+        criarEndereco,
+        listarEnderecos,
+        excluirEndereco
+    };

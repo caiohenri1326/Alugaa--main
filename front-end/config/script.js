@@ -38,7 +38,10 @@ const mensagem_vazia = document.getElementById('mensagem-vazia');
 // Inputs e Botões do Modal de Endereço
 const campoNome = document.getElementById('nomeDoEndereco');
 const campoRua = document.getElementById('enderecoRua');
+const campoNumero = document.getElementById('numeroCasa');
 const campoCidade = document.getElementById('enderecoCidade');
+const campoBairro = document.getElementById('bairro');
+const campoEstado = document.getElementById('estado');
 const campoCep = document.getElementById('cep');
 const botaoSalva = document.getElementById('salvar');
 const botaoCancelar = document.getElementById('cancelar');
@@ -120,20 +123,98 @@ divisao_container_esquerdo.addEventListener('click', Animaçoes);
 
 /* --- Modal de Endereço (Ações de Abrir/Fechar) --- */
 botao_adicionar_novo_endereco.addEventListener('click', () => {
+
     aparecer_aba_adicionar_endereco.showModal();
+
+    requestAnimationFrame(() => {
+        aparecer_aba_adicionar_endereco.classList.add('ativo');
+    });
+
 });
 
-botaoCancelar.addEventListener('click', limparInputs);
+botaoCancelar.addEventListener('click', function (event) {
 
-botao_cancelar_endereco.addEventListener('click', function(event) {
     event.preventDefault();
-    aparecer_aba_adicionar_endereco.classList.add('fechando');
 
-    aparecer_aba_adicionar_endereco.addEventListener('animationend', function functionOnEnd() {
-        aparecer_aba_adicionar_endereco.classList.remove('fechando');
-        aparecer_aba_adicionar_endereco.removeEventListener('animationend', functionOnEnd);
+    limparInputs();
+
+    aparecer_aba_adicionar_endereco.classList.remove('ativo');
+
+    setTimeout(() => {
+
         aparecer_aba_adicionar_endereco.close();
-    });
+
+    }, 200);
+
+});
+// 📮 CEP ENDEREÇO
+campoCep.addEventListener('input', () => {
+
+    let valor = campoCep.value
+        .replace(/\D/g, '')
+        .slice(0, 8);
+
+    // 12345-678
+    if (valor.length > 5) {
+
+        valor =
+            valor.slice(0, 5) +
+            '-' +
+            valor.slice(5);
+
+    }
+
+    campoCep.value = valor;
+
+});
+
+// 🔥 BUSCAR CEP AUTOMATICAMENTE
+campoCep.addEventListener('blur', async () => {
+
+    const cep = campoCep.value
+        .replace(/\D/g, '');
+
+    // 🚨 CEP inválido
+    if (cep.length !== 8) {
+
+        alert('CEP inválido');
+
+        return;
+    }
+
+    try {
+
+        const res = await fetch(
+            `https://viacep.com.br/ws/${cep}/json/`
+        );
+
+        const data = await res.json();
+
+        // 🚨 CEP não encontrado
+        if (data.erro) {
+
+            alert('CEP não encontrado');
+
+            return;
+        }
+
+        // 🔥 PREENCHER CAMPOS
+        campoRua.value = data.logradouro || '';
+
+        campoBairro.value = data.bairro || '';
+
+        campoCidade.value = data.localidade || '';
+
+        campoEstado.value = data.uf || '';
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert('Erro ao buscar CEP');
+
+    }
+
 });
 
 /* --- Lógica de Salvar Endereço --- */
@@ -141,11 +222,15 @@ botaoSalva.addEventListener('click', async function () {
 
     const nome = campoNome.value;
     const rua = campoRua.value;
+    const numero = campoNumero.value;
     const cidade = campoCidade.value;
     const cepVal = campoCep.value;
 
-    if (!nome || !rua || !cidade || !cepVal) {
+    // 🚨 validação
+    if (!nome || !rua || !numero || !cidade || !cepVal) {
+
         alert('Preencha todos os campos!');
+
         return;
     }
 
@@ -153,9 +238,11 @@ botaoSalva.addEventListener('click', async function () {
 
         const token = localStorage.getItem('token');
 
+        // 🚀 ENVIA PRO BACKEND
         const res = await fetch(
             'http://localhost:3000/api/enderecos',
             {
+
                 method: 'POST',
 
                 headers: {
@@ -164,18 +251,28 @@ botaoSalva.addEventListener('click', async function () {
                 },
 
                 body: JSON.stringify({
-                    nome,
-                    rua,
-                    cidade,
+
+                    nome_endereco: nome,
+
+                    logradouro: rua,
+
+                    numero: numero,
+
+                    cidade: cidade,
+
                     cep: cepVal
+
                 })
+
             }
         );
 
         const data = await res.json();
 
         if (!res.ok) {
+
             alert(data.message);
+
             return;
         }
 
@@ -183,10 +280,14 @@ botaoSalva.addEventListener('click', async function () {
         const novoCard = aparecer_infos_endereco.cloneNode(true);
 
         novoCard.removeAttribute('id');
+
         novoCard.style.display = "flex";
 
         novoCard.querySelector('.nomeEndereco').innerText = nome;
-        novoCard.querySelector('.text-endereco').innerText = rua;
+
+        novoCard.querySelector('.text-endereco').innerText =
+            `${rua}, ${numero}`;
+
         novoCard.querySelector('.estado-cep').innerText =
             `${cidade} • CEP ${cepVal}`;
 
@@ -194,8 +295,10 @@ botaoSalva.addEventListener('click', async function () {
 
         mensagem_vazia.style.display = "none";
 
+        // ✅ fecha modal
         aparecer_aba_adicionar_endereco.close();
 
+        // 🧹 limpa inputs
         limparInputs();
 
         alert('Endereço salvo com sucesso 🚀');
@@ -208,7 +311,7 @@ botaoSalva.addEventListener('click', async function () {
 
     }
 
-}); 
+});
 
 /* ============================================================
    4. INICIALIZAÇÃO
@@ -437,3 +540,76 @@ botaoSalvarPerfil.addEventListener('click', async () => {
     }
 
 });
+
+/* ============================================================
+   📦 CARREGAR ENDEREÇOS
+============================================================ */
+
+async function carregarEnderecos() {
+
+    try {
+
+        const token = localStorage.getItem('token');
+
+        const res = await fetch(
+            'http://localhost:3000/api/enderecos',
+            {
+
+                method: 'GET',
+
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+
+            }
+        );
+
+        const enderecos = await res.json();
+
+        console.log(enderecos);
+
+        // limpa lista
+        lista_enderecos_container.innerHTML = '';
+
+        // 🚨 sem endereço
+        if (enderecos.length === 0) {
+
+            mensagem_vazia.style.display = 'block';
+
+            return;
+        }
+
+        mensagem_vazia.style.display = 'none';
+
+        // 🔥 cria cards
+        enderecos.forEach(endereco => {
+
+            const novoCard =
+                aparecer_infos_endereco.cloneNode(true);
+
+            novoCard.removeAttribute('id');
+
+            novoCard.style.display = 'flex';
+
+            novoCard.querySelector('.nomeEndereco').innerText =
+                endereco.nome_endereco;
+
+            novoCard.querySelector('.text-endereco').innerText =
+                `${endereco.logradouro}, ${endereco.numero}`;
+
+            novoCard.querySelector('.estado-cep').innerText =
+                `${endereco.cidade} • CEP ${endereco.cep}`;
+
+            lista_enderecos_container.appendChild(novoCard);
+
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+}
+
+carregarEnderecos();

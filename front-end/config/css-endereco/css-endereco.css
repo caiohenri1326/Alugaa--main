@@ -274,6 +274,63 @@
     width: 91%;
 }
 
+.numeroCasa{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.numeroCasa label{
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.2px;
+}
+.numeroCasa input{
+    margin-top: 10px;
+    width: 91%;
+}
+
+.bairroEstado{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.bairro{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.bairro label{
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.2px;
+}
+
+.bairro input{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.estado{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.estado label{
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.2px;
+}
+
+.estado input{
+    margin-top: 10px;
+    width: 100%;
+}
+
 .cidadeCep{
     display: flex;
     flex-direction: row;
@@ -347,4 +404,34 @@
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
+}
+
+/* 🔥 ANIMAÇÃO MODAL */
+
+.aba-adicionar-novo-endereco {
+
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+/* modal aberto */
+.aba-adicionar-novo-endereco[open] {
+
+    opacity: 1;
+    transform: scale(1) translateY(0);
+
+}
+
+/* fundo escuro */
+.aba-adicionar-novo-endereco::backdrop {
+
+    background: rgba(0, 0, 0, 0.4);
+
+    backdrop-filter: blur(3px);
+
 }
