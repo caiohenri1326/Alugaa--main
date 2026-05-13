@@ -5,6 +5,16 @@
     --colorTextCinza: rgba(0, 0, 0, 0.631);
     --botoes-afins: #F97015;
     --textoPreto: black;
+
+    /* MUDANDO A COR DE DESTAQUE */
+
+    --cor-destaque: #F97015;
+    --cor-destaque-background-input: #FCFAF7;
+    --azul:#48A4FF;
+
+    --verde: #2DCBA9;
+    --rosa: #FD749C;
+    --roxo: #B490FD;
 }
 
 

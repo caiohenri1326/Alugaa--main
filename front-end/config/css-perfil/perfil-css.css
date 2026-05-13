@@ -1,12 +1,4 @@
-:root{
-    --cor-fontes-afins: #F97015;
-    --cor-containers: rgb(255, 255, 255);
-    --cor-body: #FCFAF7;
-    --hover: #FFF3EB;
 
-
-    --color-icons-theme-black: #E5E8EB;
-}
 
 .container-perfil{
     width: 95%;
@@ -61,7 +53,7 @@
     margin-left: 30px;
     border-radius: 100%;
     display: flex;
-    border: 2px solid var(--cor-fontes-afins);
+    border: 2px solid var(--cor-destaque);
     object-fit: cover;
     flex-shrink: 0;
 }
@@ -73,7 +65,7 @@
     margin-left: -50px;
     left: 20rem;
     border: none;
-    background-color: var(--cor-fontes-afins);
+    background-color: var(--cor-destaque);
     border-radius: 100%;
     color: var(--colorText);
     cursor: pointer;
@@ -127,9 +119,11 @@
     height: 35px;
     margin-left: 30px;
     border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.26);
-    background-color: var(--cor-body);
+    border: 1px solid var(--colorTextCinza);
     padding-left: 10px;
+}
+.info-pessoais input, .info-pessoais textarea{
+    font-size: 15px;
 }
 .info-pessoais input::placeholder{
     font-size: 15px;
@@ -137,7 +131,7 @@
     font-weight: 500;
 }
 .info-pessoais input:focus{
-    border: 1px solid var(--cor-fontes-afins);
+    border: 1px solid var(--cor-destaque);
     outline: none;
     font-size: 15px;
 }
@@ -180,8 +174,7 @@
     height: 40px;
     margin-top: 5px;
     border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.356);
-    background-color: var(--cor-body);
+    border: 1px solid var(--colorTextCinza);
     box-sizing:border-box;
 }
 .cidade{
@@ -197,8 +190,7 @@
     width: 100%;
     margin-top: 5px;
     border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.308);
-    background-color: var(--cor-body);
+    border: 1px solid var(--colorTextCinza);
     box-sizing: border-box;
 }
 
@@ -224,8 +216,7 @@
     height: 35px;
     width: 100%;
     border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.342);
-    background-color: #FCFAF7;
+    border: 1px solid var(--colorTextCinza);
     outline: none;
 }
 /* --------------------------------------------------------- */
@@ -247,8 +238,7 @@
 .rg input{
     height: 35px;
     border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.336);
-    background-color: #FCFAF7;
+    border: 1px solid var(--colorTextCinza);
     outline: none;
 }
 
@@ -273,20 +263,19 @@
     box-sizing: border-box;
     height: 130px;
     border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.253);
+    border: 1px solid var(--colorTextCinza);
     padding-left: 10px;
     padding-top: 10px;
     font-size: 17px;
     outline: none;
     resize: none;
-    background-color: var(--cor-body);
 }
 textarea::placeholder{
     font-size: 14px;
 
 }
 textarea:focus{
-    border: 1px solid var(--cor-fontes-afins);
+    border: 1px solid var(--cor-destaque);
 }
 
 
@@ -320,8 +309,8 @@ textarea:focus{
     background: none;
 }
 .cancelar:hover{
-    background-color: var(--hover);
-    color: var(--cor-fontes-afins);
+    background-color: var(--cor-destaque-background-input);
+    color: var(--cor-destaque);
     border: 1px solid rgba(0, 0, 0, 0.041);
     transition: 0.2s ease-in;
 }
@@ -332,7 +321,7 @@ textarea:focus{
     font-weight: 600;
     font-size: 14px;
     border: none;
-    background-color: #FD8443;
+    background-color: var(--cor-destaque);
     color: #ffffff;
     cursor: pointer;
     font-family: sans-serif;
@@ -346,7 +335,8 @@ textarea:focus{
     backface-visibility: hidden;
 }
 .env:hover{
-    background-color: #ff8736;
+    background-color:#2891fa;
+    transition: .3s ease;
 }
 
 /* --------------------------------------------------- */

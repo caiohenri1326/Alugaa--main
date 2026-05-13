@@ -54,6 +54,17 @@ const temaSistema = document.getElementById('tema-sistema');
 
 const root = document.documentElement;
 
+
+// MUDANDO COR DO SITE
+
+const corLaranja = document.getElementById('laranja')
+const corAzul = document.getElementById('azul')
+const corVerde = document.getElementById('verde')
+const corRosa = document.getElementById('rosa')
+const corRoxo = document.getElementById('roxo')
+
+const corItem = document.querySelectorAll('.cor-item');
+
 // EXPORTANDO VARIAVEIS DA PAGE REGISTRO
 
 
@@ -193,7 +204,12 @@ botaoSalva.addEventListener('click', function() {
 // MUNDANDO TEMA DO SITE
 
 temaClaro.addEventListener('click', function(){
-    
+    root.style.setProperty('--bg-site', '');
+    root.style.setProperty('--colorText', '');
+    root.style.setProperty('--fundo-de-abas', '');
+    root.style.setProperty('--colorTextCinza', '');
+    root.style.setProperty('--textoPreto', '');
+    root.style.colorScheme = 'light';
 })
 
 temaEscuro.addEventListener('click', function(){
@@ -207,6 +223,27 @@ temaEscuro.addEventListener('click', function(){
 
 
 
+// MUDANDO A COR DOS ICONES E TEXTOS
+
+corItem.forEach(botao => {
+    botao.addEventListener('click', function(){
+        const corSelecionada = this.getAttibute('data-color');
+
+        document.documentElement.style.setProperty('--cor-destaque', corSelecionada)
+
+        localStorage.setItem('temaCustomizado', corSelecionada);
+    })
+})
+
+corLaranja.addEventListener('click', function(){
+    root.style.setProperty('--cor-destaque', '#F97015');
+    root.style.setProperty('--cor-destaque-background-input', '#FCFAF7')
+})
+
+corAzul.addEventListener('click', function(){
+    root.style.setProperty('--cor-destaque', '#48A4FF');
+    root.style.setProperty('--cor-destaque-background-input', '#f2f6fa')
+})
 
 
 /* ============================================================

@@ -17,7 +17,7 @@
 .tema{
     width: 95%;
     height: 270px;
-    background-color: white;
+    background-color: var(--fundo-de-abas);
     border-radius: 10px;
     box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.068);
 }
@@ -30,7 +30,7 @@
 .tema p{
     font-size: 14px;
     font-weight: 400;
-    color: rgba(0, 0, 0, 0.658);
+    color: var(--colorTextCinza);
     margin-left: 20px;
     margin-top: -15px;
 }
@@ -47,7 +47,7 @@
     width: 350px;
     margin-top: 15px;
     margin-left: 15px;
-    border: 2px solid rgba(36, 36, 36, 0.205);
+    border: 2px solid var(--colorTextCinza);
     border-radius: 10px;
     background: none;
     cursor: pointer;
@@ -58,12 +58,12 @@
 .escolha-tema button i{
     display: flex;
     flex-direction: column;
-    color: var(--cor-fontes-afins);
+    color: var(--cor-destaque);
     font-size: 25px;
     margin-bottom: 10px;
 }
 .escolha-tema button:hover{
-    border: 2px solid var(--cor-fontes-afins);
+    border: 2px solid var(--cor-destaque);
     transition: 0.5s ease;
 }
 
@@ -74,7 +74,7 @@
 .cor-destaque{
     width: 95%;
     margin-top: 20px;
-    background-color: white;
+    background-color: var(--fundo-de-abas);
     height: 220px;
     box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.068);
     border-radius: 10px;
@@ -89,7 +89,7 @@
     font-size: 14px;
     margin-left: 20px;
     margin-top: -15px;
-    color: rgba(0, 0, 0, 0.637);
+    color: var(--colorTextCinza);
     font-weight: 400;
 }
 .cores{
@@ -129,13 +129,13 @@
     margin-top: 15px;
     border-radius: 10px;
     border: none;
-    background: linear-gradient(to right, #FF8436, #FF660D);
+    background: var(--cor-destaque);
     color: white;
     font-weight: 600;
     cursor: pointer;
 }
 .salvar:hover{
-    border: 1px solid #f75d04;
+    border: 1px solid var(--cor-destaque);
     transform: scaleX(0.5.0.5);
     transition: 0.3s ease;
 }
