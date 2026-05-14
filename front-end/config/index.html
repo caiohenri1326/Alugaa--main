@@ -119,27 +119,28 @@
                 <input type="text" id="input-nome" placeholder="Digite seu Nome">
             </div>
 
-            <div class="fone-city">
+           <div class="fone-city">
+
                 <div class="fone">
-                    <label for="">Telefone</label>
-                    <input type="text" id="input-telefone" maxlength="15" placeholder="(11) 99999-9999"> 
-                </div>
-        
-                <div class="cidade">
-                    <label>Cidade</label>
-                    <input type="text" id="input-cidade" placeholder="São Paulo, SP">
+                    <label for="telefone">Telefone</label>
+                    <input 
+                        type="text" 
+                        id="input-telefone" 
+                        maxlength="15" 
+                        placeholder="(11) 99999-9999"
+                    > 
                 </div>
 
-                <div class="fone-city">
-                    <div class="fone">
-                        <label for="">Telefone</label>
-                        <input type="number"  maxlength="14" placeholder="(11) 99999-9999">
-                    </div>
-            
-                    <div class="cidade">
-                        <label>Cidade</label>
-                        <input type="text" placeholder="São Paulo, SP">
-                    </div>
+                <div class="cidade">
+                    <label for="cidade">Cidade</label>
+                    <input 
+                        type="text" 
+                        id="input-cidade" 
+                        placeholder="São Paulo, SP"
+                    >
+                </div>
+
+            </div>
 
             <div class="cpf">
                 <label for="cpf">CPF</label>
@@ -450,13 +451,13 @@
         <div class="mostrar-telefone">    
             <h2>Mostrar meu telefone nos anúncios</h2>
             <p>Alugantes poderão ligar diretamente.</p>
-            <input type="checkbox" type="checkbox" role="switch">
+            <input type="checkbox" role="switch">
         </div>
         <hr style="max-width: 1150px; background-color: rgba(0, 0, 0, 0.055); margin-top: 40px;">
         <div class="mostrar-email">
             <h2>Mostrar meu e-mail nos anúncios</h2>
             <p>Alugantes poderão entrar em contato usando o e-mail.</p>
-            <input type="checkbox" type="checkbox" role="switch">
+            <input type="checkbox" role="switch">
         </div>
     </div>
 </div>
