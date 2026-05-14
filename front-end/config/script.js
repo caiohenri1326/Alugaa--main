@@ -245,6 +245,7 @@ corAzul.addEventListener('click', function(){
     root.style.setProperty('--cor-destaque-background-input', '#f2f6fa')
 })
 
+cor
 
 /* ============================================================
    4. INICIALIZAÇÃO
