@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="../config/css-aparencia/aparencia-css.css">
     <link rel="stylesheet" href="../config/css-endereco/css-endereco.css">
     <link rel="stylesheet" href="css-segurança/seguranca-style.css">
-    <script src="../../front-end/page-registro/"></script>
+    <script src="../../front-end/page-registro/script.js"></script>
+    <link rel="stylesheet" href="../config/css-privacidade/privacidade-css.css">
 </head>
 <body>
     <header>
@@ -96,7 +97,7 @@
 <div class="container-agrupa-tudo" id="container-agrupa-tudo">
     <div class="container-perfil tela" id="container-perfil">
         <div class="infos">
-            <p style="font-size: 23px; margin-left: 25px; margin-top: 35px;">Foto de Perfil</p>
+            <p style="font-size: 23px; margin-left: 30px; margin-top: 35px; color: var(--colorTextCinza);">Foto de Perfil</p>
             
             <div class="container-infos-pessoais">
                 <span id="nomePessoa">Nome da Pessoa</span>
@@ -129,7 +130,16 @@
                     <input type="text" id="input-cidade" placeholder="São Paulo, SP">
                 </div>
 
-            </div>
+                <div class="fone-city">
+                    <div class="fone">
+                        <label for="">Telefone</label>
+                        <input type="number"  maxlength="14" placeholder="(11) 99999-9999">
+                    </div>
+            
+                    <div class="cidade">
+                        <label>Cidade</label>
+                        <input type="text" placeholder="São Paulo, SP">
+                    </div>
 
             <div class="cpf">
                 <label for="cpf">CPF</label>
@@ -151,7 +161,6 @@
                 <button class="cancelar">Cancelar</button>
             </div>
         </div>
-        
     </div>
     <!------------------------------------------------------------------------------------------------------------------>
 
@@ -163,7 +172,7 @@
             <p>Atualize as informações da sua conta</p>
             <div class="input-email">
                 <label for="Email">E-mail</label>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" id="input-pegar-email">
             </div>
 
             <div class="aba-moeda">
@@ -221,9 +230,9 @@
             <h3>Tema</h3>
             <p>Escolha como o Alugaê aparece para você.</p>
             <div class="escolha-tema">
-                <button class="claro"><i class="bi bi-brightness-high"></i>Claro</button>
-                <button class="escuro"><i class="bi bi-moon-stars"></i>Escuro</button>
-                <button class="sistema"><i class="bi bi-display"></i>Sistema</button>
+                <button class="claro" id="claro"><i class="bi bi-brightness-high"></i>Claro</button>
+                <button class="escuro" id="escuro"><i class="bi bi-moon-stars"></i>Escuro</button>
+                <button class="sistema" id="tema-sistema"><i class="bi bi-display"></i>Sistema</button>
             </div>
         </div>
 
@@ -231,11 +240,11 @@
             <h3>Cor de destaque</h3>
             <p>Personalize a cor principal da interface.</p>
             <div class="cores">
-                <button class="laranja"></button>
-                <button class="azul"></button>
-                <button class="verde"></button>
-                <button class="rosa"></button>
-                <button class="roxo"></button>
+                <button class="laranja cor-item" id="laranja" data-color="#FF7E3E"></button>
+                <button class="azul cor-item" id="azul" data-color="#48A4FF"></button>
+                <button class="verde cor-item" id="verde" data-color="#2DCBA9"></button>
+                <button class="rosa cor-item" id="rosa" data-color="#FD749C"></button>
+                <button class="roxo cor-item" id="roxo" data-color="#B490FD"></button>
             </div>
         </div>
         <button class="salvar">Salvar</button>
@@ -256,7 +265,7 @@
         <!-- MENSAGEM DE ESTADO VAZIO -->
 
         <div id="mensagem-vazia" class="mensagem-vazia">
-            <i class="bi bi-geo-fill" style="font-size: 1rem; color: #ccc;"></i>
+            <i class="bi bi-geo-fill" style="font-size: 1rem; color: var(--colorTextCinza);"></i>
             <p>Você ainda não adicionou um endereço.</p>
         </div>
 
@@ -368,7 +377,7 @@
 
         </div>
         <div class="botoes-salvar">
-            <button class="salvar" id="salvar">Salva</button>
+            <button class="salvar-endereco" id="salvar">Salva</button>
             <button class="cancelar" id="cancelar">Cancelar</button>
         </div>
     </dialog>

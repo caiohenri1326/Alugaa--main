@@ -122,6 +122,31 @@ const botaoSalva = document.getElementById('salvar');
 const botaoCancelar = document.getElementById('cancelar');
 const botao_cancelar_endereco = aparecer_aba_adicionar_endereco.querySelector('.cancelar');
 
+
+// VARIAVEIS DO TEMA 
+
+const temaClaro = document.getElementById('claro');
+const temaEscuro = document.getElementById('escuro');
+const temaSistema = document.getElementById('tema-sistema');
+
+
+const root = document.documentElement;
+
+
+// MUDANDO COR DO SITE
+
+const corLaranja = document.getElementById('laranja')
+const corAzul = document.getElementById('azul')
+const corVerde = document.getElementById('verde')
+const corRosa = document.getElementById('rosa')
+const corRoxo = document.getElementById('roxo')
+
+const corItem = document.querySelectorAll('.cor-item');
+
+// EXPORTANDO VARIAVEIS DA PAGE REGISTRO
+
+
+
 /* ============================================================
    2. FUNÇÕES AUXILIARES (Lógica de Negócio)
    ============================================================ */
@@ -186,7 +211,7 @@ function mostrarConfirmacaoExclusao(mensagem) {
    ============================================================ */
 
 /* --- Navegação entre Abas --- */
-botao_ativar_perfil.addEventListener('click', function() { alternarAba(this, tela_perfil, "Perfil"); });
+botao_ativar_perfil.addEventListener('click', function() { alternarAba(this, tela_perfil, "Perfil");});
 botao_ativar_conta.addEventListener('click', function() { alternarAba(this, containerConta, "Conta"); });
 botao_ativar_aparencia.addEventListener('click', function() { alternarAba(this, container_aparencia, "Aparencia"); });
 botao_ativar_endereco.addEventListener('click', function() { alternarAba(this, container_endereco, "Endereço"); });
