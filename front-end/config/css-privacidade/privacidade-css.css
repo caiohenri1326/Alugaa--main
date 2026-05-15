@@ -73,7 +73,7 @@
     transition: .3s;
 }
 .container-privacidade input[type="checkbox"]:checked{
-    background-color: #F97015;
+    background-color: var(--cor-destaque);
 }
 .container-privacidade input[type="checkbox"]:checked::before{
     background: #fff;

@@ -133,7 +133,7 @@
     padding-left: 10px;
 }
 .container-cpf input:focus{
-    border: 1px solid #F97015;
+    border: 1px solid var(--cor-destaque);
 }
 
 
@@ -217,7 +217,7 @@
     transition: .3s;
 }
 .codigo-email input[type="checkbox"]:checked{
-    background-color: #F97015;
+    background-color: var(--cor-destaque);
 }
 .codigo-email input[type="checkbox"]:checked::before{
     background: #fff;
@@ -248,7 +248,7 @@
     margin-top: 20px;
     display: inline-block;
     -webkit-text-stroke: 0.6px;
-    color: #F97015;
+    color: var(--cor-destaque);
 }
 .sessoes-ativas h3{
     font-size: 23px;
@@ -276,8 +276,8 @@
     -webkit-text-stroke: 0.3px;
 }
 .sessoes-ativas button:hover{
-    background-color: #fdddbd;
-    color: #db5a03;
+    background-color: var(--cor-destaque-background-input);
+    color: var(--cor-destaque);
     transition: 0.3s;
 }
 

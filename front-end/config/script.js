@@ -67,8 +67,14 @@ const corItem = document.querySelectorAll('.cor-item');
 
 // EXPORTANDO VARIAVEIS DA PAGE REGISTRO
 
+//RECUPERAÇÃO DO TEMA 
 
+window.onload = function() {
+      // Recupera valor salvo no localStorage
+      const corSelecionada = localStorage.getItem('temaCustomizado');
+        root.style.setProperty('--cor-destaque', corSelecionada);
 
+}
 /* ============================================================
    2. FUNÇÕES AUXILIARES (Lógica de Negócio)
    ============================================================ */
@@ -235,6 +241,10 @@ corItem.forEach(botao => {
     })
 })
 
+function SalvarCores(){
+    //localStorage.setItem('temaCustomizado', corSelecionada);
+}
+
 corLaranja.addEventListener('click', function(){
     root.style.setProperty('--cor-destaque', '#F97015');
     root.style.setProperty('--cor-destaque-background-input', '#FCFAF7')
@@ -242,11 +252,23 @@ corLaranja.addEventListener('click', function(){
 
 corAzul.addEventListener('click', function(){
     root.style.setProperty('--cor-destaque', '#48A4FF');
-    root.style.setProperty('--cor-destaque-background-input', '#f2f6fa')
+    root.style.setProperty('--cor-destaque-background-input', '#8fc7ffff')
 })
 
-cor
+corVerde.addEventListener('click', function(){
+    root.style.setProperty('--cor-destaque', '#52CEAB');
+    root.style.setProperty('--cor-destaque-background-input', '#cdfff1ff')
+})
 
+corRosa.addEventListener('click', function(){
+    root.style.setProperty('--cor-destaque', '#F26C96');
+    root.style.setProperty('--cor-destaque-background-input', '#fdbed2ff')
+})
+
+corRoxo.addEventListener('click', function(){
+    root.style.setProperty('--cor-destaque', '#AE88FC');
+    root.style.setProperty('--cor-destaque-background-input', '#e0d0fdff')
+})
 /* ============================================================
    4. INICIALIZAÇÃO
    ============================================================ */
