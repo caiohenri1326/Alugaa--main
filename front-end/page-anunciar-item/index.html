@@ -4,31 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anúnciar um item</title>
-
     <link rel="icon" href="../../assets/LOGO_ALUGAÊ-removebg-preview.png" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
     <script src="./../page-anunciar-item/script.js" defer></script>
+    <link rel="stylesheet" href="../config/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container-anuncio">
-
-        <!-- 🔙 VOLTAR -->
         <a href="../homepage/index.html">
-            <i class="bi bi-arrow-left"></i> Voltar
-        </a>
+            <i class="bi bi-arrow-left"></i>Voltar</a>
 
         <div class="text-header">
             <h6>Publicar um Anúncio</h6>
             <p>Preencha os dados abaixo com o máximo de detalhes possível</p>
         </div>
 
-        <!-- 🚀 FORM -->
         <form class="form-anuncio" enctype="multipart/form-data">
-
             <p>Fotos do Produto</p>
 
             <div class="container-upload">
@@ -42,13 +39,13 @@
 
             <div class="nome-do-anuncio">
                 <label>Título do Anúncio</label>
-                <input type="text" class="input-titulo" name="titulo" placeholder="Ex: PlayStation 5 Pro">
+                <input type="text" name="titulo" placeholder="Ex: PlayStation 5 Pro">
             </div>
 
-            <!-- 🎯 SELECT -->
             <div class="select-custom">
+                <label for="categorias">Categorias</label>
                 <div class="select-selected">
-                    Categorias <i class="bi bi-arrow-down"></i>
+                    Selecionar <i class="bi bi-arrow-down"></i>
                 </div>
 
                 <ul class="select-options">
@@ -63,28 +60,20 @@
                 <input type="hidden" name="categoria">
             </div>
 
-            <label>Preço (R$)</label>
-            <input type="text" class="input-preco" name="preco" placeholder="0,00">
-
-            <label>Descrição</label>
-            <input class="area-caracteristicas" type="text" name="descricao" placeholder="Descreva o produto...">
-
-            <div class="container-infos">
-                <label>Informe o CEP</label>
-                <input type="text" id="cep"  maxlength="9" placeholder="00000-000">
+            <div class="container-preco">
+                <label>Preço (R$)</label>
+                <input type="number" class="input-preco" name="preco" placeholder="0,00">
             </div>
+            
 
-        <div id="endereco" class="cep-box hidden">
-                <i class="bi bi-geo-alt-fill"></i>
-            <div class="cep-info">
-            <span class="cep-main"></span>
-            <small class="cep-sub"></small>
-        </div>
-    </div>
-
+            <div class="container-descricao">
+                <label>Descrição</label>
+                <textarea name="" id="" class="area-caracteristicas" placeholder="Descreva as caracteristicas"></textarea>
+            </div>
+            
             <div class="buttons-enter">
+                <button type="button" class="button-anunciar">Anunciar</button>
                 <button type="button" class="button-cancel">Cancelar</button>
-                <button type="submit" class="button-anunciar">Anunciar</button>
             </div>
 
         </form>

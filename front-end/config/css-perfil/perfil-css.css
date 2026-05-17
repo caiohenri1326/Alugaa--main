@@ -335,7 +335,8 @@ textarea:focus{
     backface-visibility: hidden;
 }
 .env:hover{
-    background-color:#2891fa;
+    background-color: var(--cor-destaque-background-input);
+    color: var(--cor-destaque);
     transition: .3s ease;
 }
 

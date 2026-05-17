@@ -1,3 +1,26 @@
+const root = document.documentElement;
+
+window.addEventListener('DOMContentLoaded', () =>{
+    // Recupera valor salvo no localStorage
+    const corSelecionada = localStorage.getItem('temaCustomizado');
+    root.style.setProperty('--cor-destaque', corSelecionada);
+
+
+    const temaSalvo = localStorage.getItem('modoTema')
+
+    if(temaSalvo === 'escuro'){
+        root.style.setProperty('--bg-site', '#1C1C1D');
+        root.style.setProperty('--colorText', '#252728');
+        root.style.setProperty('--fundo-de-abas', '#252728');
+        root.style.setProperty('--colorTextCinza', '#A0A0A0');
+        root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
+        root.style.colorScheme = 'dark';
+    }
+})
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // 🔥 ELEMENTOS DO CARD DE ENDEREÇO

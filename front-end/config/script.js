@@ -70,10 +70,21 @@ const corItem = document.querySelectorAll('.cor-item');
 //RECUPERAÇÃO DO TEMA 
 
 window.onload = function() {
-      // Recupera valor salvo no localStorage
-      const corSelecionada = localStorage.getItem('temaCustomizado');
-        root.style.setProperty('--cor-destaque', corSelecionada);
+    // Recupera valor salvo no localStorage
+    const corSelecionada = localStorage.getItem('temaCustomizado');
+    root.style.setProperty('--cor-destaque', corSelecionada);
 
+
+    const temaSalvo = localStorage.getItem('modoTema')
+
+    if(temaSalvo === 'escuro'){
+        root.style.setProperty('--bg-site', '#1C1C1D');
+        root.style.setProperty('--colorText', '#252728');
+        root.style.setProperty('--fundo-de-abas', '#252728');
+        root.style.setProperty('--colorTextCinza', '#A0A0A0');
+        root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
+        root.style.colorScheme = 'dark';
+    }
 }
 /* ============================================================
    2. FUNÇÕES AUXILIARES (Lógica de Negócio)
@@ -216,6 +227,8 @@ temaClaro.addEventListener('click', function(){
     root.style.setProperty('--colorTextCinza', '');
     root.style.setProperty('--textoPreto', '');
     root.style.colorScheme = 'light';
+
+    localStorage.setItem('modoTema', 'claro')
 })
 
 temaEscuro.addEventListener('click', function(){
@@ -225,6 +238,9 @@ temaEscuro.addEventListener('click', function(){
     root.style.setProperty('--colorTextCinza', '#A0A0A0');
     root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
     root.style.colorScheme = 'dark';
+
+
+    localStorage.setItem('modoTema', 'escuro');
 })
 
 
@@ -233,42 +249,23 @@ temaEscuro.addEventListener('click', function(){
 
 corItem.forEach(botao => {
     botao.addEventListener('click', function(){
-        const corSelecionada = this.getAttibute('data-color');
-
-        document.documentElement.style.setProperty('--cor-destaque', corSelecionada)
+        const corSelecionada = this.getAttribute('data-color');
+        const bgInputSelecionado = this.getAttribute('data-bg-input')
+       
+       if (corSelecionada){
+        root.style.setProperty('--cor-destaque', corSelecionada);
 
         localStorage.setItem('temaCustomizado', corSelecionada);
+       }
+
+       if(this.id === 'laranja') root.style.setProperty('--cor-destaque-background-input', '#FCFAF7');
+       if(this.id === 'azul') root.style.setProperty('--cor-destaque-background-input', '#8fc7ffff');
+       if(this.id === 'verde') root.style.setProperty('--cor-destaque-background-input', '#cdfff1ff');
+       if(this.id === 'rosa') root.style.setProperty('--cor-destaque-background-input', '#fdbed2ff');
+       if(this.id === 'roxo') root.style.setProperty('--cor-destaque-background-input', '#e0d0fdff');
     })
 })
 
-function SalvarCores(){
-    //localStorage.setItem('temaCustomizado', corSelecionada);
-}
-
-corLaranja.addEventListener('click', function(){
-    root.style.setProperty('--cor-destaque', '#F97015');
-    root.style.setProperty('--cor-destaque-background-input', '#FCFAF7')
-})
-
-corAzul.addEventListener('click', function(){
-    root.style.setProperty('--cor-destaque', '#48A4FF');
-    root.style.setProperty('--cor-destaque-background-input', '#8fc7ffff')
-})
-
-corVerde.addEventListener('click', function(){
-    root.style.setProperty('--cor-destaque', '#52CEAB');
-    root.style.setProperty('--cor-destaque-background-input', '#cdfff1ff')
-})
-
-corRosa.addEventListener('click', function(){
-    root.style.setProperty('--cor-destaque', '#F26C96');
-    root.style.setProperty('--cor-destaque-background-input', '#fdbed2ff')
-})
-
-corRoxo.addEventListener('click', function(){
-    root.style.setProperty('--cor-destaque', '#AE88FC');
-    root.style.setProperty('--cor-destaque-background-input', '#e0d0fdff')
-})
 /* ============================================================
    4. INICIALIZAÇÃO
    ============================================================ */
