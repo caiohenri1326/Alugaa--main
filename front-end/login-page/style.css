@@ -41,7 +41,7 @@ body{
     color: rgb(94, 94, 94);
 }
 .box-login{
-    border: 1px solid rgba(0, 0, 0, 0.183);
+    border: 1px solid var(--colorTextCinza);
     border-radius: 15px;
     height: 700px;
     width: 500px;
@@ -49,7 +49,7 @@ body{
 }
 .box-login p a{
     text-decoration: none;
-    color: #FF6933;
+    color: var(--cor-destaque);
     font-weight: 600;
 }
 .form-login{
