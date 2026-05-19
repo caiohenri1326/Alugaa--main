@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function(){
 
     // 🔐 proteção (opcional mas recomendado)

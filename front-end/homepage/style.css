@@ -1,7 +1,3 @@
-:root{
-    color-scheme: light dark;
-}
-
 body{
     padding: 0;
     margin: 0;
@@ -11,13 +7,13 @@ body{
     font-style: normal;
     font-variant: normal;
     font-variation-settings: 100;
-    background-color: #fff;
+    background-color: var(--bg-site) !important;
 }
 html{
     scroll-behavior: smooth;
 }
 .container-fluid{
-    background-color: #ffffffa0;
+    background-color: var(--colorText);
     border-bottom: 1px solid;
     border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect width='1' height='0.8' fill='%23ccc'/%3E%3C/svg%3E") 0 0 100% 0;
     backdrop-filter: blur(10px);
@@ -30,7 +26,7 @@ html{
     margin-left: 16%;
     margin-top: 70px;
     font-size: 25px;
-    color: #F97015;
+    color: var(--cor-destaque);
     font-weight: 700;
     cursor: pointer;
 }
@@ -45,11 +41,12 @@ html{
     display: flex;
     height: 40px;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.245);
+    border: 1px solid var(--colorTextCinza);
     width: 65%;
     position: absolute;
     box-shadow: none;
     padding-left: 40px;
+    background-color: var(--colorTextCinza);
 }
 .form-control::placeholder{
     font-size: 12px;
@@ -58,8 +55,9 @@ html{
 
 .form-header .form-control:focus{
     box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.164) !important;
-    border: 1px solid #F97015;
-    font-size: 15px;
+    border: 1px solid var(--cor-destaque);
+    background-color: var(--colorTextCinza);
+    font-size: 13px;
 }
 
 .form-control::-webkit-search-decoration,
@@ -75,7 +73,7 @@ html{
     margin-top: 15px;
     border: none;
     font-size: 13px;
-    color: #090D0F;
+    color: black;
 }
 .form-header .btn-outline-success:hover{
     background: none;
@@ -96,7 +94,7 @@ html{
 .dropdown-menu li p{
     font-size: 18px;
     font-weight: 600;
-    color: #F97015;
+    color: var(--cor-destaque);
     font-display: center;
     margin-left: 90px;
     margin-top: 18px;
@@ -112,8 +110,8 @@ html{
     padding-top: 15px;
 }
 .dropdown-menu li a:hover{
-    background-color: #F97015;
-    color: white;
+    background-color: var(--cor-destaque);
+    color: var(--colorTextCinza);
 }
 .dropdown-item i{
     font-size: 20px;
@@ -138,7 +136,7 @@ html{
     margin-bottom: 50px;
     border: none;
     background: none;
-    color: #090D0F;
+    color: var(--colorTextCinza);
     font-size: 20px;
     border-radius: 50%; 
     height: 50px;
@@ -162,7 +160,7 @@ html{
     padding: 2px;
     
     
-    background: linear-gradient(to top, #F97015 50%, transparent 50%) bottom;
+    background: linear-gradient(to top, var(--cor-destaque) 50%, transparent 50%) bottom;
     background-size: 100% 200%; 
     background-position: top; 
     
@@ -183,7 +181,7 @@ html{
 }
 
 .buttons-interact button:hover {
-    color: #F97015; /* Muda a cor do ícone também */
+    color: var(--cor-destaque); /* Muda a cor do ícone também */
     transition: 0.5s ease;
 }
 /* CONTAINER LOGIN*/
@@ -208,11 +206,11 @@ html{
     transition: all 0.5s ease;
 }
 .button-login:hover{
-    background-color: #f9dfce9f;
-    color: #F97015;
+    background-color: var(--colorTextCinza);
+    color: var(--cor-destaque);
 }
 .button-login:hover i{
-    color: #F97015;
+    color: var(--cor-destaque);
     transition: 0.5s ease;
 }
 .button-login i{
@@ -220,28 +218,10 @@ html{
 }
 
 .button-login i:hover{
-    color: #F97015;
+    color: var(--cor-destaque);
     transition: 0.5s ease;
 }
-/* .container-login button::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 10px;
-    padding: 2px;
 
-    background: linear-gradient(to top, var(--animacao-hover) 50%, transparent 50%) bottom;
-    background-size: 100% 200%;
-    background-position: top;
-
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-
-    transition: background-position 0.5s ease, opacity 0.3s ease;
-    opacity: 0;
-    pointer-events: none;
-} */
 .container-login button:hover::after{
     opacity: 1;
     background-position: bottom;
@@ -256,7 +236,7 @@ html{
 
 .btn-anunciar{
     border: none;
-    background-color: #F97015;
+    background-color: var(--cor-destaque);
     color: white;
     font-weight: 400;
 }
@@ -265,7 +245,9 @@ html{
     font-size: 18px;
 }
 .btn-anunciar:hover{
-    background-color: #d35f11;
+    background-color: var(--cor-destaque-background-input);
+    border: 1px solid var(--colorTextCinza);
+    transition: .3s ease;
 }
 
 
@@ -324,7 +306,7 @@ html{
     align-items: center;
     gap: 15px;
     white-space: nowrap;
-    background-color: #F97015;
+    background-color: var(--cor-destaque);
     margin-top: 30px;
 }
 #CarroselIcons{
@@ -338,10 +320,9 @@ html{
 
 .btn-categoria-filtro.active {
     color: white !important;
-    background-color: #F97015 !important;
+    background-color: var(--cor-destaque) !important;
     border: none;
 }
-
 
 .button-anterior-carrosel{
     margin-left: 19%;
@@ -370,7 +351,6 @@ html{
 
 
 
-
 /* CARD ITENS */
 section{
     margin-left: 24%;
@@ -383,7 +363,7 @@ section h6{
 section p{
     font-size: 15px;
     margin-top: 20px;
-    color: rgba(37, 35, 35, 0.672);
+    color: var(--colorTextCinza);
 }
 
 .card{
@@ -438,7 +418,7 @@ section p{
 .preco{
     font-size: 25px;
     font-weight: bold;
-    color: #F97015;
+    color: var(--cor-destaque);
     margin: 2px 0;
     margin-top: 20px;
 }
