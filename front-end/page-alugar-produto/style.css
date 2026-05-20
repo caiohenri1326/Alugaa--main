@@ -1,86 +1,252 @@
 body{
-    margin: 0;
     padding: 0;
-    background-color: var(--bg-site);
-    font-family: Inter;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
     font-variant: normal;
     font-variation-settings: 100;
+    background-color: var(--bg-site) !important;
 }
-header{
-    width: 100%;
-    height: 75px;
-    display: flex;
+html{
+    scroll-behavior: smooth;
+}
+.container-fluid{
     background-color: var(--colorText);
-}
-.container-img{
-    width: 200px;
-    margin-left: 20px;
-    display: flex;
-    font-size: 23px;
-    color: var(--cor-destaque);
-}
-.container-img i{
-    font-size: 25px;
-    margin-top: 25px;
-    margin-right: 15px;
-    margin-left: -5px;
-}
-.buttons-header{
-    margin-left: 85%;
+    border-bottom: 1px solid;
+    border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect width='1' height='0.8' fill='%23ccc'/%3E%3C/svg%3E") 0 0 100% 0;
+    backdrop-filter: blur(10px);
     position: fixed;
+    z-index: 1050;
+    height: 150px;
+    width: 100%;
 }
-.button-anunciar{
-    height: 40px;
-    width: 120px;
-    background-color: var(--cor-destaque);
-    border: none;
-    border-radius: 5px;
+.container-fluid a{
+    margin-left: 16%;
+    margin-top: 70px;
+    font-size: 25px;
+    color: var(--cor-destaque);
+    font-weight: 700;
     cursor: pointer;
-    font-size: 14px;
-    color: var(--colorText);
-    font-weight: 500;
 }
-.button-anunciar:hover{
-    background-color: var(--cor-destaque-background-input);
-    transition: .3s ease;
-    color: rgb(80, 79, 79);
-    border: none;
+.form-header{
+    position: absolute;
+    width: 30%;
+    margin-top: 10px;
+    margin-left: 30%;
 }
-.button-anunciar i{
-    font-size: 17px;
-    margin-right: 7px;
-}
-.icon-sino{
+.form-header .form-control{
+    margin-top: 10px;
+    display: flex;
     height: 40px;
-    width: 40px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    width: 65%;
+    position: absolute;
+    box-shadow: none;
+    padding-left: 40px;
+    background-color: var(--colorTextCinza);
+}
+.form-control::placeholder{
+    font-size: 12px;
+    padding-left: 5px;
+}
+
+.form-header .form-control:focus{
+    box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.164) !important;
+    border: 1px solid var(--cor-destaque);
+    background-color: var(--colorTextCinza);
+    font-size: 13px;
+}
+
+.form-control::-webkit-search-decoration,
+.form-control::-webkit-search-cancel-button,
+.form-control::-webkit-search-results-button,
+.form-control::-webkit-search-results-decoration{
+    display: none;
+}
+
+.form-header .btn-outline-success{
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 15px;
+    border: none;
+    font-size: 13px;
+    color: black;
+}
+.form-header .btn-outline-success:hover{
+    background: none;
+}
+.dropdown-menu{
+    padding: 0;
+    margin: 0;
+    height: 21rem;
+    width: 250px;
+    overflow: hidden;
+    padding-top: 0;
+    border-top: none !important;
+}
+.dropdown-menu li{
+    width: 100%;
+    max-width: 100%;
+}
+.dropdown-menu li p{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cor-destaque);
+    font-display: center;
+    margin-left: 90px;
+    margin-top: 18px;
+}
+
+.dropdown-menu li a{
+    margin-top: 0px;
+    font-size: 15px;
+    text-decoration: none;
+    margin-left: 0;
+    text-align: center;
+    height: 60px;
+    padding-top: 15px;
+}
+.dropdown-menu li a:hover{
+    background-color: var(--cor-destaque);
+    color: var(--colorTextCinza);
+}
+.dropdown-item i{
     font-size: 20px;
+    margin-right: 10px;
+}
+.area-sair:hover{
+    color: white !important;
+}
+
+.buttons-interact {
+    display: flex;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 80%;
+}
+.buttons-interact button i{
+    -webkit-text-stroke: 0.5px currentColor;
+}
+
+.buttons-interact button{
+    margin-left: 20px;
+    margin-bottom: 50px;
     border: none;
     background: none;
-    border-radius: 10px;
+    color: var(--colorTextCinza);
+    font-size: 20px;
+    border-radius: 50%; 
+    height: 50px;
+    width: 50px;
+    position: relative; 
     cursor: pointer;
-    margin-left: 20px;
-    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 1;
+    transition: border 0.3s ease;
 }
-.icon-sino:hover{
-    background-color: var(--cor-destaque-background-input);
-    color: var(--cor-destaque);
-    transition: .3s;
-}
-.img-perfil{
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    border: 1px solid #FFF3EB;
-    margin-left: 20px;
-    margin-top: 15px;
-    cursor: pointer;
+
+/* A borda que sobe de baixo para cima */
+.buttons-interact button::after{
+    content: "";
     position: absolute;
+    inset: 0; 
+    border-radius: 50%;
+    padding: 2px;
+    
+    
+    background: linear-gradient(to top, var(--cor-destaque) 50%, transparent 50%) bottom;
+    background-size: 100% 200%; 
+    background-position: top; 
+    
+    
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    
+    transition: background-position 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
 }
-.img-perfil:hover{
-    border: 2px solid var(--cor-destaque);
-    transform: scaleX(0.5.0.5);
-    transition: 0.1s ease-in;
+
+/* Quando passa o mouse */
+.buttons-interact button:hover::after {
+    opacity: 1;
+    background-position: bottom; /* Faz o gradiente "subir" */
 }
+
+.buttons-interact button:hover {
+    color: var(--cor-destaque); /* Muda a cor do ícone também */
+    transition: 0.5s ease;
+}
+/* CONTAINER LOGIN*/
+.container-login{
+    position: absolute;
+    margin-left: 73%;
+    margin-top: 70px;
+    display: flex;
+    padding-left: 10px;
+}
+.container-login button{
+    border-radius: 7px;
+    margin-left: 20px;
+    position: relative;
+    height: 40px;
+    width: 120px;
+    font-weight: 500;
+}
+.button-login{
+    border: 1px solid rgba(0, 0, 0, 0.224);
+    background-color: transparent;
+    transition: all 0.5s ease;
+}
+.button-login:hover{
+    background-color: var(--colorTextCinza);
+    color: var(--cor-destaque);
+}
+.button-login:hover i{
+    color: var(--cor-destaque);
+    transition: 0.5s ease;
+}
+.button-login i{
+    transition: 0.5s ease;
+}
+
+.button-login i:hover{
+    color: var(--cor-destaque);
+    transition: 0.5s ease;
+}
+
+.container-login button:hover::after{
+    opacity: 1;
+    background-position: bottom;
+}
+
+.button-login i{
+    margin-right: 10px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.768);
+    font-weight: 700;
+}
+
+.btn-anunciar{
+    border: none;
+    background-color: var(--cor-destaque);
+    color: white;
+    font-weight: 400;
+}
+.btn-anunciar i{
+    margin-right: 7px;
+    font-size: 18px;
+}
+.btn-anunciar:hover{
+    background-color: var(--cor-destaque-background-input);
+    border: 1px solid var(--colorTextCinza);
+    transition: .3s ease;
+}
+
