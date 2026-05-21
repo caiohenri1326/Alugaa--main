@@ -90,11 +90,15 @@ html{
     overflow: hidden;
     padding-top: 0;
     border-top: none !important;
+    background: var(--bg-site) !important;
 }
+
 .dropdown-menu li{
     width: 100%;
     max-width: 100%;
+    background-color: var(--bg-site);
 }
+
 .dropdown-menu li p{
     font-size: 18px;
     font-weight: 600;
@@ -115,7 +119,7 @@ html{
 }
 .dropdown-menu li a:hover{
     background-color: var(--cor-destaque);
-    color: var(--colorTextCinza);
+    color: white;
 }
 .dropdown-item i{
     font-size: 20px;
@@ -123,6 +127,7 @@ html{
 }
 .area-sair:hover{
     color: white !important;
+    background-color: #EF4343 !important;
 }
 
 .buttons-interact {
@@ -286,7 +291,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: var(--fundo-de-abas);
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.075);
 }
 
@@ -495,7 +500,7 @@ html{
     width: 100%;
     background-color: var(--fundo-de-abas);
     border: 1px solid var(--colorTextCinza);
-    border-radius: px;
+    border-radius: 10px !important;
     padding: 12px 14px;
     font-size: 14px;
     color: var(--colorTextCinza);
@@ -625,9 +630,10 @@ html{
 
 .security-info {
     font-size: 11px;
-    color: var(--text-muted);
+    color: green;
     text-align: center;
     margin-top: 4px;
+    font-weight: 600;
 }
 
 /* ==========================================================================
