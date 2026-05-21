@@ -60,7 +60,8 @@ header{
     width: 100%;
     height: 75px;
     display: flex;
-    background-color: var(--colorText);
+    background-color: var(--bg-site);
+    border-bottom: 1px solid var(--colorTextCinza);
 }
 .container-img{
     width: 200px;

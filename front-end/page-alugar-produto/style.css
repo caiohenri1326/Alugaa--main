@@ -13,7 +13,7 @@ html{
     scroll-behavior: smooth;
 }
 .container-fluid{
-    background-color: var(--colorText);
+    background-color: var(--fundo-de-abas);
     border-bottom: 1px solid;
     border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect width='1' height='0.8' fill='%23ccc'/%3E%3C/svg%3E") 0 0 100% 0;
     backdrop-filter: blur(10px);
@@ -46,18 +46,22 @@ html{
     position: absolute;
     box-shadow: none;
     padding-left: 40px;
-    background-color: var(--colorTextCinza);
+    background-color: var(--fundo-de-abas);
+    color: var(--colorTextCinza);
+    font-size: 13px;
 }
 .form-control::placeholder{
     font-size: 12px;
     padding-left: 5px;
+    
 }
 
 .form-header .form-control:focus{
     box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.164) !important;
     border: 1px solid var(--cor-destaque);
-    background-color: var(--colorTextCinza);
+    background-color: var(--fundo-de-abas);
     font-size: 13px;
+    color: var(--colorTextCinza);
 }
 
 .form-control::-webkit-search-decoration,
@@ -250,3 +254,391 @@ html{
     transition: .3s ease;
 }
 
+/* CONTAINER DO PRODUTO  */
+
+.product-container {
+    display: flex;
+    gap: 32px;
+    max-width: 1140px;
+    width: 100%;
+    align-items: flex-start;
+    margin-top: 130px;
+    margin-left: 320px;
+}
+
+/* Duas colunas com larguras iguais */
+.gallery-section,
+.checkout-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ==========================================================================
+   3. COLUNA DA ESQUERDA - GALERIA DE IMAGENS
+   ========================================================================== */
+.main-image {
+    position: relative; /* Necessário para a tag absolute flutuar aqui dentro */
+    border: none;
+    border-radius: 12px;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.075);
+}
+
+.main-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.badge-destaque {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: var(--cor-destaque);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.thumbnails img {
+    width: 100%;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.075);
+}
+
+.thumbnails img:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. COLUNA DA DIREITA - HEADER E ABAS
+   ========================================================================== */
+.product-header{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-header .category {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--colorTextCinza);
+    letter-spacing: 1px;
+}
+
+.product-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0 0px 0px;
+    color: var(--colorTextCinza);
+}
+
+.product-header .location {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-top: 20px;
+    display: flex;
+    color: var(--colorTextCinza);
+}
+.location i{
+    margin-right: 10px;
+}
+
+.product-header .price {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--cor-destaque);
+}
+
+.product-header .period-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Controle de Abas (Segmented Control) */
+.product-tabs {
+    display: flex;
+    background-color: rgb(209, 207, 207);
+    padding: 4px;
+    border-radius: 8px;
+    margin-top: 120px;
+}
+
+.product-tabs button {
+    flex: 1;
+    border: none;
+    background: none;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.product-tabs button.active {
+    background-color: var(--fundo-de-abas);
+    color: var(--colorTextCinza);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid rgba(156, 156, 156, 0.753);
+}
+
+/* ==========================================================================
+   5. FORMULÁRIO E CARDS (FIELDSETS)
+   ========================================================================== */
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Transforma o fieldset no card idêntico ao do print */
+.form-card {
+    background-color: var(--fundo-de-abas);
+    border: 1px solid var(--colorTextCinza);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-card legend {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--colorTextCinza);
+    padding: 0 8px;
+    margin-bottom: 4px;
+}
+.form-card legend i{
+    font-size: 19px;
+    margin-right: 7px;
+    color: var(--cor-destaque);
+    -webkit-text-stroke: 0.5px;
+}
+
+/* Grupo de Opções Superiores (Retirada / Combinar) */
+.radio-group {
+    display: flex;
+    gap: 16px;
+}
+
+.radio-option, .radio-option-active {
+    flex: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.radio-option-active {
+    border-color: var(--primary-color);
+    background-color: var(--cor-destaque);
+}
+
+/* Estilização interna dos textos do Radio */
+.radio-group span strong {
+    color: var(--textoPreto);
+    display: block;
+    margin-bottom: 2px;
+}
+.radio-group span {
+    color: var(--colorTextCinza);
+    line-height: 1.0;
+    -webkit-text-stroke: 0.2px;
+}
+
+
+/* Customização dos Inputs de Texto/Data */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--colorTextCinza);
+}
+
+.input-group input {
+    width: 100%;
+    background-color: var(--fundo-de-abas);
+    border: 1px solid var(--colorTextCinza);
+    border-radius: px;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: var(--colorTextCinza);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    border-color: var(--cor-destaque);
+    background-color: var(--bg-card);
+}
+
+/* Linha Dupla (Data e Dias) */
+.input-row {
+    display: flex;
+    gap: 16px;
+}
+.flex-3 { flex: 3; }
+.flex-1 { flex: 1; }
+
+/* Métodos de Pagamento (Grid de 3 colunas) */
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.method-card {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 16px 8px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s;
+}
+
+.method-card.active {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+}
+
+.method-card .icon {
+    font-size: 23px;
+    margin-bottom: 2px;
+    color: var(--cor-destaque);
+}
+
+.method-card strong {
+    font-size: 13px;
+    color: var(--colorTextCinza);
+}
+
+.method-card small {
+    font-size: 11px;
+    color: var(--colorTextCinza);
+}
+
+/* Esconder os inputs radio originais para manter o design limpo */
+.radio-group input[type="radio"],
+.payment-methods input[type="radio"] {
+    accent-color: var(--primary-color);
+    margin-top: 3px;
+}
+
+/* ==========================================================================
+   6. CARD DE RESUMO E CHECKOUT (RODAPÉ)
+   ========================================================================== */
+.checkout-summary {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--colorTextCinza);
+}
+
+.summary-row.discount {
+    color: #22c55e; /* Verde para destacar o desconto */
+    font-weight: 500;
+}
+
+.checkout-summary hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 4px 0;
+}
+
+.summary-row.total {
+    font-size: 18px;
+    color: var(--colorTextCinza);
+    margin-bottom: 8px;
+}
+
+/* Botão Principal Laranja */
+.btn-submit {
+    background-color: var(--fundo-de-abas);
+    color: var(--colorTextCinza);
+    border: 1px solid var(--colorTextCinza);
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: var(--cor-destaque);
+}
+
+.btn-submit:active {
+    transform: scale(0.99);
+}
+
+.security-info {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   7. RESPONSIVIDADE (MOBILE-FRIENDLY)
+   ========================================================================== */
+@media (max-width: 868px) {
+    .product-container {
+        flex-direction: column;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+    }
+}

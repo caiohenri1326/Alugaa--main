@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../config/style.css">
 </head>
 <body>
     <nav class="navbar container-header">
@@ -45,7 +46,126 @@
             </div>
         </div>
     </nav>
+
+<main class="product-container">  
+        <section class="gallery-section">
+            <div class="main-image">
+                <span class="badge-destaque">Destaque</span>
+                <img src="../../assets/imagem-ps5-2.jpg" alt="iPhone 14 Pro Max">
+            </div>
+            
+            <div class="thumbnails">
+                <img src="../../assets/imagem-ps5-2.jpg" alt="Vista 1">
+                <img src="../../assets/imagem-ps5-2.jpg" alt="Vista 2">
+                <img src="../../assets/imagem-ps5-2.jpg" alt="Vista 3">
+                <img src="../../assets/imagem-ps5-2.jpg" alt="Vista 4">
+            </div>
+        </section>
+
+        <aside class="checkout-section">
+            
+            <header class="product-header">
+                <span class="category">ELETRÔNICOS</span>
+                <h1>iPhone 14 Pro Max 256GB Impecável</h1>
+                <p class="location"><i class="bi bi-geo-alt"></i> São Paulo, SP • Há 2 horas</p>
+                <div class="price">R$ 150 <span class="period-text">/ dia</span></div>
+            </header>
+
+            <nav class="product-tabs">
+                <button>Detalhes</button>
+                <button class="active">Alugar</button> <button>Vendedor</button>
+            </nav>
+
+            <form action="#" method="POST" class="checkout-form">
+                
+                <fieldset class="form-card">
+                    <legend><i class="bi bi-box2"></i> Tempo e Retirada</legend>
+                    
+                    <div class="radio-group">
+                        <label class="radio-option-active">
+                            <input type="radio" name="retirada" value="combinar" checked>
+                            <span><strong>Combinar com o locador</strong><br><span class="alinhar">Alinhar detalhes via chat • Grátis</span></span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="retirada" value="buscar">
+                            <span><strong>Retirar no local</strong><br><span class="alinhar">Buscar no endereço do dono</span></span>
+                        </label>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" placeholder="Como está no documento">
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group flex-3">
+                            <label for="data-inicio">Data de início</label>
+                            <input type="date" id="data-inicio" required>
+                        </div>
+                        <div class="input-group flex-1">
+                            <label for="dias">Dias</label>
+                            <input type="number" id="dias" placeholder="3" min="1">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="mensagem">Mensagem para o proprietário (Opcional)</label>
+                        <input type="text" id="mensagem" placeholder="Ex: Tenho interesse em buscar no próximo sábado de manhã...">
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-card">
+                    <legend><i class="bi bi-credit-card"></i> Pagamento</legend>
+                    
+                    <div class="payment-methods">
+                        <label class="method-card active">
+                            <span class="icon"><i class="bi bi-qr-code-scan"></i></span>
+                            <strong>Pix</strong>
+                        </label>
+                        
+                        <label class="method-card">
+                            <span class="icon"><i class="bi bi-credit-card"></i></span>
+                            <strong>Cartão</strong>
+                            <small>À vista</small>
+                        </label>
+                        
+                        <label class="method-card">
+                            <span class="icon"><i class="bi bi-bank"></i></span>
+                            <strong>Boleto</strong>
+                            <small>À vista</small>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <footer class="checkout-summary">
+                    <div class="summary-row">
+                        <span>Subtotal (3 diárias)</span>
+                        <span>R$ 450</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Taxa Alugaê</span>
+                        <span>R$ 30</span>
+                    </div>
+                    <div class="summary-row discount">
+                        <span>Desconto Pix</span>
+                        <span>- R$ 22,50</span>
+                    </div>
+                    <hr>
+                    <div class="summary-row total">
+                        <strong>Total</strong>
+                        <strong>R$ 457,50</strong>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Finalizar compra</button>
+                    <p class="security-info">🛡️ Pagamento 100% seguro</p>
+                </footer>
+
+            </form>
+        </aside>
+
+    </main>
 <script>
+    const root = document.documentElement;
     window.onload = function() {
     // Recupera valor salvo no localStorage
     const corSelecionada = localStorage.getItem('temaCustomizado');
@@ -55,7 +175,7 @@
     const temaSalvo = localStorage.getItem('modoTema')
 
     if(temaSalvo === 'escuro'){
-        root.style.setProperty('--bg-site', '#1C1C1D');
+        root.style.setProperty('--bg-site', '#181412');
         root.style.setProperty('--colorText', '#252728');
         root.style.setProperty('--fundo-de-abas', '#252728');
         root.style.setProperty('--colorTextCinza', '#A0A0A0');
