@@ -13,31 +13,44 @@
 <body>
     <div class="box-registro">
             <button class="voltar-homepage"><i class="bi bi-arrow-left"></i> Voltar para o início</button>
-            <img src="../../assets/LOGO_ALUGAÊ-removebg-preview.png">
+            <i class="bi bi-check-circle-fill"></i>
             
             <h6>Crie sua conta</h6>
             <p>Preencha os dados abaixo para se cadastrar</p>
 
             <form class="form-registro">
-                <label>Nome completo</label>
-                <i class="bi bi-person"></i>
-                <input type="text" placeholder="João da Silva" class="nome" id="novamente" required>
-
-                <label>E-mail</label>
-                <i class="bi bi-envelope"></i>
-                <input type="email" placeholder="seu@email.com" class="email" id="email" required>
+                <div class="nome">
+                    <label>Nome completo</label>
+                    <i class="bi bi-person"></i>
+                    <input type="text" placeholder="João da Silva" class="nome" id="novamente" required>
+                </div>
                 
-                <label>Senha</label>
-                <i class="bi bi-lock icon-lock1"></i>
-                <input type="password" placeholder="Minimo 6 caracteres" class="senha" id="senha" required>
+                <div class="email">
+                    <label>E-mail</label>
+                    <i class="bi bi-envelope"></i>
+                    <input type="email" placeholder="seu@email.com" class="email" id="email" required>
+                </div>
+                
+                <div class="senha">
+                    <label>Senha</label>
+                    <i class="bi bi-lock icon-lock1"></i>
+                    <input type="password" placeholder="Minimo 6 caracteres" class="senha" id="senha" required>
+                </div>
 
-                <label>Confirmar Senha</label>
-                <i class="bi bi-lock icon-lock2"></i>
-                <input type="password" placeholder="Digite a senha novamente" class="senha2" required>
-
+                <div class="confirm-senha">
+                    <label>Confirmar Senha</label>
+                    <i class="bi bi-lock icon-lock2"></i>
+                    <input type="password" placeholder="Digite a senha novamente" class="senha2" required>
+                </div>
                 <button type="submit">Criar Conta</button>
                 
-                <hr style="margin-top: 30px; max-width: 100%; margin-left: 60px; color: rgba(0, 0, 0, 0.767);">
+                <span class="login-plataformas">
+                    <a href="" class="google"><i class="bi bi-google"></i></a>
+                    <a href="" class="apple"><i class="bi bi-apple"></i></a>
+                    <a href="" class="facebook"><i class="bi bi-facebook"></i></a>
+                </span>
+
+                <hr style="margin-top: 30px; max-width: 100%; margin-left: 60px; color: var(--colorTextCinza);">
                 <p>Já tem uma conta? <a href="../login-page/index.html">Faça login</a></p>
                 </div>
             </form>

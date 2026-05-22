@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: var(--bg-site);
 }
 .box-registro{
     display: flex;
@@ -8,10 +9,10 @@ body{
     flex-direction: column;
     margin-top: 3%;
     margin-left: 35%;
-    border: 1px solid rgba(0, 0, 0, 0.384);
+    border: 1px solid var(--colorTextCinza);
     position: absolute;
     width: 30%;
-    height: 80%;
+    height: 90%;
     border-radius: 5px;
 }
 .box-registro .voltar-homepage{
@@ -19,11 +20,17 @@ body{
     margin-top: 20px;
     border: none;
     font-size: 13px;
-    color: rgba(0, 0, 0, 0.692);
+    color: var(--colorTextCinza);
     font-weight: 500;
+    background: none;
+}
+.box-registro .bi-check-circle-fill{
+    font-size: 40px;
+    color: var(--cor-destaque);
+    margin-top: 20px;
 }
 .box-registro .voltar-homepage:hover{
-    color: #FF6933;
+    color: var(--cor-destaque);
 }
 .form-registro{
     width: 70%;
@@ -31,8 +38,12 @@ body{
     display: flex;
     gap: 0;
     margin-top: 20px;
-    height: 35rem;
+    min-height: 37rem;
     width: 100%;
+}
+.form-registro div{
+    display: flex;
+    flex-direction: column;
 }
 .form-registro input{
     margin-left: auto;
@@ -41,8 +52,8 @@ body{
     height: 40px;
     width: 80%;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.274);
-    color: rgba(0, 0, 0, 0.815);
+    border: 1px solid var(--colorTextCinza);
+    color: var(--colorTextCinza);
     font-size: 15px;
 }
 .form-registro input::placeholder{
@@ -51,71 +62,75 @@ body{
 }
 .form-registro input:focus{
     padding-left: 40px;
-    border: 1px solid #FF6933 !important;
+    border: 1px solid var(--cor-destaque) !important;
     outline: none;
+    color: var(--colorTextCinza);
 }
 .form-registro label{
     font-size: 12px;
     padding: 0;
     margin-top: 26px;
     margin-left: 65px;
-    color: black;
+    color: var(--colorTextCinza);
     font-weight: 500;
 }
 
 .box-registro h6{
-    margin-top: 100px;
+    margin-top: 0px;
     font-size: 24px;
     font-weight: 600;
+    color: var(--colorTextCinza);
 }
 .box-registro p{
     font-size: 14px;
     font-weight: 500;
-    color: rgba(0, 0, 0, 0.705);
+    color: var(--colorTextCinza);
 }
 
 
 /* ICONES INPUT */
-
+.form-registro i{
+    -webkit-text-stroke: 0.4px;
+}
 .bi-person{
     position: absolute;
     margin-top: 47px;
     margin-left: 65px;
     font-size: 23px;
-    color: rgba(0, 0, 0, 0.575);
+    color: var(--cor-destaque);
 }
 .bi-envelope{
     position: absolute;
     font-size: 19px;
-    margin-top: 135px;
+    margin-top: 50px;
     margin-left: 66px;
-    color: rgba(0, 0, 0, 0.616);
+    color: var(--cor-destaque);
 }
 .icon-lock1{
     position: absolute;
     font-size: 18px;
-    margin-top: 39%;
+    margin-top: 50px;
     margin-left: 65px;
-    color: rgba(0, 0, 0, 0.678);
+    color: var(--cor-destaque);
 }
 .icon-lock2{
     position: absolute;
-    margin-top: 54%;
     margin-left: 65px;
+    margin-top: 50px;
     font-size: 18px;
-    color: rgba(0, 0, 0, 0.616);
+    color: var(--cor-destaque);
 }
 
 .form-registro button{
     width: 80%;
+    height: 40px;
     margin-left: 60px;
     margin-top: 35px;
     border: none;
-    height: 40px;
     color: white;
     font-weight: 500;
     border-radius: 10px;
-    background-color: #FF6933;
+    background-color: var(--cor-destaque);
 }
 
 .box-registro hr{
@@ -126,15 +141,23 @@ body{
     margin-left: auto;
     margin-right: auto;
     font-size: 12px;
-    color: rgba(0, 0, 0, 0.753);
+    color: var(--colorTextCinza);
 }
 .box-registro p a{
     text-decoration: none;
-    color: #FF6933;
+    color: var(--cor-destaque);
 }
 .box-registro img{
     height: 40px;
     width: 40px;
     margin-top: 80px;
     position: absolute;
+}
+.login-plataformas{
+    margin-top: 30px;
+    margin-left: 200px;
+}
+.login-plataformas a{
+    font-size: 40px;
+    padding-left: 15px;
 }

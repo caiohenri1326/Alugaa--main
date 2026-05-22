@@ -45,9 +45,9 @@ body{
 .box-login{
     border: 1px solid var(--colorTextCinza);
     border-radius: 15px;
-    height: 700px;
+    min-height: 750px;
     width: 500px;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 .box-login p a{
     text-decoration: none;
@@ -193,4 +193,14 @@ body{
 }
 .login-container p{
     margin-top: 40px;
+}
+.login-plataformas{
+    display: flex;
+    flex-direction: row;
+    margin-left: 160px;
+    margin-top: 20px;
+}
+.login-plataformas a{
+    font-size: 40px;
+    margin-left: 15px;
 }

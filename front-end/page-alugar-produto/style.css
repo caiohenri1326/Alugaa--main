@@ -464,9 +464,12 @@ html{
     font-size: 13px;
     transition: all 0.2s;
 }
-
+.ativa{
+    border-color: var(--colorTextCinza);
+    background-color: var(--cor-destaque);
+}
 .radio-option-active {
-    border-color: var(--primary-color);
+    border-color: var(--colorTextCinza);
     background-color: var(--cor-destaque);
 }
 
