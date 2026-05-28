@@ -57,33 +57,29 @@ var root = document.documentElement;
 
 // MUDANDO COR DO SITE
 
-const corLaranja = document.getElementById('laranja')
-const corAzul = document.getElementById('azul')
-const corVerde = document.getElementById('verde')
-const corRosa = document.getElementById('rosa')
-const corRoxo = document.getElementById('roxo')
-
 const corItem = document.querySelectorAll('.cor-item');
-
-// EXPORTANDO VARIAVEIS DA PAGE REGISTRO
 
 //RECUPERAÇÃO DO TEMA 
 
 window.onload = function() {
     // Recupera valor salvo no localStorage
+    const root = document.documentElement;
+
     const corSelecionada = localStorage.getItem('temaCustomizado');
-    root.style.setProperty('--cor-destaque', corSelecionada);
-
-
+    if(corSelecionada){
+        root.style.setProperty('--cor-destaque', corSelecionada);
+    }
+    
     const temaSalvo = localStorage.getItem('modoTema')
 
     if(temaSalvo === 'escuro'){
-        root.style.setProperty('--bg-site', '#181412');
+        root.style.setProperty('--bg-site', '#171412');
         root.style.setProperty('--colorText', '#252728');
         root.style.setProperty('--fundo-de-abas', '#28221F');
         root.style.setProperty('--colorTextCinza', '#A0A0A0');
         root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
-        root.style.colorScheme = 'dark';
+        root.style.setProperty('--corInput', '#201A17');
+        root.style.setProperty('color-scheme', 'dark');
     }
 }
 /* ============================================================

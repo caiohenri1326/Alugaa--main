@@ -15,7 +15,7 @@
     <!-- Header -->
     <nav class="navbar container-header">
         <div class="container-fluid">
-            <a class="navbar-brand">Alugaê</a>
+            <i class="bi bi-check-circle-fill navbar-brand"></i>
             <form class="form-header" role="search">
                 <input class="form-control" type="search" placeholder="Buscar anúncios..." aria-label="Search"/>
                 <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
@@ -55,8 +55,8 @@
             <p>Alugue, anuncie com pessoas da sua região. Simples, rápido e facil.</p>
         </div>
         <div class="container-pesquisa">
-            <input type="text" class="pesquisa-item">
-            <input type="text" class="cidade">
+            <input type="text" class="pesquisa-item" placeholder="Ex: PS5, Honda Civic, Headset"><i class="bi bi-search icon-pesquisa-hero"></i>
+            <input type="text" class="cidade" placeholder="Cidade"><i class="bi bi-geo-alt"></i>
             <button>Buscar</button>
         </div>
     </header>
@@ -220,11 +220,12 @@ window.onload = function() {
     const temaSalvo = localStorage.getItem('modoTema')
 
     if(temaSalvo === 'escuro'){
-        root.style.setProperty('--bg-site', '#1C1C1D');
+        root.style.setProperty('--bg-site', '#171412');
         root.style.setProperty('--colorText', '#252728');
         root.style.setProperty('--fundo-de-abas', '#252728');
         root.style.setProperty('--colorTextCinza', '#A0A0A0');
         root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
+        root.style.setProperty('--corInput', '#201A17')
         root.style.colorScheme = 'dark';
     }
 }
