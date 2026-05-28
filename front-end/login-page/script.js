@@ -1,4 +1,4 @@
-const root = document.documentElement;
+// var root = document.documentElement;
 
 window.onload = function() {
     // Recupera valor salvo no localStorage

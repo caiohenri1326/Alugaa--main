@@ -1,7 +1,22 @@
+:root{
+    --linear-gradient-corpo: linear-gradient(
+        to left top in oklab,
+        #1C1C1D,
+        var(--cor-destaque)
+    );
+}
+
 body{
     margin: 0;
     padding: 0;
-    background-color: var(--bg-site);
+    background-image: var(--linear-gradient-corpo);
+    min-height: 100vh;
+    font-family: Inter;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variant: normal;
+    font-variation-settings: 100;
 }
 .box-registro{
     display: flex;
@@ -9,18 +24,18 @@ body{
     flex-direction: column;
     margin-top: 3%;
     margin-left: 35%;
-    border: 1px solid var(--colorTextCinza);
     position: absolute;
     width: 30%;
     height: 90%;
-    border-radius: 5px;
+    border-radius: 10px;
+    background-color: var(--corAbas);
 }
 .box-registro .voltar-homepage{
     margin-right: 70%;
     margin-top: 20px;
     border: none;
     font-size: 13px;
-    color: var(--colorTextCinza);
+    color: white;
     font-weight: 500;
     background: none;
 }
@@ -71,7 +86,7 @@ body{
     padding: 0;
     margin-top: 26px;
     margin-left: 65px;
-    color: var(--colorTextCinza);
+    color: white;
     font-weight: 500;
 }
 
@@ -79,12 +94,12 @@ body{
     margin-top: 0px;
     font-size: 24px;
     font-weight: 600;
-    color: var(--colorTextCinza);
+    color: rgb(238, 238, 238);
 }
 .box-registro p{
     font-size: 14px;
     font-weight: 500;
-    color: var(--colorTextCinza);
+    color: white !important;
 }
 
 
@@ -160,4 +175,11 @@ body{
 .login-plataformas a{
     font-size: 40px;
     padding-left: 15px;
+}
+.google{
+    color: #EA4335;
+}
+.apple
+{
+    color: #F7F5F3;
 }

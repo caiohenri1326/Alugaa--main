@@ -52,7 +52,7 @@ const temaEscuro = document.getElementById('escuro');
 const temaSistema = document.getElementById('tema-sistema');
 
 
-const root = document.documentElement;
+var root = document.documentElement;
 
 
 // MUDANDO COR DO SITE

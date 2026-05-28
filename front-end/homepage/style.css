@@ -12,6 +12,62 @@ body{
 html{
     scroll-behavior: smooth;
 }
+.hero-section{
+    width: 100%;
+    min-height: 600px;
+
+    background-image: url('../../assets/imagem-fundo.jpg'),
+    linear-gradient(to right in oklab, var(--bg-site) 20%, #ffffff);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    background-blend-mode: multiply;
+    background-color: transparent;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+.text-hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 130px;
+}
+.text-hero p{
+    font-size: 20px;
+    width: 500px;
+    color: #d3c390;
+    font-weight: 600;
+    margin-left: 50px;
+}
+.text-hero h2{
+    font-size: 60px;
+    color: white;
+    font-weight: 700;
+}
+.text-style{
+    /* 1. Altera o comportamento para bloco inline (essencial para o span) */
+    display: inline-block; 
+    
+    /* 2. Define o gradiente (usando o espaço de cor oklab que deixa as cores vivas) */
+    background-image: linear-gradient(to right in oklab, #ff7e40, var(--cor-destaque, #ff0055));
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    /* 3. Aplica os recortes específicos para os navegadores */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* 4. Torna a cor padrão transparente para revelar o gradiente */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin-top: -15px;
+}
+.container-pesquisa{
+    margin-top: 100px;
+    margin-left: 75vh;
+}
 .container-fluid{
     background-color: var(--colorText);
     border-bottom: 1px solid;
@@ -29,6 +85,10 @@ html{
     color: var(--cor-destaque);
     font-weight: 700;
     cursor: pointer;
+}
+.imagem-hero{
+    width: 100%;
+    height: 600px;
 }
 .form-header{
     position: absolute;
@@ -191,6 +251,7 @@ html{
     margin-top: 70px;
     display: flex;
     padding-left: 10px;
+    background-color: var(--corAbas);
 }
 .container-login button{
     border-radius: 7px;
