@@ -76,8 +76,8 @@ window.onload = function() {
         root.style.setProperty('--bg-site', '#171412');
         root.style.setProperty('--colorText', '#252728');
         root.style.setProperty('--fundo-de-abas', '#28221F');
-        root.style.setProperty('--colorTextCinza', '#A0A0A0');
-        root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
+        root.style.setProperty('--colorTextCinza', '#808080ff');
+        root.style.setProperty('--textoPreto', 'white');
         root.style.setProperty('--corInput', '#201A17');
         root.style.setProperty('color-scheme', 'dark');
     }

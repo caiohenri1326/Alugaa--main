@@ -28,7 +28,7 @@
             </form>
             <div class="container-login">
                 <div class="dropdown">
-                    <img src="../../assets/eu.jpg" alt="Perfil" class="rounded-circle dropdown-toggle" id="menuPerfil" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; cursor: pointer;">
+                    <img src="../../assets/eu.jpg" alt="Perfil" class="rounded-circle dropdown-toggle" id="menuPerfil" data-bs-toggle="dropdown" aria-expanded="false" style="width: 38px; height: 38px; cursor: pointer;">
                     <ul class="dropdown-menu shadow" aria-labelledby="menuPerfil">
                         <li>
                             <p>Olá, <span>Caio</span></p>
@@ -62,44 +62,30 @@
     </header>
 
 <!-- Carrosel Icones -->
-
+<div class="container-text-carousel">
+    <h2>Explore Categorias</h2>
+    <p>Encontre exatamente o que você procura.</p>
+</div>
 <div id="CarroselIcons" class="carousel slide" data-bs-interval="false">
     <div class="carousel-inner carrosel-categorias">
         <div class="carousel-item active">
-            <div class="d-flex justify-content-center gap-2 container-carousel">
-                <button class="btn btn-light btn-categoria-filtro active"><i class="bi bi-boxes"></i> Categorias</button>          
+            <div class="d-flex justify-content-center gap-2 container-carousel">        
                 <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-tags"></i> Roupas</button>
                 <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-dribbble"></i> Esportes</button>
                 <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-gear"></i> Autos</button>
                 <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-controller"></i> Video Games</button>
                 <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-house-door"></i> Imoveis</button>
                 <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-pc-display"></i> Tecnologias</button>
-            </div>
-        </div>
-
-        <div class="carousel-item">
-            <div class="d-flex justify-content-center gap-2">
                 <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-bell"></i> Infantil</button>
                 <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-cart"></i> Outros</button>
             </div>
         </div>
     </div>
-    </div>
-
-    <button class="carousel-control-prev button-anterior-carrosel" type="button" data-bs-target="#CarroselIcons" data-bs-slide="prev">
-        <i class="bi bi-arrow-left-circle"></i>
-    </button>
-    <button class="carousel-control-next button-next-carrosel" type="button" data-bs-target="#CarroselIcons" data-bs-slide="next">
-        <i class="bi bi-arrow-right-circle"></i>
-    </button>
-    <br>
-    <hr>
-
+</div>
     <section>
         <header>
             <button class="ver-todos">Ver Todos</button>
             <h6>Anúncios em destaques</h6>
-            <p>Confira as melhores ofertas disponíveis</p>
         </header>
         <div class="grid-container">
             <article class="card">
@@ -209,7 +195,7 @@
     </section>
 
 <script>
-    const root = document.documentElement;
+const root = document.documentElement;
 
 window.onload = function() {
     // Recupera valor salvo no localStorage
@@ -221,10 +207,10 @@ window.onload = function() {
 
     if(temaSalvo === 'escuro'){
         root.style.setProperty('--bg-site', '#171412');
-        root.style.setProperty('--colorText', '#252728');
+        root.style.setProperty('--colorText', '#fff');
         root.style.setProperty('--fundo-de-abas', '#252728');
-        root.style.setProperty('--colorTextCinza', '#A0A0A0');
-        root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
+        root.style.setProperty('--colorTextCinza', '#808080ff');
+        root.style.setProperty('--textoPreto', 'white');
         root.style.setProperty('--corInput', '#201A17')
         root.style.colorScheme = 'dark';
     }

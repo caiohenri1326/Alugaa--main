@@ -1,16 +1,14 @@
 :root{
-    --bg-site: #fff;
-    --colorText: white;
+    --bg-site: #FCFAF8;
+    --colorText: rgb(0, 0, 0);
     --fundo-de-abas: white;
     --corAbas: #201B18;
     --colorTextCinza: rgba(0, 0, 0, 0.631);
     --botoes-afins: #F97015;
     --textoPreto: black;
-
     --corInput: #fcf8f8;
 
     /* MUDANDO A COR DE DESTAQUE */
-
     --cor-destaque: #F97015;
     --cor-destaque-background-input: #FCFAF7;
 }
@@ -64,7 +62,6 @@ header{
     height: 75px;
     display: flex;
     background-color: var(--bg-site);
-    border-bottom: 1px solid var(--colorTextCinza);
 }
 .container-img{
     width: 200px;

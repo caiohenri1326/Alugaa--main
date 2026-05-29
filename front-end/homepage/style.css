@@ -27,12 +27,14 @@ html{
     margin-top: 0px;
     display: flex;
     flex-direction: column;
+    border: none;
 }
 .text-hero{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 130px;
+    margin-top: 150px;
+    margin-left: -150px;
 }
 .text-hero p{
     font-size: 20px;
@@ -47,32 +49,34 @@ html{
     font-weight: 700;
 }
 .text-style{
-    /* 1. Altera o comportamento para bloco inline (essencial para o span) */
-    display: inline-block; 
-    
-    /* 2. Define o gradiente (usando o espaço de cor oklab que deixa as cores vivas) */
-    background-image: linear-gradient(to right in oklab, #ff7e40, var(--cor-destaque, #ff0055));
+    display: inline-block !important; 
+    background: linear-gradient(
+        to right,
+        color-mix(in srgb, var(--cor-destaque) 85%, white) 0%,
+        var(--cor-destaque) 50%,
+        color-mix(in srgb, var(--cor-destaque) 85%, black) 100%
+    ) !important;
     background-size: 100%;
     background-repeat: no-repeat;
-
-    /* 3. Aplica os recortes específicos para os navegadores */
-    -webkit-background-clip: text;
+    -webkit-background-clip: text !important;
     background-clip: text;
-    
-    /* 4. Torna a cor padrão transparente para revelar o gradiente */
     -webkit-text-fill-color: transparent;
     color: transparent;
     margin-top: -15px;
 }
+
 .container-pesquisa{
     margin-top: 90px;
-    margin-left: 75vh;
+    margin-left: 68vh;
     height: 70px;
-    width: 700px;
+    width: 750px;
     background-image: linear-gradient(to right in oklab, #201B18 0%, #442e24 90%);
     display: flex;
     align-items: center;
     border-radius: 10px;
+}
+.container-pesquisa input:focus{
+    border: 1px solid var(--cor-destaque);
 }
 .icon-pesquisa-hero{
     position: absolute;
@@ -83,7 +87,7 @@ html{
 .bi-geo-alt{
     position: absolute;
     color: #AFA49D;
-    margin-left: 397px;
+    margin-left: 390px;
     font-size: 15px;
 }
 .pesquisa-item{
@@ -91,14 +95,14 @@ html{
     height: 55px;
     margin-left: 10px;
     border-radius: 10px;
-    border: none;
     background-color: var(--corInput);
     outline: none;
     position: relative;
     padding-left: 40px;
+    border: 1px solid var(--corInput);
 }
 .cidade{
-    width: 20vh;
+    width: 23vh;
     height: 55px;
     margin-left: 5px;
     border-radius: 10px;
@@ -110,10 +114,15 @@ html{
 }
 .container-pesquisa button{
     height: 55px;
-    width: 12.5vh;
+    width: 15.5vh;
     border-radius: 10px;
     border: none;
-    background-image: linear-gradient(to right in oklab, #F96424, #FF8D4C);
+    background: linear-gradient(
+        to right,
+        color-mix(in srgb, var(--cor-destaque) 85%, white) 0%,
+        var(--cor-destaque) 50%,
+        color-mix(in srgb, var(--cor-destaque) 85%, black) 100%
+    ) !important;
     font-weight: 600;
     margin-left: 5px;
 }
@@ -126,9 +135,10 @@ html{
     height: 110px;
     display: flex;
     justify-content: flex-start !important;
+    z-index: 1000;
 }
 .navbar-brand{
-    margin-left: 440px;
+    margin-left: 350px;
     margin-top: 50px;
     font-size: 35px !important;
     color: var(--cor-destaque) !important;
@@ -141,10 +151,10 @@ html{
 }
 
 .form-header .form-control {
-    height: 50px;
+    height: 55px;
     width: 55vh;
-    margin-left: 150px;
-    margin-top: 50px;
+    margin-left: 120px;
+    margin-top: 35px;
     border: 2px solid transparent;
     background-color: var(--corInput);
     color: #AFA49D !important;
@@ -172,14 +182,29 @@ html{
 
 .form-header .btn-outline-success{
     position: absolute;
-    margin-left: 150px;
-    margin-top: -40px;
+    margin-left: 125px;
+    margin-top: -45px;
     border: none;
     font-size: 15px;
     color: #AFA49D;
 }
 .form-header .btn-outline-success:hover{
     background: none;
+}
+.container-text-carousel{
+    display: flex;
+    flex-direction: column;
+    margin-left: 370px;
+    margin-top: 50px;
+}
+.container-text-carousel h2{
+    color: var(--textoPreto);
+    font-weight: 700;
+}
+.container-text-carousel p{
+    color: var(--colorTextCinza);
+    font-size: 17px;
+    font-weight: 600;
 }
 .dropdown-menu{
     padding: 0;
@@ -225,8 +250,9 @@ html{
 /* BOTOES INTERAÇOES HEADER */
 .buttons-interact {
     display: flex;
-    position: absolute;
-    margin-left: 80%;
+    justify-content: end;
+    margin-left: 850px;
+    margin-top: -45px;
 }
 .buttons-interact button i{
     -webkit-text-stroke: 0.5px currentColor;
@@ -239,8 +265,8 @@ html{
     color: var(--colorTextCinza);
     font-size: 20px;
     border-radius: 50%; 
-    height: 50px;
-    width: 50px;
+    height: 35px;
+    width: 35px;
     position: relative; 
     cursor: pointer;
     display: flex;
@@ -286,12 +312,11 @@ html{
 }
 /* CONTAINER LOGIN*/
 .container-login{
-    position: absolute;
-    margin-left: 73%;
-    margin-top: 70px;
+    margin-left: 150vh;
+    margin-top: -70px;
     display: flex;
     padding-left: 10px;
-    background-color: var(--corAbas);
+    background: none;
 }
 .container-login button{
     border-radius: 7px;
@@ -337,17 +362,23 @@ html{
 
 .btn-anunciar{
     border: none;
-    background-color: var(--cor-destaque);
+    background: linear-gradient(
+        to right,
+        color-mix(in srgb, var(--cor-destaque) 85%, white) 0%,
+        var(--cor-destaque) 50%,
+        color-mix(in srgb, var(--cor-destaque) 85%, black) 100%
+    ) !important;
     color: white;
     font-weight: 400;
+    width: 140px !important;
 }
 .btn-anunciar i{
     margin-right: 7px;
     font-size: 18px;
 }
 .btn-anunciar:hover{
-    background-color: var(--cor-destaque-background-input);
-    border: 1px solid var(--colorTextCinza);
+    background: none;
+    border: 2px solid var(--colorTextCinza);
     transition: .3s ease;
 }
 
@@ -360,16 +391,11 @@ html{
     margin-left: 24%;
     margin-top: 5%;
 }
-.carousel-item img{
-    border-radius: 5px;
-    position: relative;
-    margin-bottom: 0;
-    width: 50%;
-}
+
 .carrosel-categorias{
-    max-width: 1040px;
+    width: 100px;
     margin-top: 0px;
-    margin-left: 325px;
+    margin-left: -50px;
     background-color: none;
 }
 #carousel-control-prev{
@@ -398,31 +424,52 @@ html{
 
 /* BOTAO ANTERIOR CARROSSEL CATEGORIAS */
 
-
 .btn-categoria-filtro{
-    border: 1px solid var(--colorTextCinza) !important;
+    height: 130px !important;
+    width: 140px !important;
+    max-width: none;
+    border: 1px solid rgba(95, 95, 95, 0.281) !important;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    white-space: nowrap;
-    background: none !important;
+    display: flex !important;
+    gap: 30px;
+    background: var(--corInput) !important;
+    margin-left: 5px;
+    margin-right: 5px;
     margin-top: 30px;
+    padding-top:20px !important;
     color: var(--colorTextCinza) !important;
+    flex-direction: column !important;
+    font-weight: 700;
+    align-items: center !important;
+    border-radius: 10px !important;
+}
+.btn-categoria-filtro i{
+    font-size: 20px !important;
+    -webkit-text-stroke: 0.3px;
+    height: 40px;
+    width: 40px;
+    background-color: #FEF3EA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: var(--cor-destaque);
 }
 #CarroselIcons{
     margin-top: 5px;
     margin-left: 10%;
+
 }
 .btn-categoria-filtro:hover{
-    background: none !important;
-    border: 1px solid var(--colorTextCinza) !important;
+    border: 1px solid var(--cor-destaque) !important;
+    transition: .3s ease !important;
+    animation: pulseUp 1s ease-in !important;
+    transform: translateY(-5px) scale(1.03);
 }
-
-.btn-categoria-filtro.active {
-    color: white !important;
-    background-color: var(--cor-destaque) !important;
-    border: none;
+.btn-categoria-filtro:hover i{
+    background-color: var(--cor-destaque);
+    color: white;
+    transition: .3s ease;
 }
 
 .button-anterior-carrosel{
@@ -453,13 +500,13 @@ html{
 
 /* CARD ITENS */
 section{
-    margin-left: 24%;
-    margin-top: 2%;
+    margin-left: 380px;
+    margin-top: 130px;
 }
 section h6{
     font-size: 30px;
     font-weight: 700;
-    color: var(--colorTextCinza);
+    color: var(--colorText);
 }
 section p{
     font-size: 15px;
@@ -495,7 +542,6 @@ section p{
 }
 .grid-container{
     width: 20%;
-    margin-top:40rem;
     margin-bottom: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -552,15 +598,17 @@ section p{
 .ver-todos{
     position: absolute;
     margin-left: 55%;
-    margin-top: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.285);
+    margin-top: 0px;
+    border: none;
     height: 40px;
     width: 110px;
-    border-radius: 5px;
+    background: none;
+    color: var(--colorText);
+    font-weight: 600;
 }
 .ver-todos:hover{
     transition: .3s ease;
-    background: none;
+    background-color: color-mix(in srgb, var(--cor-usuario) 20%);
     border: 1px solid var(--colorTextCinza);
-    color: var(--cor-destaque);
+    color: white;
 }
