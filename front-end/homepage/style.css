@@ -515,36 +515,45 @@ section p{
 }
 
 .card{
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--colorTextCinza) !important;
+    width: 370px;
+    height: 410px !important;
+    border: 1px solid rgba(80, 80, 80, 0.435) !important;
     margin-top: 20%;
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-site) !important;
+    background-color: var(--corInput) !important;
 }
-.img-container{
-    width: 100%;
-    height: 200px;
+.img-container {
+    width: 100% !important;
+    height: 200px !important;
+    aspect-ratio: 4 / 3 !important;
+    max-height: 100% !important; 
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     overflow: hidden;
     position: relative;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding: 10px;
+    padding: 10px !important; /* Um pequeno respiro para o produto não colar na borda */
+    
+    /* Define uma cor de fundo neutra para as rebarbas de imagens que não forem 4:3 */
+    background-color: var(--corInput) !important; 
 }
-.img-container img{
-    max-width: 100%;
-    max-height: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: contain;
-    transform: scale(1.1);
+
+.img-container img {
+    /* Trocar 'width: 100%' por 'max-width/max-height: 100%' com largura automática */
+    /* é o segredo definitivo para o 'contain' funcionar sem dar zoom ou esticar */
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    
+    object-fit: contain !important;
 }
 .grid-container{
     width: 20%;
     margin-bottom: 20px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
     gap: 20px;
     width: 100%;
     max-width: 1200px;
@@ -579,21 +588,12 @@ section p{
     color: var(--colorTextCinza);
     margin-top: 15px;
 }
-.btn-alugar{
-    margin-top: auto;
-    width: 100%;
-    padding: 8px 0;
-    background-color: var(--cor-destaque);
-    border: 1px solid transparent;
-    font-weight: bold;
-    border-radius: 10px;
-}
-.btn-alugar:hover{
-    font-weight: bold;
-    color: var(--cor-destaque);
-    border: 1px solid var(--colorTextCinza);
-    transition: .3s ease;
+.card-click{
     background: none;
+    border: none;
+    height: 100px;
+    width: 100%;
+    text-decoration: none;
 }
 .ver-todos{
     position: absolute;
@@ -605,10 +605,12 @@ section p{
     background: none;
     color: var(--colorText);
     font-weight: 600;
+    font-size: 15px;
 }
 .ver-todos:hover{
     transition: .3s ease;
-    background-color: color-mix(in srgb, var(--cor-usuario) 20%);
-    border: 1px solid var(--colorTextCinza);
-    color: white;
+    background-color: color-mix(in srgb, var(--cor-destaque) 15%, #1e1b18) !important;
+    color: var(--cor-destaque) !important;
+    border: none;
+    border-radius: 10px;
 }
