@@ -803,7 +803,7 @@ footer{
     border-bottom: 1px solid rgba(104, 103, 103, 0.336);
 }
 footer h5{
-    color: white;
+    color: var(--textoPreto);
     font-weight: 500;
     font-size: 16px;
 }
