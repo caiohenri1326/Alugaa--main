@@ -15,3 +15,17 @@ document.addEventListener('DOMContentLoaded', function(){
             })
         })
     });
+
+
+    const mostrarTela = document.querySelectorAll(".mostrar");
+
+
+    mostrarTela.forEach(mostrar => {
+        mostrar.style.display = 'none';
+        mostrar.classList.remove(".mostrar");
+    })
+
+    const todasAsSelecoes = document.querySelectorAll(".product-tabs");
+    todasAsSelecoes.forEach(btn =>{
+        btn.classList.remove
+    })

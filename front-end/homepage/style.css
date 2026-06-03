@@ -69,8 +69,8 @@ html{
     margin-top: 90px;
     margin-left: 68vh;
     height: 70px;
-    width: 750px;
-    background-image: linear-gradient(to right in oklab, #201B18 0%, #442e24 90%);
+    width: 755px;
+    background-image: linear-gradient(to right in oklab, var(--corInput) 0%, var(--corInput) 90%);
     display: flex;
     align-items: center;
     border-radius: 10px;
@@ -107,7 +107,7 @@ html{
     margin-left: 5px;
     border-radius: 10px;
     border: none;
-    background-color: #171312;
+    background-color: var(--bg-site);
     outline: none;
     position: relative;
     padding-left: 40px;
@@ -213,6 +213,7 @@ html{
     width: 250px;
     overflow: hidden;
     border-top: none !important;
+    background-color: var(--corInput) !important;
 }
 .dropdown-menu li{
     width: 100%;
@@ -221,7 +222,7 @@ html{
 .dropdown-menu li p{
     font-size: 18px;
     font-weight: 600;
-    color: var(--cor-destaque);
+    color: var(--colorText);
     font-display: center;
     margin-left: 90px;
     margin-top: 15px;
@@ -235,10 +236,12 @@ html{
     text-align: center;
     height: 60px;
     padding-top: 15px;
+    color: var(--colorText);
 }
 .dropdown-menu li a:hover{
     background-color: var(--cor-destaque);
-    color: var(--colorTextCinza);
+    color: var(--colorText);
+    transition: .3s ease;
 }
 .dropdown-item i{
     font-size: 20px;
@@ -246,6 +249,7 @@ html{
 }
 .area-sair:hover{
     color: white !important;
+    background-color: rgb(209, 59, 59) !important;
 }
 /* BOTOES INTERAÇOES HEADER */
 .buttons-interact {
@@ -697,15 +701,15 @@ section p{
     background: linear-gradient(
     to right,
     /* Começo (Esquerda): 10% da cor de destaque misturada com preto */
-    color-mix(in srgb, var(--cor-destaque) 8%, rgb(0, 0, 0)) 0%,
+    color-mix(in srgb, var(--cor-destaque) 8%, var(--bg-site)) 0%,
     
     /* Fim (Direita): Ajustado para 75% da cor de destaque misturada com preto */
-    color-mix(in srgb, var(--cor-destaque) 40%, rgb(0, 0, 0)) 100%
+    color-mix(in srgb, var(--cor-destaque) 40%, var(--bg-site)) 100%
 ) !important;
     
 }
 .container-infos-cliente h1{
-    color: white;
+    color: var(--colorText);
     font-weight: bold;
     -webkit-text-stroke: 0.5px;
 }
@@ -754,7 +758,7 @@ section p{
     margin-top: 20px;
 }
 .card-infos-internos h3{
-    color: white;
+    color: var(--colorText);
     font-size: 15px;
     text-align: center;
     margin-top: 10px;
