@@ -611,7 +611,7 @@ section p{
 }
 .ver-todos{
     position: absolute;
-    margin-left: 55%;
+    margin-left: 62%;
     margin-top: 0px;
     border: none;
     height: 40px;
@@ -627,4 +627,245 @@ section p{
     color: var(--cor-destaque) !important;
     border: none;
     border-radius: 10px;
+}
+
+
+
+/* RECÉM PUBLICADOS */
+
+.recem-publicados{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-recem-publicados{
+    width: 300px;
+    height: 400px !important;
+    border: 1px solid rgba(80, 80, 80, 0.435) !important;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--corInput) !important;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.card-recem-publicados a{
+    text-decoration: none;
+}
+.card-recem-publicados:hover{
+    transition: .2s ease;
+    box-shadow: 0 0 20px color-mix(in srgb, var(--cor-destaque) 70%, transparent);
+    border-radius: 15px;
+    transform: translateY(-5px) scale(1.03);
+}
+.card-recem-publicados .img-container {
+    width: 100% !important;
+    height: 200px !important;
+    max-height: 100% !important; 
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden;
+    position: relative;
+    padding: 10px !important;
+    border-radius: 15px;
+}
+
+.card-recem-publicados .img-container img {
+    display: flex;
+    object-fit: cover !important;
+    transform: scale(.6);
+}
+
+
+
+
+/* CONTAINER INFOS CLIENTES */
+
+
+.container-infos-cliente{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-left: 40vh;
+    flex-direction: column;
+    margin-top: 120px;
+    margin-bottom: 100px;
+    height: 500px;
+    width: 137vh;
+    border-radius: 15px;
+    background: linear-gradient(
+    to right,
+    /* Começo (Esquerda): 10% da cor de destaque misturada com preto */
+    color-mix(in srgb, var(--cor-destaque) 8%, rgb(0, 0, 0)) 0%,
+    
+    /* Fim (Direita): Ajustado para 75% da cor de destaque misturada com preto */
+    color-mix(in srgb, var(--cor-destaque) 40%, rgb(0, 0, 0)) 100%
+) !important;
+    
+}
+.container-infos-cliente h1{
+    color: white;
+    font-weight: bold;
+    -webkit-text-stroke: 0.5px;
+}
+.container-infos-cliente .text-chamativo{
+    color: rgba(155, 155, 155, 0.822);
+    font-weight: 500;
+    font-size: 16px;
+    width: 60vh;
+    display: block;
+    text-align: center;
+}
+.card-infos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.card-infos-internos{
+    height: 170px;
+    width: 230px;
+    background-color: var(--corInput);
+    margin-left: 15px;
+    margin-top: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(95, 95, 95, 0.233);
+}
+.card-infos-internos i{
+    font-size: 19px;
+    color: white;
+}
+.icones-card{
+    height: 45px;
+    width: 45px;
+    background: linear-gradient(
+        to right,
+        color-mix(in srgb, var(--cor-destaque) 85%, white) 0%,
+        var(--cor-destaque) 50%,
+        color-mix(in srgb, var(--cor-destaque) 85%, black) 100%
+    ) !important;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.card-infos-internos h3{
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.card-infos-internos p{
+    color: grey;
+    display: block;
+    text-align: center;
+    width: 210px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+}
+.container-infos-cliente button{
+    margin-top: 40px;
+    height: 50px;
+    width: 270px;
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    background: linear-gradient(
+        to right,
+        color-mix(in srgb, var(--cor-destaque) 85%, white) 0%,
+        var(--cor-destaque) 50%,
+        color-mix(in srgb, var(--cor-destaque) 85%, black) 100%
+    ) !important;
+    box-shadow: 0 0 20px color-mix(in srgb, var(--cor-destaque) 50%, transparent);
+}
+.container-infos-cliente button:hover{
+    box-shadow: 0 0 20px color-mix(in srgb, var(--cor-destaque) 70%, transparent);
+    transition: .3s ease;
+}
+
+
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 250px;
+    background-color: var(--corInput);
+    border-top: 1px solid rgba(104, 103, 103, 0.336);
+    border-bottom: 1px solid rgba(104, 103, 103, 0.336);
+}
+footer h5{
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+footer a{
+    text-decoration: none;
+    color: grey;
+    margin-bottom: 5px;
+}
+footer a:hover{
+    color: var(--cor-destaque);
+    transition: .3s ease;
+}
+.footer-brand{
+    display: block;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 50px;
+}
+.footer-brand i{
+    margin-left: 380px;
+    font-size: 23px;
+    color: #E26F36;
+    font-weight: bold;
+}
+.footer-brand p{
+    width: 310px;
+    color: grey;
+    font-size: 15px;
+    margin-left: 380px;
+    margin-top: 15px;
+    display: block;
+    text-align: start;
+    font-weight: 600;
+}
+.categorias-footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 70px;
+}
+
+.sobre-footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+.sobre-footer h5{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.ajuda-footer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+.footer-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: gray;
+    margin-top: 10px;
 }
