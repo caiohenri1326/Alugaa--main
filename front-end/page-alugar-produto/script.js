@@ -1,31 +1,11 @@
-document.addEventListener('DOMContentLoaded', function(){
-        const opcoes = document.querySelectorAll(".radio-option")
-        
-        opcoes.forEach(opcao =>{
-            opcao.addEventListener("click", function(){
-                opcoes.forEach(op => op.classList.remove('.ativa'));
-                
-                this.classList.add('.ativa')
+const AbaVendedor = document.getElementById('aba-vendedor');
 
+const AbaTabs = document.querySelectorAll('mudar')
 
-                const radioInput = this.querySelector('input[type="radio"]');
-                if(radioInput){
-                    radioInput.checked = true;
-                }
-            })
-        })
-    });
+AbaVendedor.addEventListener('click', function(){
+    alternarAbasTabs();
+})
 
-
-    const mostrarTela = document.querySelectorAll(".mostrar");
-
-
-    mostrarTela.forEach(mostrar => {
-        mostrar.style.display = 'none';
-        mostrar.classList.remove(".mostrar");
-    })
-
-    const todasAsSelecoes = document.querySelectorAll(".product-tabs");
-    todasAsSelecoes.forEach(btn =>{
-        btn.classList.remove
-    })
+function alternarAbasTabs(){
+    AbaTabs.classList.add('active');
+}

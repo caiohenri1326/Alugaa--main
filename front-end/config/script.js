@@ -79,6 +79,7 @@ window.onload = function() {
         root.style.setProperty('--colorTextCinza', '#808080ff');
         root.style.setProperty('--textoPreto', 'white');
         root.style.setProperty('--corInput', '#201A17');
+        root.style.setProperty('--textoBranco', 'black')
         root.style.setProperty('color-scheme', 'dark');
     }
 }
