@@ -28,7 +28,7 @@
             </form>
             <div class="container-login">
                 <div class="dropdown">
-                    <img src="../../assets/eu.jpg" alt="Perfil" class="rounded-circle dropdown-toggle" id="menuPerfil" data-bs-toggle="dropdown" aria-expanded="false" style="width: 40px; height: 40px; cursor: pointer;">
+                    <img src="../../assets/eu.jpg" alt="Perfil" class="rounded-circle dropdown-toggle" id="menuPerfil" data-bs-toggle="dropdown" aria-expanded="false" style="width: 38px; height: 38px; cursor: pointer; margin-top: -7px;">
                     <ul class="dropdown-menu shadow" aria-labelledby="menuPerfil">
                         <li>
                             <p>Olá, <span>Caio</span></p>
@@ -72,12 +72,12 @@
             </header>
 
             <nav class="product-tabs">
-                <button id="aba-detalhes" class="mudar">Detalhes</button>
-                <button class="active mudar" id="aba-alugar">Alugar</button> 
-                <button id="aba-vendedor" class="mudar">Vendedor</button>
+                <button onclick="alternarAba(this)" class="mudar" data-aba="conteudo-detalhes">Detalhes</button>
+                <button onclick="alternarAba(this)" class="active mudar" data-aba="conteudo-alugar">Alugar</button> 
+                <button onclick="alternarAba(this)" class="mudar" data-aba="conteudo-alugante">Alugante</button>
             </nav>
 
-            <form action="#" method="POST" class="checkout-form">
+            <form action="#" method="POST" class="checkout-form conteudo-aba active">
                 
                 <fieldset class="form-card">
                     <legend><i class="bi bi-box2"></i> Tempo e Retirada</legend>
@@ -166,23 +166,27 @@
 
     </main>
 
-    <div class="aba-vendedor">
-        <img src="" alt="">
+    <div class="aba-vendedor conteudo-aba" id="conteudo-alugante">
+        <img src="../../assets/eu.jpg" alt="">
         <span class="name">Caio Henrique</span>
-        <p>Membro desde <span>2020</span> • <span>Presidente Prudente, <span>SP</span></span></p>
-        <div class="avalicoes">
+        <p class="membro-p">Membro desde <span>2020</span> • <span>Presidente Prudente, <span>SP</span></span></p>
+        <div class="avaliacoes">
             <i class="bi bi-star-fill"></i>
-            <p><span>4.9</span><span>(100)</span>avaliações</p>
+            <span class="note-avaliation">4.9</span><span class="number-avaliation">(100</span><p>avaliações)</p>
         </div>
-        <div class="vendas-concluidas">
-            <p><span>30</span>Itens alugados</p>
+        <div class="infos-client">
+            <div class="vendas-concluidas">
+                <span>30</span>
+                <p>Itens alugados</p>
+            </div>
+            <div class="resposta">
+                <p><span>98%</span>Resposta rápida</p>
+            </div>
+            <div class="tempo">
+                <p><span>~1h</span>Tempo médio</p>
+            </div>
         </div>
-        <div class="resposta">
-            <p><span>98%</span>Resposta rápida</p>
-        </div>
-        <div class="tempo">
-            <p><span>~1h</span>Tempo médio</p>
-        </div>
+        
         <div class="confirmacoes-perfil">
             <div class="doc-confirm">
                 <i class="bi bi-shield-check"></i><p>Documento confirmado</p>
@@ -212,9 +216,9 @@
     if(temaSalvo === 'escuro'){
         root.style.setProperty('--bg-site', '#181412');
         root.style.setProperty('--colorText', '#252728');
-        root.style.setProperty('--fundo-de-abas', '#252728');
-        root.style.setProperty('--colorTextCinza', '#A0A0A0');
-        root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
+        root.style.setProperty('--fundo-de-abas', '#201B18');
+        root.style.setProperty('--colorTextCinza', '#a0a0a067');
+        root.style.setProperty('--textoPreto', 'white');
         root.style.colorScheme = 'dark';
     }
 

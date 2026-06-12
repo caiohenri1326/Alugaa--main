@@ -1,11 +1,26 @@
-const AbaVendedor = document.getElementById('aba-vendedor');
+const cssAbas = document.querySelectorAll('.mudar');
 
-const AbaTabs = document.querySelectorAll('mudar')
+function alternarAba(abaClicada){
+    cssAbas.forEach(aba => {
+        aba.classList.remove('active');
+    });
 
-AbaVendedor.addEventListener('click', function(){
-    alternarAbasTabs();
-})
+    abaClicada.classList.add('active');
+    
+    // ---------- MOSTRAR CONTEUDO ----------------
 
-function alternarAbasTabs(){
-    AbaTabs.classList.add('active');
+    const conteudos = document.querySelectorAll('.conteudo-aba');
+    conteudos.forEach(conteudo => conteudo.classList.remove('active'));
+
+
+    const idConteudoAlvo = abaClicada.getAttribute('data-aba');
+
+
+    const conteudoAlvo = document.getElementById(idConteudoAlvo);
+    if(conteudoAlvo){
+        conteudoAlvo.classList.add('active');
+    }
 }
+
+
+
