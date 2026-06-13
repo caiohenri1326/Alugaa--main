@@ -717,9 +717,106 @@ html{
 .vendas-concluidas{
     display: flex;
     flex-direction: column;
-    background-color: color-mix(in srgb, var(--fundo-de-abas) 93%, #fff);
+    background-color: color-mix(in srgb, var(--fundo-de-abas) 91%, #fff);
+    border-radius: 10px;
+    width: 170px;
+    height: 90px;
+    text-align: center;
+    margin-left: 25px;
+}
+.vendas-concluidas span{
+    color: var(--cor-destaque);
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+
+}
+.vendas-concluidas p{
+    color: var(--textoPreto);
+    font-size: 13px;
+    font-weight: 600;
 }
 
+.resposta{
+    display: flex;
+    flex-direction: column;
+    background-color: color-mix(in srgb, var(--fundo-de-abas) 91%, white);
+    margin-left: 20px;
+    width: 170px;
+    height: 90px;
+    text-align: center;
+    border-radius: 10px;
+}
+.resposta span{
+    font-size: 20px;
+    color: var(--cor-destaque);
+    font-weight: 700;
+    margin-top: 10px;
+}
+.resposta p{
+    font-size: 13px;
+    color: var(--textoPreto);
+    font-weight: 600;
+}
+
+.tempo{
+    display: flex;
+    flex-direction: column;
+    background-color: color-mix(in srgb, var(--fundo-de-abas) 91%, white);
+    width: 170px;
+    height: 90px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+.tempo span{
+    font-size: 20px;
+    color: var(--cor-destaque);
+    font-weight: 700;
+    margin-top: 10px;
+}
+.tempo p{
+    font-size: 13px;
+    color: var(--textoPreto);
+    font-weight: 600;
+}
+
+
+/* CONFIRMAÇOES DO PERFIL */
+
+
+.confirmacoes-perfil{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.confirmacoes-perfil .confirm{
+    display: flex;
+    margin-top: -8px;
+}
+.confirm p, span{
+    color: var(--colorTextCinza);
+    font-size: 13px;
+}
+.confirm span{
+    margin-left: 5px;
+}
+.confirm i{
+    color: var(--cor-destaque);
+    margin-left: 25px;
+    margin-right: 5px;
+}
+.confirmacoes-perfil .buttons{
+    margin-top: 20px;
+}
+.chat-mensagem{
+    margin-top: 30px;
+    
+    height: 40px;
+    width: 230px;
+    border: 1px solid var(--fundo-de-abas);
+    border-radius: 7px;
+}
 .infos-client{
     display: flex;
 }
