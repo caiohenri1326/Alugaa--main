@@ -811,11 +811,40 @@ html{
 }
 .chat-mensagem{
     margin-top: 30px;
-    
-    height: 40px;
-    width: 230px;
-    border: 1px solid var(--fundo-de-abas);
+    margin-left: 25px;
+    margin-bottom: 10px;
+    height: 50px;
+    width: 270px;
     border-radius: 7px;
+    background-color: var(--bg-site);
+    border: 1px solid var(--colorTextCinza);
+    font-size: 14px;
+    font-weight: bold;
+}
+.chat-mensagem:hover{
+    background-color: color-mix(in srgb, var(--cor-destaque) 20%, rgb(255, 255, 255));
+    color: color-mix(in srgb, var(--cor-destaque) 90%, white);
+    transition: .3s ease;
+}
+
+
+.btn-ver-anuncios{
+    width: 270px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(241, 115, 12, 0.377);
+    background: linear-gradient(
+        to right,
+        color-mix(in srgb, var(--cor-destaque) 85%, white) 0%,
+        var(--cor-destaque) 50%,
+        color-mix(in srgb, var(--cor-destaque) 85%, black) 100%
+    ) !important;
+}
+.btn-ver-anuncios:hover{
+    box-shadow: 1px 1px 10px 1px rgba(241, 115, 12, 0.61);
+    transition: .3s ease;
 }
 .infos-client{
     display: flex;
