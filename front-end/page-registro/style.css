@@ -17,16 +17,20 @@ body{
     font-style: normal;
     font-variant: normal;
     font-variation-settings: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 .box-registro{
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 3%;
-    margin-left: 35%;
-    position: absolute;
-    width: 30%;
-    height: 90%;
+    margin: 20px auto;
+    width: 90%;
+    height: 95%;
+    max-width: 540px;
     border-radius: 10px;
     background-color: var(--corAbas);
 }
@@ -51,14 +55,16 @@ body{
     width: 70%;
     flex-direction: column;
     display: flex;
+    position: relative;
     gap: 0;
     margin-top: 20px;
-    min-height: 37rem;
     width: 100%;
 }
 .form-registro div{
     display: flex;
     flex-direction: column;
+    position: relative;
+    width: 100%;
 }
 .form-registro input{
     margin-left: auto;
@@ -70,6 +76,7 @@ body{
     border: 1px solid var(--colorTextCinza);
     color: var(--colorTextCinza);
     font-size: 15px;
+    box-sizing: border-box;
 }
 .form-registro input::placeholder{
     padding-left: 5px;
@@ -104,42 +111,21 @@ body{
 
 
 /* ICONES INPUT */
-.form-registro i{
+.form-registro .icon-input{
     -webkit-text-stroke: 0.4px;
-}
-.bi-person{
     position: absolute;
-    margin-top: 47px;
-    margin-left: 65px;
+    margin-top: 48px;
+    left: 65px;
     font-size: 23px;
     color: var(--cor-destaque);
-}
-.bi-envelope{
-    position: absolute;
-    font-size: 19px;
-    margin-top: 50px;
-    margin-left: 66px;
-    color: var(--cor-destaque);
-}
-.icon-lock1{
-    position: absolute;
-    font-size: 18px;
-    margin-top: 50px;
-    margin-left: 65px;
-    color: var(--cor-destaque);
-}
-.icon-lock2{
-    position: absolute;
-    margin-left: 65px;
-    margin-top: 50px;
-    font-size: 18px;
-    color: var(--cor-destaque);
+    pointer-events: none;
 }
 
 .form-registro button{
     width: 80%;
     height: 40px;
-    margin-left: 60px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 35px;
     border: none;
     color: white;
@@ -149,7 +135,7 @@ body{
 }
 
 .box-registro hr{
-    margin-top: 90%;
+    margin-top: 30px;
     width: 80%;
 }
 .box-registro p{
@@ -162,19 +148,16 @@ body{
     text-decoration: none;
     color: var(--cor-destaque);
 }
-.box-registro img{
-    height: 40px;
-    width: 40px;
-    margin-top: 80px;
-    position: absolute;
-}
+
 .login-plataformas{
-    margin-top: 30px;
-    margin-left: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
-.login-plataformas a{
+
+.login-plataformas i{
     font-size: 40px;
-    padding-left: 15px;
+    padding-left: 20px;
 }
 .google{
     color: #EA4335;
@@ -182,4 +165,41 @@ body{
 .apple
 {
     color: #F7F5F3;
+}
+
+
+
+
+/* ------------------REPONSIVIDADE----------------- */
+
+
+@media (max-width: 300px){
+    .box-registro{
+        width: 80%;
+        height: 90%;
+        margin: 0 auto;
+    }
+    .form-registro .icon-input{
+        left: 15px;
+    }
+}
+@media (max-width: 400px){
+    .box-registro{
+        width: 80%;
+        height: 90%;
+        margin: 0 auto;
+    }
+    .form-registro .icon-input{
+        left: 20px;
+    }
+}
+@media (max-width: 500px){
+    .box-registro{
+        width: 90%;
+        height: 90%;
+        margin: 0 auto;
+    }
+    .form-registro .icon-input{
+        left: 50px;
+    }
 }

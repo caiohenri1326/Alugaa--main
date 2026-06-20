@@ -12,18 +12,23 @@ body{
 .container-anuncio{
     display: flex;
     flex-direction: column;
-    align-items: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
     width: 35%;
-    height: 55rem;
+    height: 90vh;
     border: 1px solid var(--colorTextCinza);
     border-radius: 5px;
 }
+.agrupa-tudo{
+    display: flex;
+    flex-direction: column;
+}
+.button-back{
+    display: flex;
+
+}
 .container-anuncio a{
-    margin-right: 85%;
-    margin-top: 10px;
     font-size: 12px;
     text-decoration: none;
     color: var(--colorTextCinza);
@@ -31,12 +36,15 @@ body{
 }
 .container-anuncio a i{
     margin-right: 10px;
+    font-size: 18px;
+}
+.text-header{
+    margin-left: 30px;
 }
 .text-header h6{
     font-size: 17px;
     font-weight: 700;
     margin-top: 50px;
-    margin-right: 24rem;
     color: var(--colorTextCinza);
 }
 .text-header p{
@@ -296,3 +304,26 @@ body{
     font-weight: 500;
 }
 
+
+
+
+/* =================== MEDIAS QUERYES =====================*/
+
+@media (max-width: 300px){
+    .container-anuncio{
+        width: 91%;
+        height: 90%;
+        margin-top: 10px;
+    }
+    .container-upload{
+        margin-left: 150px;
+        width: 300px;
+    }
+    .upload-placeholder{
+        height: 90%;
+        width: 150px;
+    }
+    .hide-input{
+        
+    }
+}
