@@ -24,14 +24,16 @@
         <div class="agrupa-tudo">
 
         <div class="text-header">
-            <h6>Anunciar um produto</h6>
+            <h6>Anunciar um Produto</h6>
             <p>Preencha os dados abaixo com o máximo de detalhes possível</p>
-            
         </div>
         <hr style="color: var(--colorTextCinza);">
         <form class="form-anuncio" enctype="multipart/form-data">
-            <p>Fotos do Produto</p>
-
+            <div class="text-num-img">
+                <p>Fotos do Produto</p>
+                <span>0/5 imagens</span>
+            </div>
+            
             <div class="container-upload">
                 <label for="foto" class="upload-placeholder">
                     <i class="bi bi-image icon-upload"></i>
@@ -39,16 +41,18 @@
                 </label>
                 <input type="file" id="foto" name="foto" accept="image/*" class="hide-input">
             </div>
-
+            
             <div class="nome-do-anuncio">
                 <label>Título do Anúncio</label>
                 <input type="text" name="titulo" placeholder="Ex: PlayStation 5 Pro">
             </div>
 
+
+            <div class="categorias-e-preco">
             <div class="select-custom">
                 <label for="categorias">Categorias</label>
                 <div class="select-selected">
-                    Selecionar <i class="bi bi-arrow-down"></i>
+                    Selecione uma categoria <i class="bi bi-arrow-down-short"></i>
                 </div>
 
                 <ul class="select-options">
@@ -58,6 +62,7 @@
                     <li data-value="8">Video Games</li>
                     <li data-value="9">Imóveis</li>
                     <li data-value="10">Tecnologias</li>    
+                    <li data-value="11">Outros</li>
                 </ul>
 
                 <input type="hidden" name="categoria">
@@ -67,13 +72,15 @@
                 <label>Preço (R$)</label>
                 <input type="number" class="input-preco" name="preco" placeholder="0,00">
             </div>
+            </div>
+            
             
 
             <div class="container-descricao">
                 <label>Descrição</label>
-                <textarea name="" id="" class="area-caracteristicas" placeholder="Descreva as caracteristicas"></textarea>
+                <textarea name="" id="" class="area-caracteristicas" placeholder="Descreva as características, estado de conservação, acessórios inclusos, etc..."></textarea>
             </div>
-            
+            <hr style="color: var(--colorTextCinza); margin-top: 15px;">
             <div class="buttons-enter">
                 <button type="button" class="button-anunciar">Anunciar</button>
                 <button type="button" class="button-cancel">Cancelar</button>

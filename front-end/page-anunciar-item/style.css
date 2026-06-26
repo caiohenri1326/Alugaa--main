@@ -14,11 +14,11 @@ body{
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    margin-top: 30px;
     width: 40%;
-    height: 90vh;
-    border: 1px solid var(--fundo-de-abas);
-    border-radius: 5px;
+    height: 93vh;
+    border: 1px solid color-mix(in srgb, var(--bg-site), white 15%);
+    border-radius: 10px;
     background-color: var(--fundo-de-abas);
 }
 .agrupa-tudo{
@@ -27,8 +27,19 @@ body{
 }
 .button-back{
     display: flex;
-
+    margin-left: 15px;
+    margin-top: 15px;
 }
+.button-back i{
+    margin-right: 5px;
+    color: var(--colorTextCinza);
+}
+.button-back a{
+    font-size: 14px;
+    color: var(--colorTextCinza);
+    text-decoration: none;
+}
+
 .container-anuncio a{
     font-size: 13px;
     text-decoration: none;
@@ -48,6 +59,9 @@ body{
     margin-top: 30px;
     color: var(--textoPreto);
 }
+.text-num-img{
+    display: flex;
+}
 .text-header p{
     font-size: 12px;
     font-weight: 600;
@@ -60,6 +74,12 @@ body{
     margin-top: 30px;
     color: var(--textoPreto);
 }
+.text-num-img span{
+    margin-left: 65%;
+    margin-top: 30px;
+    color: var(--colorTextCinza);
+    font-size: 12px;
+}
 
 /* CONTAINER ADICIONAR FOTO */
 .container-upload{
@@ -67,11 +87,10 @@ body{
     padding: 20px;
     display: flex;
     justify-content: center;
-    margin-left: 0px;
     border-radius: 5px;
 }
 .upload-placeholder{
-    width: 140px;
+    width: 20%;
     height: 140px;
     border: 2px dashed color-mix(in srgb, var(--fundo-de-abas), white 10%);
     background-color: color;
@@ -129,15 +148,18 @@ body{
     color: var(--colorTextCinza);
 }
 .nome-do-anuncio input{
-    width: 90%;
+    width: 91%;
     height: 45px;
     margin-left: 30px;
     margin-top: 10px;
     border-radius: 10px;
-    border: 1px solid var(--colorTextCinza);
+    border: 1px solid color-mix(in srgb, var(--fundo-de-abas), white 15%);
+    background-color: var(--bg-site);
+    padding-left: 15px;
+    font-size: 16px;
 }
 .nome-do-anuncio input::placeholder{
-    font-size: 14px;
+    font-size: 16px;
 }
 .nome-do-anuncio input:focus{
     outline: none;
@@ -147,22 +169,34 @@ body{
 }
 
 /* CONTAINER SELECT */
+.anuncio-e-categorias{
+    display: flex;
+}
 
 .select-custom{
-    width: 220px;
     position: relative;
+    width: 50%;
 }
 
 .select-selected{
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 10px;
     margin-left: 30px;
     font-size: 15px;
     font-weight: 500;
     cursor: pointer;
-    border: 1px solid var(--colorTextCinza);
+    border: 1px solid color-mix(in srgb, var(--fundo-de-abas), white 15%);
     color: var(--colorTextCinza);
+    display: flex;
+    background-color: var(--bg-site);
+    justify-content: space-between;
+    align-items: center;
+}
+.select-selected i{
+    display: inline-block;
+    font-size: 20px;
+    flex-shrink: 0;
 }
 .select-selected:focus{
     outline: none;
@@ -178,22 +212,23 @@ body{
     list-style: none;
     padding: 0;
     position: absolute;
-    width: 100%;
+    width: 92%;
     background: var(--bg-site);
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 1px 4px rgba(128, 128, 128, 0.594);
+    border: 1px solid color-mix(in srgb, var(--fundo-de-abas), white 10%);
+    border-radius: 10px;
     display: none;
     z-index: 10;
     color: var(--colorTextCinza);
+    margin-top: 10px;
+    margin-left: 30px;
 }
 .select-options li{
     padding: 10px;
     cursor: pointer;
 }
 .select-options li:hover{
-    background-color: var(--cor-destaque);
-    color: white;
+    background-color: color-mix(in srgb, var(--cor-destaque), var(--fundo-de-abas) 98%);
+    color: color-mix(in srgb, var(--cor-destaque), white 10%);
 }
 .select-custom.open .select-options{
     display: block;
@@ -204,24 +239,37 @@ body{
     font-size: 15px;
     font-weight: 500;
 }
-
+.categorias-e-preco{
+    display: flex;
+    width: 100%;
+}
 /* CONTAINER PREÇO */
 .container-preco{
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
-    margin-top: 15px;
+    margin-left: 10px;
+    margin-top: 30px;
+    width: 50%;
+
 }
 .container-preco label{
     font-size: 13px;
     color: var(--colorTextCinza);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .container-preco input{
-    width: 42%;
-    height: 40px;
+    width: 90%;
+    height: 47px;
     border-radius: 10px;
-    border: 1px solid var(--colorTextCinza);
+    border: 1px solid color-mix(in srgb, var(--bg-site), white 15%);
+    background-color: var(--bg-site);
+    padding-left: 10px;
+    font-size: 15px;
+}
+.container-preco input::-webkit-outer-spin-button,
+.container-preco input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
 }
 .container-preco input:focus{
     border: 1px solid var(--cor-destaque);
@@ -242,39 +290,40 @@ body{
 }
 .area-caracteristicas{
     height: 150px;
-    width: 88%;
+    width: 91%;
     border-radius: 10px;
-    border: 1px solid var(--colorTextCinza);
+    border: 1px solid color-mix(in srgb, var(--fundo-de-abas), white 15%);
+    background-color: var(--bg-site);
     resize: none;
     margin-left: 30px;
     margin-top: 10px;
-    padding-left: 5px;
+    padding-left: 10px;
     padding-top: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
 }
 .area-caracteristicas::placeholder{
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
-    padding-top: 0px;
+
 }
 
 .area-caracteristicas:focus{
     border: 1px solid var(--cor-destaque);
     outline: none;
-    padding-top: 5px;
-    padding-left: 5px;
-    font-size: 13px;
-
 }
 
 /* BOTOES ENVIAR */
 
 .buttons-enter{
-    margin-top: 20px;
+    margin-top: 30px;
     margin-left: 30px;
+    margin-bottom: 10px;
 }
 .button-cancel{
-    height: 43px;
-    width: 90px;
+    height: 40px;
+    width: 120px;
     font-size: 13px;
     border-radius: 5px;
     border: 1px solid var(--colorTextCinza);
@@ -291,13 +340,20 @@ body{
     width: 120px;
     height: 40px;
     border: none;
-    background-color: var(--cor-destaque);
+    background: linear-gradient(
+        to right,
+        color-mix(in srgb, var(--cor-destaque) 85%, white) 0%,
+        var(--cor-destaque) 50%,
+        color-mix(in srgb, var(--cor-destaque) 85%, black) 100%
+    ) !important;
     font-weight: 500;
     border-radius: 5px;
-    color: white;
+    color: var(--textoPreto) !important;
+    box-shadow: 0 0 20px color-mix(in srgb, var(--cor-destaque) 50%, transparent);
 }
 .button-anunciar:hover{
-    background-color: #be5330;
+    transition: .3s ease;
+    box-shadow: 0 0 20px color-mix(in srgb, var(--cor-destaque) 70%, transparent);
 }
 .button-anunciar i{
     margin-right: 7px;
@@ -310,21 +366,59 @@ body{
 
 /* =================== MEDIAS QUERYES =====================*/
 
-@media (max-width: 300px){
+@media (max-width: 768px){
     .container-anuncio{
-        width: 91%;
+        width: 90%;
         height: 90%;
         margin-top: 10px;
     }
-    .container-upload{
-        margin-left: 150px;
-        width: 300px;
+    .upload-placeholder{
+        width: 25%;
+        margin-left: 5px;
+        margin-right: auto;
+    }
+    .buttons-enter{
+        margin-bottom: 5px;
+    }
+    .select-options{
+        bottom: 45%;
+        top:auto;
+        margin-top: 0;
+        margin-bottom: 10px;
+        
+    }
+}
+@media (max-width: 992px){
+    .container-anuncio{
+        width: 90%;
+        height: 90%;
+        margin-top: 10px;
     }
     .upload-placeholder{
-        height: 90%;
-        width: 150px;
+        width: 20%;
+        margin-left: 5px;
+        margin-right: auto;
     }
-    .hide-input{
+    .buttons-enter{
+        margin-bottom: 5px;
+    }
+    .select-options{
+        bottom: 45%;
+        top:auto;
+        margin-top: 0;
+        margin-bottom: 10px;
+        
+    }
+}
+@media (min-width: 993px){
+    .buttons-enter{
+        margin-bottom: 5px;
+    }
+    .select-options{
+        bottom: 45%;
+        top:auto;
+        margin-top: 0;
+        margin-bottom: 10px;
         
     }
 }
