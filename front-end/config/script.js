@@ -236,7 +236,6 @@ temaEscuro.addEventListener('click', function(){
     root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
     root.style.colorScheme = 'dark';
 
-
     localStorage.setItem('modoTema', 'escuro');
 })
 

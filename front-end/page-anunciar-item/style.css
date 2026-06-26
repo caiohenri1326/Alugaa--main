@@ -15,10 +15,11 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
-    width: 35%;
+    width: 40%;
     height: 90vh;
-    border: 1px solid var(--colorTextCinza);
+    border: 1px solid var(--fundo-de-abas);
     border-radius: 5px;
+    background-color: var(--fundo-de-abas);
 }
 .agrupa-tudo{
     display: flex;
@@ -42,22 +43,22 @@ body{
     margin-left: 30px;
 }
 .text-header h6{
-    font-size: 17px;
+    font-size: 26px;
     font-weight: 700;
-    margin-top: 50px;
-    color: var(--colorTextCinza);
+    margin-top: 30px;
+    color: var(--textoPreto);
 }
 .text-header p{
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--colorTextCinza);
 }
 .form-anuncio p{
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
     margin-left: 30px;
     margin-top: 30px;
-    color: var(--colorTextCinza);
+    color: var(--textoPreto);
 }
 
 /* CONTAINER ADICIONAR FOTO */
@@ -66,41 +67,38 @@ body{
     padding: 20px;
     display: flex;
     justify-content: center;
-    margin-left: 10px;
+    margin-left: 0px;
     border-radius: 5px;
 }
 .upload-placeholder{
     width: 140px;
-    height: 90px;
-    border: 2px dashed var(--colorTextCinza);
+    height: 140px;
+    border: 2px dashed color-mix(in srgb, var(--fundo-de-abas), white 10%);
+    background-color: color;
     border-radius: 15px;
     background-color: var(--bg-site);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 26rem;
+    margin-right: 30rem;
     margin-top: -20px;
     cursor: pointer;
     transition: all 0.3s;
 }
-.upload-placeholder::placeholder{
-    width: 90px;
-    height: 110px;
-    border: 2px dashed var(--colorTextCinza);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s;
+.upload-placeholder:hover{
+    border: 2px dashed var(--cor-destaque);
+    transition: .4s ease;
 }
 .text-upload{
     font-family: sans-serif;
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 600;
     color: var(--colorTextCinza);
     text-align: center;
+    margin-top: 0px;
+}
+.upload-placeholder:hover .text-upload{
+    color: var(--cor-destaque);
 }
 .hide-input{
     opacity: 0;
@@ -111,7 +109,10 @@ body{
 .icon-upload{
     color: var(--colorTextCinza);
     font-size: 30px;
-    margin-top: 15px;
+    margin-top: 30px;
+}
+.upload-placeholder:hover .icon-upload{
+    color: var(--cor-destaque);
 }
 
 /* CONTAINER NOME DO ANUNCIO */
