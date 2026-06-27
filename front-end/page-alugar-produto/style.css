@@ -432,12 +432,13 @@ html{
 /* Transforma o fieldset no card idêntico ao do print */
 .form-card {
     background-color: var(--fundo-de-abas);
-    border: 1px solid var(--colorTextCinza);
+    border: 1px solid color-mix(in srgb, var(--fundo-de-abas), white 10%);
     border-radius: 12px;
     padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-top: 10px;
 }
 
 .form-card legend {
@@ -488,7 +489,7 @@ html{
     margin-bottom: 2px;
 }
 .radio-group span {
-    color: var(--colorTextCinza);
+    color: var(--textoPreto);
     line-height: 1.0;
     -webkit-text-stroke: 0.2px;
 }
@@ -552,9 +553,8 @@ html{
     transition: all 0.2s;
 }
 
-.method-card.active {
-    border-color: var(--primary-color);
-    background-color: var(--primary-light);
+.method-card.selecionado {
+    border: 1px solid var(--cor-destaque);
 }
 
 .method-card .icon {
@@ -564,8 +564,8 @@ html{
 }
 
 .method-card strong {
-    font-size: 13px;
-    color: var(--colorTextCinza);
+    font-size: 14px;
+    color: color-mix(in srgb, var(--colorTextCinza), white 30%);
 }
 
 .method-card small {

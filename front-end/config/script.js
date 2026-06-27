@@ -73,7 +73,7 @@ window.onload = function() {
     const temaSalvo = localStorage.getItem('modoTema')
 
     if(temaSalvo === 'escuro'){
-        root.style.setProperty('--bg-site', '#171412');
+        root.style.setProperty('--bg-site', '#181412');
         root.style.setProperty('--colorText', '#252728');
         root.style.setProperty('--fundo-de-abas', '#201B18');
         root.style.setProperty('--colorTextCinza', '#8080807a');

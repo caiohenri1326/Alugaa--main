@@ -22,5 +22,17 @@ function alternarAba(abaClicada){
     }
 }
 
+// ---------------------- SELEÇÃO DE PAGAMENTO ---------------------------
 
 
+const cardsPagamento = document.querySelectorAll('.method-card');
+
+cardsPagamento.forEach(card => {
+    card.addEventListener('click', () =>{
+        cardsPagamento.forEach(c => c.classList.remove('selecionado'));
+        
+        card.classList.add('selecionado');
+    })
+
+    
+})
