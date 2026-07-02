@@ -1,0 +1,104 @@
+.container-privacidade{
+    display: none;
+    flex-direction: column;
+    margin-left: 400px;
+    margin-top: -800px;
+    background-color: var(--fundo-de-abas);
+    border-radius: 15px;
+    min-height: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.052);
+}
+.container-privacidade h3{
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 23px;
+}
+.container-privacidade p{
+    font-size: 13px;
+    margin-left: 20px;
+    margin-top: -20px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.2px;
+    color: rgb(95, 94, 94);
+}
+.mostrar-telefone{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.mostrar-telefone h2{
+    font-size: 15px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.1px;
+}
+.mostrar-telefone p{
+    font-size: 12px;
+    margin-top: -7px;
+    margin-left: 0;
+}
+.container-privacidade input{
+    margin-left: 1100px;
+    margin-top: -40px;
+    display: flex;
+}
+
+.container-privacidade input[type="checkbox"]{
+    appearance: none;
+    width: 60px;
+    height: 30px;
+    background-color: rgb(208, 208, 208);
+    border-radius: 50px;
+    position: absolute;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container-privacidade input[type="checkbox"]::before{
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    left: 5px;
+    top: 4px;
+    transition: .3s;
+}
+.container-privacidade input[type="checkbox"]::after{
+    content: "";
+    position: absolute;
+    color: #34384b;
+    font-size: 20px;
+    left: 20px;
+    top: 29px;
+    transition: .3s;
+}
+.container-privacidade input[type="checkbox"]:checked{
+    background-color: var(--cor-destaque);
+}
+.container-privacidade input[type="checkbox"]:checked::before{
+    background: #fff;
+    left: 33px;
+}
+.container-privacidade input[type="checkbox"]:checked::after{
+    content: "";
+    color: #fff;
+    left: 10px;
+}
+
+
+/* AREA MOSTRAR EMAIL */
+
+
+.mostrar-email{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.mostrar-email h2{
+    font-size: 15px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.1px;
+}
+.mostrar-email p{
+    margin-top: -5px;
+    margin-left: 0;
+}

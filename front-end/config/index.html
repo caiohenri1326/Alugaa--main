@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações | Alugaê</title>
+    <link rel="stylesheet" href="../config/style.css">
+    <link rel="stylesheet" href="../config/css-perfil/perfil-css.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" href="../../assets/gear-fill.svg" type="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css-conta/conta-css.css">
+    <link rel="stylesheet" href="../config/css-aparencia/aparencia-css.css">
+    <link rel="stylesheet" href="../config/css-endereco/css-endereco.css">
+    <link rel="stylesheet" href="css-segurança/seguranca-style.css">
+    <link rel="stylesheet" href="../config/css-privacidade/privacidade-css.css">
+</head>
+<body>
+    <header>
+        <div class="container-img">
+           <i class="bi bi-check-circle-fill"></i>
+            <p class="texto-logo">Alugaê</p> 
+        </div>
+        <div class="container-botao-divisoria" id="container-botao-divisoria">
+            <button id="divisao-container-esquerdo" style="border: none; background: none; width: 50px; height: 50px; margin-top: 18px; cursor: pointer;"><i class="bi bi-layout-sidebar-reverse"></i></button>
+            <span id="text-area" class="text-area">Area</span>
+        </div>
+        <div class="container-right">
+            <div class="buttons-interacoes">
+                <button class="bi bi-bell"></button>
+                <button class="bi bi-heart" style="margin-top: 5px;"></button>
+                <button class="bi bi-chat"></button>
+            </div>
+            <div class="button-user-interact">
+                <div class="button-options">
+                    <img src="../../assets/usuario.jpg" alt="" class="rounded-circle dropdown-toggle" style="height: 40px; width: 40px; border-radius: 40px; cursor: pointer;">
+                </div>
+                <button class="button-anunciar">Anunciar</button>
+                
+            </div>
+        </div>
+        
+    </header>
+<hr style="background-color: rgba(0, 0, 0, 0.176); border: none; opacity: 1; height: 1px; margin-top: 0;" class="hr-vertical">
+<div class="divisao-vertical" id="divisao-vertical"></div>
+
+
+<main class="layout-principal">
+
+    <aside class="config-sidebar" id="config-sidebar">
+        <ul class="nav nav-pills flex-column">
+            <li class="nav-item" id="tela-perfil">
+                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#tela-perfil" id="botao-ativar-perfil">
+                    <i class="bi bi-person"></i> Perfil
+                </button>
+            </li>
+            
+            <li class="nav-item" id="tela-conta">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-conta" id="botao-ativar-conta">
+                    <i class="bi bi-gear"></i> Conta
+                </button>
+            </li>
+
+            <li class="nav-item" id="tela-aparencia">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-aparencia" id="botao-ativar-aparencia">
+                    <i class="bi bi-palette"></i> Aparência
+                </button>
+            </li>
+
+            <li class="nav-item" id="tela-enderecos">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-enderecos" id="botao-ativar-endereco">
+                    <i class="bi bi-geo-alt"></i> Endereços
+                </button>
+            </li>
+
+            <li class="nav-item" id="tela-seguranca">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-seguranca" id="botao-ativar-seguranca">
+                    <i class="bi bi-key"></i> Segurança
+                </button>
+            </li>
+
+            <li class="nav-item" id="tela-privacidade">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#tela-privacidade" id="botao-ativar-privacidade">
+                    <i class="bi bi-shield-check"></i> Privacidade
+                </button>
+            </li>
+
+            <hr class="my-3">
+
+            <li class="nav-item container-exit" id="container-exit">
+                <a href="../login/index.html" class="nav-link text-danger">
+                    <i class="bi bi-box-arrow-right"></i> Sair
+                </a>
+            </li>
+        </ul>
+    </aside>
+</main>
+
+
+
+
+<!-- AREA VISUAL PERFIL -->
+
+<div class="container-agrupa-tudo" id="container-agrupa-tudo">
+    <div class="container-perfil tela" id="container-perfil">
+        <div class="infos">
+            <p style="font-size: 23px; margin-left: 30px; margin-top: 35px; color: var(--colorTextCinza);">
+                Foto de Perfil
+            </p>
+
+            <div class="container-infos-pessoais">
+                <span id="nomePessoa">Nome da Pessoa</span>
+                <p class="text-member">Membro desde <span>Data que a pessoa entrou</span></p>
+            </div>
+
+            <div class="perfil-header">
+                <img src="../../assets/usuario.jpg" id="fotoPerfilPreview">
+                <input type="file" id="upload-foto" accept="image/*" style="display: none;">
+                <label for="upload-foto" class="botao-foto">
+                    <i class="bi bi-camera"></i>
+                </label>
+            </div>
+        </div>
+
+        <div class="info-pessoais">
+            <p>Informações Pessoais</p>
+
+            <div class="agrupa-tudo-infos">
+                <div class="nome">
+                    <label for="perfilNome">Nome Completo</label>
+                    <input type="text" id="perfilNome" placeholder="Digite seu Nome">
+                </div>
+
+                <div class="fone-city">
+                    <div class="fone">
+                        <label for="perfilTelefone">Telefone</label>
+                        <input 
+                            type="text" 
+                            id="perfilTelefone" 
+                            name="telefone"
+                            maxlength="15" 
+                            autocomplete="off"
+                            inputmode="numeric"
+                            placeholder="(11) 99999-9999"
+                        >
+                    </div>
+
+                    <div class="cidade">
+                        <label for="perfilCidade">Cidade</label>
+                        <input 
+                            type="text" 
+                            id="perfilCidade"
+                            name="cidade"
+                            placeholder="São Paulo, SP"
+                        >
+                    </div>
+                </div>
+
+                <div class="cpf">
+                    <label for="perfilCpf">CPF</label>
+                    <input 
+                        type="text" 
+                        id="perfilCpf" 
+                        name="cpf" 
+                        maxlength="14" 
+                        autocomplete="off"
+                        inputmode="numeric"
+                        placeholder="000.000.000-00"
+                    >
+                </div>
+
+                <div class="bio">
+                    <label for="perfilBio">Bio</label>
+                    <textarea 
+                        id="perfilBio"
+                        name="bio"
+                        placeholder="Conte um pouco sobre você..."
+                    ></textarea>
+                </div>
+
+                <div class="container-botoes-env">
+                    <button type="button" class="env">Salvar alterações</button>
+                    <button type="button" class="cancelar">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const telefoneInput = document.getElementById("perfilTelefone");
+const cpfInput = document.getElementById("perfilCpf");
+
+telefoneInput.addEventListener("input", () => {
+    let valor = telefoneInput.value.replace(/\D/g, "");
+
+    valor = valor.slice(0, 11);
+
+    if (valor.length > 10) {
+        valor = valor.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+    } else {
+        valor = valor.replace(/^(\d{2})(\d{4})(\d{0,4})$/, "($1) $2-$3");
+    }
+
+    telefoneInput.value = valor;
+});
+
+cpfInput.addEventListener("input", () => {
+    let valor = cpfInput.value.replace(/\D/g, "");
+
+    valor = valor.slice(0, 11);
+
+    valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+    valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+    valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+    cpfInput.value = valor;
+});
+</script>
+    <!------------------------------------------------------------------------------------------------------------------>
+
+    <!-- AREA VISUAL CONTA -->
+
+    <div class="container-conta tela" id="container-conta">
+        <div class="aba-email-idioma">
+            <h1>E-mail e idioma</h1>
+            <p>Atualize as informações da sua conta</p>
+            <div class="input-email">
+                <label for="Email">E-mail</label>
+                <input type="text" placeholder="" id="input-pegar-email">
+            </div>
+
+            <div class="aba-moeda">
+                <div class="idioma">
+                    <label for="idioma">Idioma</label>
+                    <select id="idioma">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="moeda">
+                    <label for="moeda">Moeda</label>
+                    <select id="moeda" class="select-customizado">
+                        <option value="brl">Real (R$)</option>
+                        <option value="usd">Dólar (US$)</option>
+                        <option value="eur">Euro (€)</option>
+                    </select>
+                </div>
+            </div>
+            <button id="salvar-email-conta">Salvar</button>
+        </div>
+        <div class="mudar-senha">
+            <h1>Alterar Senha</h1>
+            <p>Use uma senha forte que você não usa em outros lugares.</p>
+            <div class="senha-atual">
+                <label for="senha">Senha Atual</label>
+                <input type="password" id="senha-atual-conta">
+            </div>
+            <div class="mudando-senha">
+                <div class="nova-senha">
+                    <label for="NewSenha">Nova Senha</label>
+                    <input type="password" id="nova-senha-conta">
+                </div>
+                <div class="confirm-senha">
+                    <label for="confirm-senha">Confirmar nova senha</label>
+                    <input type="password" id="confirmar-senha-conta">
+                </div>
+            </div>
+            <button id="atualizar-senha-conta">Atualizar Senha</button>
+        </div>
+        <div class="excluir-conta">
+            <h1>Zona de Perigo</h1>
+            <p>Esta ação é permanente e não pode ser desfeita.</p>
+            <button id="excluir-conta">Excluir minha conta</button>
+        </div>
+    </div>
+
+
+
+    <!-- -------------------------------------------------------------------------------------- -->
+    <!-- AREA APARENCIA -->
+
+    <div class="container-aparencia tela" id="container-aparencia">
+        <div class="tema">
+            <h3>Tema</h3>
+            <p>Escolha como o Alugaê aparece para você.</p>
+            <div class="escolha-tema">
+                <button class="claro" id="claro"><i class="bi bi-brightness-high"></i>Claro</button>
+                <button class="escuro" id="escuro"><i class="bi bi-moon-stars"></i>Escuro</button>
+                <button class="sistema" id="tema-sistema"><i class="bi bi-display"></i>Sistema</button>
+            </div>
+        </div>
+
+        <div class="cor-destaque">
+            <h3>Cor de destaque</h3>
+            <p>Personalize a cor principal da interface.</p>
+            <div class="cores">
+                <button class="laranja cor-item" id="laranja" data-color="#FF7E3E"></button>
+                <button class="azul cor-item" id="azul" data-color="#48A4FF"></button>
+                <button class="verde cor-item" id="verde" data-color="#2DCBA9"></button>
+                <button class="rosa cor-item" id="rosa" data-color="#FD749C"></button>
+                <button class="roxo cor-item" id="roxo" data-color="#B490FD"></button>
+            </div>
+        </div>
+        <button class="salvar" onclick="SalvarCores()">Salvar</button>
+    </div>
+
+
+    <!-- --------------------------------------------------------- -->
+
+    <!-- AREA ENDEREÇOS -->
+
+    <div class="container-endereco tela" id="container-endereco">
+        <div class="add-endereco">
+            <h2><i class="bi bi-geo-alt"></i>Meus Endereços</h2>
+            <p>Use para entrega, retirada de produtos e localização nos anúncios.</p>
+            <button class="novo-endereco" id="adicionar-novo-endereco"><i class="bi bi-plus"></i>Novo endereço</button>
+        </div>
+
+        <!-- MENSAGEM DE ESTADO VAZIO -->
+
+        <div id="mensagem-vazia" class="mensagem-vazia">
+            <i class="bi bi-geo-fill" style="font-size: 1rem; color: var(--colorTextCinza);"></i>
+            <p>Você ainda não adicionou um endereço.</p>
+        </div>
+
+    <div id="lista-enderecos-container">
+        <div class="container-infos-endereco" id="container-infos-endereco">
+                    <i class="bi bi-house"></i>
+                    <div class="endereco" id="endereco">
+                        <span class="nomeEndereco" id= "nomeEndereco">Nome do endereco</span>
+                        <span class="text-endereco" id="text-endereco">Rua das acácias, 123 - Apto 43</span>
+                        <div class="container-cidade">
+                            <span id="text-cidade" class="text-cidade">São Paulo, SP</span>
+                            <p>•</p> 
+                            <span class="estado-cep" id="text-cep">  CEP 01234-567</span></div>
+                    </div>
+                    <div class="buttons-enderecos">
+                    <button class="edit-endereco" id="edit-endereco"><i class="bi bi-pencil-square" ></i></button>
+                    <button class="excluir-endereco" id="excluir-endereco"><i class="bi bi-trash3"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div id="confirmacao-excluir" class="confirmacao-excluir">
+        <i class="bi bi-check-circle-fill"></i>
+        <span id="toast-menssage">Endereço Removido.</span>
+    </div>
+
+
+    <dialog class="aba-adicionar-novo-endereco" id="aba-adicionar-novo-endereco">
+        <h2>Novo Endereço</h2>
+        <p>Preencha os dados do endereço.</p>
+
+        <div class="identificacao">
+            <label for="identificacao">Identificação(Casa, Trabalho...)</label>
+            <input type="text" id="nomeDoEndereco">
+        </div>
+        <div class="ruaNumero">
+            <div class="rua">
+                <label for="rua">Rua</label>
+                <input type="text" id="enderecoRua">
+            </div>
+            <div class="numero-endereco">
+                <label for="numero">Número</label>
+                <input type="text" id="enderecoNumero">
+            </div>
+        </div>
+        <div class="cidadeCep">
+            <div class="cidade-endereco">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="enderecoCidade">
+            </div>
+            <div class="cep">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep">
+            </div>
+        </div>
+        <div class="botoes-salvar">
+            <button class="salvar-endereco" id="salvar">Salva</button>
+            <button class="cancelar" id="cancelar">Cancelar</button>
+        </div>
+    </dialog>
+
+
+
+    <!-- AREA DE SEGURANÇA -->
+
+
+    <div class="container-seguranca tela" id="container-seguranca">
+        <div class="verificacao-identidade">
+            <h6><i class="bi bi-patch-check" style="color: var(--cor-destaque); margin-right: 10px; font-size: 22px; -webkit-text-stroke: 0.5px;"></i>Verificação de identidade</h6>
+            <p>Verifique-se para receber o selo de confiança.</p>
+
+            <div class="container-email">
+                <i class="bi bi-file-earmark-check" style="color: #149C72;"></i>
+                <div class="div-email">
+                    <span class="s-email">Situaçao do email</span>
+                    <span>email da pessoa</span>
+                </div>
+                <span class="status-email">status</span>
+            </div>
+
+            <div class="container-telefone">
+                <i class="bi bi-phone" style="color: #149C72;"></i>
+                <div class="div-telefone">
+                    <span class="s-telefone">Situaçao do telefone</span>
+                    <span>telefone da pesssoa</span>
+                </div>
+                <span class="status-telefone">status</span>
+            </div>
+
+            <div class="container-cpf">
+                <p>CPF</p>
+                <input type="number" placeholder="000.000.000-00">
+            </div>
+        </div>
+
+
+        <div class="container-autenticacao">
+            <h6><i class="bi bi-shield-check" style="color: var(--cor-destaque);"></i>Autenticação em duas etapas</h6>
+            <p>Adicione uma camada extra de proteção á sua conta.</p>        
+            
+            <div class="codigo-email">
+                <h3>Código por e-mail</h3>
+                <p>Receba um código no e-mail cadastrado.</p>
+                <input class="checkbox" type="checkbox" role="switch"></input>               
+             </div>
+        </div>
+            
+            
+        <div class="sessoes-ativas">
+            <h3><i class="bi bi-laptop"></i>Sessoões ativas</h3>
+            <p>Dispositivos atualmente conectados á sua conta.</p>
+            <div class="dispositivos">         
+               <i class="bi bi-laptop"></i>
+                <div class="info-dispositivos">
+                    <span id="computador-pessoa">Computador da pessoa</span>
+                    <span id="ip-pessoa">Localizaçao do computador</span>
+                </div>
+            </div>
+            <button class="encerrar-sessoes">Encerrar todas as outras sessões</button>
+        </div>   
+    </div>
+
+
+    <div class="container-privacidade tela" id="container-privacidade">
+        <h3>Privacidade e visibilidade</h3>
+        <p>Controle quem vê suas informações e como elas são usadas.</p>
+        <div class="mostrar-telefone">    
+            <h2>Mostrar meu telefone nos anúncios</h2>
+            <p>Alugantes poderão ligar diretamente.</p>
+            <input type="checkbox" type="checkbox" role="switch">
+        </div>
+        <hr style="max-width: 1150px; background-color: rgba(0, 0, 0, 0.055); margin-top: 40px;">
+        <div class="mostrar-email">
+            <h2>Mostrar meu e-mail nos anúncios</h2>
+            <p>Alugantes poderão entrar em contato usando o e-mail.</p>
+            <input type="checkbox" type="checkbox" role="switch">
+        </div>
+    </div>
+</div>
+<script src="../config/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

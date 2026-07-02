@@ -1,0 +1,329 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-site);
+    font-family: Inter;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variant: normal;
+    font-variation-settings: 100;
+}
+.container-anuncio{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    width: 35%;
+    height: 90vh;
+    border: 1px solid var(--colorTextCinza);
+    border-radius: 5px;
+}
+.agrupa-tudo{
+    display: flex;
+    flex-direction: column;
+}
+.button-back{
+    display: flex;
+
+}
+.container-anuncio a{
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--colorTextCinza);
+    font-weight: 600;
+}
+.container-anuncio a i{
+    margin-right: 10px;
+    font-size: 18px;
+}
+.text-header{
+    margin-left: 30px;
+}
+.text-header h6{
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: 50px;
+    color: var(--colorTextCinza);
+}
+.text-header p{
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--colorTextCinza);
+}
+.form-anuncio p{
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 30px;
+    margin-top: 30px;
+    color: var(--colorTextCinza);
+}
+
+/* CONTAINER ADICIONAR FOTO */
+.container-upload{
+    width: 90%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.upload-placeholder{
+    width: 140px;
+    height: 90px;
+    border: 2px dashed var(--colorTextCinza);
+    border-radius: 15px;
+    background-color: var(--bg-site);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 26rem;
+    margin-top: -20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.upload-placeholder::placeholder{
+    width: 90px;
+    height: 110px;
+    border: 2px dashed var(--colorTextCinza);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.text-upload{
+    font-family: sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    color: var(--colorTextCinza);
+    text-align: center;
+}
+.hide-input{
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+.icon-upload{
+    color: var(--colorTextCinza);
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+/* CONTAINER NOME DO ANUNCIO */
+
+.nome-do-anuncio{
+    display: flex;
+    flex-direction: column;
+}
+.nome-do-anuncio label{
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-left: 30px;
+    color: var(--colorTextCinza);
+}
+.nome-do-anuncio input{
+    width: 90%;
+    height: 45px;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--colorTextCinza);
+}
+.nome-do-anuncio input::placeholder{
+    font-size: 14px;
+}
+.nome-do-anuncio input:focus{
+    outline: none;
+    border: 1px solid var(--cor-destaque);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* CONTAINER SELECT */
+
+.select-custom{
+    width: 220px;
+    position: relative;
+}
+
+.select-selected{
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--colorTextCinza);
+    color: var(--colorTextCinza);
+}
+.select-selected:focus{
+    outline: none;
+    border: 1px solid var(--cor-destaque);
+}
+.select-custom label{
+    margin-left: 30px;
+    margin-top: 30px;
+    font-size: 13px;
+    color: var(--colorTextCinza);
+}
+.select-options{
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    background: var(--bg-site);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(128, 128, 128, 0.594);
+    display: none;
+    z-index: 10;
+    color: var(--colorTextCinza);
+}
+.select-options li{
+    padding: 10px;
+    cursor: pointer;
+}
+.select-options li:hover{
+    background-color: var(--cor-destaque);
+    color: white;
+}
+.select-custom.open .select-options{
+    display: block;
+}
+.container-categorias .preco{
+    position: absolute;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* CONTAINER PREÇO */
+.container-preco{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.container-preco label{
+    font-size: 13px;
+    color: var(--colorTextCinza);
+    margin-bottom: 5px;
+}
+.container-preco input{
+    width: 42%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--colorTextCinza);
+}
+.container-preco input:focus{
+    border: 1px solid var(--cor-destaque);
+    outline: none;
+}
+
+/* CONTAINER DESCRIÇÃO */
+
+.container-descricao{
+    display: flex;
+    flex-direction: column;
+}
+.container-descricao label{
+    font-size: 13px;
+    color: var(--colorTextCinza);
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.area-caracteristicas{
+    height: 150px;
+    width: 88%;
+    border-radius: 10px;
+    border: 1px solid var(--colorTextCinza);
+    resize: none;
+    margin-left: 30px;
+    margin-top: 10px;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+.area-caracteristicas::placeholder{
+    font-size: 13px;
+    font-weight: 500;
+    padding-top: 0px;
+}
+
+.area-caracteristicas:focus{
+    border: 1px solid var(--cor-destaque);
+    outline: none;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 13px;
+
+}
+
+/* BOTOES ENVIAR */
+
+.buttons-enter{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.button-cancel{
+    height: 43px;
+    width: 90px;
+    font-size: 13px;
+    border-radius: 5px;
+    border: 1px solid var(--colorTextCinza);
+    background: none;
+    font-weight: 600;
+    color: var(--colorTextCinza);
+}
+.button-cancel:hover{
+    background-color: var(--cor-destaque-background-input);
+    color: var(--cor-destaque);
+    transition: .3s ease;
+}
+.button-anunciar{
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color: var(--cor-destaque);
+    font-weight: 500;
+    border-radius: 5px;
+    color: white;
+}
+.button-anunciar:hover{
+    background-color: #be5330;
+}
+.button-anunciar i{
+    margin-right: 7px;
+    color: white;
+    font-weight: 500;
+}
+
+
+
+
+/* =================== MEDIAS QUERYES =====================*/
+
+@media (max-width: 300px){
+    .container-anuncio{
+        width: 91%;
+        height: 90%;
+        margin-top: 10px;
+    }
+    .container-upload{
+        margin-left: 150px;
+        width: 300px;
+    }
+    .upload-placeholder{
+        height: 90%;
+        width: 150px;
+    }
+    .hide-input{
+        
+    }
+}

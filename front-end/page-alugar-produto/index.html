@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alugaê</title>
+    <link rel="stylesheet" href="../page-alugar-produto/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../config/style.css">
+</head>
+<body>
+    <nav class="navbar container-header">
+        <div class="container-fluid">
+            <a class="navbar-brand">Alugaê</a>
+            <form class="form-header" role="search">
+                <input class="form-control" type="search" placeholder="Buscar anúncios..." aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                <div class="buttons-interact">
+                    <button class="icon-notifications"><i class="bi bi-bell"></i></button>
+                    <button class="icon-chat"><i class="bi bi-chat"></i></button>
+                    <button class="icon-favorites"><i class="bi bi-heart"></i></button>
+                </div>
+                
+            </form>
+            <div class="container-login">
+                <div class="dropdown">
+                    <img src="../../assets/usuario.jpg" alt="Perfil" class="rounded-circle dropdown-toggle" id="menuPerfil" data-bs-toggle="dropdown" aria-expanded="false" style="width: 38px; height: 38px; cursor: pointer; margin-top: -7px;">
+                    <ul class="dropdown-menu shadow" aria-labelledby="menuPerfil">
+                        <li>
+                            <p>Olá, <span>Caio</span></p>
+                        </li>
+                        <li><hr class="dropdown-divider" style="background-color: var(--colorTextCinza) !important;"></li>
+                        <li><a href="" class="dropdown-item"><i class="bi bi-bag"></i>Meus Anuncios</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill-gear"></i>Editar Perfil</a></li>
+                        <li><a class="dropdown-item" href="/front-end/config/index.html"><i class="bi bi-gear"></i>Configurações</a></li>
+                        <li><hr class="dropdown-divider" style="background-color: var(--colorTextCinza) !important;"></li>
+                        <li><a class="dropdown-item text-danger area-sair" href="../login-page/index.html"><i class="bi bi-person-up"></i>Sair</a></li>
+                    </ul>
+                    </div>
+
+                <button class="btn-anunciar"><i class="bi bi-bag-plus"></i>Anunciar</button>
+            </div>
+        </div>
+    </nav>
+
+<main class="product-container">  
+        <section class="gallery-section">
+            <div class="main-image">
+                <span class="badge-destaque">Destaque</span>
+                <img src="../../assets/imagem-ps5-2.jpg" alt="iPhone 14 Pro Max">
+            </div>
+            
+            <div class="thumbnails">
+                <img src="../../assets/imagem-ps5-2.jpg" alt="Vista 1">
+                <img src="../../assets/imagem-ps5-2.jpg" alt="Vista 2">
+                <img src="../../assets/imagem-ps5-2.jpg" alt="Vista 3">
+                <img src="../../assets/imagem-ps5-2.jpg" alt="Vista 4">
+            </div>
+        </section>
+
+        <aside class="checkout-section">
+            
+            <header class="product-header">
+                <span class="category">ELETRÔNICOS</span>
+                <h1>iPhone 14 Pro Max 256GB Impecável</h1>
+                <p class="location"><i class="bi bi-geo-alt"></i> São Paulo, SP • Há 2 horas</p>
+                <div class="price">R$ 150 <span class="period-text">/ dia</span></div>
+            </header>
+
+            <nav class="product-tabs">
+                <button onclick="alternarAba(this)" class="mudar" data-aba="conteudo-detalhes">Detalhes</button>
+                <button onclick="alternarAba(this)" class="active mudar" data-aba="conteudo-alugar">Alugar</button> 
+                <button onclick="alternarAba(this)" class="mudar" data-aba="conteudo-alugante">Alugante</button>
+            </nav>
+
+            <form action="#" method="POST" class="checkout-form conteudo-aba active" id="conteudo-alugar">
+                
+                <fieldset class="form-card">
+                    <legend><i class="bi bi-box2"></i> Tempo e Retirada</legend>
+                    
+                    <div class="radio-group">
+                        <label class="radio-option-active">
+                            <input type="radio" name="retirada" value="combinar" checked>
+                            <span><strong>Combinar com o locador</strong><br><span class="alinhar">Alinhar detalhes via chat • Grátis</span></span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="retirada" value="buscar">
+                            <span><strong>Retirar no local</strong><br><span class="alinhar">Buscar no endereço do dono</span></span>
+                        </label>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" placeholder="Como está no documento">
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group flex-3">
+                            <label for="data-inicio">Data de início</label>
+                            <input type="date" id="data-inicio" required>
+                        </div>
+                        <div class="input-group flex-1">
+                            <label for="dias">Dias</label>
+                            <input type="number" id="dias" placeholder="3" min="1">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="mensagem">Mensagem para o proprietário (Opcional)</label>
+                        <input type="text" id="mensagem" placeholder="Ex: Tenho interesse em buscar no próximo sábado de manhã...">
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-card">
+                    <legend><i class="bi bi-credit-card"></i> Pagamento</legend>
+                    
+                    <div class="payment-methods">
+                        <label class="method-card active">
+                            <span class="icon"><i class="bi bi-qr-code-scan"></i></span>
+                            <strong>Pix</strong>
+                        </label>
+                        
+                        <label class="method-card">
+                            <span class="icon"><i class="bi bi-credit-card"></i></span>
+                            <strong>Cartão</strong>
+                            <small>À vista</small>
+                        </label>
+                        
+                        <label class="method-card">
+                            <span class="icon"><i class="bi bi-bank"></i></span>
+                            <strong>Boleto</strong>
+                            <small>À vista</small>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <footer class="checkout-summary">
+                    <div class="summary-row">
+                        <span>Subtotal (3 diárias)</span>
+                        <span>R$ 450</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Taxa Alugaê</span>
+                        <span>R$ 30</span>
+                    </div>
+                    <div class="summary-row discount">
+                        <span>Desconto Pix</span>
+                        <span>- R$ 22,50</span>
+                    </div>
+                    <hr>
+                    <div class="summary-row total">
+                        <strong>Total</strong>
+                        <strong>R$ 457,50</strong>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Finalizar compra</button>
+                    <p class="security-info"><i class="bi bi-shield-check"></i> Pagamento 100% seguro</p>
+                </footer>
+
+            </form>
+        </aside>
+
+    </main>
+
+    <div class="aba-vendedor conteudo-aba" id="conteudo-alugante">
+        <img src="../../assets/usuario.jpg" alt="">
+        <span class="name">Caio Henrique</span>
+        <p class="membro-p">Membro desde <span>2020</span> • <span>Presidente Prudente, <span>SP</span></span></p>
+        <div class="avaliacoes">
+            <i class="bi bi-star-fill"></i>
+            <span class="note-avaliation">4.9</span><span class="number-avaliation">(100</span><p>avaliações)</p>
+        </div>
+        <div class="infos-client">
+            <div class="vendas-concluidas">
+                <span>30</span>
+                <p>Itens alugados</p>
+            </div>
+            <div class="resposta">
+                <span>98%</span>
+                <p>Resposta rápida</p>
+            </div>
+            <div class="tempo">
+                <span>~1h</span>
+                <p>Tempo médio</p>
+            </div>
+        </div>
+        
+        <div class="confirmacoes-perfil">
+            <div class="doc-confirm confirm">
+                <i class="bi bi-shield-check"></i><p>Documento confirmado</p>
+            </div>
+            <div class="email-confirm confirm">
+                <i class="bi bi-check-circle"></i><p>E-mail e telefone verificados</p>
+            </div>
+            <div class="loc-confirm confirm">
+                <i class="bi bi-geo-alt"></i><p>Atende em</p><span> Presidente Prudente</span>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="chat-mensagem"><i class="bi bi-chat"></i> Mensagem</button>
+            <button class="btn-ver-anuncios">Ver anúncios</button>
+        </div>
+    </div>
+
+
+    <div class="aba-detalhes conteudo-aba" id="conteudo-detalhes">
+        <span>iPhone 14 Pro Max 256GB Impecável em ótimo estado de conservação. Pouco uso, sem marcas ou riscos aparentes. Acompanha todos os acessórios originais. Disponível para retirada na região de São Paulo.</span>
+        <hr>
+        <div class="info-container">
+            <dl class="info-group">
+                <dt>Categoria</dt>
+                <dd>Eletrônico</dd>
+            </dl>
+            <dl class="info-group">
+                <dt>Condição</dt>
+                <dd>Usado - Como novo</dd>
+            </dl>
+            <dl class="info-group">
+                <dt>Localização</dt>
+                <dd>São Paulo, SP</dd>
+            </dl>
+            <dl class="info-group">
+                <dt>Publicado</dt>
+                <dd>Há 2 horas</dd>
+            </dl>
+        </div>
+        <div class="pergunta">
+            <p>O que está incluso</p>
+            <div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+<script>
+    const root = document.documentElement;
+    window.onload = function() {
+    // Recupera valor salvo no localStorage
+    const corSelecionada = localStorage.getItem('temaCustomizado');
+    root.style.setProperty('--cor-destaque', corSelecionada);
+
+
+    const temaSalvo = localStorage.getItem('modoTema')
+
+    if(temaSalvo === 'escuro'){
+        root.style.setProperty('--bg-site', '#181412');
+        root.style.setProperty('--colorText', '#252728');
+        root.style.setProperty('--fundo-de-abas', '#201B18');
+        root.style.setProperty('--colorTextCinza', '#a0a0a067');
+        root.style.setProperty('--textoPreto', 'white');
+        root.style.colorScheme = 'dark';
+    }
+
+}
+</script>
+<script src="../page-alugar-produto/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</body>
+</html>

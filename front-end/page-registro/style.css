@@ -1,0 +1,205 @@
+:root{
+    --linear-gradient-corpo: linear-gradient(
+        to left top in oklab,
+        #1C1C1D,
+        var(--cor-destaque)
+    );
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: var(--linear-gradient-corpo);
+    min-height: 100vh;
+    font-family: Inter;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variant: normal;
+    font-variation-settings: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.box-registro{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 90%;
+    height: 95%;
+    max-width: 540px;
+    border-radius: 10px;
+    background-color: var(--corAbas);
+}
+.box-registro .voltar-homepage{
+    margin-right: 70%;
+    margin-top: 20px;
+    border: none;
+    font-size: 13px;
+    color: white;
+    font-weight: 500;
+    background: none;
+}
+.box-registro .bi-check-circle-fill{
+    font-size: 40px;
+    color: var(--cor-destaque);
+    margin-top: 20px;
+}
+.box-registro .voltar-homepage:hover{
+    color: var(--cor-destaque);
+}
+.form-registro{
+    width: 70%;
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    gap: 0;
+    margin-top: 20px;
+    width: 100%;
+}
+.form-registro div{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+.form-registro input{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    height: 40px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid var(--colorTextCinza);
+    color: var(--colorTextCinza);
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.form-registro input::placeholder{
+    padding-left: 5px;
+    font-size: 13px;
+}
+.form-registro input:focus{
+    padding-left: 40px;
+    border: 1px solid var(--cor-destaque) !important;
+    outline: none;
+    color: var(--colorTextCinza);
+}
+.form-registro label{
+    font-size: 12px;
+    padding: 0;
+    margin-top: 26px;
+    margin-left: 65px;
+    color: white;
+    font-weight: 500;
+}
+
+.box-registro h6{
+    margin-top: 0px;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(238, 238, 238);
+}
+.box-registro p{
+    font-size: 14px;
+    font-weight: 500;
+    color: white !important;
+}
+
+
+/* ICONES INPUT */
+.form-registro .icon-input{
+    -webkit-text-stroke: 0.4px;
+    position: absolute;
+    margin-top: 48px;
+    left: 65px;
+    font-size: 23px;
+    color: var(--cor-destaque);
+    pointer-events: none;
+}
+
+.form-registro button{
+    width: 80%;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+    background-color: var(--cor-destaque);
+}
+
+.box-registro hr{
+    margin-top: 30px;
+    width: 80%;
+}
+.box-registro p{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+    color: var(--colorTextCinza);
+}
+.box-registro p a{
+    text-decoration: none;
+    color: var(--cor-destaque);
+}
+
+.login-plataformas{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.login-plataformas i{
+    font-size: 40px;
+    padding-left: 20px;
+}
+.google{
+    color: #EA4335;
+}
+.apple
+{
+    color: #F7F5F3;
+}
+
+
+
+
+/* ------------------REPONSIVIDADE----------------- */
+
+
+@media (max-width: 300px){
+    .box-registro{
+        width: 80%;
+        height: 90%;
+        margin: 0 auto;
+    }
+    .form-registro .icon-input{
+        left: 15px;
+    }
+}
+@media (max-width: 400px){
+    .box-registro{
+        width: 80%;
+        height: 90%;
+        margin: 0 auto;
+    }
+    .form-registro .icon-input{
+        left: 20px;
+    }
+}
+@media (max-width: 500px){
+    .box-registro{
+        width: 90%;
+        height: 90%;
+        margin: 0 auto;
+    }
+    .form-registro .icon-input{
+        left: 50px;
+    }
+}

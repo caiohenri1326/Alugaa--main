@@ -1,0 +1,329 @@
+.container-seguranca{
+    display: none;
+    margin-top: -890px;
+    margin-left: 400px;
+}
+.verificacao-identidade{
+    background-color: var(--fundo-de-abas);
+    min-width: 1200px;
+    min-height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.052);
+}
+.verificacao-identidade h6{
+    font-size: 23px;
+    margin-left: 20px;
+    padding-top: 20px;
+    color: var(--colorTextCinza);
+}
+.verificacao-identidade p{
+    font-size: 13px;
+    margin-left: 25px;
+    margin-top: -50px;
+    color: var(--colorTextCinza);
+    font-weight: 400;
+}
+
+.container-email{
+    width: 95%;
+    height: 75px;
+    margin-left: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    border: 1px solid #f5d5c3;
+    display: flex;
+}
+
+.container-email i{
+    font-size: 21px;
+    margin-top: 20px;
+    margin-left: 15px;
+    -webkit-text-stroke: 0.6px;
+}
+.div-email{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    margin-left: 15px;
+    margin-top: 17px;
+}
+.div-email span{
+    color: var(--colorTextCinza);
+}
+.s-email, .s-telefone{
+    font-weight: 400;
+    
+}
+.status-email{
+    font-size: 12px;
+    margin-left: 910px;
+    margin-top: 25px;
+    border: 1px solid #f5d5c3;
+    height: 20px;
+    width: 60px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+
+
+/* AREA TELEFONE */
+
+
+.container-telefone{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 95%;
+    height: 75px;
+    border-radius: 10px;
+    border: 1px solid #f5d5c3;
+}
+.div-telefone span{
+    color: var(--colorTextCinza);
+}
+.container-telefone i{
+    font-size: 21px;
+    margin-top: 20px;
+    margin-left: 15px;
+    -webkit-text-stroke: 0.6px;
+}
+.div-telefone{
+    display: flex;
+    flex-direction: column;
+    margin-top: 17px;
+    margin-left: 15px;
+    font-size: 13px;
+}
+.status-telefone{
+    font-size: 13px;
+    margin-left: 890px;
+    margin-top: 25px;
+    border: 1px solid #f5d5c3;
+    height: 20px;
+    border-radius: 25px;
+    width: 60px;
+    align-items: center;
+    text-align: center;
+}
+/* CONTAINER CPF */
+.container-cpf{
+    width: 95%;
+    height: 110px;
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 0;
+    border-radius: 10px;
+    border: 1px dashed #a08c804f;
+}
+.container-cpf p{
+    font-size: 15px;
+    margin-top: 20px;
+    color: var(--colorTextCinza);
+}
+.container-cpf input{
+    margin-top: 5px;
+    margin-left: 20px;
+    height: 35px;
+    width: 95%;
+    border-radius: 10px;
+    border: 1px solid rgba(116, 80, 33, 0.322);
+    outline: none;
+    padding-left: 10px;
+}
+.container-cpf input:focus{
+    border: 1px solid var(--cor-destaque);
+}
+
+
+/* CONTAINER AUTENTICAÇAO */
+
+.container-autenticacao{
+    background-color: var(--fundo-de-abas);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.052);
+    min-width: 1200px;
+    max-width: 1200px;
+    min-height: 210px;
+    max-height: 210px;
+}
+.container-autenticacao i{
+    font-size: 25px;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-top: 20px;
+    display: inline-block;
+    -webkit-text-stroke: 0.5px;
+}
+.container-autenticacao h6{
+    margin-top: 20px;
+    font-size: 23px;
+}
+
+.container-autenticacao p{
+    font-size: 13px;
+    margin-top: -46px;
+    margin-left: 25px;
+    color: var(--colorTextCinza);
+    font-weight: 400;
+}
+
+.codigo-email{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.codigo-email p{
+    margin-top: 0;
+    margin-left: 0;
+}
+.codigo-email h3{
+    font-size: 15px;
+}
+.codigo-email input{
+    display: flex;
+    margin-left: 1070px;
+    margin-top: -60px;
+}
+.codigo-email input[type="checkbox"]{
+    appearance: none;
+    width: 70px;
+    height: 35px;
+    background-color: rgb(208, 208, 208);
+    border-radius: 50px;
+    position: absolute;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.codigo-email input[type="checkbox"]::before{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    left: 5px;
+    top: 5px;
+    transition: .3s;
+}
+.codigo-email input[type="checkbox"]::after{
+    content: "";
+    position: absolute;
+    color: #34384b;
+    font-size: 20px;
+    left: 20px;
+    top: 29px;
+    transition: .3s;
+}
+.codigo-email input[type="checkbox"]:checked{
+    background-color: var(--cor-destaque);
+}
+.codigo-email input[type="checkbox"]:checked::before{
+    background: #fff;
+    left: 40px;
+}
+.codigo-email input[type="checkbox"]:checked::after{
+    content: "";
+    color: #fff;
+    left: 10px;
+}
+
+
+/* ABA SESSOES ATIVAS */
+
+.sessoes-ativas{
+    max-width: 1200px;
+    min-width: 1200px;
+    min-height: 250px;
+    background-color: var(--fundo-de-abas);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.052);
+}
+.sessoes-ativas i{
+    font-size: 23px;
+    margin-left: 25px;
+    margin-right: 10px;
+    margin-top: 20px;
+    display: inline-block;
+    -webkit-text-stroke: 0.6px;
+    color: var(--cor-destaque);
+}
+.sessoes-ativas h3{
+    font-size: 23px;
+}
+.sessoes-ativas p{
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 20px;
+    margin-top: -10px;
+    color: var(--colorTextCinza);
+}
+
+.sessoes-ativas button{
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 95%;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #a08c804f;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    -webkit-text-stroke: 0.3px;
+}
+.sessoes-ativas button:hover{
+    background-color: var(--cor-destaque-background-input);
+    color: var(--cor-destaque);
+    transition: 0.3s;
+}
+
+
+/* ABA DISPOSITIVOS */
+
+.dispositivos{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 80px;
+    margin-left: 20px;
+    margin-top: 30px;
+    background: none;
+    border-radius: 15px;
+    border: 1px solid #fdddbd;
+}
+.dispositivos i{
+    margin-top: 15px;
+    margin-left: 15px;
+    padding: 0;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    font-size: 21px;
+    background-color: #FFF3EB;
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+    border-radius: 15px;
+}
+.info-dispositivos{
+    margin-left: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#computador-pessoa{
+    font-size: 15px;
+    font-weight: 400;
+    -webkit-text-stroke: 0.3px;
+}
+#ip-pessoa{
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--colorTextCinza);
+}
+

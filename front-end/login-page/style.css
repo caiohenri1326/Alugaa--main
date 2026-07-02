@@ -1,0 +1,201 @@
+:root{
+    --linear-gradient-corpo: linear-gradient(
+        to top left in oklab,
+        #1C1C1D,
+        var(--cor-destaque)
+    );
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-variation-settings: 'wght' 650;
+    background-image: var(--linear-gradient-corpo);
+    min-height: 100vh;
+}
+.login-container{
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.voltar-homepage{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 13px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    background: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.voltar-homepage:hover{
+    color: var(--cor-destaque);
+    transition: .2s ease;
+}
+.box-login{
+    background-color: var(--corAbas);
+}
+.box-login .bi-check-circle-fill{
+    font-size: 35px;
+    position: absolute;
+    margin-left: 70px;
+    margin-top: 60px;
+    color: var(--cor-destaque);
+}
+.box-login h6{
+    font-size: 23px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 80px;
+    color: rgb(240, 240, 240);
+}
+.box-login p{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(240, 240, 240);
+}
+.box-login{
+    border: 1px solid var(--colorTextCinza);
+    border-radius: 15px;
+    min-height: 750px;
+    width: 500px;
+    margin-top: 100px;
+}
+.box-login p a{
+    text-decoration: none;
+    color: var(--cor-destaque);
+    font-weight: 600;
+}
+.form-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form-login label{
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 5%;
+    margin-right: 70%;
+    padding-bottom: 7px;
+    color: rgb(240, 240, 240);
+}
+.form-login input::placeholder{
+    padding-left: 0px;
+    font-size: 15px;
+}
+
+.form-login .email, .senha{
+    width: 80%;
+    height: 40px;
+    padding-left: 40px;
+    border: 1px solid var(--colorTextCinza);
+    border-radius: 5px;
+    font-size: 15px;
+}
+.form-login .email:focus{
+    padding-left: 40px;
+    font-size: 15px;
+    border: 1px solid var(--cor-destaque);
+    outline: none;
+}
+.form-login .senha:focus{
+    padding-left: 40px;
+    border: 1px solid var(--cor-destaque);
+    outline: none;
+}
+
+.form-login input:hover{
+    border: 1px solid var(--cor-destaque);
+}
+.form-login .bi-lock{
+    position: absolute;
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 19%;
+    margin-top: 40px;
+    color: rgba(0, 0, 0, 0.557);
+}
+.form-login .bi-envelope{
+    position: absolute;
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 19%;
+    margin-bottom: 7.3%;
+    color: rgba(0, 0, 0, 0.604);
+}
+.form-login a{
+    position: absolute;
+    margin-left: 14%;
+    margin-bottom: 25px;
+    font-size: 10px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.529);
+    font-weight: 700;
+}
+.form-login a:hover{
+    color: var(--cor-destaque);
+}
+.resgatar-senha{
+    width: 100px;
+    position: absolute;
+    left: 790px;
+    bottom: 457px;
+    color: var(--textoBranco) !important;
+    transition: .2s ease;
+}
+#eye-password {
+    color: var(--colorTextCinza);
+    margin-left: 350px;
+    margin-top: 30px;
+    position: absolute;
+    cursor: pointer;
+    display: inline-block;
+    width: 20px; /* Largura do ícone */
+    height: 20px; /* Altura do ícone */
+}
+
+#eye-password svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor; /* Faz o SVG herdar a cor vermelha do pai */
+}
+
+.resgatar-senha:hover{
+    transition: .3s ease;
+    color: var(--cor-destaque) !important;
+}
+.form-login button{
+    margin-top: 60px;
+    width: 81%;
+    height: 37px;
+    border: none;
+    background-color: var(--cor-destaque);
+    color: white;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.login-container p{
+    margin-top: 40px;
+}
+.login-plataformas{
+    display: flex;
+    flex-direction: row;
+    margin-left: 160px;
+    margin-top: 20px;
+}
+.login-plataformas a{
+    font-size: 40px;
+    margin-left: 15px;
+}
+.google
+{
+    color: #EA4335;
+}
+.apple{
+    color: #F7F5F3;
+}

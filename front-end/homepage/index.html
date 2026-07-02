@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Inicial | Alugaê</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../../assets/LOGO_ALUGAÊ-removebg-preview.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="../config/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar container-header">
+        <div class="container-fluid">
+            <i class="bi bi-check-circle-fill navbar-brand"></i>
+            <form class="form-header" role="search">
+                <input class="form-control" type="search" placeholder="Buscar anúncios..." aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                <div class="buttons-interact">
+                    <button class="icon-notifications"><i class="bi bi-bell"></i></button>
+                    <button class="icon-chat"><i class="bi bi-chat"></i></button>
+                    <button class="icon-favorites"><i class="bi bi-heart"></i></button>
+                </div>
+                
+            </form>
+            <div class="container-login">
+                <div class="dropdown">
+                    <img src="../../assets/usuario.jpg" alt="Perfil" class="rounded-circle dropdown-toggle" id="menuPerfil" data-bs-toggle="dropdown" aria-expanded="false" style="width: 38px; height: 38px; cursor: pointer;">
+                    <ul class="dropdown-menu shadow" aria-labelledby="menuPerfil">
+                        <li>
+                            <p>Olá, <span id="nomeUsuarioMenu">Usuário</span></p>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a href="" class="dropdown-item"><i class="bi bi-bag"></i>Meus Anuncios</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill-gear"></i>Editar Perfil</a></li>
+                        <li><a class="dropdown-item" href="/front-end/config/index.html"><i class="bi bi-gear"></i>Configurações</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger area-sair" href="../login-page/index.html"><i class="bi bi-person-up"></i>Sair</a></li>
+                    </ul>
+                    </div>
+
+                    <button class="btn-anunciar" onclick="window.location.href='../page-anunciar-item/index.html'"> <i class="bi bi-bag-plus"></i>Anunciar
+                </button>
+            </div>
+        </div>
+    </nav>
+    <header class="hero-section">
+        <div class="text-hero">
+            <div class="hero-pergunta">
+               <h2>O que você quer</h2> 
+               <span class="text-style"><h2>alugar hoje?</h2></span>
+            </div>
+            <p>Alugue, anuncie com pessoas da sua região. Simples, rápido e facil.</p>
+        </div>
+        <div class="container-pesquisa">
+            <input type="text" class="pesquisa-item" placeholder="Ex: PS5, Honda Civic, Headset"><i class="bi bi-search icon-pesquisa-hero"></i>
+            <input type="text" class="cidade" placeholder="Cidade"><i class="bi bi-geo-alt"></i>
+            <button>Buscar</button>
+        </div>
+    </header>
+
+<!-- Carrosel Icones -->
+<div class="container-text-carousel">
+    <h2>Explore Categorias</h2>
+    <p>Encontre exatamente o que você procura.</p>
+</div>
+<div id="CarroselIcons" class="carousel slide" data-bs-interval="false">
+    <div class="carousel-inner carrosel-categorias">
+        <div class="carousel-item active">
+            <div class="d-flex justify-content-center gap-2 container-carousel">        
+                <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-tags"></i> Roupas</button>
+                <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-dribbble"></i> Esportes</button>
+                <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-gear"></i> Autos</button>
+                <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-controller"></i> Video Games</button>
+                <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-house-door"></i> Imoveis</button>
+                <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-pc-display"></i> Tecnologias</button>
+                <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-bell"></i> Infantil</button>
+                <button class="btn btn-light btn-categoria-filtro"><i class="bi bi-cart"></i> Outros</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <section>
+        <header>
+            <button class="ver-todos">Ver Todos</button>
+            <h6>Anúncios em Alta</h6>
+        </header>
+        <div class="grid-container">
+            <article class="card">
+                <a href="#">
+                    <div class="img-container">
+                        <img src="../../assets/playstation5.png" alt="Playstation 5" class="ps5">
+                    </div>
+                    <div class="card-content">
+                        <p class="preco">R$ 100</p>
+                        <h3>Playstation 5 Pro</h3>
+                        <div class="time-location">
+                            <i class="bi bi-geo-alt"></i><span>Presidente Prudente, SP</span>
+                            <span class="time">1h Atrás</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="#">
+                    <div class="img-container">
+                        <img src="../../assets/bicicleta.png" alt="Bicicleta" class="ps5">
+                    </div>
+                    <div class="card-content">
+                        <p class="preco">R$ 50</p>
+                        <h3>Bicicleta</h3>
+                        <div class="time-location">
+                            <i class="bi bi-geo-alt"></i><span>Pirapózinho, SP</span>
+                            <span class="time">3h Atrás</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            
+            <article class="card">
+                <a href="#">
+                    <div class="img-container">
+                        <img src="../../assets/casa.jpg" alt="Casa">
+                    </div>
+                    <div class="card-content">
+                        <p class="preco">R$ 1500</p>
+                        <h3>Casa 7 comodos</h3>
+                        <div class="time-location">
+                            <i class="bi bi-geo-alt"></i><span>São Paulo, SP</span>
+                            <span class="time">5 Dias Atrás</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    </section>
+
+
+
+    <!-- RECEM PUBLICADOS -->
+    <section>
+        <div class="recem-publicados">
+            <header>
+                <button class="ver-todos">Ver Todos</button>
+                <h6>Recém Publicados</h6>
+            </header>
+            <article class="card-recem-publicados">
+                <a href="../page-alugar-produto/index.html">
+                    <div class="img-container">
+                        <img src="../../assets/livro.jpg" alt="Livro">
+                    </div>
+                    <div class="card-content">
+                        <p class="preco">R$ 15</p>
+                        <h3>Livro</h3>
+                        <div class="time-location">
+                            <i class="bi bi-geo-alt"></i><span>Rio de Janeiro, SP</span>
+                            <span class="time">30 Minutos Atrás</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card-recem-publicados">
+                <a href="../page-alugar-produto/index.html">
+                    <div class="img-container">
+                        <img src="../../assets/tenis.png" alt="Tenis">
+                    </div>
+                    <div class="card-content">
+                        <p class="preco">R$ 40</p>
+                        <h3>Tenis Feminino</h3>
+                        <div class="time-location">
+                            <i class="bi bi-geo-alt"></i><span>Presidente Prudente</span>
+                            <span class="time">Há 2 horas</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card-recem-publicados">
+                <a href="../page-alugar-produto/index.html">
+                    <div class="img-container">
+                        <img src="../../assets/moto.png" alt="Moto" >
+                    </div>
+                    <div class="card-content">
+                        <p class="preco">R$ 50</p>
+                        <h3>Titan 160 2026</h3>
+                        <div class="time-location">
+                            <i class="bi bi-geo-alt"></i><span>Presidente Prudente</span>
+                            <span class="time">Há 2 horas</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card-recem-publicados">
+                <a href="../page-alugar-produto/index.html">
+                    <div class="img-container">
+                        <img src="../../assets/all-star-tamanho-certo.jpg" alt="Moto" >
+                    </div>
+                    <div class="card-content">
+                        <p class="preco">R$ 30</p>
+                        <h3>All Star Òtima Conservação</h3>
+                        <div class="time-location">
+                            <i class="bi bi-geo-alt"></i><span>Presidente Prudente</span>
+                            <span class="time">Há 8 horas</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card-recem-publicados">
+                <a href="../page-alugar-produto/index.html">
+                    <div class="img-container">
+                        <img src="../../assets/camisa-tamanh-certo.jpg" alt="Camisa" >
+                    </div>
+                    <div class="card-content">
+                        <p class="preco">R$ 15</p>
+                        <h3>Camisa Manga Longa</h3>
+                        <div class="time-location">
+                            <i class="bi bi-geo-alt"></i><span>Presidente Prudente</span>
+                            <span class="time">Há 6 horas</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            <article class="card-recem-publicados">
+                <a href="../page-alugar-produto/index.html">
+                    <div class="img-container">
+                        <img src="../../assets/iphone-700x500.jpg" alt="Moto" >
+                    </div>
+                    <div class="card-content">
+                        <p class="preco">R$ 70</p>
+                        <h3>Iphone 15 PRO MASTER ULTRA BLASTER</h3>
+                        <div class="time-location">
+                            <i class="bi bi-geo-alt"></i><span>Presidente Prudente</span>
+                            <span class="time">Há 12 horas</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card-recem-publicados">
+                <a href="../page-alugar-produto/index.html">
+                    <div class="img-container">
+                        <img src="../../assets/tenis-700x500.jpg" alt="Moto" >
+                    </div>
+                    <div class="card-content">
+                        <p class="preco">R$ 30</p>
+                        <h3>Nike Air</h3>
+                        <div class="time-location">
+                            <i class="bi bi-geo-alt"></i><span>Presidente Prudente</span>
+                            <span class="time">Há 20 horas</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card-recem-publicados">
+                <a href="../page-alugar-produto/index.html">
+                    <div class="img-container">
+                        <img src="../../assets/pexels-atahandemir-30469973 (1).jpg" alt="Moto" >
+                    </div>
+                    <div class="card-content">
+                        <p class="preco">R$ 100</p>
+                        <h3>PC Gamer</h3>
+                        <div class="time-location">
+                            <i class="bi bi-geo-alt"></i><span>Presidente Prudente</span>
+                            <span class="time">Há 20 horas</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+</section>
+
+
+<div class="container-infos-cliente">
+    <h1>Alugar nunca foi tão simples.</h1>
+    <p class="text-chamativo">Publique seu anúncio em menos de 1 minuto e fale direto com quem tem interesse.</p>
+    <div class="card-infos">
+        <div class="card-infos-internos">
+            <div class="icones-card">
+                <i class="bi bi-lightning-charge"></i>
+            </div>
+            <h3>Rápido</h3>
+            <p>Publique em segundos, sem complicação.</p>
+        </div>
+        <div class="card-infos-internos">
+            <div class="icones-card">
+                <i class="bi bi-shield-check"></i>
+            </div>
+            <h3>Seguro</h3>
+            <p>Anunciantes verificados e dicas de segurança.</p>
+        </div>
+        <div class="card-infos-internos">
+            <div class="icones-card">
+                <i class="bi bi-stars"></i>
+            </div>
+            <h3>Gratuito</h3>
+            <p>Crie quantos anúncios quiser, sem taxas.</p>
+        </div>
+    </div>
+    <button>Publicar meu anúncio grátis</button>
+</div>
+
+<footer>
+    <div class="footer-brand">
+        <i class="bi bi-check-circle-fill"> Alugaê</i>
+        <p>O marketplace de classificados mais simples do Brasil. Compre, venda e encontre tudo perto de você.</p>
+    </div>
+
+    <div class="categorias-footer">
+        <h5>Categorias</h5>
+        <a href="#">Eletrônicos</a>
+        <a href="#">Veículos</a>
+        <a href="#">Imóveis</a>
+        <a href="#">Infantil</a>
+    </div>
+
+    <div class="sobre-footer">
+        <h5>Sobre</h5>
+        <a href="#">Como funciona</a>
+        <a href="#">Segurança</a>
+        <a href="#">Carreiras</a>
+    </div>
+
+    <div class="ajuda-footer">
+        <h5>Ajuda</h5>
+        <a href="#">Central de ajuda</a>
+        <a href="#">Termos de uso</a>
+        <a href="#">Privacidade</a>
+        <a href="#">Contato</a>
+    </div>
+</footer>
+<div class="footer-bottom">
+    <p>&copy; 2026 Alugaê.</p>
+</div>
+
+
+
+
+<script>
+const root = document.documentElement;
+
+window.onload = function() {
+    // Recupera valor salvo no localStorage
+    const corSelecionada = localStorage.getItem('temaCustomizado');
+    root.style.setProperty('--cor-destaque', corSelecionada);
+
+
+    const temaSalvo = localStorage.getItem('modoTema')
+
+    if(temaSalvo === 'escuro'){
+        root.style.setProperty('--bg-site', '#171412');
+        root.style.setProperty('--colorText', '#fff');
+        root.style.setProperty('--fundo-de-abas', '#252728');
+        root.style.setProperty('--colorTextCinza', '#808080ff');
+        root.style.setProperty('--textoPreto', 'white');
+        root.style.setProperty('--corInput', '#201A17')
+        root.style.colorScheme = 'dark';
+    }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</body>
+</html>

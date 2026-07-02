@@ -1,0 +1,258 @@
+:root{
+    --cor-fontes-afins: #F97015;
+    --cor-containers: rgb(255, 255, 255);
+    --cor-body: #FCFAF7;
+    --hover: #FFF3EB;
+}
+
+
+
+.container-conta{
+    width: 95%;
+    min-width: 1200px;
+    display: none;
+    flex-direction: column;
+    margin-left: 400px;
+    margin-top:  -54rem;
+    /* margin-left: 25%;
+    bottom: 2vw;
+    position: absolute; */
+}
+
+.container-conta input:focus{
+    border: 1px solid var(--cor-destaque);
+}
+.container-conta.ativa{
+    display: block;
+}
+.aba-email-idioma{
+    width: 100%;
+    height: 300px;
+    background-color: var(--fundo-de-abas);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.068);
+}
+.aba-email-idioma input{
+    padding-left: 10px;
+    font-size: 15px;
+}
+.aba-email-idioma button{
+    height: 35px;
+    width: 90px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--cor-destaque);
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+.aba-email-idioma h1{
+    font-size: 23px;
+    margin-left: 20px;
+    padding-top: 15px;
+    font-weight: 500;
+}
+.aba-email-idioma p{
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 20px;
+    margin-top: -10px;
+    color: var(--colorTextCinza);
+}
+.input-email{
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input-email label{
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.input-email input{
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid black;
+    outline: none;
+}
+/* -------------------------------------------------------------------- */
+
+.aba-moeda{
+    display: flex;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.idioma{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.idioma label{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.idioma select{
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* --------------------------------------------------------------- */
+.moeda{
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.moeda label{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.moeda select{
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------------------ */
+/* CONTAINER SENHA */
+
+.mudar-senha{
+    background-color: var(--fundo-de-abas);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.068);
+}
+.mudar-senha h1{
+    font-size: 23px;
+    margin-left: 25px;
+    padding-top: 25px;
+    font-weight: 500;
+}
+.mudar-senha p{
+    font-size: 13px;
+    margin-left: 20px;
+    margin-top: -10px;
+    font-weight: 400;
+    color: var(--colorTextCinza);
+}
+.senha-atual{
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+.senha-atual label{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+.senha-atual input{
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid var(--colorTextCinza);
+    outline: none;
+}
+.mudando-senha{
+    display: flex;  
+    width: 100%;
+    margin-top: 10px;
+}
+.nova-senha{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 50%;
+}
+.nova-senha label{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.nova-senha input{
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid var(--colorTextCinza);
+    outline: none;
+}
+.confirm-senha{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-top: 10px;
+    width: 50%;
+}
+.confirm-senha label{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.confirm-senha input{
+    width: 95.5%;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid var(--colorTextCinza);
+    outline: none;
+}
+.mudar-senha button{
+    height: 35px;
+    width: 150px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--cor-destaque);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* ----------------------------------------------------------------- */
+
+/* ZONA PERIGO */
+
+.excluir-conta{
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 5px rgba(255, 0, 0, 0.068);
+    border: 1px solid rgba(255, 0, 0, 0.705);
+    margin-top: 20px;
+}
+.excluir-conta h1{
+    font-size: 20px;
+    margin-left: 20px;
+    color: #EF4343;
+}
+.excluir-conta p{
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: -5px;
+    color: var(--colorTextCinza);
+}
+.excluir-conta button{
+    margin-left: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    height: 45px;
+    width: 160px;
+    border: none;
+    background-color: #EF4343;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+

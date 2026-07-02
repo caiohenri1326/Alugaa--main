@@ -1,0 +1,112 @@
+https://lovable.dev/projects/cb28b9d2-501d-41c1-b44d-c2c6a4f3b933
+
+
+
+
+
+MINI IA PARA VERIFICAÇÃO DE IDENTIDADE 
+
+const inputRg = document.getElementById('input-rg');
+    const inputSelfie = document.getElementById('input-selfie');
+    const previewRg = document.getElementById('preview-rg');
+    const previewSelfie = document.getElementById('preview-selfie');
+    const btnVerificar = document.getElementById('btn-verificar');
+    const statusDiv = document.getElementById('status');
+
+    // URLs dos modelos pré-treinados hospedados publicamente
+    const MODEL_URL = 'https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/';
+
+    // 1. Carregar os modelos da IA assim que a página abrir
+    async function carregarModelos() {
+        try {
+            await faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL);
+            await faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL);
+            await faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL);
+            
+            statusDiv.textContent = "Modelos carregados! Insira as fotos.";
+            statusDiv.className = "";
+            inputRg.disabled = false;
+            inputSelfie.disabled = false;
+        } catch (error) {
+            statusDiv.textContent = "Erro ao carregar modelos de IA.";
+            statusDiv.className = "erro";
+            console.error(error);
+        }
+    }
+
+    // Configurar previews das imagens quando o usuário seleciona o arquivo
+    function configurarPreview(input, imgElement) {
+        input.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    imgElement.src = event.target.result;
+                    imgElement.style.display = 'block';
+                    verificarInputsProntos();
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+
+    configurarPreview(inputRg, previewRg);
+    configurarPreview(inputSelfie, previewSelfie);
+
+    function verificarInputsProntos() {
+        if (inputRg.files.length > 0 && inputSelfie.files.length > 0) {
+            btnVerificar.disabled = false;
+        }
+    }
+
+    // 2. Processar e comparar os rostos
+    btnVerificar.addEventListener('click', async () => {
+        statusDiv.textContent = "Processando e comparando rostos...";
+        statusDiv.className = "loading";
+        btnVerificar.disabled = true;
+
+        try {
+            // Detectar rosto e gerar o mapeamento (descriptor) do RG
+            const rostoRg = await faceapi.detectSingleFace(previewRg).withFaceLandmarks().withFaceDescriptor();
+            // Detectar rosto e gerar o mapeamento da Selfie
+            const rostoSelfie = await faceapi.detectSingleFace(previewSelfie).withFaceLandmarks().withFaceDescriptor();
+
+            if (!rostoRg) {
+                statusDiv.textContent = "Não encontramos nenhum rosto na foto do RG.";
+                statusDiv.className = "erro";
+                btnVerificar.disabled = false;
+                return;
+            }
+            if (!rostoSelfie) {
+                statusDiv.textContent = "Não encontramos nenhum rosto na foto da Selfie.";
+                statusDiv.className = "erro";
+                btnVerificar.disabled = false;
+                return;
+            }
+
+            // Comparar a distância euclidiana entre os dois rostos
+            const matcher = new faceapi.FaceMatcher(rostoRg);
+            const melhorMatch = matcher.findBestMatch(rostoSelfie.descriptor);
+
+            // Se a distância (distance) for menor que 0.6, as chances de ser a mesma pessoa são gigantescas
+            // O próprio face-api define que se o label for diferente de "unknown", é um match válido.
+            if (melhorMatch.label !== 'unknown') {
+                const precisao = ((1 - melhorMatch.distance) * 100).toFixed(2);
+                statusDiv.textContent = `✅ Verificação Aprovada! É a mesma pessoa (Compatibilidade: ${precisao}%)`;
+                statusDiv.className = "sucesso";
+            } else {
+                statusDiv.textContent = "❌ Verificação Recusada! Os rostos não são da mesma pessoa.";
+                statusDiv.className = "erro";
+            }
+
+        } catch (error) {
+            statusDiv.textContent = "Erro ao processar as imagens.";
+            statusDiv.className = "erro";
+            console.error(error);
+        }
+
+        btnVerificar.disabled = false;
+    });
+
+    // Iniciar carregamento dos modelos
+    carregarModelos();

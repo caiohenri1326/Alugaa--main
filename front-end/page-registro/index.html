@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registre-se | Alugaaê</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../page-registro/style.css">
+    <link rel="icon" href="../../assets/LOGO_ALUGAÊ-removebg-preview.png" type="image/png">
+    <link rel="stylesheet" href="../config/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="box-registro">
+            <button class="voltar-homepage"><i class="bi bi-arrow-left"></i> Voltar para o início</button>
+            <i class="bi bi-check-circle-fill"></i>
+            
+            <h6>Crie sua conta</h6>
+            <p>Preencha os dados abaixo para se cadastrar</p>
+
+            <form class="form-registro">
+                <div class="nome">
+                    <label>Nome completo</label>
+                    <i class="bi bi-person icon-input"></i>
+                    <input type="text" placeholder="João da Silva" class="nome" id="novamente" required>
+                </div>
+                
+                <div class="email">
+                    <label>E-mail</label>
+                    <i class="bi bi-envelope icon-input"></i>
+                    <input type="email" placeholder="seu@email.com" class="email" id="email" required>
+                </div>
+                
+                <div class="senha">
+                    <label>Senha</label>
+                    <i class="bi bi-lock icon-lock1 icon-input"></i>
+                    <input type="text" placeholder="Minimo 6 caracteres" class="senha" id="senha" required>
+                </div>
+
+                <div class="confirm-senha">
+                    <label>Confirmar Senha</label>
+                    <i class="bi bi-lock icon-lock2 icon-input"></i>
+                    <input type="text" placeholder="Digite a senha novamente" class="senha2" required>
+                </div>
+                <button type="submit">Criar Conta</button>
+                
+                <span class="login-plataformas">
+                    <a href="" class="google"><i class="bi bi-google"></i></a>
+                    <a href="" class="apple"><i class="bi bi-apple"></i></a>
+                    <a href="" class="facebook"><i class="bi bi-facebook"></i></a>
+                </span>
+
+                <hr style="margin-top: 30px; max-width: 100%; margin-left: 60px; color: var(--colorTextCinza);">
+                <p>Já tem uma conta? <a href="../login-page/index.html">Faça login</a></p>
+                </div>
+            </form>
+            
+    </div>
+<script src="../shared/api.js"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
