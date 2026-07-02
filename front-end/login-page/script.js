@@ -68,7 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // 🔐 salva token
+<<<<<<< HEAD
             localStorage.setItem('alugae_token', data.token);
+=======
+            localStorage.setItem('token', data.token);
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 
             // 🔥 salva usuário
             localStorage.setItem('usuario', JSON.stringify(data.usuario));
@@ -89,4 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe

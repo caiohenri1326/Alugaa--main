@@ -1,7 +1,11 @@
 .container-privacidade{
     display: none;
     flex-direction: column;
+<<<<<<< HEAD
     margin-left: 400px;
+=======
+    margin-left: 250px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     margin-top: -800px;
     background-color: var(--fundo-de-abas);
     border-radius: 15px;

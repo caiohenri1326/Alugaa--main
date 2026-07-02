@@ -2,15 +2,25 @@ const db = require('../config/db');
 
 // 🚀 CRIAR USUÁRIO
 const criarUsuario = (dados, callback) => {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     const sql = `
         INSERT INTO usuarios
         (
             nome,
             email,
+<<<<<<< HEAD
             senha,
             senha_hash
         )
         VALUES (?, ?, ?, ?)
+=======
+            senha
+        )
+        VALUES (?, ?, ?)
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     `;
 
     db.query(
@@ -18,7 +28,10 @@ const criarUsuario = (dados, callback) => {
         [
             dados.nome,
             dados.email,
+<<<<<<< HEAD
             dados.senha,
+=======
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
             dados.senha
         ],
         callback
@@ -27,6 +40,7 @@ const criarUsuario = (dados, callback) => {
 
 // 🔍 BUSCAR POR EMAIL
 const buscarPorEmail = (email, callback) => {
+<<<<<<< HEAD
     const sql = `
         SELECT
             id,
@@ -38,6 +52,11 @@ const buscarPorEmail = (email, callback) => {
             bio,
             foto_perfil,
             created_at
+=======
+
+    const sql = `
+        SELECT *
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
         FROM usuarios
         WHERE email = ?
     `;
@@ -47,6 +66,10 @@ const buscarPorEmail = (email, callback) => {
 
 // 🔥 BUSCAR POR ID
 const buscarPorId = (id, callback) => {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     const sql = `
         SELECT
             id,
@@ -54,10 +77,16 @@ const buscarPorId = (id, callback) => {
             email,
             telefone,
             cidade,
+<<<<<<< HEAD
             cpf,
             bio,
             foto_perfil,
             COALESCE(created_at, data_criacao) AS created_at
+=======
+            bio,
+            foto_perfil,
+            created_at
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
         FROM usuarios
         WHERE id = ?
     `;
@@ -65,6 +94,7 @@ const buscarPorId = (id, callback) => {
     db.query(sql, [id], callback);
 };
 
+<<<<<<< HEAD
 const atualizarPerfil = (id, dados, callback) => {
     const sql = `
         UPDATE usuarios
@@ -135,3 +165,10 @@ module.exports = {
     atualizarSenha,
     excluirConta
 };
+=======
+module.exports = {
+    criarUsuario,
+    buscarPorEmail,
+    buscarPorId
+};
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe

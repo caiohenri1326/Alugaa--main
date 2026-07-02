@@ -1,7 +1,11 @@
 .container-seguranca{
     display: none;
     margin-top: -890px;
+<<<<<<< HEAD
     margin-left: 400px;
+=======
+    margin-left: 250px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 }
 .verificacao-identidade{
     background-color: var(--fundo-de-abas);

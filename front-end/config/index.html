@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="../config/css-aparencia/aparencia-css.css">
     <link rel="stylesheet" href="../config/css-endereco/css-endereco.css">
     <link rel="stylesheet" href="css-segurança/seguranca-style.css">
+<<<<<<< HEAD
+=======
+    <script src="../../front-end/page-registro/script.js"></script>
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     <link rel="stylesheet" href="../config/css-privacidade/privacidade-css.css">
 </head>
 <body>
@@ -27,6 +31,7 @@
             <button id="divisao-container-esquerdo" style="border: none; background: none; width: 50px; height: 50px; margin-top: 18px; cursor: pointer;"><i class="bi bi-layout-sidebar-reverse"></i></button>
             <span id="text-area" class="text-area">Area</span>
         </div>
+<<<<<<< HEAD
         <div class="container-right">
             <div class="buttons-interacoes">
                 <button class="bi bi-bell"></button>
@@ -42,6 +47,13 @@
             </div>
         </div>
         
+=======
+        <div class="buttons-header">
+            <button class="button-anunciar"><i class="bi bi-bag-plus"></i>Anunciar</button>
+            <button class="icon-sino"><i class="bi bi-bell"></i></button>
+            <img src="../../assets/eu.jpg" class="img-perfil">
+        </div>
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     </header>
 <hr style="background-color: rgba(0, 0, 0, 0.176); border: none; opacity: 1; height: 1px; margin-top: 0;" class="hr-vertical">
 <div class="divisao-vertical" id="divisao-vertical"></div>
@@ -106,14 +118,20 @@
 <div class="container-agrupa-tudo" id="container-agrupa-tudo">
     <div class="container-perfil tela" id="container-perfil">
         <div class="infos">
+<<<<<<< HEAD
             <p style="font-size: 23px; margin-left: 30px; margin-top: 35px; color: var(--colorTextCinza);">
                 Foto de Perfil
             </p>
 
+=======
+            <p style="font-size: 23px; margin-left: 30px; margin-top: 35px; color: var(--colorTextCinza);">Foto de Perfil</p>
+            
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
             <div class="container-infos-pessoais">
                 <span id="nomePessoa">Nome da Pessoa</span>
                 <p class="text-member">Membro desde <span>Data que a pessoa entrou</span></p>
             </div>
+<<<<<<< HEAD
 
             <div class="perfil-header">
                 <img src="../../assets/usuario.jpg" id="fotoPerfilPreview">
@@ -131,10 +149,28 @@
                 <div class="nome">
                     <label for="perfilNome">Nome Completo</label>
                     <input type="text" id="perfilNome" placeholder="Digite seu Nome">
+=======
+            
+            <div class="perfil-header">
+                <img src="../../assets/eu.jpg">
+                <input type="file" id="upload-foto" style="display: none;"></input>
+                <label for="upload-foto" class="botao-foto"><i class="bi bi-camera"></i></label>
+            </div>
+        </div>
+        
+
+        <div class="info-pessoais">
+            <p>Informações Pessoais</p>
+            <div class="agrupa-tudo-infos">
+                <div class="nome">
+                    <label for="Nome">Nome Completo</label>
+                    <input type="text" placeholder="Digite seu Nome">
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
                 </div>
 
                 <div class="fone-city">
                     <div class="fone">
+<<<<<<< HEAD
                         <label for="perfilTelefone">Telefone</label>
                         <input 
                             type="text" 
@@ -219,6 +255,42 @@ cpfInput.addEventListener("input", () => {
     cpfInput.value = valor;
 });
 </script>
+=======
+                        <label for="">Telefone</label>
+                        <input type="number"  maxlength="14" placeholder="(11) 99999-9999">
+                    </div>
+            
+                    <div class="cidade">
+                        <label>Cidade</label>
+                        <input type="text" placeholder="São Paulo, SP">
+                    </div>
+
+                </div>
+
+                <div class="cpf">
+                    <label for="cpf">CPF</label>
+                    <input type="number" maxlength="14" placeholder="Ex: 335.333.333-05">
+                </div>
+
+                <div class="rg">
+                    <label for="RG">RG (Registro Geral)</label>
+                    <input type="number" placeholder="ex: 55.555.555-0">
+                </div>
+
+                <div class="bio">
+                    <label>Bio</label>
+                    <textarea placeholder="Conte um pouco sobre você..."></textarea>
+                </div>
+                
+                <div class="container-botoes-env">
+                    <button class="env">Salvar alterações</button>
+                    <button class="cancelar">Cancelar</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     <!------------------------------------------------------------------------------------------------------------------>
 
     <!-- AREA VISUAL CONTA -->
@@ -249,18 +321,27 @@ cpfInput.addEventListener("input", () => {
                     </select>
                 </div>
             </div>
+<<<<<<< HEAD
             <button id="salvar-email-conta">Salvar</button>
+=======
+            <button>Salvar</button>
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
         </div>
         <div class="mudar-senha">
             <h1>Alterar Senha</h1>
             <p>Use uma senha forte que você não usa em outros lugares.</p>
             <div class="senha-atual">
                 <label for="senha">Senha Atual</label>
+<<<<<<< HEAD
                 <input type="password" id="senha-atual-conta">
+=======
+                <input type="text">
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
             </div>
             <div class="mudando-senha">
                 <div class="nova-senha">
                     <label for="NewSenha">Nova Senha</label>
+<<<<<<< HEAD
                     <input type="password" id="nova-senha-conta">
                 </div>
                 <div class="confirm-senha">
@@ -269,6 +350,16 @@ cpfInput.addEventListener("input", () => {
                 </div>
             </div>
             <button id="atualizar-senha-conta">Atualizar Senha</button>
+=======
+                    <input type="text">
+                </div>
+                <div class="confirm-senha">
+                    <label for="confirm-senha">Confirmar nova senha</label>
+                    <input type="text">
+                </div>
+            </div>
+            <button>Atualizar Senha</button>
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
         </div>
         <div class="excluir-conta">
             <h1>Zona de Perigo</h1>
@@ -359,6 +450,7 @@ cpfInput.addEventListener("input", () => {
             <label for="identificacao">Identificação(Casa, Trabalho...)</label>
             <input type="text" id="nomeDoEndereco">
         </div>
+<<<<<<< HEAD
         <div class="ruaNumero">
             <div class="rua">
                 <label for="rua">Rua</label>
@@ -368,6 +460,11 @@ cpfInput.addEventListener("input", () => {
                 <label for="numero">Número</label>
                 <input type="text" id="enderecoNumero">
             </div>
+=======
+        <div class="rua">
+            <label for="rua">Rua e Número</label>
+            <input type="text" id="enderecoRua">
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
         </div>
         <div class="cidadeCep">
             <div class="cidade-endereco">
@@ -376,7 +473,11 @@ cpfInput.addEventListener("input", () => {
             </div>
             <div class="cep">
                 <label for="cep">CEP</label>
+<<<<<<< HEAD
                 <input type="text" id="cep">
+=======
+                <input type="number" id="cep">
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
             </div>
         </div>
         <div class="botoes-salvar">
@@ -464,6 +565,11 @@ cpfInput.addEventListener("input", () => {
     </div>
 </div>
 <script src="../config/script.js"></script>
+<<<<<<< HEAD
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
+=======
+</body>
+</html>
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe

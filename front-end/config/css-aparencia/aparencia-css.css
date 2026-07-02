@@ -9,7 +9,11 @@
 .container-aparencia{
     width: 95%;
     min-width: 1200px;
+<<<<<<< HEAD
     margin-left: 25%;
+=======
+    margin-left: 250px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     margin-top: -43%;
     display: none;
 }

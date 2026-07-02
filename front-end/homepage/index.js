@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function(){
 
     // 🔐 proteção (opcional mas recomendado)
+<<<<<<< HEAD
     const token = localStorage.getItem('alugae_token');
     const usuarioSalvo = localStorage.getItem('alugae_usuario') || localStorage.getItem('usuario');
 
@@ -33,6 +34,12 @@ document.addEventListener('DOMContentLoaded', function(){
             localStorage.removeItem('alugae_usuario');
             window.location.href = "../login-page/index.html";
         });
+=======
+    const token = localStorage.getItem('token');
+    if (!token) {
+        window.location.href = "../login-page/index.html";
+        return;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     }
 
     // 🎯 CATEGORIAS (seu código original)
@@ -55,3 +62,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe

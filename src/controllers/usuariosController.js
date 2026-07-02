@@ -30,6 +30,7 @@ const cadastrar = async (req, res) => {
                 if (err) {
 
                     // 🚨 email duplicado
+<<<<<<< HEAD
                  if (err) {
                 console.error('ERRO COMPLETO:', err);
 
@@ -38,6 +39,13 @@ const cadastrar = async (req, res) => {
                     code: err.code
                 });
             }
+=======
+                    if (err.code === 'ER_DUP_ENTRY') {
+                        return res.status(400).json({
+                            message: 'Email já cadastrado'
+                        });
+                    }
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 
                     console.error('ERRO CADASTRO:', err);
 
@@ -177,6 +185,7 @@ const buscarPerfil = (req, res) => {
 
 };
 
+<<<<<<< HEAD
 const atualizarPerfil = (req, res) => {
     const usuarioId = req.usuario.id;
     const fotoPerfil = req.file ? `http://localhost:3000/uploads/${req.file.filename}` : null;
@@ -358,3 +367,10 @@ module.exports = {
     atualizarSenha,
     excluirConta
 };
+=======
+module.exports = {
+    cadastrar,
+    login,
+    buscarPerfil
+};
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe

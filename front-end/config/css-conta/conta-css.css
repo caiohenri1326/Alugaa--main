@@ -11,12 +11,18 @@
     width: 95%;
     min-width: 1200px;
     display: none;
+<<<<<<< HEAD
     flex-direction: column;
     margin-left: 400px;
     margin-top:  -54rem;
     /* margin-left: 25%;
     bottom: 2vw;
     position: absolute; */
+=======
+    margin-left: 250px;
+    margin-top: -45%;
+    position: absolute;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 }
 
 .container-conta input:focus{
@@ -254,5 +260,9 @@
     color: white;
     font-weight: 500;
     cursor: pointer;
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe

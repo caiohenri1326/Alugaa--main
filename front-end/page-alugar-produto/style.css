@@ -13,7 +13,11 @@ html{
     scroll-behavior: smooth;
 }
 .container-fluid{
+<<<<<<< HEAD
     background-color: var(-)--bg-card;
+=======
+    background-color: var(--bg-card);
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     border-bottom: 1px solid;
     border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3Crect width='1' height='0.8' fill='%23ccc'/%3E%3C/svg%3E") 0 0 100% 0;
     backdrop-filter: blur(10px);
@@ -432,12 +436,20 @@ html{
 /* Transforma o fieldset no card idêntico ao do print */
 .form-card {
     background-color: var(--fundo-de-abas);
+<<<<<<< HEAD
     border: 1px solid var(--colorTextCinza);
+=======
+    border: 1px solid color-mix(in srgb, var(--fundo-de-abas), white 10%);
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     border-radius: 12px;
     padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+<<<<<<< HEAD
+=======
+    margin-top: 10px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 }
 
 .form-card legend {
@@ -488,7 +500,11 @@ html{
     margin-bottom: 2px;
 }
 .radio-group span {
+<<<<<<< HEAD
     color: var(--colorTextCinza);
+=======
+    color: var(--textoPreto);
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     line-height: 1.0;
     -webkit-text-stroke: 0.2px;
 }
@@ -552,9 +568,14 @@ html{
     transition: all 0.2s;
 }
 
+<<<<<<< HEAD
 .method-card.active {
     border-color: var(--primary-color);
     background-color: var(--primary-light);
+=======
+.method-card.selecionado {
+    border: 1px solid var(--cor-destaque);
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 }
 
 .method-card .icon {
@@ -564,8 +585,13 @@ html{
 }
 
 .method-card strong {
+<<<<<<< HEAD
     font-size: 13px;
     color: var(--colorTextCinza);
+=======
+    font-size: 14px;
+    color: color-mix(in srgb, var(--colorTextCinza), white 30%);
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 }
 
 .method-card small {

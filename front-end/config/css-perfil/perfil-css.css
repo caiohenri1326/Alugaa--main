@@ -27,10 +27,14 @@
     box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.068);
 }
 .agrupa-tudo-infos{
+<<<<<<< HEAD
     width: 90%;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+=======
+    max-width: 96%;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 }
 .container-infos-pessoais{
     margin-left: 200px;
@@ -84,7 +88,11 @@
 
 
 .info-pessoais{
+<<<<<<< HEAD
     height: 560px;
+=======
+    height: 600px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     width: 73%;
     margin-left: auto;
     margin-right: auto;
@@ -96,9 +104,13 @@
 .info-pessoais p{
     color: var(--colorTextCinza);
     font-size: 23px;
+<<<<<<< HEAD
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+=======
+    margin-left: 45px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     padding-top: 20px;
     font-weight: 500;
 }
@@ -108,21 +120,35 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+<<<<<<< HEAD
     margin-left: 0;
+=======
+    margin-left: 14px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     font-family: Inter;
     width: 100%;
 }
 .nome label{
+<<<<<<< HEAD
     margin-left: 0;
+=======
+    margin-left: 30px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     margin-bottom: 10px;
     font-size: 13px;
     font-weight: 500;
     color: var(--colorTextCinza);
 }
 .nome input{
+<<<<<<< HEAD
     width: 100%;
     height: 35px;
     margin-left: 0;
+=======
+    width: 90%;
+    height: 35px;
+    margin-left: 30px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     border-radius: 10px;
     border: 1px solid var(--colorTextCinza);
     padding-left: 10px;
@@ -149,8 +175,13 @@
 .fone-city{
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
     gap: 16px;
     width: 100%;
+=======
+    gap: 5px;
+    width: 82vh;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     height: 100px;
     max-width: 100%;
     margin-left: auto;
@@ -171,7 +202,11 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+<<<<<<< HEAD
     margin-left: 0;
+=======
+    margin-left: 10px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     
 }
 .fone input{
@@ -186,7 +221,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     margin-left: 0;
+=======
+    margin-left: 10px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     margin-top: 20px;
 
 }
@@ -208,8 +247,13 @@
 .cpf{
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     margin-left: 0;
     width: 100%;
+=======
+    margin-left: 44px;
+    width: 91%;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     max-width: 100%;
 }
 .cpf label{
@@ -224,20 +268,55 @@
     border: 1px solid var(--colorTextCinza);
     outline: none;
 }
+<<<<<<< HEAD
+=======
+/* --------------------------------------------------------- */
+/* CONTAINER RG */
+.rg{
+    display: flex;
+    flex-direction: column;
+    margin-left: 44px;
+    width: 81vh;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.rg label{
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 9px;
+    margin-bottom: 5px;
+}
+.rg input{
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid var(--colorTextCinza);
+    outline: none;
+}
+
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 /* CONTAINER BIO */
 
 
 .bio{
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     width: 100%;
     margin-left: 0;
+=======
+    width: 81vh;
+    margin-left: 44px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     max-width: 100%;
 }
 .bio label{
     font-size: 15px;
     font-weight: 500;
+<<<<<<< HEAD
     margin-left: 0;
+=======
+    margin-left: 5px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     margin-top: 5px;
     margin-bottom: 10px;
 }
@@ -267,16 +346,26 @@ textarea:focus{
 
 .container-botoes-env{
     display: flex !important;
+<<<<<<< HEAD
     width: 100%;
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
+=======
+    width: 73%;
+    margin-top: 15px;
+    margin-left: 30px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     margin-bottom: 20px;
 }
 .container-botoes-env button{
     height: 40px;
+<<<<<<< HEAD
     margin-left: 0;
     margin-right: 10px;
+=======
+    margin-left: 10px;
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 }
 .cancelar{
     width: 100px;

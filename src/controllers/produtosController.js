@@ -5,7 +5,10 @@ const cadastrar = (req, res) => {
     const foto = req.file ? req.file.filename : null;
 
     const {
+<<<<<<< HEAD
     nome,
+=======
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     titulo,
     descricao,
     preco,
@@ -20,9 +23,14 @@ const cadastrar = (req, res) => {
 
 
     const usuario_id = req.usuario.id;
+<<<<<<< HEAD
     const nomeProduto = titulo || nome;
 
     if (!nomeProduto || !preco || !categoria) {
+=======
+
+    if (!titulo || !preco || !categoria) {
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
         return res.status(400).json({ message: 'Campos obrigatórios faltando' });
     }
 
@@ -35,6 +43,7 @@ const cadastrar = (req, res) => {
 
     const sql = `
     INSERT INTO produtos 
+<<<<<<< HEAD
     (nome, titulo, descricao, preco_dia, categoria_id, cidade, estado, cep, bairro, logradouro, usuario_id, foto)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 `;
@@ -42,6 +51,14 @@ const cadastrar = (req, res) => {
     db.query(sql, [
     nomeProduto,
     nomeProduto,
+=======
+    (nome, descricao, preco_dia, categoria_id, cidade, estado, cep, bairro, logradouro, usuario_id, foto)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+`;
+
+    db.query(sql, [
+    titulo,
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     descricao,
     preco,
     categoria_id,
@@ -67,4 +84,8 @@ const cadastrar = (req, res) => {
 
 module.exports = {
     cadastrar
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe

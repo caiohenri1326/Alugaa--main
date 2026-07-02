@@ -38,12 +38,20 @@ const mensagem_vazia = document.getElementById('mensagem-vazia');
 // Inputs e Botões do Modal de Endereço
 const campoNome = document.getElementById('nomeDoEndereco');
 const campoRua = document.getElementById('enderecoRua');
+<<<<<<< HEAD
 const campoNumero = document.getElementById('enderecoNumero');
 const campoCidade = document.getElementById('enderecoCidade');
 const campoCep = document.getElementById('cep');
 const botaoSalva = document.getElementById('salvar');
 const botao_cancelar_endereco = aparecer_aba_adicionar_endereco.querySelector('.cancelar');
 let enderecoEditandoId = null;
+=======
+const campoCidade = document.getElementById('enderecoCidade');
+const campoCep = document.getElementById('cep');
+const botaoSalva = document.getElementById('salvar');
+const botaoCancelar = document.getElementById('cancelar');
+const botao_cancelar_endereco = aparecer_aba_adicionar_endereco.querySelector('.cancelar');
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 
 
 // VARIAVEIS DO TEMA 
@@ -74,7 +82,11 @@ window.onload = function() {
     const temaSalvo = localStorage.getItem('modoTema')
 
     if(temaSalvo === 'escuro'){
+<<<<<<< HEAD
         root.style.setProperty('--bg-site', '#171412');
+=======
+        root.style.setProperty('--bg-site', '#181412');
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
         root.style.setProperty('--colorText', '#252728');
         root.style.setProperty('--fundo-de-abas', '#201B18');
         root.style.setProperty('--colorTextCinza', '#8080807a');
@@ -87,6 +99,10 @@ window.onload = function() {
 /* ============================================================
    2. FUNÇÕES AUXILIARES (Lógica de Negócio)
    ============================================================ */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 function esconderTodasAsTelas() {
     todas_as_telas.forEach(tela => {
         tela.style.display = 'none';
@@ -126,7 +142,10 @@ function Animaçoes() {
 function limparInputs() {
     campoNome.value = "";
     campoRua.value = "";
+<<<<<<< HEAD
     campoNumero.value = "";
+=======
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     campoCidade.value = "";
     campoCep.value = "";
 }
@@ -163,6 +182,7 @@ botao_adicionar_novo_endereco.addEventListener('click', () => {
     aparecer_aba_adicionar_endereco.showModal();
 });
 
+<<<<<<< HEAD
 /* --- Lógica de Salvar Endereço --- */
 botao_cancelar_endereco.addEventListener('click', function(event) {
     event.preventDefault();
@@ -178,6 +198,12 @@ function tokenEnderecos() {
 }
 
 function fecharModalEndereco() {
+=======
+botaoCancelar.addEventListener('click', limparInputs);
+
+botao_cancelar_endereco.addEventListener('click', function(event) {
+    event.preventDefault();
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     aparecer_aba_adicionar_endereco.classList.add('fechando');
 
     aparecer_aba_adicionar_endereco.addEventListener('animationend', function functionOnEnd() {
@@ -185,6 +211,7 @@ function fecharModalEndereco() {
         aparecer_aba_adicionar_endereco.removeEventListener('animationend', functionOnEnd);
         aparecer_aba_adicionar_endereco.close();
     });
+<<<<<<< HEAD
 }
 
 function cidadeComEstado(endereco) {
@@ -364,6 +391,11 @@ botaoSalva.addEventListener('click', async function(event) {
 
 carregarEnderecos();
 
+=======
+});
+
+/* --- Lógica de Salvar Endereço --- */
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
 botaoSalva.addEventListener('click', function() {
     const nomeAddEndereco = campoNome.value;
     const rua = campoRua.value;
@@ -424,7 +456,10 @@ temaEscuro.addEventListener('click', function(){
     root.style.setProperty('--textoPreto', 'rgba(0, 0, 0, 0.631)');
     root.style.colorScheme = 'dark';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
     localStorage.setItem('modoTema', 'escuro');
 })
 
@@ -454,6 +489,7 @@ corItem.forEach(botao => {
 /* ============================================================
    4. INICIALIZAÇÃO
    ============================================================ */
+<<<<<<< HEAD
 const perfilApiUrl = 'http://localhost:3000/api/usuarios/me';
 const perfilToken = localStorage.getItem('alugae_token');
 let perfilAtual = null;
@@ -723,3 +759,6 @@ carregarPerfil().catch((error) => {
 });
 
 botao_ativar_perfil.click();
+=======
+botao_ativar_perfil.click();
+>>>>>>> 0f929d66d2d23f2199d12324228f0318e7e4aabe
